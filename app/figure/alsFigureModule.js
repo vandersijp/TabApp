@@ -4,10 +4,11 @@
 var alsFigure = angular.module("alsFigure", ['ngMaterial', 'ngAnimate']);
 
 alsFigure.directive('alsFigurePhotoMain', function () {
-  return {
-    scope: {
-        image: '='
-    },
+    return {
+        scope: {
+            tab: '=',
+            data: '='
+        },
     controller: function () {
       // this.name = 'Pascal';
     },
