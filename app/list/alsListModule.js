@@ -9,7 +9,7 @@ alsList.directive('alsListSingle', function() {
         scope: {
             list: '='
         },
-        templateUrl: 'app/list/alsListSingle.html'
+        templateUrl: 'https://rawgit.com/vandersijp/tab-app/master/app/list/alsListSingle.html'
     }
 });
 
