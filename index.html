@@ -1,0 +1,109 @@
+<!--(C) Ask Learn Share Ltd -->
+<html>
+
+<head>
+    <title>Hampstead Mansions</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <!-- ReCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <!-- Material Design -->
+    <link rel="stylesheet prefetch" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.css">
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet prefetch" href="https://material.angularjs.org/1.1.1/docs.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Roboto">
+    <!-- Ask Learn Share -->
+    <link rel="stylesheet" href="css/als.css" />
+</head>
+
+<body ng-app="app" ng-controller="appController as appCtrl" layout="column" layout-align="start center">
+
+    <md-content class="als-main-content" layout="column" ng-cloak>
+
+        <md-toolbar md-toolbar md-scroll-shrink>
+            <div class="md-toolbar-tools" layout="row">
+                <als-icon-fab-pair data-class="'md-fab md-mini md-primary'" data-toggle="isSidenavOpen" data-icon1="'menu'" data-icon2="'arrow_back'"> </als-icon-fab-pair>
+                <h1 class="md-toolbar-tools">{{appCtrl.appData.version.title}}</h1>
+            </div>
+        </md-toolbar>
+
+        <section layout="column">
+
+            <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4" md-is-open="isSidenavOpen">
+                <md-content ng-controller="LeftCtrl">
+
+                    <md-toolbar md-toolbar md-scroll-shrink>
+                        <div class="md-toolbar-tools" layout="row">
+                            <als-icon-fab-pair data-class="'md-fab md-mini md-primary'" data-toggle="$parent.isSidenavOpen" data-icon1="'menu'" data-icon2="'arrow_back'"> </als-icon-fab-pair>
+                            <h1 class="md-toolbar-tools"></h1>
+                        </div>
+                    </md-toolbar>
+
+                    <md-menu-content width="2">
+                        <md-menu-item ng-repeat="tab in appCtrl.appData.tabs">
+                            <md-button ng-click="$parent.$parent.selectedIndex=$index; toggleLeft();">
+                                <div layout="row" flex>
+                                    <p flex>{{tab.id}}</p>
+                                    <md-icon class="md-accent"><i class="material-icons">{{tab.icon}}</i></md-icon>
+                                </div>
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                    <md-divider></md-divider>
+                    <md-content layout="column" layout-align="top center">
+                        <p class="md-caption">&copy;&nbsp;{{appCtrl.appData.version.copyright}}</p>
+                        <p class="md-caption">{{appCtrl.appData.version.date}}</p>
+                    </md-content>
+
+                </md-content>
+            </md-sidenav>
+
+            <md-content ng-cloak>
+                <md-tabs md-selected="selectedIndex" md-dynamic-height md-border-bottom md-swipe-content>
+                    <!-- firs tabs only -->
+                    <md-tab ng-repeat="tab in appCtrl.appData.tabs" ng-if="$index < appCtrl.appData.tabs.length-1" label="{{tab.id}}">
+                        <als-tab-content data-data="appCtrl.appData" data-tab="tab"></als-tab-content>
+                    </md-tab>
+                    <!-- last tab only -->
+                    <md-tab label="{{appCtrl.appData.tabs[appCtrl.appData.tabs.length-1]['id']}}">
+                        <als-tab-content data-data="appCtrl.appData" data-tab="appCtrl.appData.tabs[appCtrl.appData.tabs.length-1]"></als-tab-content>
+                        <!-- controller should be obsolete once variables can be set -->
+                        <div ng-controller="alsContactController as alsContactCtrl">
+                            <als-contact-form data-message="appCtrl.appData.message" data-status="alsContactCtrl.status"></als-contact-form>
+                            <div layout="column" layout-align="center center" layout-margin ng-show="alsContactCtrl.status.open" class="g-recaptcha" data-sitekey="6LfWQykTAAAAAEyKqcTgnMrUCdiCVIveggsB4XfU"></div>
+                        </div>
+                    </md-tab>
+                </md-tabs>
+            </md-content>
+
+        </section>
+
+        </div>
+
+        <!-- Angular JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
+        <!-- Material Design -->
+        <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.js"></script>
+        <!-- FireBase -->
+        <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+        <!-- Ask Learn Share -->
+        <script src="app/figure/alsFigureModule.js"></script>
+        <script src="app/list/alsListModule.js"></script>
+        <script src="app/icon/alsIconModule.js"></script>
+        <script src="app/access/alsAccessModule.js"></script>
+        <script src="app/contact/alsContactModule.js"></script>
+        <script src="app/tab/alsTabModule.js"></script>
+        <!--
+        <script src="https://gist.github.com/vandersijp/ac7e96ecbdb604b20440cfd54a94c46d.js"></script>
+        -->
+        <script src="app/appModule.js"></script>
+
+</body>
+
+</html>
