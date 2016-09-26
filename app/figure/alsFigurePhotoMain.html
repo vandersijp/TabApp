@@ -1,0 +1,21 @@
+<!--(C) Ask Learn Share Ltd -->
+<style type="text/css">
+    img {
+        max-height: 400px;
+        max-width: 400px;
+        height: auto;
+        width: auto;
+        filter: drop-shadow(4px 4px 4px #bbb);
+    }
+
+    .md-caption,
+    figcaption {
+        text-align: center;
+    }
+</style>
+<div layout="column" layout-align="start center">
+    <figure layout="column" layout-align="start center" layout-padding>
+        <img ng-src="{{path + image.url}}" />
+        <figcaption class="md-caption">{{image.caption}}</figcaption>
+    </figure>
+</div>
