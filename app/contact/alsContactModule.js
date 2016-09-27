@@ -26,8 +26,8 @@ alsContact.directive('alsContactForm', function() {
 
                 $http({
                     method: 'POST',
-                    url: 'https://rawgit.com/vandersijp/TabApp/master/app/contact/alsContactSend.php',
-                    //url: 'https://www.smartsoft.mobi/libs/alsContactSend.php',
+                    // PHP file must be stored on own server
+                    url: 'alsContactSend.php',
                     data: message,
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
