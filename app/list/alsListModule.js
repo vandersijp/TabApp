@@ -24,3 +24,13 @@ alsList.directive('alsListTable', function() {
         templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/list/alsListTable.html'
     }
 });
+
+alsList.directive('alsListTableFiltered', function() {
+    return {
+        restrict: 'E',
+        scope: {
+            table: '='
+        },
+        templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/list/alsListTableFiltered.html'
+    }
+});
