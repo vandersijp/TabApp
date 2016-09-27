@@ -14,7 +14,7 @@ $defs = array(
 	"querylabel" => "query",
 	"signature" => "Kind regards.",
 	"subject" => "Your query",
-	"to" => "unknown");
+	"to" => "unknown@somewhere.com");
 
 $postData = array_default($postData, $defs);
 
@@ -49,7 +49,7 @@ else
   }
 
 echo $echoStr;
-log_insert ("log.html", $echoStr);
+log_insert ("../../log.html", $echoStr);
 
 //=====================
 function log_insert ($file, $text) {
