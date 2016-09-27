@@ -22,17 +22,17 @@
                 <td ng-repeat="h in table.filter" ng-switch="h">
 
                     <span ng-switch-when="hex">
-                      fbe88b
-                      &nbsp;
-                      <span style="background: #fbe88b; font-size: 100%">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      </span>
+                      {{r[h]}}
                       &nbsp;
                       <span style="background: #{{r[h]}}; font-size: 100%">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       </span>
                       &nbsp;
-                      {{r[h]}}xxx
+                      <span style="background: #fbe88b; font-size: 100%">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      </span>
+                      &nbsp;
+                      fbe88b
                     </span>
 
                     <span ng-switch-when="icon">
