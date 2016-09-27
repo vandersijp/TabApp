@@ -10,8 +10,6 @@ alsList.directive('alsListSingle', function() {
             list: '='
         },
         templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/list/alsListSingle.html'
-        //templateUrl: 'https://rawgit.com/vandersijp/tab-app/master/app/list/alsListSingle.html'
-
     }
 });
 
