@@ -20,21 +20,30 @@
         </thead>
         <tbody>
             <tr ng-repeat="r in table.records">
-                <td ng-repeat="h in table.filter" ng-switch="h">
+                <td ng-repeat="h in table.filter" ng-switch="h" flex>
 
                     <span ng-switch-when="hex">
+                      <span flex="25">
                       {{r[h]}}
                       &nbsp;
-                      <span style="background: #{{r[h]}}; font-size: 100%">
+                    </span>
+
+                      <span style="background: #{{r[h]}}; font-size: 100%" flex="25">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       </span>
+
                       &nbsp;
-                      <span style="background: #fbe88b; font-size: 100%">
+
+                      <span style="background: #fbe88b; font-size: 100%" flex="25">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       </span>
+
+                      <span flex="25">
                       &nbsp;
                       fbe88b
                     </span>
+
+                  </span>
 
                     <span ng-switch-when="icon">
                       <md-icon>
