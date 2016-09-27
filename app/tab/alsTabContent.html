@@ -4,10 +4,6 @@
 </style>
 <md-content layout="column" layout-margin>
 
-    <div layout="column" layout-align="center center" ng-if="false" ng-hide="data.loaded">
-        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-    </div>
-
     <h3 ng-if="tab.header" class="md-headline md-accent">{{tab.header}}</h3>
     <p ng-if="tab.summary">{{tab.summary}}</p>
     <als-access-form ng-show="tab.id==data.system.access.tab" data-access="data.system.access"></als-access-form>
