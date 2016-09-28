@@ -37,11 +37,16 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "accent": "red",
             "title": "Hampstead Mansions"
         },
+        "defectelimination": {
+            "primary": "blue",
+            "accent": "red",
+            "title": "Defect Elimination"
+        },
         "asklearnshare": {
             "primary": "teal",
             "accent": "amber",
             "title": "Ask Learn Share"
-        },
+        }
     }
 
     var root = "";
@@ -54,6 +59,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         root = host.split(".")[0];
     };
 
+    // dynamically change the <title> tag
     document.title = themes[root]["title"];
 
     /*
