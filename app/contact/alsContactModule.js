@@ -21,7 +21,6 @@ alsContact.directive('alsContactForm', function() {
                 status.sending = true;
                 status.response = {};
 
-
                 message["g-recaptcha-response"] = grecaptcha.getResponse();
 
                 // =========< should be in a global function >=========
@@ -36,8 +35,7 @@ alsContact.directive('alsContactForm', function() {
                     root = host.split(".")[0];
                 }
                 // =========< should be in a global function >=========
-                message["root"] = "root";
-
+                message["root"] = root;
 
                 $http({
                     method: 'POST',
