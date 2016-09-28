@@ -23,7 +23,8 @@ alsContact.directive('alsContactForm', function() {
 
 
                 message["g-recaptcha-response"] = grecaptcha.getResponse();
-                message["root"] = $scope.getRoot();
+                //message["root"] = $scope.getRoot();
+                message["root"] = "abc";
 
                 $http({
                     method: 'POST',
