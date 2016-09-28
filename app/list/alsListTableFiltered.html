@@ -4,7 +4,7 @@
     td, th {
         padding: .2em
     }
-    td span {
+    .hex, .hex span {
       text-align: center;
       font-size: 80%;
     }
@@ -27,7 +27,7 @@
             <tr ng-repeat="r in table.records">
                 <td ng-repeat="h in table.filter" ng-switch="h" class="center">
 
-                    <span ng-switch-when="hex" layout="row" layout-align="center center">
+                    <span ng-switch-when="hex" layout="row" layout-align="center center" class="hex">
                       <span flex="25">
                       {{r[h]}}
                     </span>
