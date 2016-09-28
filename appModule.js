@@ -3,6 +3,7 @@
 // button to close the sideNav
 // <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
+
 var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTab'])
 
 app.config(function($mdThemingProvider, $sceDelegateProvider) {
@@ -18,23 +19,28 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     var themes = {
         "default": {
             "primary": "teal",
-            "accent": "amber"
+            "accent": "amber",
+            "title": "Ask Learn Share"
         },
         "neverturkey": {
             "primary": "red",
-            "accent": "green"
+            "accent": "green",
+            "title": "Never Turkey"
         },
         "mexit": {
             "primary": "green",
-            "accent": "red"
+            "accent": "red",
+            "title": "Mexit"
         },
         "nw3": {
             "primary": "indigo",
-            "accent": "red"
+            "accent": "red",
+            "title": "Hampstead Mansions"
         },
         "asklearnshare": {
             "primary": "teal",
-            "accent": "amber"
+            "accent": "amber",
+            "title": "Ask Learn Share"
         },
     }
 
@@ -47,6 +53,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     } else {
         root = host.split(".")[0];
     };
+
+    document.title = themes[root]["title"];
 
     /*
     // this code is a test to load a json file instead, but the asynchronicity spoils the party
