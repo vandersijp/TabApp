@@ -26,8 +26,8 @@ alsContact.directive('alsContactForm', function() {
 
                 $http({
                     method: 'POST',
-                    // PHP file must be stored on own server
-                    url: 'alsContactSend.php',
+                    // PHP file must be stored on own server, at root level
+                    url: '../alsContactSend.php',
                     data: message,
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
