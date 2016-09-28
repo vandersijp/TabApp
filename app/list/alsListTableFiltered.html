@@ -4,6 +4,9 @@
     td, th {
         padding: .2em
     }
+    td span {
+      text-align: center;
+    }
 </style>
 
 <md-card>
@@ -20,7 +23,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="r in table.records">
-                <td ng-repeat="h in table.filter" ng-switch="h">
+                <td ng-repeat="h in table.filter" ng-switch="h" class="center">
 
                     <span ng-switch-when="hex" layout="row" layout-align="center center">
                       <span flex="25">
