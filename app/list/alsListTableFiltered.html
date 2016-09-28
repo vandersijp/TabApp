@@ -22,8 +22,9 @@
             <tr ng-repeat="r in table.records">
                 <td ng-repeat="h in table.filter" ng-switch="h">
 
-                    <span ng-switch-when="hex" layout="row">
+                    <span ng-switch-when="hex" layout="row" layout-align="center center">
                       <span flex="25">
+                        &nbsp;
                       {{r[h]}}
                       &nbsp;
                     </span>
@@ -41,6 +42,7 @@
                       <span flex="25">
                       &nbsp;
                       fbe88b
+                      &nbsp;
                     </span>
 
                   </span>
