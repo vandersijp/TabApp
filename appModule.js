@@ -49,6 +49,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         }
     }
 
+
+    // =========< should be in a global function >=========
     var root = "";
     var host = window.location.hostname;
     if (host == 'localhost') {
@@ -58,6 +60,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     } else {
         root = host.split(".")[0];
     };
+    // =========< should be in a global function >=========
+
 
     // dynamically change the <title> tag
     document.title = themes[root]["title"];
@@ -85,18 +89,18 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
 // not used
 app.service('rootService', function() {
     this.getRoot = function() {
+        // =========< should be in a global function >=========
         var root = "";
         var host = window.location.hostname;
-
         if (typeof host == "undefined" || host == null) {
             root = "default";
         } else if (host == 'localhost') {
-            // replace only replacs the first occurence
-            // see http://stackoverflow.com/questions/1144783/replacing-all-occurrences-of-a-string-in-javascript
+            // replace only replaces the first occurence
             root = window.location.pathname.split("/").join("");
         } else {
             root = host.split(".")[0];
         }
+        // =========< should be in a global function >=========
         return root;
     };
 });
@@ -114,15 +118,18 @@ app.controller('appController', function($scope, $http, $q, rootService, dataSer
     var self = this;
 
     $scope.getRoot = function() {
+        // =========< should be in a global function >=========
         var root = "";
         var host = window.location.hostname;
-        if (host == 'localhost') {
-            // replace only replacs the first occurence
-            // see http://stackoverflow.com/questions/1144783/replacing-all-occurrences-of-a-string-in-javascript
+        if (typeof host == "undefined" || host == null) {
+            root = "default";
+        } else if (host == 'localhost') {
+            // replace only replaces the first occurence
             root = window.location.pathname.split("/").join("");
         } else {
             root = host.split(".")[0];
         }
+        // =========< should be in a global function >=========
         return root;
     }
 

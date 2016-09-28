@@ -23,8 +23,21 @@ alsContact.directive('alsContactForm', function() {
 
 
                 message["g-recaptcha-response"] = grecaptcha.getResponse();
-                //message["root"] = $scope.getRoot();
-                message["root"] = "abc";
+
+                // =========< should be in a global function >=========
+                var root = "";
+                var host = window.location.hostname;
+                if (typeof host == "undefined" || host == null) {
+                    root = "default";
+                } else if (host == 'localhost') {
+                  // replace only replaces the first occurence
+                    root = window.location.pathname.split("/").join("");
+                } else {
+                    root = host.split(".")[0];
+                }
+                // =========< should be in a global function >=========
+                message["root"] = "root";
+
 
                 $http({
                     method: 'POST',
