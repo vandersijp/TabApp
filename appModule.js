@@ -26,7 +26,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         },
         "mexit": {
             "primary": "green",
-            "accent": "reader"
+            "accent": "red"
         },
         "nw3": {
             "primary": "indigo",
