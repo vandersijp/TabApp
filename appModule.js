@@ -22,6 +22,11 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "accent": "amber",
             "title": "Ask Learn Share"
         },
+        "app": {
+            "primary": "purple",
+            "accent": "blue",
+            "title": "Test application"
+        },
         "neverturkey": {
             "primary": "red",
             "accent": "green",
