@@ -150,6 +150,8 @@ app.controller('appController', function($scope, $http, $q, rootService, dataSer
         .then(function(result) {
             self.appData = result[1];
             self.appData.loaded = true;
+            var favicon = self.appData.system.paths.images +"/"+rootService.getRoot()+".png";
+            alert (favicon);
         });
 
     $scope.toggleLeft = buildDelayedToggler('left');
