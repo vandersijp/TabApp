@@ -37,10 +37,15 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "accent": "red",
             "title": "Mexit"
         },
-        "nw3": {
+        "nw2": {
             "primary": "indigo",
             "accent": "red",
             "title": "Hampstead Mansions"
+        },
+        "smartsoft": {
+            "primary": "amber",
+            "accent": "deep-purple",
+            "title": "Smartsoft"
         },
         "defectelimination": {
             "primary": "blue",
@@ -58,18 +63,29 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     // =========< should be in a global function >=========
     var root = "";
     var host = window.location.hostname;
-    if (host == 'localhost') {
-        // replace only replacs the first occurence
-        // see http://stackoverflow.com/questions/1144783/replacing-all-occurrences-of-a-string-in-javascript
+    if (typeof host == "undefined" || host == null) {
+        root = "default";
+    } else if (host == 'localhost') {
+        // replace only replaces the first occurence
         root = window.location.pathname.split("/").join("");
     } else {
         root = host.split(".")[0];
-    };
+    }
     // =========< should be in a global function >=========
-
-
+    var root_favicon = root;
+    if (themes[root] == "undefined" || themes[root] == null) {
+        themes[root] = themes["default"];
+        root_favicon = "als";
+    }
     // dynamically change the <title> tag
     document.title = themes[root]["title"];
+    // dynamically insert a new <link> tag
+    var path = "https://rawgit.com/vandersijp/assets/master/images/" + "favicons/";
+    var link = document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/png';
+    link.href = path + root_favicon + ".png";
+    document.getElementsByTagName('head')[0].appendChild(link);
 
     /*
     // this code is a test to load a json file instead, but the asynchronicity spoils the party
@@ -149,9 +165,8 @@ app.controller('appController', function($scope, $http, $q, rootService, dataSer
         ])
         .then(function(result) {
             self.appData = result[1];
-            self.appData.loaded = true;
-            var favicon = self.appData.system.paths.images +"/"+rootService.getRoot()+".png";
-            alert (favicon);
+            //alert (JSON.stringify(result[2]));
+            //var favicon = self.appData.system.paths.img + "/" + rootService.getRoot() + ".png";
         });
 
     $scope.toggleLeft = buildDelayedToggler('left');
