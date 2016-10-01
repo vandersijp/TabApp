@@ -4,8 +4,10 @@
 </style>
 <md-content ng-class="{'als-font-large' : appCtrl.fontLarge}" layout="column" layout-margin>
 
+{{appCtrl.fontLarge}}
+
     <h3 ng-if="tab.header" class="md-headline md-accent">{{tab.header}}</h3>
-    <p ng-if="tab.summary">{{tab.summary}}</p>
+    <p ng-class="{'als-font-large' : appCtrl.fontLarge}" ng-if="tab.summary">{{tab.summary}}</p>
     <als-access-form ng-show="tab.id==data.system.access.tab" data-access="data.system.access"></als-access-form>
 
     <div layout="column" layout-align="start center" ng-show="(tab.id!=data.system.access.tab || $parent.appCtrl.codeCompare(data.system.access.entered, data.system.access.code))">
