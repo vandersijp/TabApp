@@ -4,7 +4,7 @@
 </style>
 <md-content ng-class="{'als-font-large' : appCtrl.fontLarge}" layout="column" layout-margin>
 
-x{{appCtrl.fontLarge}}x
+{{$parent.appCtrl.fontLarge}}x
 
     <h3 ng-if="tab.header" class="md-headline md-accent">{{tab.header}}</h3>
     <p ng-class="{'als-font-large' : appCtrl.fontLarge}" ng-if="tab.summary">{{tab.summary}}</p>
