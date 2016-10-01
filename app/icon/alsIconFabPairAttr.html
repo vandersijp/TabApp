@@ -212,27 +212,22 @@
     }
 </style>
 
+<md-button>
+<div layout="row" flex layout-align="center center" ng-click="toggle=!toggle" >
 
-<div ng-click="toggle=!toggle">
-    <md-button aria-label="label" ng-class="class" ng-disabled="disabled">
+    <p ng-if="false" flex>x</p>
 
-        <div layout="row" flex layout-align="center center">
+    <span class="als-icon-fab-pair-icons">
 
-          <p ng-if="false" flex>x</p>
+      <md-icon class="als-icon-fab-pair-icon1-on" ng-class="{'als-icon-fab-pair-icon1-off': toggle}">
+      <i class="material-icons">{{icon1}}</i>
+      </md-icon>
 
-          <span class="als-icon-fab-pair-icons">
+      <md-icon class="als-icon-fab-pair-icon2-on" ng-class="{'als-icon-fab-pair-icon2-off': !toggle}">
+      <i class="material-icons">{{icon2}}</i>
+      </md-icon>
 
-            <md-icon class="als-icon-fab-pair-icon1-on" ng-class="{'als-icon-fab-pair-icon1-off': toggle}">
-            <i class="material-icons">{{icon1}}</i>
-            </md-icon>
+    </span>
 
-            <md-icon class="als-icon-fab-pair-icon2-on" ng-class="{'als-icon-fab-pair-icon2-off': !toggle}">
-            <i class="material-icons">{{icon2}}</i>
-            </md-icon>
-
-          </span>
-
-        </div>
-
-    </md-button>
 </div>
+</md-button>

@@ -16,6 +16,6 @@
 <div layout="column" layout-align="start center">
     <figure layout="column" layout-align="start center" layout-padding>
         <img ng-src="{{path + image.url}}" />
-        <figcaption class="md-caption">{{image.caption}}</figcaption>
+        <figcaption ng-class="{als-font-large : appCtrl.fontLarge}" class="md-caption">{{image.caption}}</figcaption>
     </figure>
 </div>
