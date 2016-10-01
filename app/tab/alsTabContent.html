@@ -2,7 +2,7 @@
 <style type="text/css">
 
 </style>
-<md-content ng-class="{'als-font-large' : $parent.appCtrl.fontLarge}" layout="column" layout-margin>
+<md-content ng-class="{'als-font-large' : $parent.$parent.appCtrl.fontLarge}" layout="column" layout-margin>
 
     <h3 ng-if="tab.header" class="md-headline md-accent">{{tab.header}}</h3>
     <p ng-class="{'als-font-large' : $parent.appCtrl.fontLarge}" ng-if="tab.summary">{{tab.summary}}</p>
