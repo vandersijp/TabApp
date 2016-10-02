@@ -1,0 +1,45 @@
+<!--(C) Ask Learn Share Ltd -->
+<style type="text/css">
+
+</style>
+
+<md-content ng-hide="status.success">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-show="status.open" ng-click="status.open=false">
+                cancel
+            </md-button>
+            <als-icon-fab-pair data-class="'md-fab md-accent'" data-disabled="!contactForm.$valid && status.open" ng-click="!status.open && alsContactFormCtrl.post(message, status);" data-toggle="status.open" data-icon1="'edit'" data-icon2="'send'" data-label="send"></als-icon-fab-pair>
+        </div>
+        <span flex></span>
+    </md-toolbar>
+</md-content>
+
+<div layout="column" layout-align="center center" ng-if="status.sending">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+
+<md-content layout="column" layout-margin ng-show="status.open">
+    <form name="contactForm">
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Your email address</label>
+            <input name="to" ng-model="message.to" required type="email">
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Your {{message.querylabel}}</label>
+            <textarea name="query" ng-model="message.query" md-maxlength="100"></textarea>
+        </md-input-container>
+        <div layout="column" layout-align="center center">
+            <md-checkbox aria-label="action" name="action" ng-model="message.action">
+                Please {{message.actionlabel}} me
+            </md-checkbox>
+        </div>
+    </form>
+</md-content>
+
+<md-subheader ng-if="status.response.data">
+    <div ng-bind-html="status.response.data"></div>
+</md-subheader>
+
+<pre ng-if="false">{{status | json}}</pre>
