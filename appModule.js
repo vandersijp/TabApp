@@ -173,22 +173,39 @@ app.controller('appController', function($scope, $http, $q, rootService, dataSer
     $scope.fontLarge = false;
     self.fontLarge = false;
 
-/*
-    self.enlargeFontSize = function(largeText) {
-        var target = document.body.querySelectorAll('p');
-        if (largeText) {
-            target.addClass('large');
-        } else {
-            target.removeClass('large');
+    /*
+        self.enlargeFontSize = function(largeText) {
+            var target = document.body.querySelectorAll('p');
+            if (largeText) {
+                target.addClass('large');
+            } else {
+                target.removeClass('large');
+            }
+            return true;
         }
-        return true;
-    }
-*/
+    */
 
     $scope.toggleLeft = buildDelayedToggler('left');
     $scope.toggleRight = buildToggler('right');
     $scope.isOpenRight = function() {
         return $mdSidenav('right').isOpen();
+    };
+
+
+    $scope.showAlert = function(ev) {
+        // Appending dialog to document.body to cover sidenav in docs app
+        // Modal dialogs should fully cover application
+        // to prevent interaction outside of dialog
+        $mdDialog.show(
+            $mdDialog.alert()
+            .parent(angular.element(document.querySelector('#popupContainer')))
+            .clickOutsideToClose(true)
+            .title('This is an alert title')
+            .textContent('You can specify some description text in here.')
+            .ariaLabel('Alert Dialog Demo')
+            .ok('Got it!')
+            .targetEvent(ev)
+        );
     };
 
     /**
