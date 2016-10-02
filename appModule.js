@@ -3,8 +3,6 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-
-
 var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTab'])
 
 app.config(function($mdThemingProvider, $sceDelegateProvider) {
@@ -38,7 +36,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "accent": "red",
             "title": "Mexit"
         },
-        "nw2": {
+        "nw3": {
             "primary": "indigo",
             "accent": "red",
             "title": "Hampstead Mansions"
@@ -167,23 +165,11 @@ app.controller('appController', function($scope, $http, $q, rootService, dataSer
         .then(function(result) {
             self.appData = result[1];
             // alert (JSON.stringify(result[2]));
+            // async not working
             // var favicon = self.appData.system.paths.img + "/" + rootService.getRoot() + ".png";
         });
 
-    $scope.fontLarge = false;
     self.fontLarge = false;
-
-    /*
-        self.enlargeFontSize = function(largeText) {
-            var target = document.body.querySelectorAll('p');
-            if (largeText) {
-                target.addClass('large');
-            } else {
-                target.removeClass('large');
-            }
-            return true;
-        }
-    */
 
     $scope.toggleLeft = buildDelayedToggler('left');
     $scope.toggleRight = buildToggler('right');
@@ -191,23 +177,37 @@ app.controller('appController', function($scope, $http, $q, rootService, dataSer
         return $mdSidenav('right').isOpen();
     };
 
-
-    self.showAlert = function(ev) {
-        // Appending dialog to document.body to cover sidenav in docs app
-        // Modal dialogs should fully cover application
-        // to prevent interaction outside of dialog
-        $mdDialog.show(
-            $mdDialog.alert()
-            .parent(angular.element(document.querySelector('#popupContainer')))
-            .clickOutsideToClose(true)
-            .title('This is an alert title')
-            .textContent('You can specify some description text in here.')
-            .ariaLabel('Alert Dialog Demo')
-            .ok('Got it!')
-            .targetEvent(ev)
-        );
+    self.alertTerms = function(ev) {
+        $mdDialog.show({
+            controller: DialogController,
+            templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/alert/alsAlertTerms.html',
+            targetEvent: ev,
+            parent: angular.element(document.querySelector('#alertContainer')),
+            clickOutsideToClose: true
+        })
     };
 
+    self.alertHelp = function(ev) {
+        $mdDialog.show({
+            controller: DialogController,
+            templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/alert/alsAlertHelp.html',
+            targetEvent: ev,
+            parent: angular.element(document.querySelector('#alertContainer')),
+            clickOutsideToClose: true
+        })
+    };
+
+    function DialogController($scope, $mdDialog) {
+        $scope.hide = function() {
+            $mdDialog.hide();
+        };
+        $scope.cancel = function() {
+            $mdDialog.cancel();
+        };
+        $scope.answer = function(answer) {
+            $mdDialog.hide(answer);
+        };
+    }
     /**
      * Supplies a function that will continue to operate until the
      * time is up.
