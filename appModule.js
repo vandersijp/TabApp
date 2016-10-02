@@ -135,7 +135,7 @@ app.service('dataService', function($http, $firebaseObject) {
     };
 });
 
-app.controller('appController', function($scope, $http, $q, rootService, dataService, $timeout, $mdSidenav, $log) {
+app.controller('appController', function($scope, $http, $q, rootService, dataService, $timeout, $mdSidenav, $mdDialog, $log) {
 
     var self = this;
 
@@ -192,7 +192,7 @@ app.controller('appController', function($scope, $http, $q, rootService, dataSer
     };
 
 
-    $scope.showAlert = function(ev) {
+    self.showAlert = function(ev) {
         // Appending dialog to document.body to cover sidenav in docs app
         // Modal dialogs should fully cover application
         // to prevent interaction outside of dialog
