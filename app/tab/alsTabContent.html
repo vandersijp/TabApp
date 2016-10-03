@@ -3,7 +3,7 @@
 
 </style>
 <md-content layout="column" layout-margin>
-  39
+    45
     <h3 ng-if="tab.header" class="md-headline md-accent">{{tab.header}}</h3>
     <p ng-if="tab.summary">{{tab.summary}}</p>
     <als-access-form ng-show="tab.id==data.system.access.tab" data-access="data.system.access"></als-access-form>
@@ -13,10 +13,8 @@
         <als-figure-photo-main ng-repeat="i in data.images" ng-if="i.tab==tab.id" data-image="i" data-path="data.system.paths.img"></als-figure-photo-main>
         <als-list-single ng-repeat="l in data.lists" ng-if="l.tab==tab.id" data-list="l"></als-list-single>
 
-        <md-card ng-if="(tab.id==data.system.access.tab && data.system.showdata)">
-        </md-card>
-        <md-card>
-            <h4 class="md-title">Site data</h4>
+        <md-card layout-margin ng-if="(tab.id==data.system.access.tab && data.system.showsite)">
+            <h4 class="md-title">Site content</h4>
             <pre>{{data | json}}</pre>
         </md-card>
 
