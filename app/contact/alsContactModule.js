@@ -37,7 +37,7 @@ alsContact.directive('alsContactForm', function() {
                 // =========< should be in a global function >=========
                 message["root"] = root;
                 message["logpath"] = "../als-logs/";
-                if (true) message["logpath"] += "../";
+                if (true) message["logpath"] = "../" + message["logpath"];
                 alert (message["logpath"]);
 
                 $http({
