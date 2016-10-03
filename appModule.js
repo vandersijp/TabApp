@@ -153,6 +153,16 @@ app.controller('appController', function($scope, $http, $q, rootService, dataSer
         return root;
     }
 
+    self.moveElement = function(array1, array2, index) {
+        var e = array1[index];
+        array1.splice(index, 1);
+        array2.unshift(e);
+    };
+
+    self.deleteElement = function(array, index) {
+        array.splice(index, 1);
+    };
+
     self.codeCompare = function(val1, val2) {
         if (typeof val1 == 'undefined') return false;
         if (typeof val2 == 'undefined') return false;
