@@ -1,18 +1,17 @@
 <!--(C) Ask Learn Share Ltd -->
 <style type="text/css">
 
-.transparent{
+.xxtransparent{
   background-color: transparent !important;
-  border: blue solid 3px;
 }
 </style>
 
 <md-content ng-hide="status.success">
     <md-toolbar class="transparent">
-        <div class="md-toolbar-tools" layout="row" layout-align="center center" layout-margin>
+        <div class="md-toolbar-tools">
             <span flex></span>
             <md-button class="md-raised md-primary" ng-show="status.open" ng-click="status.open=false">
-                cancel-
+                cancel+
             </md-button>
             <als-icon-fab-pair data-class="'md-fab md-accent'" data-disabled="!contactForm.$valid && status.open" ng-click="!status.open && alsContactFormCtrl.post(message, status);" data-toggle="status.open" data-icon1="'edit'" data-icon2="'send'" data-label="send"></als-icon-fab-pair>
         </div>
