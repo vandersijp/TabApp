@@ -13,7 +13,7 @@
     }
 
     .eighty {
-        max-width: 360px;
+        max-width: 400px;
         width:auto;
         !important;
     }
@@ -48,7 +48,7 @@
                 </div>
                 <div layout="row" ng-repeat="(k,v) in active track by $index">
 
-                    <div flex="10">
+                    <div flex="15">
                         <span ng-if="!v.open">{{v.name}}</span>
                         <form ng-if="v.open">
                             <input ng-model="v.name" size="3" placeholder="name">
@@ -58,7 +58,7 @@
                     <div flex ng-title="{{eval(v.expression)}}" title "to be fixed">
                         <span ng-if="!v.open">{{v.expression}}</span>
                         <form ng-if="v.open">
-                            <input ng-model="v.expression" size="12" placeholder="expression">
+                            <input ng-model="v.expression" size="16" placeholder="expression">
                         </form>
                     </div>
 
@@ -89,7 +89,7 @@
                     <div flex ng-title="{{eval(v.expression)}}" title "to be fixed">
                         <span>{{v.expression}}</span>
                     </div>
-                    <div flex="20" layout="row" layout-align="end">
+                    <div flex="40" layout="row" layout-align="end">
 
                         <!-- Restore -->
                         <md-button title="restore" class="md-icon-button" ng-click="active.unshift(bin[$index]); bin.splice($index, 1);">
