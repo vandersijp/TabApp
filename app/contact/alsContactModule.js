@@ -38,6 +38,7 @@ alsContact.directive('alsContactForm', function() {
                 message["root"] = root;
                 message["logpath"] = "../als-logs/";
                 if (true) message["logpath"] += "../";
+                alert (message["logpath"]);
 
                 $http({
                     method: 'POST',
