@@ -125,6 +125,7 @@ app.service('rootService', function() {
     };
 });
 
+
 app.service('dataService', function($http, $firebaseObject) {
     this.getFileData = function() {};
     this.getFirebaseData = function(root) {
@@ -132,6 +133,7 @@ app.service('dataService', function($http, $firebaseObject) {
         return $firebaseObject(ref);
     };
 });
+
 
 app.controller('appController', function($scope, $http, $q, rootService, dataService, $timeout, $mdSidenav, $mdDialog, $log) {
 
@@ -153,28 +155,8 @@ app.controller('appController', function($scope, $http, $q, rootService, dataSer
         return root;
     }
 
-    self.addElement = function(array) {
-        var e = {
-            "name": "",
-            "expression": "",
-            "ok": true,
-            "test": "test"
-        };
-        array.unshift(e);
-    };
-
-    self.moveElement = function(array1, array2, index) {
-        var e = array1[index];
-        array1.splice(index, 1);
-        array2.unshift(e);
-    };
-
-    self.deleteElement = function(array, index) {
-        array.splice(index, 1);
-    };
-
+    // ===========< to be moved to a Service ===========
     $scope.addElement = function(array) {
-      alert ("xx");
         var e = {
             "name": "",
             "expression": "",
@@ -182,6 +164,7 @@ app.controller('appController', function($scope, $http, $q, rootService, dataSer
             "test": "test"
         };
         array.unshift(e);
+        return array;
     };
 
     $scope.moveElement = function(array1, array2, index) {
@@ -193,6 +176,7 @@ app.controller('appController', function($scope, $http, $q, rootService, dataSer
     $scope.deleteElement = function(array, index) {
         array.splice(index, 1);
     };
+    // ============================================
 
     self.codeCompare = function(val1, val2) {
         if (typeof val1 == 'undefined') return false;
