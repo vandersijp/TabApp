@@ -14,6 +14,8 @@
         <als-list-single ng-repeat="l in data.lists" ng-if="l.tab==tab.id" data-list="l"></als-list-single>
 
         <md-card ng-if="(tab.id==data.system.access.tab && data.system.showdata)">
+        </md-card>
+        <md-card>
             <h4 class="md-title">Site data</h4>
             <pre>{{data | json}}</pre>
         </md-card>
