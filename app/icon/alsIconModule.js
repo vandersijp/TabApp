@@ -42,6 +42,23 @@ alsIcon.directive('alsIconMenuFabPair', function() {
     };
 });
 
+alsIcon.directive('alsIconPair', function() {
+    return {
+        scope: {
+            toggle: '=',
+            icon1: '=',
+            icon2: '='
+        },
+        controller: function() {
+            // set openings position
+            // this.toggle = false;
+        },
+        controllerAs: 'alsIconPairCtrl',
+        //    bindToController: true,
+        templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/icon/alsIconPair.html'
+    };
+});
+
 alsIcon.directive('alsIconFabPairAttr', function() {
     return {
         scope: {

@@ -4,7 +4,7 @@
 </style>
 
 <md-content ng-hide="status.success">
-    <md-fab-toolbar>
+    <md-toolbar>
         <div class="md-toolbar-tools">
             <span flex></span>
             <md-button class="md-raised md-primary" ng-show="status.open" ng-click="status.open=false">
@@ -13,7 +13,7 @@
             <als-icon-fab-pair data-class="'md-fab md-accent'" data-disabled="!contactForm.$valid && status.open" ng-click="!status.open && alsContactFormCtrl.post(message, status);" data-toggle="status.open" data-icon1="'edit'" data-icon2="'send'" data-label="send"></als-icon-fab-pair>
         </div>
         <span flex></span>
-    </md-fab-toolbar>
+    </md-toolbar>
 </md-content>
 
 <div layout="column" layout-align="center center" ng-if="status.sending">
