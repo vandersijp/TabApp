@@ -3,13 +3,13 @@
 
 .transparent{
   background-color: transparent !important;
-  padding-top: 15px !important;
+  border: red solid 1px;
 }
 </style>
 
 <md-content ng-hide="status.success">
     <md-toolbar class="md-medium-tall transparent">
-        <div class="md-toolbar-tools" layout="row" layout-align="center center">
+        <div class="md-toolbar-tools" layout="row" layout-align="center center" layout-margin>
             <span flex></span>
             <md-button class="md-raised md-primary" ng-show="status.open" ng-click="status.open=false">
                 cancel-
