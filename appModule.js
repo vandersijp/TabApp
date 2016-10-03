@@ -153,6 +153,16 @@ app.controller('appController', function($scope, $http, $q, rootService, dataSer
         return root;
     }
 
+    self.addElement = function(array) {
+        var e = {
+            "name": "",
+            "expression": "",
+            "ok": true,
+            "test": "test"
+        };
+        array.unshift(e);
+    };
+
     self.moveElement = function(array1, array2, index) {
         var e = array1[index];
         array1.splice(index, 1);
@@ -161,6 +171,17 @@ app.controller('appController', function($scope, $http, $q, rootService, dataSer
 
     self.deleteElement = function(array, index) {
         array.splice(index, 1);
+    };
+
+    $scope.addElement = function(array) {
+      alert ("xx");
+        var e = {
+            "name": "",
+            "expression": "",
+            "ok": true,
+            "test": "test"
+        };
+        array.unshift(e);
     };
 
     $scope.moveElement = function(array1, array2, index) {
