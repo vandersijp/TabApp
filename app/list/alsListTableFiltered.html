@@ -13,7 +13,8 @@
     }
 
     .eighty {
-        width: 500px;
+        max-width: 360px;
+        width:auto;
         !important;
     }
 </style>
@@ -47,7 +48,7 @@
                 </div>
                 <div layout="row" ng-repeat="(k,v) in active track by $index">
 
-                    <div flex="15">
+                    <div flex="10">
                         <span ng-if="!v.open">{{v.name}}</span>
                         <form ng-if="v.open">
                             <input ng-model="v.name" size="5" placeholder="name">
@@ -57,7 +58,7 @@
                     <div flex ng-title="{{eval(v.expression)}}" title "to be fixed">
                         <span ng-if="!v.open">{{v.expression}}</span>
                         <form ng-if="v.open">
-                            <input ng-model="v.expression" size="35" placeholder="expression">
+                            <input ng-model="v.expression" size="20" placeholder="expression">
                         </form>
                     </div>
 

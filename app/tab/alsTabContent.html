@@ -12,10 +12,10 @@
         <als-figure-photo-main ng-repeat="i in data.images" ng-if="i.tab==tab.id" data-image="i" data-path="data.system.paths.img"></als-figure-photo-main>
         <als-list-single ng-repeat="l in data.lists" ng-if="l.tab==tab.id" data-list="l"></als-list-single>
 
-        <md-card layout-margin ng-if="(tab.id==data.system.access.tab && data.system.access.showsite)">
+        <div layout-margin ng-if="(tab.id==data.system.access.tab && data.system.access.showsite)">
             <h4 class="md-title">Site content</h4>
             <pre>{{data | json}}</pre>
-        </md-card>
+        </div>
 
     </div>
 </md-content>
