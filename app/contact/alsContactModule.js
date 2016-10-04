@@ -29,16 +29,20 @@ alsContact.directive('alsContactForm', function() {
                 if (typeof host == "undefined" || host == null) {
                     root = "default";
                 } else if (host == 'localhost') {
-                  // replace only replaces the first occurence
+                    // replace only replaces the first occurence
                     root = window.location.pathname.split("/").join("");
                 } else {
                     root = host.split(".")[0];
                 }
                 // =========< should be in a global function >=========
+
+                alert("02");
+                alert(JSON.stringify(window.appProperties));
+
                 message["root"] = root;
                 message["logpath"] = "../als-logs/";
                 if (true) message["logpath"] = "../" + message["logpath"];
-                alert (message["logpath"]);
+                alert(message["logpath"]);
 
                 $http({
                     method: 'POST',
@@ -65,7 +69,7 @@ alsContact.directive('alsContactForm', function() {
 });
 
 alsContact.controller('alsContactController', function($scope, $http) {
-// failed to include this in the "alsContactFormCtrl" controller
+    // failed to include this in the "alsContactFormCtrl" controller
     var self = this;
     this.status = {};
     this.status.open = false;
