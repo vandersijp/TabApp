@@ -25,7 +25,7 @@ alsContact.directive('alsContactForm', function() {
 
                 alert(JSON.stringify(window.appProperties));
 
-                message["root"] = window.appProperties.app;
+                message["app"] = window.appProperties.app;
                 message["logpath"] = window.appProperties.logPath;
 
                 $http({
