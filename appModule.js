@@ -141,12 +141,9 @@ app.service('dataService', function($http, $firebaseObject) {
 });
 
 
-app.controller('appController', function($scope, $window, $http, $q, dataService, $timeout, $mdSidenav, $mdDialog, $log) {
+app.controller('appController', function($scope, $http, $q, dataService, $timeout, $mdSidenav, $mdDialog, $log) {
 
     var self = this;
-
-    // make a temporary copy
-    self.appProperties = $window.appProperties;
 
     // ===========< to be moved to a Service ===========
     $scope.addElement = function(array) {
