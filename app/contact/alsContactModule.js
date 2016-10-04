@@ -24,13 +24,11 @@ alsContact.directive('alsContactForm', function() {
                 message["g-recaptcha-response"] = grecaptcha.getResponse();
 
 
-                alert("33");
+                alert("41");
                 alert(JSON.stringify(window.appProperties));
 
-                message["root"] = root;
-                message["logpath"] = "../als-logs/";
-                if (true) message["logpath"] = "../" + message["logpath"];
-                alert(message["logpath"]);
+                message["root"] = window.appProperties.app;
+                message["logpath"] =  = window.appProperties.logPath;
 
                 $http({
                     method: 'POST',
