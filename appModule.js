@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("Built 27");
+console.log("Built 28");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -141,9 +141,12 @@ app.service('dataService', function($http, $firebaseObject) {
 });
 
 
-app.controller('appController', function($scope, $http, $q, dataService, $timeout, $mdSidenav, $mdDialog, $log) {
+app.controller('appController', function($scope, $window, $http, $q, dataService, $timeout, $mdSidenav, $mdDialog, $log) {
 
     var self = this;
+
+    // make a snap-shot for usage in the View
+    self.appProps = $window.appProperties;
 
     // ===========< to be moved to a Service ===========
     $scope.addElement = function(array) {
