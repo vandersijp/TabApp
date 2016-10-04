@@ -21,7 +21,7 @@ function getAppProperties() {
     loc.depth = loc.fullName.split("/").length - 2;
     loc.app = loc.fullName.split("/")[loc.depth];
     loc.app = loc.app.split(".").join("-");
-    loc.logPath = String.repeat ("../", loc.depth);
+    loc.logPath = String.repeat ("../", loc.depth) + "als logs/";
     return loc;
     /*
     "hostName": "localhost",
