@@ -114,7 +114,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     link.href = path + root_favicon + ".png";
     document.getElementsByTagName('head')[0].appendChild(link);
 
-    alert("13");
+    alert("17");
     alert(JSON.stringify(window.appProperties));
 
     $mdThemingProvider.theme('default')
@@ -181,6 +181,8 @@ app.controller('appController', function($scope, $http, $q, dataService, $timeou
         if (typeof val2 == 'undefined') return false;
         return (val2.toLowerCase() == val1.toLowerCase());
     }
+
+alert (window.appProperties.app);
 
     $q.all([
             dataService.getFileData(), dataService.getFirebaseData(window.appProperties.app)
