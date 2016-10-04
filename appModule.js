@@ -27,7 +27,6 @@ function getAppProperties() {
     */
 }
 window.appProperties = getAppProperties();
-//alert(JSON.stringify(window.appProperties));
 
 
 var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTab'])
@@ -115,7 +114,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     link.href = path + root_favicon + ".png";
     document.getElementsByTagName('head')[0].appendChild(link);
 
-    alert("05");
+    alert("13");
     alert(JSON.stringify(window.appProperties));
 
     $mdThemingProvider.theme('default')
@@ -124,26 +123,6 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         .warnPalette('red')
         .backgroundPalette('grey');
 });
-
-//  not used
-app.service('rootService', function() {
-    this.getRoot = function() {
-        //  =========< should be in a global function >=========
-        var root = "";
-        var host = window.location.hostname;
-        if (typeof host == "undefined" || host == null) {
-            root = "default";
-        } else if (host == 'localhost') {
-            //  replace only replaces the first occurence
-            root = window.location.pathname.split("/").join("");
-        } else {
-            root = host.split(".")[0];
-        }
-        //  =========< should be in a global function >=========
-        return root;
-    };
-});
-
 
 app.service('dataService', function($http, $firebaseObject) {
     this.getFileData = function() {};
@@ -154,7 +133,7 @@ app.service('dataService', function($http, $firebaseObject) {
 });
 
 
-app.controller('appController', function($scope, $http, $q, rootService, dataService, $timeout, $mdSidenav, $mdDialog, $log) {
+app.controller('appController', function($scope, $http, $q, dataService, $timeout, $mdSidenav, $mdDialog, $log) {
 
     var self = this;
 
@@ -204,7 +183,7 @@ app.controller('appController', function($scope, $http, $q, rootService, dataSer
     }
 
     $q.all([
-            dataService.getFileData(), dataService.getFirebaseData(rootService.getRoot())
+            dataService.getFileData(), dataService.getFirebaseData(window.appProperties.app)
         ])
         .then(function(result) {
             self.appData = result[1];
