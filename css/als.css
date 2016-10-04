@@ -25,7 +25,9 @@ h5:first-letter, h6:first-letter, figcaption:first-letter, .md-caption:first-let
     text-transform: capitalize;
 }
 
-
+pre {
+  padding: 1em;
+}
 /* in case the md-sidenav is too narrow */
 
 md-menu-item p {
