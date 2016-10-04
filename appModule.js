@@ -69,27 +69,27 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "accent": "green",
             "title": "Never Turkey"
         },
-        "mexit": {
+        "mexit-us": {
             "primary": "green",
             "accent": "red",
             "title": "Mexit"
         },
-        "nw3": {
+        "nw3-info": {
             "primary": "indigo",
             "accent": "red",
             "title": "Hampstead Mansions"
         },
-        "smartsoft": {
+        "smartsoft-mobi": {
             "primary": "amber",
             "accent": "deep-purple",
             "title": "Smartsoft"
         },
-        "defectelimination": {
+        "defectelimination-com": {
             "primary": "blue",
             "accent": "red",
             "title": "Defect Elimination"
         },
-        "asklearnshare": {
+        "asklearnshare-com": {
             "primary": "teal",
             "accent": "amber",
             "title": "Ask Learn Share"
@@ -114,7 +114,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     link.href = path + root_favicon + ".png";
     document.getElementsByTagName('head')[0].appendChild(link);
 
-    alert("17");
+    alert("28");
     alert(JSON.stringify(window.appProperties));
 
     $mdThemingProvider.theme('default')
