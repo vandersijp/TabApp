@@ -15,7 +15,6 @@
     .eighty {
         width: 400px;
     }
-
 </style>
 
 <md-card layout-padding>
@@ -24,13 +23,13 @@
 
         <div ng-switch-when="editable" layout="column" class="eighty" ng-init="active=table.records; bin=[]; e = {'name': '','expression': '','open': true,'test': 'test'};">
             <div layout="row" layout-align="center center">
-              <md-checkbox ng-model="showJSON">Show JSON</md-checkbox>
+                <md-checkbox ng-model="showJSON">Show JSON</md-checkbox>
 
                 <span flex></span>
-                <md-button class="md-raised">
+                <md-button arria-label="" class="md-raised">
                     import
                 </md-button>
-                <md-button class="md-raised">
+                <md-button aria-label="" class="md-raised">
                     export
                 </md-button>
             </div>
@@ -39,7 +38,7 @@
                 <div layout="row" layout-align="space-between center">
                     <h4 class="md-title">Active</h4>
                     <!-- track by in ng-repeat to keep collection up-to-date -->
-                    <md-button class="md-fab md-mini md-primary" ng-click="active.unshift(e);">
+                    <md-button arria-label="" class="md-fab md-mini md-primary" ng-click="active.unshift(e);">
                         <md-icon>
                             <i class="material-icons">add</i>
                         </md-icon>
@@ -64,12 +63,12 @@
                     <div flex="40" layout="row" layout-align="end">
 
                         <!-- Edit -->
-                        <md-button title="edit" class="md-icon-button" ng-click="v.open=!v.open">
+                        <md-button arria-label="" title="edit" class="md-icon-button" ng-click="v.open=!v.open">
                             <als-icon-pair data-toggle="v.open" data-icon1="'edit'" data-icon2="'check'"></als-icon-pair>
                         </md-button>
 
                         <!-- Bin -->
-                        <md-button title="bin" class="md-icon-button" ng-click="bin.unshift(active[$index]); active.splice($index, 1);">
+                        <md-button arria-label="" title="bin" class="md-icon-button" ng-click="bin.unshift(active[$index]); active.splice($index, 1);">
                             <md-icon>
                                 <i class="material-icons">delete</i>
                             </md-icon>
@@ -91,14 +90,14 @@
                     <div flex="40" layout="row" layout-align="end">
 
                         <!-- Restore -->
-                        <md-button title="restore" class="md-icon-button" ng-click="active.unshift(bin[$index]); bin.splice($index, 1);">
+                        <md-button arria-label="" title="restore" class="md-icon-button" ng-click="active.unshift(bin[$index]); bin.splice($index, 1);">
                             <md-icon>
                                 <i class="material-icons">restore</i>
                             </md-icon>
                         </md-button>
 
                         <!-- Delete forever-->
-                        <md-button title="delete forever" class="md-icon-button" ng-click="bin.splice($index, 1);">
+                        <md-button arria-label="" title="delete forever" class="md-icon-button" ng-click="bin.splice($index, 1);">
                             <md-icon>
                                 <i class="material-icons">delete_forever</i>
                             </md-icon>
@@ -109,10 +108,10 @@
             </md-card>
 
             <div ng-show="showJSON" layout-padding layout="column" layout-align="center center">
-                    <h4 class="md-title">Active</h4>
-                    <pre>{{active | json}}</pre>
-                    <h4 class="md-title">Bin</h4>
-                    <pre>{{bin | json}}</pre>
+                <h4 class="md-title">Active</h4>
+                <pre>{{active | json}}</pre>
+                <h4 class="md-title">Bin</h4>
+                <pre>{{bin | json}}</pre>
             </div>
         </div>
 
