@@ -13,6 +13,8 @@
         <als-list-single ng-repeat="l in data.lists" ng-if="l.tab==tab.id" data-list="l"></als-list-single>
 
         <div layout-margin ng-if="(tab.id==data.system.access.tab && data.system.access.showsite)">
+            <h4 class="md-title">Application properties</h4>
+            <pre>{{windows.appProperties | json}}</pre>
             <h4 class="md-title">Site content</h4>
             <pre>{{data | json}}</pre>
         </div>

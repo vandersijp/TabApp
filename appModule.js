@@ -125,7 +125,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     link.href = favicon;
     document.getElementsByTagName('head')[0].appendChild(link);
 
-    alert(JSON.stringify(window.appProperties));
+    //alert(JSON.stringify(window.appProperties));
 
     $mdThemingProvider.theme('default')
         .primaryPalette(window.appProperties.theme['primary'])
