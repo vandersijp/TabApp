@@ -3,6 +3,33 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
+function getAppProperties() {
+    var loc = {};
+    loc.hostName = window.location.hostname;
+    loc.pathName = window.location.pathname;
+    switch (loc.hostName) {
+        case ("localhost"):
+            loc.fullName = loc.hostName + loc.pathName;
+            break;
+        default:
+            loc.fullName = "other/" + loc.hostName + loc.pathName;
+    }
+    loc.depth = loc.fullName.split("/").length - 2;
+    loc.app = loc.fullName.split("/")[loc.depth];
+    loc.app = loc.app.split(".").join("-");
+    return loc;
+    /*
+    "hostName": "localhost",
+    "pathName": "/secuos/abc/",
+    "fullName": "localhost/secuos/abc/",
+    "depth": 2,
+    "app": "abc"
+    */
+}
+window.appProperties = getAppProperties();
+//alert(JSON.stringify(window.appProperties));
+
+
 var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTab'])
 
 app.config(function($mdThemingProvider, $sceDelegateProvider) {
@@ -15,6 +42,13 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         'https://rawgit.com/vandersijp/**'
     ]);
 
+    var root = window.appProperties.app;
+
+    var aliases = {
+      "to" : "chaos",
+      "from" : ["xx", "yy"]
+    };
+
     var themes = {
         "default": {
             "primary": "teal",
@@ -25,6 +59,11 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "primary": "purple",
             "accent": "blue",
             "title": "Test application"
+        },
+        "secuos": {
+            "primary": "orange",
+            "accent": "green",
+            "title": "Expressions"
         },
         "neverturkey": {
             "primary": "red",
@@ -58,24 +97,14 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         }
     }
 
-
-    //  =========< should be in a global function >=========
-    var root = "";
-    var host = window.location.hostname;
-    if (typeof host == "undefined" || host == null) {
-        root = "default";
-    } else if (host == 'localhost') {
-        //  replace only replaces the first occurence
-        root = window.location.pathname.split("/").join("");
-    } else {
-        root = host.split(".")[0];
-    }
-    //  =========< should be in a global function >=========
     var root_favicon = root;
     if (themes[root] == "undefined" || themes[root] == null) {
         themes[root] = themes["default"];
         root_favicon = "als";
     }
+
+    window.appProperties.favicon = root_favicon;
+
     //  dynamically change the <title> tag
     document.title = themes[root]["title"];
     //  dynamically insert a new <link> tag
@@ -86,18 +115,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     link.href = path + root_favicon + ".png";
     document.getElementsByTagName('head')[0].appendChild(link);
 
-    /*
-    //  this code is a test to load a json file instead, but the asynchronicity spoils the party
-    var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
-    reader.open('get', 'x.json', true);
-    reader.onreadystatechange = function () {
-    if(reader.readyState==4) {
-    //  beware that code after this block is executed first
-    alert(reader.responseText);
-    }
-    };
-    reader.send(null);
-    */
+    alert("58");
+    alert(JSON.stringify(window.appProperties));
 
     $mdThemingProvider.theme('default')
         .primaryPalette(themes[root]['primary'])
