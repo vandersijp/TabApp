@@ -181,8 +181,6 @@ app.controller('appController', function($scope, $http, $q, dataService, $timeou
         return (val2.toLowerCase() == val1.toLowerCase());
     }
 
-alert (window.appProperties.app);
-
     $q.all([
             dataService.getFileData(), dataService.getFirebaseData(window.appProperties.app)
         ])
