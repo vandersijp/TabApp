@@ -22,9 +22,6 @@ alsContact.directive('alsContactForm', function() {
                 status.response = {};
 
                 message["g-recaptcha-response"] = grecaptcha.getResponse();
-
-                alert(JSON.stringify(window.appProperties));
-
                 message["app"] = window.appProperties.app;
                 message["logpath"] = window.appProperties.logPath;
 
