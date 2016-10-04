@@ -60,11 +60,11 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "title": "Test application"
         },
         "secuos": {
-            "primary": "orange",
-            "accent": "green",
+            "primary": "deep-orange",
+            "accent": "blue-grey",
             "title": "Expressions"
         },
-        "neverturkey": {
+        "neverturkey-eu": {
             "primary": "red",
             "accent": "green",
             "title": "Never Turkey"
@@ -114,8 +114,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     link.href = path + root_favicon + ".png";
     document.getElementsByTagName('head')[0].appendChild(link);
 
-    alert("28");
-    alert(JSON.stringify(window.appProperties));
+    //alert(JSON.stringify(window.appProperties));
 
     $mdThemingProvider.theme('default')
         .primaryPalette(themes[root]['primary'])
