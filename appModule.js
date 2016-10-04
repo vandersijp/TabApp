@@ -70,7 +70,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         },
         "secuos": {
             "primary": "deep-orange",
-            "accent": "blue-grey",
+            "accent": "indigo",
             "title": "Expressions"
         },
         "neverturkey-eu": {
