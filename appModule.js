@@ -52,8 +52,6 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         'https://rawgit.com/vandersijp/**'
     ]);
 
-    var root = window.appProperties.app;
-
     var aliases = {
         "to": "chaos",
         "from": ["xx", "yy"]
@@ -136,32 +134,19 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
 
 app.service('dataService', function($http, $firebaseObject) {
     this.getFileData = function() {};
-    this.getFirebaseData = function(root) {
-        var ref = new Firebase("https://smartchart.firebaseio.com/apps/tab-apps/" + root);
+    this.getFirebaseData = function(app) {
+        var ref = new Firebase("https://smartchart.firebaseio.com/apps/tab-apps/" + app);
         return $firebaseObject(ref);
     };
 });
 
 
-app.controller('appController', function($scope, $http, $q, dataService, $timeout, $mdSidenav, $mdDialog, $log) {
+app.controller('appController', function($scope, $window, $http, $q, dataService, $timeout, $mdSidenav, $mdDialog, $log) {
 
     var self = this;
 
-    $scope.getRoot = function() {
-        //  =========< should be in a global function >=========
-        var root = "";
-        var host = window.location.hostname;
-        if (typeof host == "undefined" || host == null) {
-            root = "default";
-        } else if (host == 'localhost') {
-            //  replace only replaces the first occurence
-            root = window.location.pathname.split("/").join("");
-        } else {
-            root = host.split(".")[0];
-        }
-        //  =========< should be in a global function >=========
-        return root;
-    }
+    // make a temporary copy
+    self.appProperties = $window.appProperties;
 
     // ===========< to be moved to a Service ===========
     $scope.addElement = function(array) {
@@ -199,7 +184,6 @@ app.controller('appController', function($scope, $http, $q, dataService, $timeou
             self.appData = result[1];
             // alert (JSON.stringify(result[2]));
             // async not working
-            // var favicon = self.appData.system.paths.img + "/" + rootService.getRoot() + ".png";
         });
 
     self.fontLarge = false;
