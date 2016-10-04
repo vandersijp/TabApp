@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("Built 23");
+console.log("Built 25");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -23,7 +23,11 @@ function getAppProperties() {
     loc.depth = loc.fullName.split("/").length - 2;
     loc.app = loc.fullName.split("/")[loc.depth];
     loc.app = loc.app.split(".").join("-");
-    loc.logPath = String.repeat ("../", loc.depth) + "als-logs/";
+    loc.logPath = String.repeat("../", loc.depth) + "als-logs/";
+    var loc.favicon = {};
+    var loc.theme = {};
+    loc.favicon.path = "https://rawgit.com/vandersijp/assets/master/images/" + "favicons/";
+    loc.favicon.ext = ".png";
     return loc;
     /*
     "hostName": "localhost",
@@ -103,29 +107,29 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         }
     }
 
-    var root_favicon = root;
-    if (themes[root] == "undefined" || themes[root] == null) {
-        themes[root] = themes["default"];
-        root_favicon = "als";
+    if (themes[window.appProperties.app] == "undefined" || themes[window.appProperties.app] == null) {
+        window.appProperties.theme = themes["default"];
+        window.appProperties.favicon.name = "default";
+    } else {
+        window.appProperties.theme = themes[window.appProperties.app];
+        window.appProperties.favicon.name = window.appProperties.app;
     }
 
-    window.appProperties.favicon = root_favicon;
-
     //  dynamically change the <title> tag
-    document.title = themes[root]["title"];
+    document.title = appProperties.theme.title;
     //  dynamically insert a new <link> tag
-    var path = "https://rawgit.com/vandersijp/assets/master/images/" + "favicons/";
+    var favicon = window.appProperties.favicon.path + window.appProperties.favicon.name + window.appProperties.favicon.ext;
     var link = document.createElement('link');
     link.rel = 'icon';
     link.type = 'image/png';
-    link.href = path + root_favicon + ".png";
+    link.href = favicon;
     document.getElementsByTagName('head')[0].appendChild(link);
 
     //alert(JSON.stringify(window.appProperties));
 
     $mdThemingProvider.theme('default')
-        .primaryPalette(themes[root]['primary'])
-        .accentPalette(themes[root]['accent'])
+        .primaryPalette(window.appProperties.theme['primary'])
+        .accentPalette(window.appProperties.theme['accent'])
         .warnPalette('red')
         .backgroundPalette('grey');
 });
