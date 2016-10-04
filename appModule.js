@@ -3,6 +3,10 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
+String.repeat = function(string, num) {
+    return new Array(parseInt(num) + 1).join(string);
+};
+
 function getAppProperties() {
     var loc = {};
     loc.hostName = window.location.hostname;
@@ -17,6 +21,7 @@ function getAppProperties() {
     loc.depth = loc.fullName.split("/").length - 2;
     loc.app = loc.fullName.split("/")[loc.depth];
     loc.app = loc.app.split(".").join("-");
+    loc.logPath = String.repeat ("../", loc.depth);
     return loc;
     /*
     "hostName": "localhost",
@@ -44,8 +49,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     var root = window.appProperties.app;
 
     var aliases = {
-      "to" : "chaos",
-      "from" : ["xx", "yy"]
+        "to": "chaos",
+        "from": ["xx", "yy"]
     };
 
     var themes = {
