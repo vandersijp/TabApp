@@ -24,10 +24,10 @@ function getAppProperties() {
     loc.app = loc.fullName.split("/")[loc.depth];
     loc.app = loc.app.split(".").join("-");
     loc.logPath = String.repeat("../", loc.depth) + "als-logs/";
-    var loc.favicon = {};
-    var loc.theme = {};
-    loc.favicon.path = "https://rawgit.com/vandersijp/assets/master/images/" + "favicons/";
-    loc.favicon.ext = ".png";
+    var favicon = {};
+    favicon.path = "https://rawgit.com/vandersijp/assets/master/images/" + "favicons/";
+    favicon.ext = ".png";
+    loc.favicon = favicon;
     return loc;
     /*
     "hostName": "localhost",
@@ -125,7 +125,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     link.href = favicon;
     document.getElementsByTagName('head')[0].appendChild(link);
 
-    //alert(JSON.stringify(window.appProperties));
+    alert(JSON.stringify(window.appProperties));
 
     $mdThemingProvider.theme('default')
         .primaryPalette(window.appProperties.theme['primary'])
