@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 20161005.23");
+console.log("App 20161005.24");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -48,15 +48,19 @@ function getMessageDefaults() {
     return def;
 }
 
-function getLinks() {
-  var l = {};
-  l.delegate = "https://rawgit.com/vandersijp/";
-  return l;
+function getPaths() {
+    var l = {};
+    l.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
+    l.gitdelegate = "https://rawgit.com/vandersijp/";
+    l.gitapp = "https://rawgit.com/vandersijp/TabApp/master/";
+    l.gitassets = "https://rawgit.com/vandersijp/assets/master/";
+    l.contacturl = "http://www.asklearnshare.com/alsContactSend.php";
+    return l;
 }
 
 window.appProperties = getAppProperties();
 window.appProperties.defaults = getMessageDefaults();
-window.appProperties.links = getLinks();
+window.appProperties.paths = getPaths();
 
 var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTab'])
 
@@ -68,7 +72,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         //  Allow same origin resource loads.
         'self',
         // Allow loading from our assets domain. Notice the difference between * and **.
-        'https://rawgit.com/vandersijp/**'
+        window.appProperties.paths + '**'
     ]);
 
     var aliases = {
