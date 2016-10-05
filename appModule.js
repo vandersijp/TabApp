@@ -48,9 +48,28 @@ function getMessageDefaults() {
     return def;
 }
 
+function getPaths() {
+    var l = {};
+    l.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
+    l.sce = "https://rawgit.com/vandersijp/";
+    l.repo = "https://rawgit.com/vandersijp/TabApp/master/";
+    l.assets = "https://rawgit.com/vandersijp/assets/master/images/";
+    l.contacturl = "http://www.asklearnshare.com/alsContactSend.php";
+    return l;
+}
+
+function getFolders() {
+    var f = {};
+    f.img = "images/";
+    f.app = "app/";
+    f.fav = "images/favicons/";
+    return f;
+}
+
 window.appProperties = getAppProperties();
-//var window.appProperties.defaults = {};
 window.appProperties.defaults = getMessageDefaults();
+window.appProperties.paths = getPaths();
+window.appProperties.folders = getFolders();
 
 var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTab'])
 
