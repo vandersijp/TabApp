@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("appModule built 31");
+console.log("appModule built 33");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -46,12 +46,12 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
 
     //  see http:// stackoverflow.com/questions/20049261/sce-trustasresourceurl-globally
     $sceDelegateProvider.resourceUrlWhitelist([
+      // see http://stackoverflow.com/questions/25636463/angularjs-error-in-loading-external-jsonfile-from-server
         //  Allow same origin resource loads.
         'self',
-        //  Allow loading from our assets domain. Notice the difference between * and **.
+        // Allow loading from our assets domain. Notice the difference between * and **.
         'https://rawgit.com/vandersijp/**',
-        'http://www.sulaiman.mobi/**',
-        '**'
+        'http://www.asklearnshare.com/**'
     ]);
 
     var aliases = {

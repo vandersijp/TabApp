@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log ("alsContactModule built 11");
+console.log ("alsContactModule built 12");
 
 var alsContact = angular.module("alsContact", ['alsIcon']);
 
@@ -30,7 +30,7 @@ alsContact.directive('alsContactForm', function() {
                 $http({
                     method: 'POST',
                     // PHP file must be stored on own server, at root level
-                    url: 'http://www.sulaiman.mobi/alsContactSend.php',
+                    url: 'http://www.asklearnshare.com/alsContactSend.php',
                     data: message,
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
