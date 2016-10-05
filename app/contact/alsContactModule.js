@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log("Contact 20161005.7");
+console.log("Contact 20161005.8");
 
 var alsContact = angular.module("alsContact", ['alsIcon']);
 
@@ -22,7 +22,6 @@ alsContact.directive('alsContactForm', function() {
                 if (message.querylabel == null || message.querylabel === '') {
                     message.querylabel = "def query";
                 }
-                message.querylabel = "set query";
                 if (message.actionlabel == null || message.actionlabel === '') {
                     message.actionlabel = "def action";
                 }
