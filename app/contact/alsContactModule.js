@@ -34,17 +34,6 @@ alsContact.directive('alsContactForm', function() {
                     }
                 });
 
-                /*
-                                if (message.actionlabel == null || message.actionlabel === '') {
-                                    message.actionlabel = window.appProperties.defaults.actionlabel;
-                                }
-                                if (message.action == null || message.action === '') {
-                                    message.action = window.appProperties.defaults.action;
-                                }
-                                if (message.querylabel == null || message.querylabel === '') {
-                                    message.querylabel = window.appProperties.defaults.querylabel;
-                                }
-                */
                 $http({
                     method: 'POST',
                     // PHP file must be stored on own server, at root level

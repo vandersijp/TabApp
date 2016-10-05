@@ -1,9 +1,8 @@
 <!--(C) Ask Learn Share Ltd -->
 <style type="text/css">
-
-.transparent{
-  background-color: transparent !important;
-}
+    .transparent {
+        background-color: transparent !important;
+    }
 </style>
 
 <md-content ng-hide="status.success">
@@ -46,4 +45,7 @@
     <div ng-bind-html="status.response.data"></div>
 </md-subheader>
 
-<pre ng-if="false">{{status | json}}</pre>
+<div ng-if="false">
+    <pre>{{props.defaults | json}}</pre>
+    <pre>{{status | json}}</pre>
+</div>
