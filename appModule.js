@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 20161005.10");
+console.log("App 20161005.12");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -36,8 +36,17 @@ function getAppProperties() {
     "app": "abc"
     */
 }
-window.appProperties = getAppProperties();
 
+function getMessageDefaults() {
+    var def {};
+    def.action = false;
+    def.actionlabel = "contact";
+    def.querylabel = "query";
+    return def;
+}
+
+window.appProperties = getAppProperties();
+window.messageDefaults = getMessageDefaults();
 
 var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTab'])
 
@@ -45,7 +54,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
 
     //  see http:// stackoverflow.com/questions/20049261/sce-trustasresourceurl-globally
     $sceDelegateProvider.resourceUrlWhitelist([
-      // see http://stackoverflow.com/questions/25636463/angularjs-error-in-loading-external-jsonfile-from-server
+        // see http://stackoverflow.com/questions/25636463/angularjs-error-in-loading-external-jsonfile-from-server
         //  Allow same origin resource loads.
         'self',
         // Allow loading from our assets domain. Notice the difference between * and **.

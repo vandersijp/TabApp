@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log("Contact 20161005.10");
+console.log("Contact 20161005.12");
 
 var alsContact = angular.module("alsContact", ['alsIcon']);
 
@@ -24,7 +24,17 @@ alsContact.directive('alsContactForm', function() {
                 status.response = {};
 
                 message["g-recaptcha-response"] = grecaptcha.getResponse();
-                message["app"] = window.appProperties.app;
+                message.app = window.appProperties.app;
+
+                if (message.actionlabel == null || message.actionlabel === '') {
+                    message.actionlabel = window.messageDefaults.actionlabel;
+                }
+                if (message.action == null || message.action === '') {
+                    message.action = window.messageDefaults.action;
+                }
+                if (message.querylabel == null || message.querylabel === '') {
+                    message.querylabel = window.messageDefaults.querylabel;
+                }
 
                 $http({
                     method: 'POST',
