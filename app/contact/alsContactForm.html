@@ -30,12 +30,12 @@
             <input name="to" ng-model="message.to" required type="email">
         </md-input-container>
         <md-input-container class="md-block" flex-gt-sm>
-            <label>Your {{message.querylabel || appProps.defaults.querylabel}}</label>
+            <label>Your {{message.querylabel || props.defaults.querylabel}}</label>
             <textarea name="query" ng-model="message.query" md-maxlength="100"></textarea>
         </md-input-container>
         <div layout="column" layout-align="center center">
             <md-checkbox aria-label="action" name="action" ng-model="message.action">
-                Please {{message.actionlabel || appProps.defaults.actionlabel}} me
+                Please {{message.actionlabel || props.defaults.actionlabel}} me
             </md-checkbox>
         </div>
     </form>
