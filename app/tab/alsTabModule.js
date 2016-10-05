@@ -1,4 +1,6 @@
 /* (C) 2016 Ask Learn Share Ltd */
+console.log("Tab 20161005.21");
+
 var alsTab = angular.module("alsTab", ['ngMaterial', 'ngAnimate', 'alsIcon', 'alsList', 'alsFigure']);
 
 alsTab.directive('alsTabContent', function() {

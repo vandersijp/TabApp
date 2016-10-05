@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log("Contact 20161005.20");
+console.log("Contact 20161005.21");
 
 var alsContact = angular.module("alsContact", ['alsIcon']);
 
