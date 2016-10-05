@@ -15,6 +15,6 @@ alsAccess.directive('alsAccessForm', function() {
         },
         controllerAs: 'alsAccessFormCtrl',
         // bindToController: true,
-        templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/access/alsAccessForm.html'
+        templateUrl: window.x.app + 'access/alsAccessForm.html'
     }
 });

@@ -38,21 +38,22 @@ function getAppProperties() {
 
 function getMessageDefaults() {
     var d = {};
-    d.action = false;
-    d.actionlabel = "contact";
-    d.querylabel = "query";
     d.bcc = "c@asklearnshare.com";
     d.from = "noreply@asklearnshare.com";
+    d.action = false;
     d.signature = "Kind regards.";
+    d.querylabel = "query";
+    d.querylabel = "query";
+    d.actionlabel = "contact";
     return d;
 }
 
 function getPaths() {
     var p = {};
-    p.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
     p.sce = "https://rawgit.com/vandersijp/";
     p.repo = "https://rawgit.com/vandersijp/TabApp/master/";
     p.assets = "https://rawgit.com/vandersijp/assets/master/";
+    p.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
     p.contacturl = "http://www.asklearnshare.com/alsContactSend.php";
     return p;
 }
@@ -71,6 +72,7 @@ function getShortCuts() {
     x.app = window.appProperties.paths.repo + window.appProperties.folders.app;
     x.img = window.appProperties.paths.assets + window.appProperties.folders.img;
     x.fav = window.appProperties.paths.assets + window.appProperties.folders.fav;
+    x.send = window.appProperties.paths.contacturl;
     return x;
 }
 
