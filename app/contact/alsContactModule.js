@@ -30,7 +30,7 @@ alsContact.directive('alsContactForm', function() {
                     message.actionlabel = window.appProperties.defaults.message.actionlabel;
                 }
                 if (message.action == null || message.action === '') {
-                    message.action = window.appProperties.defaults.message..action;
+                    message.action = window.appProperties.defaults.message.action;
                 }
                 if (message.querylabel == null || message.querylabel === '') {
                     message.querylabel = window.appProperties.defaults.message.querylabel;
