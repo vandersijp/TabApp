@@ -16,7 +16,7 @@ alsIcon.directive('ii', function() {
         },
         controllerAs: 'ii',
         //    bindToController: true,
-        templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/icon/ii.html'
+        templateUrl: window.x.app + 'icon/ii.html'
     };
 });
 
@@ -38,7 +38,7 @@ alsIcon.directive('alsIconMenuFabPair', function() {
         },
         controllerAs: 'alsIconMenuFabPairCtrl',
         //    bindToController: true,
-        templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/icon/alsIconMenuFabPair.html'
+        templateUrl: window.x.app + 'icon/alsIconMenuFabPair.html'
     };
 });
 
@@ -55,7 +55,7 @@ alsIcon.directive('alsIconPair', function() {
         },
         controllerAs: 'alsIconPairCtrl',
         //    bindToController: true,
-        templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/icon/alsIconPair.html'
+        templateUrl: window.x.app + 'icon/alsIconPair.html'
     };
 });
 
@@ -73,7 +73,7 @@ alsIcon.directive('alsIconFabPairAttr', function() {
         },
         controllerAs: 'alsIconFabPairAttrCtrl',
         //    bindToController: true,
-        templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/icon/alsIconFabPairAttr.html'
+        templateUrl: window.x.app + 'icon/alsIconFabPairAttr.html'
     };
 });
 
@@ -93,7 +93,7 @@ alsIcon.directive('alsIconFabPair', function() {
         },
         controllerAs: 'alsIconFabPairCtrl',
         //    bindToController: true,
-        templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/icon/alsIconFabPair.html'
+        templateUrl: window.x.app + 'icon/alsIconFabPair.html'
     };
 });
 
@@ -103,6 +103,6 @@ alsIcon.directive('alsIconFlagPair', function() {
             lang1: '=',
             lang2: '='
         },
-        templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/icon/alsIconFlagPair.html'
+        templateUrl: window.x.app + 'icon/alsIconFlagPair.html'
     };
 });

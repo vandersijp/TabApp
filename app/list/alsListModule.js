@@ -9,7 +9,7 @@ alsList.directive('alsListSingle', function() {
         scope: {
             list: '='
         },
-        templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/list/alsListSingle.html'
+        templateUrl: window.x.app + 'list/alsListSingle.html'
     }
 });
 
@@ -19,7 +19,7 @@ alsList.directive('alsListTable', function() {
         scope: {
             table: '='
         },
-        templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/list/alsListTable.html'
+        templateUrl: window.x.app + 'list/alsListTable.html'
     }
 });
 
@@ -29,6 +29,6 @@ alsList.directive('alsListTableFiltered', function() {
         scope: {
             table: '='
         },
-        templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/list/alsListTableFiltered.html'
+        templateUrl: window.x.app + 'list/alsListTableFiltered.html'
     }
 });

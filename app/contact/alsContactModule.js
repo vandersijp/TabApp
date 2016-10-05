@@ -54,7 +54,7 @@ alsContact.directive('alsContactForm', function() {
         },
         controllerAs: 'alsContactFormCtrl',
         //    bindToController: true,
-        templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/contact/alsContactForm.html'
+        templateUrl: window.x.app + 'contact/alsContactForm.html'
     }
 });
 

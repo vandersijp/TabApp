@@ -14,6 +14,6 @@ alsFigure.directive('alsFigurePhotoMain', function () {
     },
     controllerAs: 'alsFigurePhotoMainCtrl',
 //    bindToController: true,
-    templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/figure/alsFigurePhotoMain.html'
+    templateUrl: window.x.app + 'figure/alsFigurePhotoMain.html'
   };
 });
