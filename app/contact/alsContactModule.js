@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log ("alsContactModule built 20161005.1");
+console.log ("Contact 20161005.2");
 
 var alsContact = angular.module("alsContact", ['alsIcon']);
 
@@ -25,7 +25,6 @@ alsContact.directive('alsContactForm', function() {
 
                 message["g-recaptcha-response"] = grecaptcha.getResponse();
                 message["app"] = window.appProperties.app;
-                message["logpath"] = window.appProperties.logPath;
 
                 $http({
                     method: 'POST',

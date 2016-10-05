@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("appModule built 20161005.1");
+console.log("App 20161005.2");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -23,7 +23,6 @@ function getAppProperties() {
     loc.depth = loc.fullName.split("/").length - 2;
     loc.app = loc.fullName.split("/")[loc.depth];
     loc.app = loc.app.split(".").join("-");
-    loc.logPath = String.repeat("../", loc.depth) + "als-logs/";
     var favicon = {};
     favicon.path = "https://rawgit.com/vandersijp/assets/master/images/" + "favicons/";
     favicon.ext = ".png";
