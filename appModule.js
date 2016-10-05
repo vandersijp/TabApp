@@ -3,31 +3,31 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 3");
+console.log("App 4");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
 };
 
 function getAppProperties() {
-    var loc = {};
-    loc.hostName = window.location.hostname;
-    loc.pathName = window.location.pathname;
-    switch (loc.hostName) {
+    var l = {};
+    l.hostName = window.location.hostname;
+    l.pathName = window.location.pathname;
+    switch (l.hostName) {
         case ("localhost"):
-            loc.fullName = loc.hostName + loc.pathName;
+            l.fullName = l.hostName + l.pathName;
             break;
         default:
-            loc.fullName = "other/" + loc.hostName + loc.pathName;
+            l.fullName = "other/" + l.hostName + l.pathName;
     }
-    loc.depth = loc.fullName.split("/").length - 2;
-    loc.app = loc.fullName.split("/")[loc.depth];
-    loc.app = loc.app.split(".").join("-");
+    l.depth = l.fullName.split("/").length - 2;
+    l.app = l.fullName.split("/")[l.depth];
+    l.app = l.app.split(".").join("-");
     var favicon = {};
     favicon.path = "https://rawgit.com/vandersijp/assets/master/images/" + "favicons/";
     favicon.ext = ".png";
-    loc.favicon = favicon;
-    return loc;
+    l.favicon = favicon;
+    return l;
     /*
     "hostName": "localhost",
     "pathName": "/secuos/abc/",
@@ -38,24 +38,24 @@ function getAppProperties() {
 }
 
 function getMessageDefaults() {
-    var def = {};
-    def.action = false;
-    def.actionlabel = "contact";
-    def.querylabel = "query";
-    def.bcc = "c@asklearnshare.com";
-    def.from = "noreply@asklearnshare.com";
-    def.signature = "Kind regards.";
-    return def;
+    var d = {};
+    d.action = false;
+    d.actionlabel = "contact";
+    d.querylabel = "query";
+    d.bcc = "c@asklearnshare.com";
+    d.from = "noreply@asklearnshare.com";
+    d.signature = "Kind regards.";
+    return d;
 }
 
 function getPaths() {
-    var l = {};
-    l.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
-    l.sce = "https://rawgit.com/vandersijp/";
-    l.repo = "https://rawgit.com/vandersijp/TabApp/master/";
-    l.assets = "https://rawgit.com/vandersijp/assets/master/images/";
-    l.contacturl = "http://www.asklearnshare.com/alsContactSend.php";
-    return l;
+    var p = {};
+    p.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
+    p.sce = "https://rawgit.com/vandersijp/";
+    p.repo = "https://rawgit.com/vandersijp/TabApp/master/";
+    p.assets = "https://rawgit.com/vandersijp/assets/master/images/";
+    p.contacturl = "http://www.asklearnshare.com/alsContactSend.php";
+    return p;
 }
 
 function getFolders() {
