@@ -48,7 +48,7 @@ function getMessageDefaults() {
     return def;
 }
 
-funtion getLinks() {
+function getLinks() {
   var l = {};
   l.delegate = "https://rawgit.com/vandersijp/";
   return l;
