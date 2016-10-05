@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 4");
+console.log("App 7");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -24,7 +24,6 @@ function getAppProperties() {
     l.app = l.fullName.split("/")[l.depth];
     l.app = l.app.split(".").join("-");
     var favicon = {};
-    favicon.path = "https://rawgit.com/vandersijp/assets/master/images/" + "favicons/";
     favicon.ext = ".png";
     l.favicon = favicon;
     return l;
@@ -53,23 +52,33 @@ function getPaths() {
     p.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
     p.sce = "https://rawgit.com/vandersijp/";
     p.repo = "https://rawgit.com/vandersijp/TabApp/master/";
-    p.assets = "https://rawgit.com/vandersijp/assets/master/images/";
+    p.assets = "https://rawgit.com/vandersijp/assets/master/";
     p.contacturl = "http://www.asklearnshare.com/alsContactSend.php";
     return p;
 }
 
 function getFolders() {
     var f = {};
+    f.app = "app/";
     f.img = "images/";
     f.app = "app/";
     f.fav = "images/favicons/";
     return f;
 }
 
+function getShortCuts() {
+    x = {}
+    x.app = window.appProperties.paths.repo + window.appProperties.folders.app;
+    x.img = window.appProperties.paths.assets + window.appProperties.folders.img;
+    x.fav = window.appProperties.paths.assets + window.appProperties.folders.fav;
+    return x;
+}
+
 window.appProperties = getAppProperties();
 window.appProperties.defaults = getMessageDefaults();
 window.appProperties.paths = getPaths();
 window.appProperties.folders = getFolders();
+window.x = getShortCuts();
 
 var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTab'])
 
@@ -149,11 +158,13 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     //  dynamically change the <title> tag
     document.title = appProperties.theme.title;
     //  dynamically insert a new <link> tag
-    var favicon = window.appProperties.favicon.path + window.appProperties.favicon.name + window.appProperties.favicon.ext;
+    var fav = window.x.fav;
+    fav += window.appProperties.favicon.name;
+    fav += window.appProperties.favicon.ext;
     var link = document.createElement('link');
     link.rel = 'icon';
     link.type = 'image/png';
-    link.href = favicon;
+    link.href = fav;
     document.getElementsByTagName('head')[0].appendChild(link);
 
     //alert(JSON.stringify(window.appProperties));
@@ -229,7 +240,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
     self.alertTerms = function(ev) {
         $mdDialog.show({
             controller: DialogController,
-            templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/alert/alsAlertTerms.html',
+            templateUrl: window.x.app + 'alert/alsAlertTerms.html',
             targetEvent: ev,
             parent: angular.element(document.querySelector('#alertContainer')),
             clickOutsideToClose: true
@@ -239,7 +250,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
     self.alertHelp = function(ev) {
         $mdDialog.show({
             controller: DialogController,
-            templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/alert/alsAlertHelp.html',
+            templateUrl: window.x.app + 'alert/alsAlertHelp.html',
             targetEvent: ev,
             parent: angular.element(document.querySelector('#alertContainer')),
             clickOutsideToClose: true
