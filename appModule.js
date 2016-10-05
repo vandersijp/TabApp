@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 20161005.14");
+console.log("App 20161005.16");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -46,7 +46,7 @@ function getMessageDefaults() {
 }
 
 window.appProperties = getAppProperties();
-//var window.messageDefaults.defaults = {};
+var window.messageDefaults.defaults = {};
 window.messageDefaults.defaults = getMessageDefaults();
 
 var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTab'])
