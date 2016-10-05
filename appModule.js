@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 20161005.29");
+console.log("App 20161005.27");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -52,7 +52,7 @@ function getPaths() {
     var l = {};
     l.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
     l.sce = "https://rawgit.com/vandersijp/";
-    l.app = "https://rawgit.com/vandersijp/TabApp/master/app/";
+    l.app = "https://rawgit.com/vandersijp/TabApp/master/";
     l.assets = "https://rawgit.com/vandersijp/assets/master/";
     l.images = "https://rawgit.com/vandersijp/assets/master/images/";
     l.favicons = "https://rawgit.com/vandersijp/assets/master/images/favicons/";
@@ -222,7 +222,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
     self.alertTerms = function(ev) {
         $mdDialog.show({
             controller: DialogController,
-            templateUrl: window.appProperties.paths.app + 'alert/alsAlertTerms.html',
+            templateUrl: window.appProperties.paths.app + 'app/alert/alsAlertTerms.html',
             targetEvent: ev,
             parent: angular.element(document.querySelector('#alertContainer')),
             clickOutsideToClose: true
@@ -232,7 +232,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
     self.alertHelp = function(ev) {
         $mdDialog.show({
             controller: DialogController,
-            templateUrl: window.appProperties.paths.app + 'alert/alsAlertHelp.html',
+            templateUrl: window.appProperties.paths.app + 'xapp/alert/alsAlertHelp.html',
             targetEvent: ev,
             parent: angular.element(document.querySelector('#alertContainer')),
             clickOutsideToClose: true
