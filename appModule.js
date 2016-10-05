@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 20161005.27");
+console.log("App 20161005.26");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -24,7 +24,7 @@ function getAppProperties() {
     loc.app = loc.fullName.split("/")[loc.depth];
     loc.app = loc.app.split(".").join("-");
     var favicon = {};
-    //favicon.path = "https://rawgit.com/vandersijp/assets/master/images/" + "favicons/";
+    favicon.path = "https://rawgit.com/vandersijp/assets/master/images/" + "favicons/";
     favicon.ext = ".png";
     loc.favicon = favicon;
     return loc;
@@ -51,11 +51,9 @@ function getMessageDefaults() {
 function getPaths() {
     var l = {};
     l.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
-    l.sce = "https://rawgit.com/vandersijp/";
-    l.app = "https://rawgit.com/vandersijp/TabApp/master/";
-    l.assets = "https://rawgit.com/vandersijp/assets/master/";
-    l.images = "https://rawgit.com/vandersijp/assets/master/images/";
-    l.favicons = "https://rawgit.com/vandersijp/assets/master/images/favicons/";
+    l.gitdelegate = "https://rawgit.com/vandersijp/";
+    l.gitapp = "https://rawgit.com/vandersijp/TabApp/master/";
+    l.gitassets = "https://rawgit.com/vandersijp/assets/master/";
     l.contacturl = "http://www.asklearnshare.com/alsContactSend.php";
     return l;
 }
@@ -74,7 +72,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         //  Allow same origin resource loads.
         'self',
         // Allow loading from our assets domain. Notice the difference between * and **.
-        window.appProperties.paths.sce + '**'
+        window.appProperties.paths.gitdelegate + '**'
     ]);
 
     var aliases = {
@@ -141,7 +139,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     //  dynamically change the <title> tag
     document.title = appProperties.theme.title;
     //  dynamically insert a new <link> tag
-    var favicon = window.appProperties.paths.favicons + window.appProperties.favicon.name + window.appProperties.favicon.ext;
+    var favicon = window.appProperties.favicon.path + window.appProperties.favicon.name + window.appProperties.favicon.ext;
     var link = document.createElement('link');
     link.rel = 'icon';
     link.type = 'image/png';
@@ -222,7 +220,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
     self.alertTerms = function(ev) {
         $mdDialog.show({
             controller: DialogController,
-            templateUrl: window.appProperties.paths.app + 'app/alert/alsAlertTerms.html',
+            templateUrl: window.appProperties.paths.gitapp + 'app/alert/alsAlertTerms.html',
             targetEvent: ev,
             parent: angular.element(document.querySelector('#alertContainer')),
             clickOutsideToClose: true
@@ -232,7 +230,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
     self.alertHelp = function(ev) {
         $mdDialog.show({
             controller: DialogController,
-            templateUrl: window.appProperties.paths.app + 'xapp/alert/alsAlertHelp.html',
+            templateUrl: window.appProperties.paths.gitapp + 'xapp/alert/alsAlertHelp.html',
             targetEvent: ev,
             parent: angular.element(document.querySelector('#alertContainer')),
             clickOutsideToClose: true
