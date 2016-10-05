@@ -72,7 +72,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         //  Allow same origin resource loads.
         'self',
         // Allow loading from our assets domain. Notice the difference between * and **.
-        window.appProperties.paths + '**'
+        window.appProperties.paths.gitdelegate + '**'
     ]);
 
     var aliases = {
