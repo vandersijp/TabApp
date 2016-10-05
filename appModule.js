@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 20161005.26");
+console.log("App 20161005.22");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -48,19 +48,9 @@ function getMessageDefaults() {
     return def;
 }
 
-function getPaths() {
-    var l = {};
-    l.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
-    l.gitdelegate = "https://rawgit.com/vandersijp/";
-    l.gitapp = "https://rawgit.com/vandersijp/TabApp/master/";
-    l.gitassets = "https://rawgit.com/vandersijp/assets/master/";
-    l.contacturl = "http://www.asklearnshare.com/alsContactSend.php";
-    return l;
-}
-
 window.appProperties = getAppProperties();
+//var window.appProperties.defaults = {};
 window.appProperties.defaults = getMessageDefaults();
-window.appProperties.paths = getPaths();
 
 var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTab'])
 
@@ -72,7 +62,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         //  Allow same origin resource loads.
         'self',
         // Allow loading from our assets domain. Notice the difference between * and **.
-        window.appProperties.paths.gitdelegate + '**'
+        'https://rawgit.com/vandersijp/**',
+        'http://www.asklearnshare.com/**'
     ]);
 
     var aliases = {
@@ -158,7 +149,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
 app.service('dataService', function($http, $firebaseObject) {
     this.getFileData = function() {};
     this.getFirebaseData = function(app) {
-        var ref = new Firebase(window.appProperties.paths.firebase + app);
+        var ref = new Firebase("https://smartchart.firebaseio.com/apps/tab-apps/" + app);
         return $firebaseObject(ref);
     };
 });
@@ -220,7 +211,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
     self.alertTerms = function(ev) {
         $mdDialog.show({
             controller: DialogController,
-            templateUrl: window.appProperties.paths.gitapp + 'app/alert/alsAlertTerms.html',
+            templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/alert/alsAlertTerms.html',
             targetEvent: ev,
             parent: angular.element(document.querySelector('#alertContainer')),
             clickOutsideToClose: true
@@ -230,7 +221,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
     self.alertHelp = function(ev) {
         $mdDialog.show({
             controller: DialogController,
-            templateUrl: window.appProperties.paths.gitapp + 'xapp/alert/alsAlertHelp.html',
+            templateUrl: 'https://rawgit.com/vandersijp/TabApp/master/app/alert/alsAlertHelp.html',
             targetEvent: ev,
             parent: angular.element(document.querySelector('#alertContainer')),
             clickOutsideToClose: true
