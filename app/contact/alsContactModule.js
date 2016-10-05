@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-alert ("2");
+alert ("3");
 
 var alsContact = angular.module("alsContact", ['alsIcon']);
 
