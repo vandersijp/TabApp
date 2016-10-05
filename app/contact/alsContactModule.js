@@ -30,7 +30,6 @@ alsContact.directive('alsContactForm', function() {
                 angular.forEach(window.appProperties.defaults, function(value, key) {
                     if (message[key] == null || message[key] === '') {
                         message[key] = value;
-                        alert(value);
                     }
                 });
 
