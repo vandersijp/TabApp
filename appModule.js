@@ -38,7 +38,7 @@ function getAppProperties() {
 }
 
 function getMessageDefaults() {
-    var def {};
+    var def = {};
     def.action = false;
     def.actionlabel = "contact";
     def.querylabel = "query";
