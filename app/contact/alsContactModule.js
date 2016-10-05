@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log ("alsContactModule built 12");
+console.log ("alsContactModule built 20161005.1");
 
 var alsContact = angular.module("alsContact", ['alsIcon']);
 

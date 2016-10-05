@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("appModule built 33");
+console.log("appModule built 20161005.1");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
