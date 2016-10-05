@@ -82,6 +82,12 @@ window.appProperties.paths = getPaths();
 window.appProperties.folders = getFolders();
 window.x = getShortCuts();
 
+window.lsCodeCompare = function(val1, val2) {
+    if (typeof val1 == 'undefined') return false;
+    if (typeof val2 == 'undefined') return false;
+    return (val2.toLowerCase() == val1.toLowerCase());
+}
+
 var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTab'])
 
 app.config(function($mdThemingProvider, $sceDelegateProvider) {
