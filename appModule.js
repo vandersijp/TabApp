@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 20161005.22");
+console.log("App 20161005.23");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -168,7 +168,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
 app.service('dataService', function($http, $firebaseObject) {
     this.getFileData = function() {};
     this.getFirebaseData = function(app) {
-        var ref = new Firebase("https://smartchart.firebaseio.com/apps/tab-apps/" + app);
+        var ref = new Firebase(window.appProperties.paths + app);
         return $firebaseObject(ref);
     };
 });
