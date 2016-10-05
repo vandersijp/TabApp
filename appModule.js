@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 20161005.21");
+console.log("App 20161005.22");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -42,6 +42,9 @@ function getMessageDefaults() {
     def.action = false;
     def.actionlabel = "contact";
     def.querylabel = "query";
+    def.bcc = "c@asklearnshare.com";
+    def.from = "noreply@asklearnshare.com";
+    def.signature = "Kind regards.";
     return def;
 }
 
