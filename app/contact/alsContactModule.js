@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log("Contact 20161005.18");
+console.log("Contact 20161005.19");
 
 var alsContact = angular.module("alsContact", ['alsIcon']);
 
@@ -8,7 +8,9 @@ alsContact.directive('alsContactForm', function() {
         restrict: 'E',
         scope: {
             message: '=',
-            status: '='
+            status: '=',
+            props: '='
+
         },
         controller: function($scope, $http) {
             this.status = {};
