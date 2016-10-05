@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 20161005.22");
+console.log("App 20161005.23");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -48,9 +48,15 @@ function getMessageDefaults() {
     return def;
 }
 
+funtion getLinks() {
+  var l = {};
+  l.delegate = "https://rawgit.com/vandersijp/";
+  return l;
+}
+
 window.appProperties = getAppProperties();
-//var window.appProperties.defaults = {};
 window.appProperties.defaults = getMessageDefaults();
+window.appProperties.links = getLinks();
 
 var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTab'])
 
@@ -62,8 +68,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         //  Allow same origin resource loads.
         'self',
         // Allow loading from our assets domain. Notice the difference between * and **.
-        'https://rawgit.com/vandersijp/**',
-        'http://www.asklearnshare.com/**'
+        'https://rawgit.com/vandersijp/**'
     ]);
 
     var aliases = {
