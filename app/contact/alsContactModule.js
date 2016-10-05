@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-alert ("3");
+console.log ("alsContactModule built 11");
 
 var alsContact = angular.module("alsContact", ['alsIcon']);
 

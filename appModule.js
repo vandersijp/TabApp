@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("Built 28");
+console.log("appModule built 29");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -49,7 +49,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         //  Allow same origin resource loads.
         'self',
         //  Allow loading from our assets domain. Notice the difference between * and **.
-        'https://rawgit.com/vandersijp/**'
+        'https://rawgit.com/vandersijp/**',
+        'https://sulaiman.mobi/**'
     ]);
 
     var aliases = {
