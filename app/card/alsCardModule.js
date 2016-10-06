@@ -20,7 +20,7 @@ alsCard.directive('alsCardExample', function() {
 alsCard.directive('alsCardMessage', function() {
     return {
         scope: {
-            card: '='
+            cardset: '='
         },
         templateUrl: window.x.app + 'card/alsCardMessage.html'
     };
