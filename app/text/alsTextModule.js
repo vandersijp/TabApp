@@ -7,7 +7,7 @@ alsList.directive('alsTextSection', function() {
     return {
         restrict: 'E',
         scope: {
-            sectiom: '='
+            section: '='
         },
         templateUrl: window.x.app + 'text/alsTextSection.html'
     }
