@@ -5,15 +5,17 @@
 
 <div layout="column" layout-align="start center">
     <h4 ng-if="list.header" class="md-title">{{cardset.header}}</h4>
-    <md-card ng-repeat="c in cardset.cards" md-margin>
+    <md-card ng-repeat="c in cardset.cards" md-padding>
         <p>
             {{c.title}}
         </p>
         <p ng-repeat="p in c.paragraphs">
             {{p}}
         </p>
-        <p>
-            {{c.note}}
-        </p>
+        <div layout=row layout-align="end">
+            <p>
+                {{c.note}}
+            </p>
+        </div>
     </md-card>
 </div>
