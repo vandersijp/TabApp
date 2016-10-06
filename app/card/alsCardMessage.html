@@ -24,10 +24,9 @@
 
             <md-card-content ng-if="c.content">
                 <p class="md-body-1" ng-repeat="p in c.content">{{p}}</p>
-                <p ng-repeat="p in c.content">{{p}}</p>
             </md-card-content>
 
-            <md-card-footer ng-if="c.footer">
+            <md-card-footer ng-if="c.footer" layout="row" layout-align="end">
                 {{c.footer}}
             </md-card-footer>
 
