@@ -29,7 +29,7 @@
 </style>
 
 <div class="als-list-capfirst" ng-switch="list.type" layout="column" layout-align="start center">
-    <h4 class="md-title">{{list.header}}</h4>
+  <h4 ng-if="list.header" class="md-title">{{list.header}}</h4>
     <!--stamp:-->
     <div ng-switch-when="stamp" layout="row" layout-margin layout-wrap layout-align="center center">
         <div class="stamp" ng-repeat="p in list.points" ng-class="list.style">
