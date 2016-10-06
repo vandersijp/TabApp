@@ -4,6 +4,9 @@
     <p ng-if="tab.summary">{{tab.summary}}</p>
     <als-figure-photo-main ng-repeat="i in data.images" ng-if="i.tab==tab.id" data-image="i" data-path="data.system.paths.img"></als-figure-photo-main>
     <als-text-section ng-repeat="s in data.sections" ng-if="s.tab==tab.id" data-section="s"></als-text-section>
+
+<pre ng-repeat="c in data.cards">{{c.header}}</pre>
+
     <als-card-message ng-repeat="c in data.cards" ng-if="c.tab==tab.id" data-card="c"></als-card-message>
     <als-access-form ng-show="tab.id==data.system.access.tab" data-access="data.system.access"></als-access-form>
 
