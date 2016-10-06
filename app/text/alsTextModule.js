@@ -3,7 +3,7 @@
 */
 var alsText = angular.module("alsList", ['ngMaterial', 'ngAnimate', 'ngSanitize']);
 
-alsList.directive('alsTextSection', function() {
+alsText.directive('alsTextSection', function() {
     return {
         restrict: 'E',
         scope: {
