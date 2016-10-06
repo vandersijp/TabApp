@@ -41,7 +41,6 @@ function getMessageDefaults() {
     d.action = false;
     d.signature = "Kind regards.";
     d.querylabel = "query";
-    d.querylabel = "query";
     d.actionlabel = "contact";
     return d;
 }
