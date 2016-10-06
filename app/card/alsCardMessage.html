@@ -2,16 +2,34 @@
 <style type="text/css">
 
 </style>
-11
+12
 <div layout="column" layout-align="start center">
     <h4 ng-if="cardset.header" class="md-title">{{cardset.header}}</h4>
     <md-card layout-margin ng-repeat="c in cardset.cards">
+
+      <md-card-header>
+         <md-card-header-text>
+           <span class="md-title">Title</span>
+           <span class="md-subhead">Sub header</span>
+         </md-card-header-text>
+       </md-card-header>
+
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Card headline</span>
+                <span class="md-subhead">Card subheader</span>
+            </md-card-title-text>
+        </md-card-title>
+
         <div layout="column" layout-align="start center" ng-repeat="c in cardset.cards">
             <p class="md-body-2">{{c.title}}</p>
         </div>
-        <p class="md-body-1" ng-repeat="p in c.paragraphs">
-            {{p}}
-        </p>
+
+        <md-card-content>
+            <p class="md-body-1" ng-repeat="p in c.paragraphs">
+                {{p}}
+            </p>
+        </md-card-content>
         <div layout=row layout-align="end">
             <span class="md-caption">{{c.note}}</span>
         </div>
