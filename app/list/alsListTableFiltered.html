@@ -18,9 +18,9 @@
 </style>
 
 <div layout="column" layout-align="start center">
-    <h4 ng-if="table.header" class="md-title">{{list.header}}</h4>
+    <h4 ng-if="table.header" class="md-title">{{table.header}}</h4>
 
-    <md-card ng-switch="list.type" layout-padding>
+    <md-card ng-switch="table.type" layout-padding>
 
         <div layout="column" ng-switch="table.type">
 
