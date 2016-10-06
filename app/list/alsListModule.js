@@ -1,7 +1,7 @@
 /*
 (C) 2016 Ask Learn Share Ltd
 */
-var alsList = angular.module("alsList", ['ngMaterial', 'ngAnimate', 'ngSanitize']);
+var alsList = angular.module("alsList", []);
 
 alsList.directive('alsListSingle', function() {
     return {

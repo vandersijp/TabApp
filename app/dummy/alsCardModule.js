@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-var alsDummy = angular.module("alsDummy", ['ngMaterial', 'ngAnimate', 'ngSanitize']);
+var alsDummy = angular.module("alsDummy", []);
 
 alsDummy.directive('alsDummyExample', function() {
     return {
