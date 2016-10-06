@@ -1,7 +1,7 @@
 /* (C) 2016 Ask Learn Share Ltd */
 console.log("Tab 9");
 
-var alsTab = angular.module("alsTab", ['ngMaterial', 'ngAnimate', 'alsIcon', 'alsList', 'alsText', 'alsFigure']);
+var alsTab = angular.module("alsTab", ['ngMaterial', 'ngAnimate', 'alsIcon', 'alsList', 'alsCard', 'alsText', 'alsFigure']);
 
 alsTab.directive('alsTabContent', function() {
     return {

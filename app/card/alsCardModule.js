@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-var alsCard = angular.module("alsCard", ['ngMaterial', 'ngAnimate', 'ngSanitize']);
+var alsCard = angular.module("alsCard", []);
 
 alsCard.directive('alsCardExample', function() {
     return {
@@ -22,12 +22,6 @@ alsCard.directive('alsCardMessage', function() {
         scope: {
             card: '='
         },
-        controller: function() {
-            // set openings position
-            // this.toggle = false;
-        },
-        controllerAs: 'alsCardMessageCtrl',
-        //    bindToController: true,
         templateUrl: window.x.app + 'card/alsCardMessage.html'
     };
 });
