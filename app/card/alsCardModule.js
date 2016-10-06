@@ -16,3 +16,18 @@ alsCard.directive('alsCardExample', function() {
         templateUrl: window.x.app + 'card/alsCardExample.html'
     };
 });
+
+alsCard.directive('alsCardMessage', function() {
+    return {
+        scope: {
+            card: '='
+        },
+        controller: function() {
+            // set openings position
+            // this.toggle = false;
+        },
+        controllerAs: 'alsCardMessageCtrl',
+        //    bindToController: true,
+        templateUrl: window.x.app + 'card/alsCardMessage.html'
+    };
+});
