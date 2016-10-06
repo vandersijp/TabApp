@@ -5,8 +5,9 @@
     <als-access-form ng-show="tab.id==data.system.access.tab" data-access="data.system.access"></als-access-form>
 
     <div layout="column" layout-align="start center" ng-show="(tab.id!=data.system.access.tab || $parent.appCtrl.codeCompare(data.system.access.entered, data.system.access.code))">
-        <als-list-table-filtered ng-repeat="t in data.tables" ng-if="t.tab==tab.id" data-table="t"></als-list-table-filtered>
         <als-figure-photo-main ng-repeat="i in data.images" ng-if="i.tab==tab.id" data-image="i" data-path="data.system.paths.img"></als-figure-photo-main>
+        <als-text-section ng-repeat="s in data.sections" ng-if="s.tab==tab.id" data-section="s"></als-text-section>
+        <als-list-table-filtered ng-repeat="t in data.tables" ng-if="t.tab==tab.id" data-table="t"></als-list-table-filtered>
         <als-list-single ng-repeat="l in data.lists" ng-if="l.tab==tab.id" data-list="l"></als-list-single>
 
         <div layout-margin ng-if="(tab.id==data.system.access.tab && data.system.access.showsite)">
