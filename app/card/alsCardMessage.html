@@ -6,9 +6,9 @@
 <div layout="column" layout-align="start center">
     <h4 ng-if="list.header" class="md-title">{{card.header}}</h4>
 
-    <md-card ng-repeat="c in cards">
+    <md-card ng-repeat="c in cards.cards">
         {{c.header}}
-        <p ng-repeat="p in paragraphs">
+        <p ng-repeat="p in c.paragraphs">
             {{p}}
         </p>
         <strong>

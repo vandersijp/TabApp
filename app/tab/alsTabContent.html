@@ -7,7 +7,7 @@
 
     <md-card ng-repeat="set in data.cards">
       {{set.header}}
-        <pre ng-repeat="card in set">
+        <pre ng-repeat="card in set.cards">
         {{card.title}}
         </pre>
     </md-card>
