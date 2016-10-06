@@ -6,8 +6,8 @@
 <div layout="column" layout-align="start center">
     <h4 ng-if="cardset.header" class="md-title">{{cardset.header}}</h4>
     <div layout="column" layout-align="start center" ng-repeat="c in cardset.cards">
-        <p class = "md-body-2">{{c.title}}</p>
-        <md-card layout-padding>
+        <md-card layout-margin>
+          <p class = "md-body-2">{{c.title}}</p>
             <p class = "md-body-1" ng-repeat="p in c.paragraphs">
                 {{p}}
             </p>
