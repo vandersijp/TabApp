@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 9");
+console.log("App 11");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -23,9 +23,7 @@ function getAppProperties() {
     l.depth = l.fullName.split("/").length - 2;
     l.app = l.fullName.split("/")[l.depth];
     l.app = l.app.split(".").join("-");
-    var favicon = {};
-    favicon.ext = ".png";
-    l.favicon = favicon;
+    l.faviconExt = ".png";
     return l;
     /*
     "hostName": "localhost",
@@ -110,8 +108,17 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     var themes = {
         "default": {
             "primary": "teal",
-            "accent": "amber",
-            "title": "Ask Learn Share"
+            "accent": "blue",
+            "warn": "red",
+            "background": "grey",
+            "title": "Ask Learn Share",
+            "favicon": "als"
+        },
+        "manya-info": {
+            "primary": "deep-purple",
+            "accent": "purple",
+            "title": "Goodbye",
+            "favicon": "app"
         },
         "app": {
             "primary": "purple",
@@ -149,39 +156,32 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "title": "Defect Elimination"
         },
         "asklearnshare-com": {
-            "primary": "teal",
-            "accent": "amber",
             "title": "Ask Learn Share"
         }
     }
 
-    if (themes[window.appProperties.app] == "undefined" || themes[window.appProperties.app] == null) {
-        window.appProperties.theme = themes["default"];
-        window.appProperties.favicon.name = "default";
-    } else {
-        window.appProperties.theme = themes[window.appProperties.app];
-        window.appProperties.favicon.name = window.appProperties.app;
-    }
+    // set any missing theme and attribute to the default
+    window.appProperties.theme = (themes[window.appProperties.app] || themes["default"]);
+    angular.forEach(themes["default"], function(value, key) {
+        window.appProperties.theme[key] = (window.appProperties.theme[key] || value);
+    });
 
     //  dynamically change the <title> tag
     document.title = appProperties.theme.title;
     //  dynamically insert a new <link> tag
-    var fav = window.x.fav;
-    fav += window.appProperties.favicon.name;
-    fav += window.appProperties.favicon.ext;
     var link = document.createElement('link');
     link.rel = 'icon';
     link.type = 'image/png';
-    link.href = fav;
+    link.href = window.x.fav + window.appProperties.theme.favicon + window.appProperties.faviconExt;
     document.getElementsByTagName('head')[0].appendChild(link);
 
     //alert(JSON.stringify(window.appProperties));
 
     $mdThemingProvider.theme('default')
-        .primaryPalette(window.appProperties.theme['primary'])
-        .accentPalette(window.appProperties.theme['accent'])
-        .warnPalette('red')
-        .backgroundPalette('grey');
+        .primaryPalette(window.appProperties.theme['primary'] || 'indigo')
+        .accentPalette(window.appProperties.theme['accent'] || 'red')
+        .warnPalette(window.appProperties.theme['warn'] || 'red')
+        .backgroundPalette(window.appProperties.theme['background'] || 'grey');
 });
 
 app.service('dataService', function($http, $firebaseObject) {
