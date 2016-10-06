@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-var alsIcon = angular.module("alsIcon", ['ngMaterial', 'ngAnimate']);
+var alsIcon = angular.module("alsIcon", []);
 
 alsIcon.directive('ii', function() {
     return {
