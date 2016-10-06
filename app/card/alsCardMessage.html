@@ -2,18 +2,18 @@
 <style type="text/css">
 
 </style>
-5
+6
 <div layout="column" layout-align="start center">
-  <h4 ng-if="list.header" class="md-title">{{cardset.header}}</h4>
-    <md-card ng-repeat="c in cardset.cards" layout-margin>
-        <p>
-            {{c.title}}
-        </p>
-        <p ng-repeat="p in c.paragraphs">
-            {{p}}
-        </p>
-        <div layout=row layout-align="end">
-            <span class="md-caption">{{c.note}}</span>
-        </div>
-    </md-card>
+    <h4 ng-if="cardset.header" class="md-title">{{cardset.header}}</h4>
+    <div ng-repeat="c in cardset.cards">
+        <h5 class="md-subhead">Headline 5</h5>{{c.title}}</h5>
+        <md-card layout-margin>
+            <p ng-repeat="p in c.paragraphs">
+                {{p}}
+            </p>
+            <div layout=row layout-align="end">
+                <span class="md-caption">{{c.note}}</span>
+            </div>
+        </md-card>
+    </div>
 </div>
