@@ -1,9 +1,20 @@
 <!--(C) Ask Learn Share Ltd:-->
 <style type="text/css">
+
 </style>
 
-<div>
-  <md-card>
-  {{card.title}}
-</md-card>
+<div layout="column" layout-align="start center">
+    <h4 ng-if="list.header" class="md-title">{{card.header}}</h4>
+
+    <md-card ng-repeat="c in cards">
+        {{c.header}}
+        <p ng-repeat="p in paragraphs">
+            {{p}}
+        </p>
+        <strong>
+        <p>
+          {{c.note}}
+        </p>
+      </strong>
+    </md-card>
 </div>
