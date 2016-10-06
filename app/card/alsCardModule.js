@@ -17,11 +17,11 @@ alsCard.directive('alsCardExample', function() {
     };
 });
 
-alsCard.directive('alsCardMessage', function() {
+alsCard.directive('alsCardGeneral', function() {
     return {
         scope: {
             cardset: '='
         },
-        templateUrl: window.x.app + 'card/alsCardMessage.html'
+        templateUrl: window.x.app + 'card/alsCardGeneral.html'
     };
 });

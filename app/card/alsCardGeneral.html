@@ -1,0 +1,39 @@
+<!--(C) Ask Learn Share Ltd:-->
+<style type="text/css">
+    md-card-content,
+    md-card-content p {
+        margin-top: .9em !important;
+        margin-bottom: .9em !important;
+    }
+</style>
+
+<div layout="column" layout-align="start center">
+    <h4 ng-if="cardset.header" class="md-title">{{cardset.header}}</h4>
+    <md-content>
+        <md-card ng-repeat="c in cardset.cards">
+
+            <md-card-header ng-if="c.title">
+                <md-card-header-text>
+                    <span class="md-title">{{c.title}}</span>
+                    <span ng-if="c.subheader" class="md-subhead">{{c.subheader}}</span>
+                </md-card-header-text>
+            </md-card-header>
+
+            <md-card-title ng-if="c.headline">
+                <md-card-title-text>
+                    <span class="md-headline">{{c.headline}}</span>
+                    <span ng-if="c.subheader" class="md-subhead">{{c.subheader}}</span>
+                </md-card-title-text>
+            </md-card-title>
+
+            <md-card-content ng-if="c.content">
+                <p class="md-body-1" ng-repeat="p in c.content">{{p}}</p>
+            </md-card-content>
+
+            <md-card-footer ng-if="c.footer" layout="row" layout-align="{{cardset.footeralign}}">
+                <span>{{c.footer}}</span>
+            </md-card-footer>
+
+        </md-card>
+    </md-content>
+</div>
