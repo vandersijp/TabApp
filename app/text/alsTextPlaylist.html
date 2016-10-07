@@ -20,7 +20,11 @@
     <div ng-switch-default>
 
         <ol>
-            <li class="md-body-1" ng-repeat="c in playlist.videos">{{c.title}} - {{c.artist}}</li>
+            <li class="md-body-1" ng-repeat="c in playlist.videos">
+              {{c.title}} - {{c.artist}}
+            </br>
+            link: https://www.youtube.com/watch?v={{c.youtube}}
+            </li>
         </ol>
         <md-content>
             <md-card ng-repeat="c in playlist.videos" ng-init="c.subhead=c.artist">
@@ -51,8 +55,6 @@
                 <md-card-footer ng-if="c.footer" layout="row" layout-align="{{playlist.footeralign}}">
                     <span>{{c.footer}}</span>
                 </md-card-footer>
-
-                <p ng-if="c.youtube">link: https://www.youtube.com/watch?v={{c.youtube}}</p>
 
             </md-card>
         </md-content>
