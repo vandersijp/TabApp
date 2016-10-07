@@ -5,8 +5,7 @@
         margin-right: 1em !important;
     }
 
-    md-card-title-media img {
-    }
+    md-card-title-media img {}
 </style>
 
 
@@ -21,9 +20,9 @@
 
         <ol>
             <li class="md-body-1" ng-repeat="c in playlist.videos">
-              {{c.title}} - {{c.artist}}
-            </br>
-            link: https://www.youtube.com/watch?v={{c.youtube}}
+                {{c.title}} - {{c.artist}}
+                </br>
+                link: https://www.youtube.com/watch?v={{c.youtube}}
             </li>
         </ol>
         <md-content>
@@ -42,13 +41,13 @@
                 </md-card-title>
 
                 <md-card-content ng-if="c.lyrics">
-                  level 1
+                    level 1
+                    <pre>{{lyrics | json}}</pre>
                     <p class="md-body-1" ng-repeat="part in c.lyrics">
-                      level 2
-                      <pre>{{part | json}}</pre>
+                        level 2
+                        <pre>{{part | json}}</pre>
                         <div ng-repeat="line in part">
-                          level 3
-                            x {{line}}
+                            level 3 x {{line}}
                             <br ng-if="!$last"></br>
                         </div>
                 </md-card-content>
