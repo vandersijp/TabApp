@@ -1,16 +1,25 @@
 <!--(C) Ask Learn Share Ltd -->
 <style type="text/css">
     md-card-title-media {
-      /* to correct Angular Material bug */
-        margin: 1em !important;
+        /* to correct Angular Material bug */
+        margin-right: 1em !important;
         /* to clip off Youtube black bars */
-        overflow: hidden !important;
+        overflow: hidden;
+        position: relative;
     }
 
     md-card-title-media img {
-      /* to clip off Youtube black bars */
-        margin: -10px !important;
-        margin-right: -30px !important;
+        /* to clip off Youtube black bars */
+        position: absolute;
+        margin: auto;
+        min-height: 100%;
+        min-width: 100%;
+        /* For the following settings we set 100%, but it can be higher if needed
+        See the answer's update */
+        left: -100%;
+        right: -100%;
+        top: -100%;
+        bottom: -100%;
     }
 </style>
 
