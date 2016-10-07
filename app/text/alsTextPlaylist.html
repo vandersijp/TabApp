@@ -1,4 +1,12 @@
 <!--(C) Ask Learn Share Ltd -->
+
+<style type="text/css">
+.card-media {
+  margin-right: 3em !important;
+}
+</style>
+
+
 <div ng-switch="playlist.type" layout="column">
     <!-- typw xxx -->
     <div ng-switch-when="xxx">
@@ -15,9 +23,11 @@
         <md-card ng-repeat="c in playlist.videos" ng-init="c.subhead=c.artist">
 
             <md-card-title ng-if="c.title">
-                <md-card-title-media>
-                    <img class="md-media-md card-media" ng-src="{{'https://i.ytimg.com/vi/'+c.youtube+'/hqdefault.jpg'}}">
-                </md-card-title-media>
+              <md-card-title-media>
+                  <div class="md-media-md card-media">
+                      <img ng-src="{{'https://i.ytimg.com/vi/'+c.youtube+'/hqdefault.jpg'}}">
+                  </div>
+              </md-card-title-media>
                 <md-card-title-text>
                     <span class="md-title">{{c.title}}</span>
                     <span ng-if="c.subhead" class="md-subhead">{{c.subhead}}</span>
