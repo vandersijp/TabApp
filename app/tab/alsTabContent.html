@@ -3,7 +3,8 @@
     <h3 ng-if="tab.header" class="md-headline md-accent">{{tab.header}}</h3>
     <p ng-if="tab.summary" class="md-body-1">{{tab.summary}}</p>
     <als-text-playlist ng-repeat="l in data.playlists" ng-if="l.tab==tab.id" data-playlist="l"></als-text-playlist>
-    <als-figure-photo-main ng-repeat="i in data.images" ng-if="i.tab==tab.id" data-image="i" data-path="data.system.paths.img"></als-figure-photo-main>
+    <als-figure-video-main ng-repeat="v in data.videos" ng-if="v.tab==tab.id" data-video="v" data-path="data.system.paths.vid"></als-figure-video-main>
+    <als-figure-photo-main ng-repeat="i in data.images" ng-if="i.tab==tab.id" data-image="i" data-path="data.system.paths.img+'/videos'"></als-figure-photo-main>
     <als-text-section ng-repeat="s in data.sections" ng-if="s.tab==tab.id" data-section="s"></als-text-section>
     <als-card-general ng-repeat="c in data.cards" ng-if="c.tab==tab.id" data-cardset="c"></als-card-general>
     <als-access-form ng-show="tab.id==data.system.access.tab" data-access="data.system.access"></als-access-form>

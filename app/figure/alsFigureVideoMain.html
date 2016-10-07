@@ -1,0 +1,19 @@
+<!--(C) Ask Learn Share Ltd -->
+<style type="text/css">
+    video {
+        max-height: 240px;
+        max-width: 360px;
+        width: 100% !important;
+        height: auto !important;
+        filter: drop-shadow(4px 4px 4px #bbb);
+        border: solid red 1px;
+    }
+</style>
+
+<div layout="row" layout-align="center">
+    <div layout="column" layout-align="center">
+        <video controls>
+        <source ng-src="{{path + image.url}}" type="video/mp4">
+        </video>
+    </div>
+</div>

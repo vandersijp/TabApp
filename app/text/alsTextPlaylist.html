@@ -2,15 +2,14 @@
 <style type="text/css">
     md-card-title-media {
         /* to correct Angular Material bug */
-        margin-right: 1em !important;
+        margin-right: 1.5em !important;
     }
 
     md-card-title-media img {
-        outline: #eee solid 7px;
+        outline: #e8e8e8 solid 7px;
         outline-offset: -7px;
     }
 </style>
-
 
 <div ng-switch="playlist.type" layout="column">
     <!-- typw xxx -->
@@ -21,11 +20,14 @@
     <!-- default -->
     <div ng-switch-default>
 
-        <ul>
-            <li class="md-body-1" ng-repeat="c in playlist.videos">
-                <span class="md-body-2">"{{c.title}}"</span> by {{c.artist}}
-            </li>
-        </ul>
+        <div layout="column" layout-padding>
+            <ul>
+                <li class="md-body-1" ng-repeat="c in playlist.videos">
+                    <span class="md-body-2">"{{c.title}}"</span> by {{c.artist}}
+                </li>
+            </ul>
+        </div>
+
         <md-content>
             <md-card ng-repeat="c in playlist.videos" ng-init="c.subhead=c.artist">
 
