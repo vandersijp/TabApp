@@ -3,6 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
+
 console.log("App 24");
 
 String.repeat = function(string, num) {
