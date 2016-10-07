@@ -6,7 +6,7 @@
     }
 
     md-card-title-media img {
-        outline: #e8e8e8 solid 7px;
+        outline: #fff solid 7px;
         outline-offset: -7px;
     }
 </style>
@@ -48,7 +48,7 @@
                 <md-card-content ng-if="c.lyrics">
                     <p class="md-body-1" ng-repeat="part in c.lyrics">
                         <span ng-repeat="line in part track by $index">
-{{line}}
+                            {{line}}
                             <br ng-if="!$last"/>
                         </span>
                     </p>

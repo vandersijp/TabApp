@@ -49,8 +49,8 @@ function getMessageDefaults() {
 function getPaths() {
     var p = {};
     p.sce = "https://rawgit.com/vandersijp/";
-    p.repo = "https://rawgit.com/vandersijp/TabApp/master/";
     p.repo = "git/";
+    p.repo = "https://rawgit.com/vandersijp/TabApp/master/";
     p.assets = "https://rawgit.com/vandersijp/assets/master/";
     p.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
     p.contacturl = "http://www.asklearnshare.com/alsContactSend.php";
@@ -61,6 +61,7 @@ function getFolders() {
     var f = {};
     f.app = "app/";
     f.img = "images/";
+    f.vid = "images/videos/";
     f.app = "app/";
     f.fav = "images/favicons/";
     return f;
@@ -70,6 +71,7 @@ function getShortCuts() {
     x = {}
     x.app = window.appProperties.paths.repo + window.appProperties.folders.app;
     x.img = window.appProperties.paths.assets + window.appProperties.folders.img;
+    x.img = window.appProperties.paths.assets + window.appProperties.folders.vid;
     x.fav = window.appProperties.paths.assets + window.appProperties.folders.fav;
     x.send = window.appProperties.paths.contacturl;
     return x;
