@@ -14,18 +14,30 @@
 
         <md-card ng-repeat="c in playlist.videos" ng-init="c.subhead=c.artist">
 
+          <md-card-avatar>
+              <img class="xxmd-user-avatar" ng-src="{{'https://i.ytimg.com/vi/'+c.youtube+'/hqdefault.jpg'}}">
+          </md-card-avatar>
+
             <md-card-header ng-if="c.title">
-                <md-card-avatar>
-                    <img class="xxmd-user-avatar" ng-src="{{'https://i.ytimg.com/vi/'+c.youtube+'/hqdefault.jpg'}}">
-                </md-card-avatar>
                 <md-card-header-text>
                     <span class="md-title">{{c.title}}</span>
                     <span ng-if="c.subhead" class="md-subhead">{{c.subhead}}</span>
                 </md-card-header-text>
+                <md-card-header-media>
+                    <div class="md-media-sm card-media"></div>
+                </md-card-header-media>
+            </md-card-header>
+
+
+            <md-card-title ng-if="c.title">
+                <md-card-title-text>
+                    <span class="md-title">{{c.title}}</span>
+                    <span ng-if="c.subhead" class="md-subhead">{{c.subhead}}</span>
+                </md-card-title-text>
                 <md-card-title-media>
                     <div class="md-media-sm card-media"></div>
                 </md-card-title-media>
-            </md-card-header>
+            </md-card-title>
 
             <md-card-content ng-if="c.lyrics">
                 <p class="md-body-1" ng-repeat="part in c.lyrics">
