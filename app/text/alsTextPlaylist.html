@@ -44,6 +44,7 @@
                 <md-card-content ng-if="c.lyrics">
                   level 1
                     <p class="md-body-1" ng-repeat="part in c.lyrics">
+                      level 2
                       <pre>{{part | json}}</pre>
                         <div ng-repeat="line in part">
                           level 3
