@@ -3,23 +3,9 @@
     md-card-title-media {
         /* to correct Angular Material bug */
         margin-right: 1em !important;
-        /* to clip off Youtube black bars */
-        overflow: hidden;
-        position: relative;
     }
 
     md-card-title-media img {
-        /* to clip off Youtube black bars */
-        position: absolute;
-        margin: auto;
-        min-height: 100%;
-        min-width: 100%;
-        /* For the following settings we set 100%, but it can be higher if needed
-        See the answer's update */
-        left: -90%;
-        right: -90%;
-        top: -90%;
-        bottom: -90%;
     }
 </style>
 
@@ -52,8 +38,11 @@
                 </md-card-title>
 
                 <md-card-content ng-if="c.lyrics">
+                  level 1
                     <p class="md-body-1" ng-repeat="part in c.lyrics">
+                      level 2
                         <div ng-repeat="line in part">
+                          level 3
                             x {{line}}
                             <br ng-if="!$last"></br>
                         </div>
