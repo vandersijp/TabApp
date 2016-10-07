@@ -8,18 +8,16 @@
     <!-- default -->
     <div ng-switch-default>
 
-        <ol ng-repeat="c in playlist.videos">
-            <li class="md-body-1">{{c.title}} - {{c.artist}}</li>
+        <ol>
+            <li class="md-body-1" ng-repeat="c in playlist.videos">{{c.title}} - {{c.artist}}</li>
         </ol>
 
         <md-card ng-repeat="c in playlist.videos" ng-init="c.subhead=c.artist">
 
             <md-card-title ng-if="c.title">
-              <md-card-title-media>
-                  <div class="md-media-sm card-media">
-                      <img class="xxmd-user-avatar" ng-src="{{'https://i.ytimg.com/vi/'+c.youtube+'/hqdefault.jpg'}}">
-                  </div>
-              </md-card-title-media>
+                <md-card-title-media>
+                    <img class="md-media-md card-media" ng-src="{{'https://i.ytimg.com/vi/'+c.youtube+'/hqdefault.jpg'}}">
+                </md-card-title-media>
                 <md-card-title-text>
                     <span class="md-title">{{c.title}}</span>
                     <span ng-if="c.subhead" class="md-subhead">{{c.subhead}}</span>
@@ -32,14 +30,12 @@
                         x {{line}}
                         <br ng-if="!$last"></br>
                     </div>
-
             </md-card-content>
 
             <md-card-footer ng-if="c.footer" layout="row" layout-align="{{playlist.footeralign}}">
                 <span>{{c.footer}}</span>
             </md-card-footer>
 
-            <img ng-if="c.youtube" ng-src="{{'https://i.ytimg.com/vi/'+c.youtube+'/hqdefault.jpg'}}" />
             <p ng-if="c.youtube">link: https://www.youtube.com/watch?v={{c.youtube}}</p>
 
         </md-card>
