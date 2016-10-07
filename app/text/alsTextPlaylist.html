@@ -5,7 +5,10 @@
         margin-right: 1em !important;
     }
 
-    md-card-title-media img {}
+    md-card-title-media img {
+        outline: #eee solid 7px;
+        outline-offset: -7px;
+    }
 </style>
 
 
@@ -18,20 +21,20 @@
     <!-- default -->
     <div ng-switch-default>
 
-        <ol>
+        <ul>
             <li class="md-body-1" ng-repeat="c in playlist.videos">
-                {{c.title}} - {{c.artist}}
-                </br>
-                link: https://www.youtube.com/watch?v={{c.youtube}}
+                <span class="md-body-2">"{{c.title}}"</span> by {{c.artist}}
             </li>
-        </ol>
+        </ul>
         <md-content>
             <md-card ng-repeat="c in playlist.videos" ng-init="c.subhead=c.artist">
 
                 <md-card-title ng-if="c.title">
                     <md-card-title-media>
-                        <div class="md-media-md card-media">
-                            <img ng-src="{{'https://i.ytimg.com/vi/'+c.youtube+'/hqdefault.jpg'}}">
+                        <div class="md-media-md card-media crop">
+                            <a href="https://www.youtube.com/watch?v={{c.youtube}}" target="_blank">
+                                <img ng-src="{{'https://i.ytimg.com/vi/'+c.youtube+'/hqdefault.jpg'}}">
+                            </a>
                         </div>
                     </md-card-title-media>
                     <md-card-title-text>
@@ -41,15 +44,12 @@
                 </md-card-title>
 
                 <md-card-content ng-if="c.lyrics">
-                    level 1
-                    <pre>{{lyrics | json}}</pre>
                     <p class="md-body-1" ng-repeat="part in c.lyrics">
-                        level 2
-                        <pre>{{part | json}}</pre>
-                        <div ng-repeat="line in part">
-                            level 3 x {{line}}
-                            <br ng-if="!$last"></br>
-                        </div>
+                        <span ng-repeat="line in part track by $index">
+{{line}}
+                            <br ng-if="!$last"/>
+                        </span>
+                    </p>
                 </md-card-content>
 
                 <md-card-footer ng-if="c.footer" layout="row" layout-align="{{playlist.footeralign}}">

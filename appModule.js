@@ -50,6 +50,7 @@ function getPaths() {
     var p = {};
     p.sce = "https://rawgit.com/vandersijp/";
     p.repo = "https://rawgit.com/vandersijp/TabApp/master/";
+    //p.repo = "git/";
     p.assets = "https://rawgit.com/vandersijp/assets/master/";
     p.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
     p.contacturl = "http://www.asklearnshare.com/alsContactSend.php";
@@ -115,8 +116,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "favicon": "als"
         },
         "manya-info": {
-            "primary": "deep-purple",
-            "accent": "purple",
+            "primary": "wine-red",
+            "accent": "amber",
             "title": "Goodbye",
             "favicon": "app"
         },
@@ -176,6 +177,30 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     document.getElementsByTagName('head')[0].appendChild(link);
 
     //alert(JSON.stringify(window.appProperties));
+
+
+    // created with https://angular-md-color.com
+    var customPrimary = {
+        '50': '#ff0080',
+        '100': '#e60073',
+        '200': '#cc0066',
+        '300': '#b30059',
+        '400': '#99004d',
+        '500': '#800040',
+        '600': '#660033',
+        '700': '#4d0026',
+        '800': '#33001a',
+        '900': '#1a000d',
+        'A100': '#ff1a8c',
+        'A200': '#ff3399',
+        'A400': '#ff4da6',
+        'A700': '#000000',
+        'contrastDefaultColor': 'light',
+        'contrastDarkColors': ['50', 'A100', 'A200', 'A400'],
+        'contrastLightColors': undefined
+    };
+
+    $mdThemingProvider.definePalette('wine-red', customPrimary);
 
     $mdThemingProvider.theme('default')
         .primaryPalette(window.appProperties.theme['primary'] || 'indigo')
