@@ -1,0 +1,38 @@
+<!--(C) Ask Learn Share Ltd -->
+<div ng-switch="playlist.type" layout="column">
+    <!-- typw xxx -->
+    <div ng-switch-when="xxx">
+        <!-- html  -->
+    </div>
+
+    <!-- default -->
+    <div ng-switch-default>
+        <div ng-repeat="c in playlist.videos">
+            <md-card ng-repeat="c in playlist.videos">
+
+                <md-card-header ng-if="c.title">
+                    <md-card-header-text>
+                        <span class="md-title">{{c.title}}</span>
+                        <span ng-if="c.subhead" class="md-subhead">{{c.subhead}}</span>
+                    </md-card-header-text>
+                </md-card-header>
+
+                <md-card-content ng-if="c.lyrics">
+                    <p class="md-body-1" ng-repeat="part in c.lyrics">
+                        <div ng-repeat="line in part">
+                            {{line}}<br ng-if="!$last"></br>
+                        </div>
+
+                </md-card-content>
+
+                <md-card-footer ng-if="c.footer" layout="row" layout-align="{{cardset.footeralign}}">
+                    <span>{{c.footer}}</span>
+                </md-card-footer>
+
+                <img ng-if="c.youtube" ng-src="{{'https://i.ytimg.com/vi/'+c.youtube+'/hqdefault.jpg'}}" />
+                <p ng-if="c.youtube">link: https://www.youtube.com/watch?v={{c.youtube}}</p>
+
+            </md-card>
+        </div>
+    </div>
+</div>

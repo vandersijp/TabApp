@@ -12,3 +12,13 @@ alsText.directive('alsTextSection', function() {
         templateUrl: window.x.app + 'text/alsTextSection.html'
     }
 });
+
+alsText.directive('alsTextPlaylist', function() {
+    return {
+        restrict: 'E',
+        scope: {
+            playlist: '='
+        },
+        templateUrl: window.x.app + 'text/alsTextPlaylist.html'
+    }
+});
