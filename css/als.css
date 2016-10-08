@@ -39,6 +39,10 @@ th, p:first-letter, h1:first-letter, h2:first-letter, h3:first-letter, h4:first-
     text-transform: capitalize;
 }
 
+p.email:first-letter {
+  text-transform: lowercase;
+}
+
 pre {
     padding: 1em;
     color: darkgreen;
