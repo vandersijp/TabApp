@@ -39,8 +39,8 @@ th, p:first-letter, h1:first-letter, h2:first-letter, h3:first-letter, h4:first-
     text-transform: capitalize;
 }
 
-p.email:first-letter {
-  text-transform: lowercase;
+p.email:first-letter, p.nocap:first-letter {
+  text-transform: none;;
 }
 
 pre {
