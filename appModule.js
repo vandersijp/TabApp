@@ -71,7 +71,7 @@ function getShortCuts() {
     x = {}
     x.app = window.appProperties.paths.repo + window.appProperties.folders.app;
     x.img = window.appProperties.paths.assets + window.appProperties.folders.img;
-    x.img = window.appProperties.paths.assets + window.appProperties.folders.vid;
+    x.vid = window.appProperties.paths.assets + window.appProperties.folders.vid;
     x.fav = window.appProperties.paths.assets + window.appProperties.folders.fav;
     x.send = window.appProperties.paths.contacturl;
     return x;
