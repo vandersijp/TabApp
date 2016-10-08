@@ -16,6 +16,10 @@ figcaption, .md-caption {
     font-size: 75% !important;
 }
 
+img, video {
+  filter: drop-shadow(4px 4px 4px #bbb);
+}
+
 .als-font-large {
     font-size: 125% !important;
 }
