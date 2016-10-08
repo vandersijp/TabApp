@@ -2,6 +2,7 @@
 <md-content layout="column" layout-margin>
     <h3 ng-if="tab.header" class="md-headline md-accent">{{tab.header}}</h3>
     <p ng-if="tab.summary" class="md-body-1">{{tab.summary}}</p>
+    <als-list-table-filtered ng-repeat="t in data.tables" ng-if="t.tab==tab.id" data-table="t" data-cuts="cuts"></als-list-table-filtered>
     <als-text-playlist ng-repeat="l in data.playlists" ng-if="l.tab==tab.id" data-playlist="l"></als-text-playlist>
     <als-figure-video-main ng-repeat="v in data.videos" ng-if="v.tab==tab.id" data-video="v" data-path="data.system.paths.vid"></als-figure-video-main>
     <als-figure-photo-main ng-repeat="i in data.images" ng-if="i.tab==tab.id" data-image="i" data-path="data.system.paths.img"></als-figure-photo-main>
@@ -10,13 +11,13 @@
     <als-access-form ng-show="tab.id==data.system.access.tab" data-access="data.system.access"></als-access-form>
 
     <div layout="column" layout-align="start center" ng-show="(tab.id!=data.system.access.tab || $parent.appCtrl.codeCompare(data.system.access.entered, data.system.access.code))">
-        <als-list-table-filtered ng-repeat="t in data.tables" ng-if="t.tab==tab.id" data-table="t"></als-list-table-filtered>
         <als-list-single ng-repeat="l in data.lists" ng-if="l.tab==tab.id" data-list="l"></als-list-single>
 
         <div layout-margin ng-if="(tab.id==data.system.access.tab && data.system.access.showsite)">
             <div>
                 <h4 class="md-title">App properties</h4>
                 <pre>{{props | json}}</pre>
+                <pre>{{cuts | json}}</pre>
             </div>
             <div>
                 <h4 class="md-title">Site data</h4>

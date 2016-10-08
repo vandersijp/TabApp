@@ -8,7 +8,8 @@ alsTab.directive('alsTabContent', function() {
         scope: {
             tab: '=',
             data: '=',
-            props: '='
+            props: '=',
+            cuts '='
         },
         controller: function() {
             // set openings position
