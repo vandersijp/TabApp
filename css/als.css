@@ -4,6 +4,14 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+md-list-item .md-avatar,
+md-list-item .md-list-item-inner .md-avatar {
+    max-width: 40px;
+    max-height: 40px;
+    height: auto;
+    width: auto;
+}
+
 .als-main-content {
     width: 700px !important;
 }
