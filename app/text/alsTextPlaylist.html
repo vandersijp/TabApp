@@ -23,7 +23,7 @@
         <div layout="column" layout-padding>
             <ul>
                 <li class="md-body-1" ng-repeat="c in playlist.videos">
-                    <span class="md-body-2">"{{c.title}}"</span> by {{c.artist}}
+                    <span class="md-body-2">"{{c.title}}"</span><span ng-if="c.artist"> by {{c.artist}}</span>
                 </li>
             </ul>
         </div>
