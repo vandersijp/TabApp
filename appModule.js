@@ -172,7 +172,9 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "title": "Defect Elimination"
         },
         "asklearnshare-com": {},
-        "sulaiman-mobi": {}
+        "sulaiman-mobi": {
+            "primary": "orange"
+        }
     }
 
 
