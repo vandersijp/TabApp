@@ -27,7 +27,8 @@ alsList.directive('alsListTableFiltered', function() {
     return {
         restrict: 'E',
         scope: {
-            table: '='
+            table: '=',
+            cuts: '='
         },
         templateUrl: window.x.app + 'list/alsListTableFiltered.html'
     }
