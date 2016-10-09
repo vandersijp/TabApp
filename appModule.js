@@ -171,7 +171,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "accent": "red",
             "title": "Defect Elimination"
         },
-        "asklearnshare-com": {}
+        "asklearnshare-com": {},
+        "sulaiman-mobi": {}
     }
 
 
