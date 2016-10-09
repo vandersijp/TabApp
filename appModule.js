@@ -62,9 +62,19 @@ function getFolders() {
     f.app = "app/";
     f.img = "images/";
     f.vid = "images/videos/";
-    f.app = "app/";
+    f.ava = "images/avatars/";
     f.fav = "images/favicons/";
     return f;
+}
+
+function getYouTube() {
+    var yt = {};
+    yt.video = {};
+    yt.icon = {};
+    yt.video.prefix = "https://www.youtube.com/watch?v=";
+    yt.icon.prefix = "https://i.ytimg.com/vi/";
+    yt.icon.suffix = "/hqdefault.jpg";
+    return yt;
 }
 
 function getShortCuts() {
@@ -72,6 +82,7 @@ function getShortCuts() {
     x.app = window.appProperties.paths.repo + window.appProperties.folders.app;
     x.img = window.appProperties.paths.assets + window.appProperties.folders.img;
     x.vid = window.appProperties.paths.assets + window.appProperties.folders.vid;
+    x.ava = window.appProperties.paths.assets + window.appProperties.folders.ava;
     x.fav = window.appProperties.paths.assets + window.appProperties.folders.fav;
     x.send = window.appProperties.paths.contacturl;
     return x;
@@ -82,6 +93,7 @@ window.appProperties.defaults = getMessageDefaults();
 window.appProperties.paths = getPaths();
 window.appProperties.folders = getFolders();
 window.x = getShortCuts();
+window.x.yt = getYouTube();
 
 window.lsCodeCompare = function(val1, val2) {
     if (typeof val1 == 'undefined') return false;
@@ -225,6 +237,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
 
     // make a snap-shot for usage in the View
     self.appProps = $window.appProperties;
+    self.shortCuts = $window.x;
 
     // ===========< to be moved to a Service ===========
     $scope.addElement = function(array) {
@@ -366,4 +379,31 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
                 $log.debug("close RIGHT is done");
             });
     };
+});
+
+app.directive('img', function() {
+    // see http://stackoverflow.com/questions/16310298/if-a-ngsrc-path-resolves-to-a-404-is-there-a-way-to-fallback-to-a-default
+    return {
+        restrict: 'E',
+        link: function(scope, element, attrs) {
+            // show an image-missing image
+            element.error(function() {
+                /*
+                var w = element.width();
+                var h = element.height();
+                // using 20 here because it seems even a missing image will have ~18px width
+                // after this error function has been called
+                if (w <= 20) { w = 100; }
+                if (h <= 20) { h = 100; }
+                var url = 'http://placehold.it/' + w + 'x' + h + '/cccccc/ffffff&text=Oh No!';
+                element.prop('src', url);
+                element.css('border', 'double 3px #cccccc');
+                */
+
+                var url = "https://www.google.co.uk/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png";
+                element.prop('src', url);
+                //                element.remove();
+            });
+        }
+    }
 });

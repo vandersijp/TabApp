@@ -17,7 +17,8 @@ alsText.directive('alsTextPlaylist', function() {
     return {
         restrict: 'E',
         scope: {
-            playlist: '='
+            playlist: '=',
+            cuts: '='
         },
         templateUrl: window.x.app + 'text/alsTextPlaylist.html'
     }

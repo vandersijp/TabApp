@@ -1,6 +1,6 @@
-/*
-(C) 2016 Ask Learn Share Ltd
-*/
+/* (C) 2016 Ask Learn Share Ltd */
+console.log("Tab 1");
+
 var alsList = angular.module("alsList", []);
 
 alsList.directive('alsListSingle', function() {

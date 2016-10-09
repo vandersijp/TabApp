@@ -34,8 +34,8 @@
                 <md-card-title ng-if="c.title">
                     <md-card-title-media>
                         <div class="md-media-md card-media crop">
-                            <a href="https://www.youtube.com/watch?v={{c.youtube}}" target="_blank">
-                                <img ng-src="{{'https://i.ytimg.com/vi/'+c.youtube+'/hqdefault.jpg'}}">
+                            <a href="{{cuts.yt.video.prefix + c.youtube}}" target="_blank">
+                                <img ng-src="{{cuts.yt.icon.prefix + c.youtube+cuts.yt.icon.suffix}}">
                             </a>
                         </div>
                     </md-card-title-media>
