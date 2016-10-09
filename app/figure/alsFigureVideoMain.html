@@ -8,10 +8,15 @@
     }
 </style>
 
+<div>
+    <h4 class="md-title">App properties</h4>
+    <pre>{{cuts | json}}</pre>
+</div>
+
 <div layout="row" layout-align="center">
     <div layout="column" layout-align="center">
         <video controls>
-        <source ng-src="{{path + video.url}}" type="video/mp4">
+        <source ng-src="{{cuts.vid + video.url}}" type="video/mp4">
         </video>
     </div>
 </div>

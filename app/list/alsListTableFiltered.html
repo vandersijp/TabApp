@@ -22,12 +22,6 @@
     }
 </style>
 
-<div>
-    <h4 class="md-title">App properties</h4>
-    <pre>{{cuts | json}}</pre>
-</div>
-
-
 <div layout="column" layout-align="start center">
     <h4 ng-if="table.header" class="md-title">{{table.header}}</h4>
 
@@ -38,7 +32,7 @@
                 <md-list flex>
                     <md-subheader ng-if="false" class="md-no-sticky">3 line item (with hover)</md-subheader>
                     <md-list-item class="md-3-line md-long-text" ng-repeat="item in table.records" ng-click="">
-                        <img ng-src="{{window.x.ava+item.name}}.png" class="md-avatar" />
+                        <img ng-src="{{cuts.ava+item.name}}.png" class="md-avatar" />
                         <div class="md-list-item-text" layout="column">
                             <p ng-class="{'nocap': f=='email'}" ng-repeat="f in table.filter">{{ item[f] }}</p>
                         </div>

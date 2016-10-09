@@ -7,7 +7,8 @@ alsFigure.directive('alsFigurePhotoMain', function () {
   return {
     scope: {
         image: '=',
-        path: '='
+        path: '=',
+        cuts: '='
     },
     controller: function () {
       // this.name = 'Pascal';
@@ -22,7 +23,8 @@ alsFigure.directive('alsFigureVideoMain', function () {
   return {
     scope: {
         video: '=',
-        path: '='
+        path: '=',
+        cuts: '='
     },
     controller: function () {
       // this.name = 'Pascal';
