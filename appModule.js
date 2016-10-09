@@ -132,8 +132,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         "manya-info": {
             "primary": "wine-red",
             "accent": "amber",
-            "title": "Goodbye",
-            "favicon": "app"
+            "title": "Goodbye"
         },
         "app": {
             "primary": "purple",
