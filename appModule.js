@@ -120,6 +120,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         "from": ["xx", "yy"]
     };
 
+    var themesNameFallbacks = ["title", "favicon"];
+
     var themes = {
         "default": {
             "primary": "teal",
@@ -132,7 +134,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         "manya-info": {
             "primary": "wine-red",
             "accent": "amber",
-            "title": "Goodbye"
+            "titlex": "Goodbye"
         },
         "app": {
             "primary": "purple",
@@ -169,14 +171,18 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "accent": "red",
             "title": "Defect Elimination"
         },
-        "asklearnshare-com": {
-            "title": "Ask Learn Share"
-        }
+        "asklearnshare-com": {}
     }
+
 
     // set any missing theme and attribute to the default
     window.appProperties.theme = (themes[window.appProperties.app] || themes["default"]);
     angular.forEach(themes["default"], function(value, key) {
+        // set some missing attributes (e.g. favicon and title) to the app name
+        angular.forEach(themesNameFallbacks, function(value, key) {
+            // set any missing favicon and title to the app name
+            window.appProperties.theme[value] = (window.appProperties.theme[value] || window.appProperties.app);
+        });
         window.appProperties.theme[key] = (window.appProperties.theme[key] || value);
     });
 
