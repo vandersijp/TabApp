@@ -195,23 +195,23 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
 
     // created with https://angular-md-color.com
     var customPrimary = {
-      '50': '#ff4080',
-      '100': '#ff276f',
-      '200': '#ff0d5e',
-      '300': '#f30051',
-      '400': '#d90048',
-      '500': '#c00040',
-      '600': '#a60037',
-      '700': '#8d002f',
-      '800': '#730026',
-      '900': '#5a001e',
-      'A100': '#ff5a91',
-      'A200': '#ff73a2',
-      'A400': '#ff8db3',
-      'A700': '#400015',
         'contrastDefaultColor': 'light',
         'contrastDarkColors': ['50', 'A100', 'A200', 'A400'],
-        'contrastLightColors': undefined
+        'contrastLightColors': undefined,
+        '50': '#ff6099',
+        '100': '#ff4789',
+        '200': '#ff2d78',
+        '300': '#ff1468',
+        '400': '#f90059',
+        '500': '#e00050',
+        '600': '#c60047',
+        '700': '#ad003e',
+        '800': '#930035',
+        '900': '#7a002c',
+        'A100': '#ff7aa9',
+        'A200': '#ff93ba',
+        'A400': '#ffadca',
+        'A700': '#600022'
     };
 
     $mdThemingProvider.definePalette('wine-red', customPrimary);
