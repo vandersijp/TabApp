@@ -73,7 +73,8 @@ function getYouTube() {
     yt.icon = {};
     yt.video.prefix = "https://www.youtube.com/watch?v=";
     yt.icon.prefix = "https://i.ytimg.com/vi/";
-    yt.icon.suffix = "/maxresdefault.jpg";
+    //yt.icon.suffix = "/maxresdefault.jpg";
+    yt.icon.suffix = "/mqdefault.jpg"; 
     return yt;
 }
 
