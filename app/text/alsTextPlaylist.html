@@ -6,8 +6,8 @@
     }
 
     md-card-title-media img {
-        xxoutline: #fff solid 7px;
-        xxoutline-offset: -7px;
+        outline: #fff solid 7px;
+        outline-offset: -7px;
     }
 </style>
 
@@ -40,7 +40,7 @@
                         </div>
                     </md-card-title-media>
                     <md-card-title-text>
-                        <span class="md-title">{{c.title}}</span>
+                        <span ng-if="c.title" class="md-title">{{c.title}}</span>
                         <span ng-if="c.subhead" class="md-subhead">{{c.subhead}}</span>
                     </md-card-title-text>
                 </md-card-title>
