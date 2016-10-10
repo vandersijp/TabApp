@@ -173,7 +173,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         },
         "asklearnshare-com": {},
         "sulaiman-mobi": {
-            "primary": "orange"
+            "primary": "deep-orange"
         }
     }
 
