@@ -4,7 +4,7 @@
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
 
-console.log("App 24");
+console.log("App 25");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -74,7 +74,7 @@ function getYouTube() {
     yt.video.prefix = "https://www.youtube.com/watch?v=";
     yt.icon.prefix = "https://i.ytimg.com/vi/";
     //yt.icon.suffix = "/maxresdefault.jpg";
-    yt.icon.suffix = "/mqdefault.jpg"; 
+    yt.icon.suffix = "/mqdefault.jpg";
     return yt;
 }
 
