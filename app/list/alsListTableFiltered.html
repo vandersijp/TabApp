@@ -1,25 +1,11 @@
 <!--(C) Ask Learn Share Ltd:-->
-
 <style type="text/css">
-    td,
-    th {
-        padding: .2em
-    }
-
     .hex,
     .hex span {
         text-align: center;
         font-size: 80%;
     }
 
-    .eighty {
-        width: 400px;
-    }
-
-    p.email {
-        text-transform: lowercase !important;
-        color: red;
-    }
 </style>
 
 <div layout="column" layout-align="start center">
@@ -42,7 +28,7 @@
         </div>
 
 
-        <div ng-switch-when="editable" layout="column" class="eighty" ng-init="active=table.records; bin=[]; e = {'name': '','expression': '','open': true,'test': 'test'};">
+        <div ng-switch-when="editable" layout="column" ng-init="active=table.records; bin=[]; e = {'name': '','expression': '','open': true,'test': 'test'};">
             <div layout="row" layout-align="center center">
                 <md-checkbox ng-model="showJSON">Show JSON</md-checkbox>
 
@@ -81,7 +67,7 @@
                         </form>
                     </div>
 
-                    <div flex="40" layout="row" layout-align="end">
+                    <div flex="30" layout="row" layout-align="end">
 
                         <!-- Edit -->
                         <md-button arria-label="" title="edit" class="md-icon-button" ng-click="v.open=!v.open">
@@ -109,7 +95,7 @@
                     <div flex ng-title="{{eval(v.expression)}}" title "to be fixed">
                         <span>{{v.expression}}</span>
                     </div>
-                    <div flex="40" layout="row" layout-align="end">
+                    <div flex="30" layout="row" layout-align="end">
 
                         <!-- Restore -->
                         <md-button arria-label="" title="restore" class="md-icon-button" ng-click="active.unshift(bin[$index]); bin.splice($index, 1);">

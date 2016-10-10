@@ -49,7 +49,7 @@ function getMessageDefaults() {
 function getPaths() {
     var p = {};
     p.sce = "https://rawgit.com/vandersijp/";
-    p.repo = "git/";
+    //p.repo = "git/";
     p.repo = "https://rawgit.com/vandersijp/TabApp/master/";
     p.assets = "https://rawgit.com/vandersijp/assets/master/";
     p.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
