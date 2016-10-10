@@ -4,7 +4,7 @@
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
 
-console.log("App 25");
+console.log("App 26");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -145,6 +145,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         "secuos": {
             "primary": "deep-orange",
             "accent": "indigo",
+            "bcc": "hans@secuos.com",
             "title": "Expressions"
         },
         "neverturkey-eu": {
