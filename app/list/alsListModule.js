@@ -30,6 +30,6 @@ alsList.directive('alsListTableFiltered', function() {
             table: '=',
             cuts: '='
         },
-        templateUrl: window.x.xapp + 'list/alsListTableFiltered.html'
+        templateUrl: window.x.app + 'list/alsListTableFiltered.html'
     }
 });
