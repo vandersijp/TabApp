@@ -12,7 +12,7 @@ md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
 }
 
 .als-main-content {
-    width: 700px !important;
+    width: 768px !important;
     line-height: normal;
 }
 
@@ -40,6 +40,9 @@ th {
     padding: .2em
 }
 
+input {
+    background: lightyellow;
+}
 
 th, p:first-letter, h1:first-letter, h2:first-letter, h3:first-letter, h4:first-letter, h5:first-letter, h6:first-letter, figcaption:first-letter, .md-caption:first-letter, md-card-header span, md-card-title span {
     text-transform: capitalize;

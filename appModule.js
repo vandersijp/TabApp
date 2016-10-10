@@ -3,8 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-
-console.log("App 26");
+console.log("App 29");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -35,7 +34,7 @@ function getAppProperties() {
     */
 }
 
-function getMessageDefaults() {
+/*function getMessageDefaults() {
     var d = {};
     d.bcc = "c@asklearnshare.com";
     d.from = "noreply@asklearnshare.com";
@@ -45,6 +44,7 @@ function getMessageDefaults() {
     d.actionlabel = "contact";
     return d;
 }
+*/
 
 function getPaths() {
     var p = {};
@@ -73,7 +73,6 @@ function getYouTube() {
     yt.icon = {};
     yt.video.prefix = "https://www.youtube.com/watch?v=";
     yt.icon.prefix = "https://i.ytimg.com/vi/";
-    //yt.icon.suffix = "/maxresdefault.jpg";
     yt.icon.suffix = "/mqdefault.jpg";
     return yt;
 }
@@ -90,7 +89,7 @@ function getShortCuts() {
 }
 
 window.appProperties = getAppProperties();
-window.appProperties.defaults = getMessageDefaults();
+//window.appProperties.defaults = getMessageDefaults();
 window.appProperties.paths = getPaths();
 window.appProperties.folders = getFolders();
 window.x = getShortCuts();
@@ -116,9 +115,27 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         'http://www.asklearnshare.com/**'
     ]);
 
+    console.log ("x");
+
     var aliases = {
         "to": "chaos",
         "from": ["xx", "yy"]
+    };
+
+
+    var profile = {
+        "default": {
+            "bcc": "c@asklearnshare.com",
+            "from": "noreply@asklearnshare.com",
+            "action": false,
+            "signature": "XKind regards.",
+            "querylabel": "Xquery",
+            "actionlabel": "Xcontact"
+        },
+        "secuos": {
+          "signature": "YKind regards.",
+            "bcc": "c@h2.eu"
+        }
     };
 
     var themesNameFallbacks = ["title", "favicon"];
@@ -145,7 +162,6 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         "secuos": {
             "primary": "deep-orange",
             "accent": "indigo",
-            "bcc": "hans@secuos.com",
             "title": "Expressions"
         },
         "neverturkey-eu": {
@@ -179,15 +195,21 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         }
     }
 
+    // start with any existing object
+    window.appProperties.defaults = (profile[window.appProperties.app] || profile["default"]);
+    angular.forEach(profile["default"], function(value, key) {
+        // them set any missing attributes to a default
+        window.appProperties.defaults[key] = (window.appProperties.defaults[key] || value);
+    });
 
-    // set any missing theme and attribute to the default
+    // start with any existing object
     window.appProperties.theme = (themes[window.appProperties.app] || themes["default"]);
     angular.forEach(themes["default"], function(value, key) {
-        // set some missing attributes (e.g. favicon and title) to the app name
         angular.forEach(themesNameFallbacks, function(value, key) {
             // set any missing favicon and title to the app name
             window.appProperties.theme[value] = (window.appProperties.theme[value] || window.appProperties.app);
         });
+        // them set any still missing attributes to a default
         window.appProperties.theme[key] = (window.appProperties.theme[key] || value);
     });
 
@@ -201,7 +223,6 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     document.getElementsByTagName('head')[0].appendChild(link);
 
     //alert(JSON.stringify(window.appProperties));
-
 
     // created with https://angular-md-color.com
     var customPrimary = {

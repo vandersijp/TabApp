@@ -5,6 +5,11 @@
         text-align: center;
         font-size: 80%;
     }
+
+    .editable form {
+        /* to avoid jumping heights */
+        height: .5em;
+    }
 </style>
 
 <div layout="column" layout-align="start center">
@@ -41,13 +46,18 @@
                 <div layout="row" layout-align="space-between center">
                     <h4 class="md-title">Active</h4>
                     <!-- track by in ng-repeat to keep collection up-to-date -->
-                    <md-button arria-label="" class="md-fab md-mini md-accent" ng-click="active.unshift(e);">
+                    <md-button title="add a new expression" arria-label="" class="md-fab md-mini md-accent" ng-click="active.unshift(e);">
                         <md-icon>
                             <i class="material-icons">add</i>
                         </md-icon>
                     </md-button>
                 </div>
-                <div layout="row" ng-repeat="(k,v) in active track by $index" layout-align="center center">
+
+                <div ng-if="!active.length">
+                    <span>(empty)</span>
+                </div>
+
+                <div class="editable" layout="row" ng-repeat="(k,v) in active track by $index" layout-align="center center">
 
                     <div flex="15">
                         <span ng-if="!v.open">{{v.name}}</span>
@@ -56,14 +66,14 @@
                         </form>
                     </div>
 
-                    <div flex ng-title="{{eval(v.expression)}}" title "to be fixed" layout="column" layout-align="center center">
+                    <div flex ng-title="{{Math.eval(v.expression)}}" title="eval function to be fixed">
                         <span ng-if="!v.open">{{v.expression}}</span>
                         <form ng-if="v.open">
                             <input ng-model="v.expression" size="17" placeholder="expression">
                         </form>
                     </div>
-                    &nbsp;
-                    <div flex="30" layout="row" layout-align="end">
+                    &nbsp; &nbsp; &nbsp;
+                    <div flex="40" layout="row" layout-align="end">
 
                         <!-- Edit -->
                         <md-button arria-label="" title="edit" class="md-icon-button" ng-click="v.open=!v.open">
@@ -84,15 +94,24 @@
             <md-card layout-padding>
 
                 <h4 class="md-title">Bin</h4>
+
+                <div ng-if="!bin.length">
+                    <span>(empty)</span>
+                </div>
+
                 <div layout="row" ng-repeat="(k,v) in bin track by $index" layout-align="center center">
+
+                    <div>
+                        <span ng-if="(bin.length==0)">(empty)</span>
+                    </div>
                     <div flex="15">
                         <span>{{v.name}}</span>
                     </div>
                     <div flex ng-title="{{eval(v.expression)}}" title "to be fixed">
                         <span>{{v.expression}}</span>
                     </div>
-                    &nbsp;
-                    <div flex="30" layout="row" layout-align="end">
+                    &nbsp; &nbsp; &nbsp;
+                    <div flex="40" layout="row" layout-align="end">
 
                         <!-- Restore -->
                         <md-button arria-label="" title="restore" class="md-icon-button" ng-click="active.unshift(bin[$index]); bin.splice($index, 1);">
@@ -112,7 +131,7 @@
                 </div>
             </md-card>
 
-            <div layout="row" layout-align="center">
+            <div title="show the expressions in a JSON format" layout="row" layout-align="center" layout-padding>
                 <md-checkbox ng-model="showJSON">Show JSON</md-checkbox>
             </div>
 
