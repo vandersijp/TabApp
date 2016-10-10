@@ -5,7 +5,6 @@
         text-align: center;
         font-size: 80%;
     }
-
 </style>
 
 <div layout="column" layout-align="start center">
@@ -29,10 +28,7 @@
 
 
         <div ng-switch-when="editable" layout="column" ng-init="active=table.records; bin=[]; e = {'name': '','expression': '','open': true,'test': 'test'};">
-            <div layout="row" layout-align="center center">
-                <md-checkbox ng-model="showJSON">Show JSON</md-checkbox>
-
-                <span flex></span>
+            <div layout="row" layout-align="center">
                 <md-button arria-label="" class="md-raised">
                     import
                 </md-button>
@@ -51,7 +47,7 @@
                         </md-icon>
                     </md-button>
                 </div>
-                <div layout="row" ng-repeat="(k,v) in active track by $index">
+                <div layout="row" ng-repeat="(k,v) in active track by $index" layout-align="center center">
 
                     <div flex="15">
                         <span ng-if="!v.open">{{v.name}}</span>
@@ -60,13 +56,13 @@
                         </form>
                     </div>
 
-                    <div flex ng-title="{{eval(v.expression)}}" title "to be fixed">
+                    <div flex ng-title="{{eval(v.expression)}}" title "to be fixed" layout="column" layout-align="center center">
                         <span ng-if="!v.open">{{v.expression}}</span>
                         <form ng-if="v.open">
-                            <input ng-model="v.expression" size="18" placeholder="expression">
+                            <input ng-model="v.expression" size="17" placeholder="expression">
                         </form>
                     </div>
-
+                    &nbsp;
                     <div flex="30" layout="row" layout-align="end">
 
                         <!-- Edit -->
@@ -88,13 +84,14 @@
             <md-card layout-padding>
 
                 <h4 class="md-title">Bin</h4>
-                <div layout="row" ng-repeat="(k,v) in bin track by $index">
+                <div layout="row" ng-repeat="(k,v) in bin track by $index" layout-align="center center">
                     <div flex="15">
                         <span>{{v.name}}</span>
                     </div>
                     <div flex ng-title="{{eval(v.expression)}}" title "to be fixed">
                         <span>{{v.expression}}</span>
                     </div>
+                    &nbsp;
                     <div flex="30" layout="row" layout-align="end">
 
                         <!-- Restore -->
@@ -114,6 +111,10 @@
                     </div>
                 </div>
             </md-card>
+
+            <div layout="row" layout-align="center">
+                <md-checkbox ng-model="showJSON">Show JSON</md-checkbox>
+            </div>
 
             <div ng-show="showJSON" layout-padding layout="column" layout-align="center center">
                 <h4 class="md-title">Active</h4>

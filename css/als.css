@@ -16,7 +16,7 @@ md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
     line-height: normal;
 }
 
-p, ul, ol, table, pre {
+p, ul, ol, table, pre, .md-body-1, .md-body-2 {
     font-size: 100% !important;
 }
 

@@ -20,6 +20,7 @@
     <!-- default -->
     <div ng-switch-default>
 
+      <md-content>
         <div layout="column" layout-padding>
             <ul>
                 <li class="md-body-1" ng-repeat="c in playlist.videos">
@@ -27,6 +28,7 @@
                 </li>
             </ul>
         </div>
+      </md-content>
 
         <md-content>
             <md-card ng-repeat="c in playlist.videos" ng-init="c.subhead=c.artist">
