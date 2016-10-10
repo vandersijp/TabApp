@@ -128,12 +128,12 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "bcc": "c@asklearnshare.com",
             "from": "noreply@asklearnshare.com",
             "action": false,
-            "signature": "XKind regards.",
-            "querylabel": "Xquery",
-            "actionlabel": "Xcontact"
+            "signature": "Kind regards.",
+            "querylabel": "query",
+            "actionlabel": "contact"
         },
         "secuos": {
-          "signature": "YKind regards.",
+          "signature": "Kind regards.",
             "bcc": "c@h2.eu"
         }
     };
