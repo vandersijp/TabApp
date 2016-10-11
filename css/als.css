@@ -70,9 +70,18 @@ md-menu-item p {
 /* to allow for non-square images */
 
 .md-media-sm, .md-media-md, .md-media-lg {
-    height: auto;
+    height: auto !important;
 }
 
+md-card md-card-title md-card-title-media .md-media-sm {
+  height: auto;
+}
+    md-card md-card-title md-card-title-media .md-media-md {
+      height: auto;
+  }
+    md-card md-card-title md-card-title-media .md-media-lg {
+      height: auto;
+  }
 
 /*
 for sideNav scrolling
