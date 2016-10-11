@@ -43,9 +43,7 @@ input {
     background: lightyellow;
 }
 
-th, p:first-letter, h1:first-letter, h2:first-letter, h3:first-letter, h4:first-letter,
-h5:first-letter, h6:first-letter, figcaption:first-letter, .md-caption:first-letter,
-md-card-header span, md-card-title span {
+th, p:first-letter, h1:first-letter, h2:first-letter, h3:first-letter, h4:first-letter, h5:first-letter, h6:first-letter, figcaption:first-letter, .md-caption:first-letter, md-card-header span, md-card-title span {
     text-transform: capitalize;
 }
 
@@ -74,14 +72,17 @@ md-menu-item p {
 }
 
 md-card md-card-title md-card-title-media .md-media-sm {
-  height: auto;
+    height: auto;
 }
-    md-card md-card-title md-card-title-media .md-media-md {
-      height: auto;
-  }
-    md-card md-card-title md-card-title-media .md-media-lg {
-      height: auto;
-  }
+
+md-card md-card-title md-card-title-media .md-media-md {
+    height: auto;
+}
+
+md-card md-card-title md-card-title-media .md-media-lg {
+    height: auto;
+}
+
 
 /*
 for sideNav scrolling

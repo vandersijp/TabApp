@@ -9,6 +9,7 @@
         outline: #fff solid 7px;
         outline-offset: -7px;
     }
+
 </style>
 
 <div ng-switch="playlist.type" layout="column">
@@ -24,7 +25,7 @@
         <div layout="column" layout-padding>
             <ul>
                 <li class="md-body-1" ng-repeat="c in playlist.videos">
-                    <span class="md-body-2">{{c.title}}</span><span ng-if="c.artist"> by {{c.artist}}</span>
+                    <span class="md-body-2">{{c.title}}</span><span ng-if="c.artist"> - by {{c.artist}}</span>
                 </li>
             </ul>
         </div>
@@ -35,7 +36,7 @@
 
                 <md-card-title ng-if="c.title">
                     <md-card-title-media>
-                        <div class="md-media-md card-media crop">
+                        <div class="md-media-md card-media">
                             <a href="{{cuts.yt.video.prefix + c.youtube}}" target="_blank">
                                 <img ng-src="{{cuts.yt.icon.prefix + c.youtube+cuts.yt.icon.suffix}}">
                             </a>
