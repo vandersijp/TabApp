@@ -35,8 +35,7 @@ img, video {
     line-height: 2 !important;
 }
 
-td,
-th {
+td, th {
     padding: .2em
 }
 
@@ -44,7 +43,9 @@ input {
     background: lightyellow;
 }
 
-th, p:first-letter, h1:first-letter, h2:first-letter, h3:first-letter, h4:first-letter, h5:first-letter, h6:first-letter, figcaption:first-letter, .md-caption:first-letter, md-card-header span, md-card-title span {
+th, p:first-letter, h1:first-letter, h2:first-letter, h3:first-letter, h4:first-letter,
+h5:first-letter, h6:first-letter, figcaption:first-letter, .md-caption:first-letter,
+md-card-header span, md-card-title span {
     text-transform: capitalize;
 }
 
@@ -63,6 +64,13 @@ pre {
 
 md-menu-item p {
     margin-right: 1em !important;
+}
+
+
+/* to allow for non-square images */
+
+.md-media-sm, .md-media-md, .md-media-lg {
+    height: auto;
 }
 
 
