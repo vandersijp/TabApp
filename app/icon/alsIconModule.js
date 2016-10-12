@@ -20,61 +20,6 @@ alsIcon.directive('alsIconMenuPair', function() {
     };
 });
 
-alsIcon.directive('alsIconMenuFabPair', function() {
-    return {
-        scope: {
-            class: '=',
-            toggle: '=',
-            label1: '=',
-            label2: '=',
-            icon1: '=',
-            icon2: '=',
-            disabled: '=',
-            label: '='
-        },
-        controller: function() {
-            // set openings position
-            // this.toggle = false;
-        },
-        controllerAs: 'alsIconMenuFabPairCtrl',
-        //    bindToController: true,
-        templateUrl: window.x.app + 'icon/alsIconMenuFabPair.html'
-    };
-});
-
-alsIcon.directive('alsIconPair', function() {
-    return {
-        scope: {
-            toggle: '=',
-            icon1: '=',
-            icon2: '='
-        },
-        controller: function() {
-            // set openings position
-            // this.toggle = false;
-        },
-        controllerAs: 'alsIconPairCtrl'
-        //    bindToController: true,
-    };
-});
-
-alsIcon.directive('alsIconFabPairAttr', function() {
-    return {
-        scope: {
-            toggle: '=',
-            icon1: '=',
-            icon2: '=',
-            disabled: '='
-        },
-        controller: function() {
-            // set openings position
-            // this.toggle = false;
-        },
-        controllerAs: 'alsIconFabPairAttrCtrl'
-        //    bindToController: true,
-    };
-});
-
 alsIcon.directive('alsIconFabPair', function() {
     return {
         scope: {
