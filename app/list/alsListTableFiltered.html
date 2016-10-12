@@ -104,8 +104,8 @@
                     <div flex ng-title="{{eval(v.expression)}}" title "to be fixed">
                         <span>{{v.expression}}</span>
                     </div>
-                    <div flex="50" style="width: 150px" llayout="row" layout-margin layout-align="end">
-
+                    <div flex="50" style="width: 150px" layout="row" layout-align="end">
+                      
                         <!-- Restore -->
                         <md-button arria-label="" title="restore" class="md-icon-button" ng-click="active.unshift(bin[$index]); bin.splice($index, 1);">
                             <md-icon>
