@@ -34,17 +34,24 @@ function getAppProperties() {
     */
 }
 
-/*function getMessageDefaults() {
-    var d = {};
-    d.bcc = "c@asklearnshare.com";
-    d.from = "noreply@asklearnshare.com";
-    d.action = false;
-    d.signature = "Kind regards.";
-    d.querylabel = "query";
-    d.actionlabel = "contact";
-    return d;
+function getAlerts() {
+    var m = [{
+        "hide": false,
+        "disabled": true,
+        "icon": "person",
+        "name": "login",
+        "label": "Log in"
+    }, {
+        "icon": "help",
+        "name": "Help",
+        "label": "Help"
+    }, {
+        "icon": "security",
+        "name": "Terms",
+        "label": "Terms"
+    }];
+    return m;
 }
-*/
 
 function getPaths() {
     var p = {};
@@ -89,9 +96,9 @@ function getShortCuts() {
 }
 
 window.appProperties = getAppProperties();
-//window.appProperties.defaults = getMessageDefaults();
 window.appProperties.paths = getPaths();
 window.appProperties.folders = getFolders();
+window.appProperties.alerts = getAlerts();
 window.x = getShortCuts();
 window.x.yt = getYouTube();
 
@@ -313,6 +320,16 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
     $scope.toggleRight = buildToggler('right');
     $scope.isOpenRight = function() {
         return $mdSidenav('right').isOpen();
+    };
+
+    self.alertAny = function(ev, alertName) {
+        $mdDialog.show({
+            controller: DialogController,
+            templateUrl: window.x.app + 'alert/alsAlert' + alertName + '.html',
+            targetEvent: ev,
+            parent: angular.element(document.querySelector('#alertContainer')),
+            clickOutsideToClose: true
+        })
     };
 
     self.alertTerms = function(ev) {
