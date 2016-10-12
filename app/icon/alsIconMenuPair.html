@@ -1,0 +1,32 @@
+<!--(C) Ask Learn Share Ltd:-->
+<style type="text/css">
+    .als-icon-menu-pair-icons {
+        position: relative;
+    }
+
+    .als-icon-menu-pair-icons md-icon {
+        position: absolute;
+        top: -12px;
+        right: 0px;
+    }
+</style>
+
+<!--(C) Ask Learn Share Ltd -->
+<div layout="row" flex>
+
+    <p ng-if="toggle" flex>{{label1}}</p>
+    <p ng-if="!toggle" flex>{{label2}}</p>
+
+    <span class="als-icon-menu-pair-icons">
+
+      <md-icon class="als-icon-fab-pair-icon1-on" ng-class="{'als-icon-fab-pair-icon1-off': toggle}">
+      <i class="material-icons">{{icon1}}</i>
+      </md-icon>
+
+      <md-icon class="als-icon-fab-pair-icon2-on" ng-class="{'als-icon-fab-pair-icon2-off': !toggle}">
+      <i class="material-icons">{{icon2}}</i>
+      </md-icon>
+
+    </span>
+
+</div>

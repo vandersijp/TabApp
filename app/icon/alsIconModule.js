@@ -1,7 +1,7 @@
 /* (C) 2016 Ask Learn Share Ltd */
 var alsIcon = angular.module("alsIcon", []);
 
-alsIcon.directive('ii', function() {
+alsIcon.directive('alsIconMenuPair', function() {
     return {
         scope: {
             toggle: '=',
@@ -14,9 +14,9 @@ alsIcon.directive('ii', function() {
             // set openings position
             // this.toggle = false;
         },
-        controllerAs: 'ii',
+        controllerAs: 'alsIconMenuPairCtrl',
         //    bindToController: true,
-        templateUrl: window.x.app + 'icon/ii.html'
+        templateUrl: window.x.app + 'icon/alsIconMenuPair.html'
     };
 });
 
@@ -53,9 +53,8 @@ alsIcon.directive('alsIconPair', function() {
             // set openings position
             // this.toggle = false;
         },
-        controllerAs: 'alsIconPairCtrl',
+        controllerAs: 'alsIconPairCtrl'
         //    bindToController: true,
-        templateUrl: window.x.app + 'icon/alsIconPair.html'
     };
 });
 
@@ -71,9 +70,8 @@ alsIcon.directive('alsIconFabPairAttr', function() {
             // set openings position
             // this.toggle = false;
         },
-        controllerAs: 'alsIconFabPairAttrCtrl',
+        controllerAs: 'alsIconFabPairAttrCtrl'
         //    bindToController: true,
-        templateUrl: window.x.app + 'icon/alsIconFabPairAttr.html'
     };
 });
 
