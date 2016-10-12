@@ -9,7 +9,6 @@
         outline: #fff solid 7px;
         outline-offset: -7px;
     }
-
 </style>
 
 <div ng-switch="playlist.type" layout="column">
@@ -21,20 +20,21 @@
     <!-- default -->
     <div ng-switch-default>
 
-      <md-content>
-        <div layout="column" layout-padding>
-            <ul>
-                <li class="md-body-1" ng-repeat="c in playlist.videos">
-                    <span class="md-body-2">{{c.title}}</span><span ng-if="c.artist"> - by {{c.artist}}</span>
-                </li>
-            </ul>
-        </div>
-      </md-content>
+        <md-content ng-if="playlist.toc">
+            <div layout="column" layout-padding>
+                <ul>
+                    <li class="md-body-1" ng-repeat="c in playlist.videos">
+                        <span class="md-body-2">{{c.title}}</span><span ng-if="c.artist"> - by {{c.artist}}</span>
+                    </li>
+                </ul>
+            </div>
+        </md-content>
 
         <md-content>
             <md-card ng-repeat="c in playlist.videos" ng-init="c.subhead=c.artist">
 
                 <md-card-title ng-if="c.title">
+
                     <md-card-title-media>
                         <div class="md-media-md card-media">
                             <a href="{{cuts.yt.video.prefix + c.youtube}}" target="_blank">
@@ -42,13 +42,19 @@
                             </a>
                         </div>
                     </md-card-title-media>
+
                     <md-card-title-text>
                         <span ng-if="c.title" class="md-title">{{c.title}}</span>
                         <span ng-if="c.subhead" class="md-subhead">{{c.subhead}}</span>
                     </md-card-title-text>
+
+                    <div layout="column" layout-align="end" ng-if="c.lyrics || c.footer">
+                        <als-icon-fab-pair data-class="'md-icon-button'" data-toggle="c.lyricsOpen" data-icon1="'keyboard_arrow_down'" data-icon2="'keyboard_arrow_up'"> </als-icon-fab-pair>
+                    </div>
+
                 </md-card-title>
 
-                <md-card-content ng-if="c.lyrics">
+                <md-card-content ng-if="c.lyrics" ng-show="c.lyricsOpen">
                     <p class="md-body-1" ng-repeat="part in c.lyrics">
                         <span ng-repeat="line in part track by $index">
                             {{line}}
@@ -57,7 +63,7 @@
                     </p>
                 </md-card-content>
 
-                <md-card-footer ng-if="c.footer" layout="row" layout-align="{{playlist.footeralign}}">
+                <md-card-footer ng-if="c.footer" ng-show="c.lyricsOpen" layout="row" layout-align="{{playlist.footeralign}}">
                     <span>{{c.footer}}</span>
                 </md-card-footer>
 

@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 29");
+console.log("App 30");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -115,8 +115,6 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         'http://www.asklearnshare.com/**'
     ]);
 
-    console.log ("x");
-
     var aliases = {
         "to": "chaos",
         "from": ["xx", "yy"]
@@ -133,7 +131,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "actionlabel": "contact"
         },
         "secuos": {
-          "signature": "Kind regards.",
+            "signature": "Kind regards.",
             "bcc": "c@h2.eu"
         }
     };
@@ -225,7 +223,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     //alert(JSON.stringify(window.appProperties));
 
     // created with https://angular-md-color.com
-    var customPrimary = {
+    var wineRed = {
         'contrastDefaultColor': 'light',
         'contrastDarkColors': ['50', 'A100', 'A200', 'A400'],
         'contrastLightColors': undefined,
@@ -244,8 +242,9 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         'A400': '#ffadca',
         'A700': '#600022'
     };
-
-    $mdThemingProvider.definePalette('wine-red', customPrimary);
+    $mdThemingProvider.definePalette('wine-red', wineRed);
+    $mdThemingProvider.theme('wine-red').backgroundPalette('wine-red').dark();
+    // <md-card md-theme-watch md-theme="'wine-red'">
 
     $mdThemingProvider.theme('default')
         .primaryPalette(window.appProperties.theme['primary'] || 'indigo')

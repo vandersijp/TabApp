@@ -4,16 +4,27 @@
         margin-top: 0em !important;
         margin-bottom: 0em !important;
     }
+
     md-card-content p {
         margin-top: 1em !important;
         margin-bottom: 1em !important;
     }
 </style>
 
+<div ng-if="cardset.search" layout="row" layout-align="end">
+    <md-input-container>
+        <md-icon>
+            <i class="material-icons">search</i>
+        </md-icon>
+        <label>Search</label>
+        <input ng-model="cardset.query" type="search" />
+    </md-input-container>
+</div>
+
 <div layout="column" layout-align="start center">
     <h4 ng-if="cardset.header" class="md-title">{{cardset.header}}</h4>
     <md-content>
-        <md-card ng-repeat="c in cardset.cards">
+        <md-card ng-repeat="c in cardset.cards | filter: cardset.query">
 
             <md-card-header ng-if="c.title">
                 <md-card-header-text>
