@@ -57,17 +57,18 @@ pre {
     color: darkgreen;
 }
 
-
-/* in case the md-sidenav is too narrow */
+md-menu-item {
+    /* to accomodate icons */
+    margin-right: -1em;
+}
 
 md-menu-item p {
+    /* in case the md-sidenav is too narrow */
     margin-right: 1em !important;
 }
 
-
-/* to allow for non-square images */
-
 md-card md-card-title md-card-title-media .md-media-sm {
+    /* to allow for non-square images */
     height: auto;
 }
 
@@ -82,6 +83,7 @@ md-card md-card-title md-card-title-media .md-media-lg {
 md-card md-card-title md-card-title-media .md-media-xl {
     height: auto;
 }
+
 
 /*
 for sideNav scrolling
@@ -100,12 +102,16 @@ md-sidenav {
 }
 
 
-/* to minimise the on-click  */
+/* icons */
 
-xxals-icon-fab-pair {
-    width: 0px !important;
-    margin-left: -36px;
-    margin-right: 72px;
+.als-icon-menu-pair-icons {
+    position: relative;
+}
+
+.als-icon-menu-pair-icons md-icon {
+    position: absolute;
+    top: -12px;
+    right: 0px;
 }
 
 .als-icon-fab-pair-icons {
@@ -117,9 +123,6 @@ xxals-icon-fab-pair {
     top: -12px;
     right: -12px;
 }
-
-
-/* icons */
 
 .als-icon-fab-pair-icon1-on {
     -webkit-animation: als-icon-fab-pair-icon1-on .44s normal both ease-out;
