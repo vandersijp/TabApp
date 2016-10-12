@@ -43,23 +43,26 @@
             </div>
 
             <md-card layout-padding>
-                <div layout="row" layout-align="space-between center">
-                    <h4 class="md-title">Active</h4>
-                    <!-- track by in ng-repeat to keep collection up-to-date -->
-                    <md-button title="add a new expression" arria-label="" class="md-fab md-mini md-accent" ng-click="active.unshift(e);">
-                        <md-icon>
-                            <i class="material-icons">add</i>
-                        </md-icon>
-                    </md-button>
-                </div>
 
-                <div ng-if="!active.length">
-                    <span>(empty)</span>
+                <div layout="column">
+                    <div layout="row" layout-align="space-between center">
+                        <h4 class="md-title">Active</h4>
+                        <!-- track by in ng-repeat to keep collection up-to-date -->
+                        <md-button title="add a new expression" arria-label="" class="md-fab md-mini md-accent" ng-click="active.unshift(e);">
+                            <md-icon>
+                                <i class="material-icons">add</i>
+                            </md-icon>
+                        </md-button>
+                    </div>
+
+                    <div ng-if="!active.length">
+                        <span>(empty)</span>
+                    </div>
                 </div>
 
                 <div class="editable" layout="row" ng-repeat="(k,v) in active track by $index" layout-align="center center">
 
-                    <div flex="15">
+                    <div style="width: 50px">
                         <span ng-if="!v.open">{{v.name}}</span>
                         <form ng-if="v.open">
                             <input ng-model="v.name" size="3" placeholder="name">
@@ -72,7 +75,7 @@
                             <input ng-model="v.expression" size="17" placeholder="expression">
                         </form>
                     </div>
-                    <div flex="50" style="width: 150px" layout="row" layout-align="end">
+                    <div style="width: 150px" layout="row" layout-align="end">
 
                         <!-- Edit -->
                         <als-icon-fab-pair title="edit" data-class="'md-icon-button'" data-toggle="v.open" data-icon1="'edit'" data-icon2="'check'"></als-icon-fab-pair>
@@ -90,22 +93,26 @@
 
             <md-card layout-padding>
 
-                <h4 class="md-title">Bin</h4>
+                <div layout="column">
+                    <div layout="row" layout-align="space-between center">
+                        <h4 class="md-title">Bin</h4>
+                    </div>
 
-                <div ng-if="!bin.length">
-                    <span>(empty)</span>
+                    <div ng-if="!bin.length">
+                        <span>(empty)</span>
+                    </div>
                 </div>
 
                 <div layout="row" ng-repeat="(k,v) in bin track by $index" layout-align="center center">
 
-                    <div flex="15">
+                    <div style="width: 50px">
                         <span>{{v.name}}</span>
                     </div>
                     <div flex ng-title="{{eval(v.expression)}}" title "to be fixed">
                         <span>{{v.expression}}</span>
                     </div>
-                    <div flex="50" style="width: 150px" layout="row" layout-align="end">
-                      
+                    <div style="width: 150px" layout="row" layout-align="end">
+
                         <!-- Restore -->
                         <md-button arria-label="" title="restore" class="md-icon-button" ng-click="active.unshift(bin[$index]); bin.splice($index, 1);">
                             <md-icon>
