@@ -72,13 +72,10 @@
                             <input ng-model="v.expression" size="17" placeholder="expression">
                         </form>
                     </div>
-                    &nbsp; &nbsp; &nbsp;
-                    <div flex="40" layout="row" layout-align="end">
+                    <div flex="50" style="width: 150px" layout="row" layout-align="end">
 
                         <!-- Edit -->
-                        <md-button arria-label="" title="edit" class="md-icon-button" ng-click="v.open=!v.open">
-                            <als-icon-pair data-toggle="v.open" data-icon1="'edit'" data-icon2="'check'"></als-icon-pair>
-                        </md-button>
+                        <als-icon-fab-pair title="edit" data-class="'md-icon-button'" data-toggle="v.open" data-icon1="'edit'" data-icon2="'check'"></als-icon-fab-pair>
 
                         <!-- Bin -->
                         <md-button arria-label="" title="bin" class="md-icon-button" ng-click="bin.unshift(active[$index]); active.splice($index, 1);">
@@ -110,8 +107,7 @@
                     <div flex ng-title="{{eval(v.expression)}}" title "to be fixed">
                         <span>{{v.expression}}</span>
                     </div>
-                    &nbsp; &nbsp; &nbsp;
-                    <div flex="40" layout="row" layout-align="end">
+                    <div flex="50" style="width: 150px" llayout="row" layout-margin layout-align="end">
 
                         <!-- Restore -->
                         <md-button arria-label="" title="restore" class="md-icon-button" ng-click="active.unshift(bin[$index]); bin.splice($index, 1);">
