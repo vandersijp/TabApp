@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 30");
+console.log("App 31");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -13,6 +13,7 @@ function getAppProperties() {
     var l = {};
     l.hostName = window.location.hostname;
     l.pathName = window.location.pathname;
+    //l.pathName = l.pathName.split("www.").length - 1;
     switch (l.hostName) {
         case ("localhost"):
             l.fullName = l.hostName + l.pathName;
@@ -24,6 +25,7 @@ function getAppProperties() {
     l.app = l.fullName.split("/")[l.depth];
     l.app = l.app.split(".").join("-");
     l.faviconExt = ".png";
+    console.log (JSON.stringify(l));
     return l;
     /*
     "hostName": "localhost",
