@@ -13,5 +13,6 @@
         <video controls>
         <source ng-src="{{cuts.vid + video.url}}" type="video/mp4">
         </video>
+        <p ng-if="video.caption" class="md-caption">{{video.caption}}</p>
     </div>
 </div>
