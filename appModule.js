@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 33");
+console.log("App 34");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -11,29 +11,24 @@ String.repeat = function(string, num) {
 
 function getAppProperties() {
     var l = {};
-    l.hostName = window.location.hostname;
-    l.hostName = l.hostName.split("www.").slice(-1)[0];
+    l.hostName = window.location.hostname.split("www.").slice(-1)[0];
+//    l.hostName = window.location.hostname;
+//    l.hostName = l.hostName.split("www.").slice(-1)[0];
     l.pathName = window.location.pathname;
     switch (l.hostName) {
         case ("localhost"):
             l.fullName = l.hostName + l.pathName;
             break;
         default:
-            l.fullName = "other/" + l.hostName + l.pathName;
+            l.fullName = "someserver/" + l.hostName + l.pathName;
     }
-    l.depth = l.fullName.split("/").length - 2;
-    l.app = l.fullName.split("/")[l.depth];
+    l.app = l.fullName.split("/").slice(-2)[0];
+//    l.depth = l.fullName.split("/").length - 2;
+//    l.app = l.fullName.split("/")[l.depth];
     l.app = l.app.split(".").join("-");
     l.faviconExt = ".png";
     console.log (JSON.stringify(l));
     return l;
-    /*
-    "hostName": "localhost",
-    "pathName": "/secuos/abc/",
-    "fullName": "localhost/secuos/abc/",
-    "depth": 2,
-    "app": "abc"
-    */
 }
 
 function getAlerts() {
