@@ -150,11 +150,14 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "background": "grey",
             "title": "Ask Learn Share",
             "favicon": "als"
+          },
+          "h2-eu": {
+              "title": "Goodbye"
         },
         "manya-info": {
             "primary": "wine-red",
             "accent": "amber",
-            "titlex": "Goodbye"
+            "title": "Goodbye"
         },
         "app": {
             "primary": "purple",
