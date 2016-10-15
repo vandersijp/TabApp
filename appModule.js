@@ -138,9 +138,10 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "bcc": "hans@secuos.com"
         },
         "vandersijp-net": {
-            "bcc": "c@h2.eu"
+            "bcc": "chaco@vandersijp.com",
+            "from": "noreply@vandersijp.net"
         }
-    };
+        "bcc": "chaco@vandersijp.com"
 
     var themesNameFallbacks = ["title", "favicon"];
 
@@ -163,7 +164,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         },
         "vandersijp-net": {
           "primary": "red",
-          "accent": "amber",
+          "accent": "indigo",
             "title": "van der Sijp"
         },
         "app": {
