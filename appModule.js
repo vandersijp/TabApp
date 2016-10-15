@@ -135,7 +135,9 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "actionlabel": "contact"
         },
         "secuos": {
-            "signature": "Kind regards.",
+            "bcc": "hans@secuos.com"
+        },
+        "vandersijp-net": {
             "bcc": "c@h2.eu"
         }
     };
@@ -158,6 +160,11 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "primary": "wine-red",
             "accent": "amber",
             "title": "Goodbye"
+        },
+        "vandersijp-net": {
+          "primary": "red",
+          "accent": "amber",
+            "title": "van der Sijp"
         },
         "app": {
             "primary": "purple",
