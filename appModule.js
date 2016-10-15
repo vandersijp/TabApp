@@ -141,7 +141,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "bcc": "chaco@vandersijp.com",
             "from": "noreply@vandersijp.net"
         }
-        "bcc": "chaco@vandersijp.com"
+    };
 
     var themesNameFallbacks = ["title", "favicon"];
 
@@ -163,8 +163,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "title": "Goodbye"
         },
         "vandersijp-net": {
-          "primary": "red",
-          "accent": "indigo",
+            "primary": "red",
+            "accent": "indigo",
             "title": "van der Sijp"
         },
         "app": {
@@ -206,7 +206,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         "sulaiman-mobi": {
             "primary": "deep-orange"
         }
-    }
+    };
 
     // start with any existing object
     window.appProperties.defaults = (profile[window.appProperties.app] || profile["default"]);
