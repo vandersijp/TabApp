@@ -12,8 +12,8 @@ String.repeat = function(string, num) {
 function getAppProperties() {
     var l = {};
     l.hostName = window.location.hostname.split("www.").slice(-1)[0];
-//    l.hostName = window.location.hostname;
-//    l.hostName = l.hostName.split("www.").slice(-1)[0];
+    //    l.hostName = window.location.hostname;
+    //    l.hostName = l.hostName.split("www.").slice(-1)[0];
     l.pathName = window.location.pathname;
     switch (l.hostName) {
         case ("localhost"):
@@ -23,11 +23,11 @@ function getAppProperties() {
             l.fullName = "someserver/" + l.hostName + l.pathName;
     }
     l.app = l.fullName.split("/").slice(-2)[0];
-//    l.depth = l.fullName.split("/").length - 2;
-//    l.app = l.fullName.split("/")[l.depth];
+    //    l.depth = l.fullName.split("/").length - 2;
+    //    l.app = l.fullName.split("/")[l.depth];
     l.app = l.app.split(".").join("-");
     l.faviconExt = ".png";
-    console.log (JSON.stringify(l));
+    console.log(JSON.stringify(l));
     return l;
 }
 
@@ -150,9 +150,9 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "background": "grey",
             "title": "Ask Learn Share",
             "favicon": "als"
-          },
-          "h2-eu": {
-              "title": "Goodbye"
+        },
+        "h2-eu": {
+            "title": "Goodbye"
         },
         "manya-info": {
             "primary": "wine-red",

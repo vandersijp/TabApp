@@ -9,6 +9,18 @@
         outline: #fff solid 7px;
         outline-offset: -7px;
     }
+
+
+  .background {
+      border: 3px dotted red;
+      position: absolute;
+  }
+  .foreground {
+    border: 3px dotted blue;
+      position: relative;
+      z-index: 1;
+  }
+
 </style>
 
 <div ng-switch="playlist.type" layout="column">

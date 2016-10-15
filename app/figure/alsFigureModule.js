@@ -7,7 +7,6 @@ alsFigure.directive('alsFigurePhotoMain', function () {
   return {
     scope: {
         image: '=',
-        path: '=',
         cuts: '='
     },
     controller: function () {
@@ -23,7 +22,6 @@ alsFigure.directive('alsFigureVideoMain', function () {
   return {
     scope: {
         video: '=',
-        path: '=',
         cuts: '='
     },
     controller: function () {

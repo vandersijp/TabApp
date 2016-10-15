@@ -1,19 +1,29 @@
 <!--(C) Ask Learn Share Ltd -->
 <style type="text/css">
     img {
-        /*
-        max-height: 400px;
-        */
         max-width: 400px;
         height: auto;
         width: auto;
     }
 
+    .overlay-container {
+        position: relative;
+    }
+
+    .overlay-image {
+        position: absolute;
+        z-index: 1;
+    }
 </style>
 
-<div layout="column" layout-align="start center">
-    <figure layout="column" layout-align="start center">
-        <img ng-src="{{cuts.img + image.url}}" />
-        <figcaption ng-if="image.caption" class="md-caption">{{image.caption}}</figcaption>
-    </figure>
+<div class="overlay-container">
+    <div class="overlay-image" ng-style="{{image.overlay.css}}" ng-if="image.overlay">
+        <img ng-src="{{cuts.img + image.overlay.url}}" />
+    </div>
+    <div layout="column" layout-align="start center">
+        <figure layout="column" layout-align="start center">
+            <img ng-src="{{cuts.img + image.url}}" />
+            <figcaption ng-if="image.caption" class="md-caption">{{image.caption}}</figcaption>
+        </figure>
+    </div>
 </div>
