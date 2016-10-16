@@ -2,6 +2,15 @@
 <md-content layout="column" layout-margin>
     <h3 ng-if="tab.header" class="md-headline md-accent">{{tab.header}}</h3>
     <p ng-if="tab.summary" class="md-body-1">{{tab.summary}}</p>
+
+    <div ng-if="tab.toc">
+        <ul>
+            <li ng-repeat="tab in data.tabs" ng-if="!tab.icon">
+                {{tab.header}}
+            </li>
+        </ul>
+    </div>
+
     <als-text-playlist ng-repeat="l in data.playlists" ng-if="l.tab==tab.id" data-playlist="l" data-cuts="cuts"></als-text-playlist>
     <als-figure-video-main ng-repeat="v in data.videos" ng-if="v.tab==tab.id" data-video="v" data-cuts="cuts"></als-figure-video-main>
     <als-figure-photo-main ng-repeat="i in data.images" ng-if="i.tab==tab.id" data-image="i" data-cuts="cuts"></als-figure-photo-main>

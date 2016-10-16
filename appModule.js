@@ -126,14 +126,14 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
 
 
     var profile = {
-      "default": {
-          "bcc": "c@asklearnshare.com",
-          "from": "noreply@asklearnshare.com",
-          "action": false,
-          "signature": "Kind regards.",
-          "querylabel": "query",
-          "actionlabel": "contact"
-      },
+        "default": {
+            "bcc": "c@asklearnshare.com",
+            "from": "noreply@asklearnshare.com",
+            "action": false,
+            "signature": "Kind regards.",
+            "querylabel": "query",
+            "actionlabel": "contact"
+        },
         "app": {
             "bcc": "c@asklearnshare.com",
             "from": "test@testco.com"
@@ -318,12 +318,24 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
     $scope.deleteElement = function(array, index) {
         array.splice(index, 1);
     };
-    // ============================================
 
     self.codeCompare = function(val1, val2) {
         if (typeof val1 == 'undefined') return false;
         if (typeof val2 == 'undefined') return false;
         return (val2.toLowerCase() == val1.toLowerCase());
+    }
+
+    self.menuSub = function(tabs, index) {
+        var menuSub = {};
+        var tab = tabs[index];
+        if (tab.icon) {
+            menuSub.isSub = false;
+            menuSub.prefix = "";
+        } else {
+            menuSub.isSub = true;
+            menuSub.prefix = "&nbsp;&nbsp;&nbsp;" + index + ".&nbsp;";
+        }
+        return (menuSub);
     }
 
     $q.all([
@@ -353,26 +365,6 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
         })
     };
 
-    self.alertTerms = function(ev) {
-        $mdDialog.show({
-            controller: DialogController,
-            templateUrl: window.x.app + 'alert/alsAlertTerms.html',
-            targetEvent: ev,
-            parent: angular.element(document.querySelector('#alertContainer')),
-            clickOutsideToClose: true
-        })
-    };
-
-    self.alertHelp = function(ev) {
-        $mdDialog.show({
-            controller: DialogController,
-            templateUrl: window.x.app + 'alert/alsAlertHelp.html',
-            targetEvent: ev,
-            parent: angular.element(document.querySelector('#alertContainer')),
-            clickOutsideToClose: true
-        })
-    };
-
     function DialogController($scope, $mdDialog) {
         $scope.hide = function() {
             $mdDialog.hide();
@@ -384,6 +376,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
             $mdDialog.hide(answer);
         };
     }
+
     /**
      * Supplies a function that will continue to operate until the
      * time is up.
