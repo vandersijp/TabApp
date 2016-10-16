@@ -139,6 +139,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         },
         "vandersijp-net": {
             "bcc": "chaco@vandersijp.com",
+            "signature": "Chaco van der Sijp",
             "from": "noreply@vandersijp.net"
         }
     };
