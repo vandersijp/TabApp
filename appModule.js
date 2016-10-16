@@ -141,6 +141,9 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "bcc": "chaco@vandersijp.com",
             "signature": "Chaco van der Sijp",
             "from": "noreply@vandersijp.net"
+          },
+          "vandersijp-net": {
+\              "from": "noreply@neverturkey.eu"
         }
     };
 
@@ -157,6 +160,11 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         },
         "h2-eu": {
             "title": "Goodbye"
+          },
+          "neverturkey": {
+              "primary": "red",
+              "accent": "green",
+              "title": "Never Turkey"
         },
         "manya-info": {
             "primary": "wine-red",
