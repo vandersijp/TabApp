@@ -126,13 +126,17 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
 
 
     var profile = {
-        "default": {
+      "default": {
+          "bcc": "c@asklearnshare.com",
+          "from": "noreply@asklearnshare.com",
+          "action": false,
+          "signature": "Kind regards.",
+          "querylabel": "query",
+          "actionlabel": "contact"
+      },
+        "app": {
             "bcc": "c@asklearnshare.com",
-            "from": "noreply@asklearnshare.com",
-            "action": false,
-            "signature": "Kind regards.",
-            "querylabel": "query",
-            "actionlabel": "contact"
+            "from": "test@testco.com"
         },
         "secuos": {
             "bcc": "hans@secuos.com"
@@ -142,7 +146,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "signature": "Chaco van der Sijp",
             "from": "noreply@vandersijp.net"
         },
-        "everturkey-eu": {
+        "neverturkey-eu": {
             "from": "noreply@neverturkey.eu"
         }
     };
