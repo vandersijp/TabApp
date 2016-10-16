@@ -190,7 +190,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         },
         "neverturkey-eu": {
             "primary": "red",
-            "accent": "green",
+            "accent": "blue-grey",
             "title": "Never Turkey"
         },
         "mexit-us": {
