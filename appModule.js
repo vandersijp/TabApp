@@ -179,7 +179,9 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         "app": {
             "primary": "purple",
             "accent": "blue",
-            "title": "Test application"
+            "title": "Test application",
+            "bcc": "test@testco.com",
+            "from": "noreply@testco.com"
         },
         "secuos": {
             "primary": "deep-orange",
