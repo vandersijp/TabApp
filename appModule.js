@@ -142,7 +142,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "signature": "Chaco van der Sijp",
             "from": "noreply@vandersijp.net"
         },
-        "neverturkey": {\
+        "neverturkey": {
             "from": "noreply@neverturkey.eu"
         }
     };
