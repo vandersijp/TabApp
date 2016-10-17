@@ -20,7 +20,8 @@ alsCard.directive('alsCardExample', function() {
 alsCard.directive('alsCardGeneral', function() {
     return {
         scope: {
-            cardset: '='
+            cardset: '=',
+            cuts: '='
         },
         templateUrl: window.x.app + 'card/alsCardGeneral.html'
     };

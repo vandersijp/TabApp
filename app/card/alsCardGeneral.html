@@ -21,23 +21,42 @@
     </md-input-container>
 </div>
 
+<pre>{{cuts | json}}</pre>
+
 <div layout="column" layout-align="start center">
     <h4 ng-if="cardset.header" class="md-title">{{cardset.header}}</h4>
     <md-content>
-        <md-card ng-repeat="c in cardset.cards | filter: cardset.query">
+        <md-card ng-repeat="c in cardset.cards | filter: cardset.query" ng-click="">
 
             <md-card-header ng-if="c.title">
+
                 <md-card-header-text>
                     <span class="md-title">{{c.title}}</span>
                     <span ng-if="c.subhead" class="md-subhead">{{c.subhead}}</span>
                 </md-card-header-text>
+
             </md-card-header>
 
             <md-card-title ng-if="c.headline">
+
+
+
+                <md-card-title-media>
+                    <div class="md-media-md card-media">
+
+                        <img ng-src="{{cuts.img + c.background}}" />
+                    </div>
+                </md-card-title-media>
+
+
+
                 <md-card-title-text>
+                  {{c.background}}
                     <span class="md-headline">{{c.headline}}</span>
                     <span ng-if="c.subhead" class="md-subhead">{{c.subhead}}</span>
                 </md-card-title-text>
+
+
             </md-card-title>
 
             <md-card-content ng-if="c.content">
