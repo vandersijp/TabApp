@@ -19,13 +19,15 @@
 </div>
 
 <div layout="column" layout-align="start center">
-    <h4 ng-if="cardset.header" class="md-title">{{cardset.header}}</h4>
+  <als-text-header data-object="cardset"></als-text-header>
     <md-content>
         <md-card ng-repeat="c in cardset.cards | filter: cardset.query">
 
             <md-card-header ng-if="c.title">
 
                 <md-card-header-text>
+                  <als-text-header data-object="c"></als-text-header>
+                  <md-divider></md-divider>
                     <span class="md-title">{{c.title}}</span>
                     <span ng-if="c.subhead" class="md-subhead">{{c.subhead}}</span>
                 </md-card-header-text>
@@ -43,6 +45,8 @@
                 </md-card-title-media>
 
                 <md-card-title-text>
+                  <als-text-header data-object="c"></als-text-header>
+                  <md-divider></md-divider>
                     <span class="md-headline">{{c.headline}}</span>
                     <span ng-if="c.subhead" class="md-subhead">{{c.subhead}}</span>
                 </md-card-title-text>
