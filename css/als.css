@@ -64,7 +64,7 @@ md-menu-item {
 }
 
 md-menu-item p {
-    /* in case the md-sidenav is too narrow */
+    /* in case the md-sidenav is too narrow, maybe obsolete */
     margin-right: 1em !important;
 }
 
@@ -73,7 +73,7 @@ md-card-title-media {
     margin-right: 1.5em !important;
 }
 
-md-card-content p {
+md-card-content p, md-content p {
     /* to reduce excessive spacing */
     margin-top: 1em !important;
     margin-bottom: 1em !important;

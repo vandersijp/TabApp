@@ -1,14 +1,16 @@
 <!--(C) Ask Learn Share Ltd -->
-<div ng-switch="section.type" layout="column">
-    <!-- typw xxx -->
-    <div ng-switch-when="xxx">
-        <!-- html  -->
+<md-content>
+    <div ng-switch="section.type" layout="column">
+        <!-- typw xxx -->
+        <div ng-switch-when="xxx">
+            <!-- html  -->
+        </div>
+        <!-- default -->
+        <div ng-switch-default>
+            <als-text-header data-object="section"></als-text-header>
+            <p ng-repeat="p in section.paragraphs">
+                {{p}}
+            </p>
+        </div>
     </div>
-    <!-- default -->
-    <div ng-switch-default>
-        <h4 class="md-title">{{section.header}}</h4>
-        <p ng-repeat="p in section.paragraphs">
-            {{p}}
-        </p>
-    </div>
-</div>
+</md-content>

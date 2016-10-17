@@ -18,6 +18,8 @@
     }
 </style>
 
+<als-text-header data-object="playlist"></als-text-header>
+
 <div ng-switch="playlist.type" layout="column">
     <!-- typw xxx -->
     <div ng-switch-when="xxx">
@@ -51,6 +53,7 @@
                     </md-card-title-media>
 
                     <md-card-title-text>
+                      <pre>{{c | json}}</pre>
                       <als-text-header data-object="c"></als-text-header>
                     </md-card-title-text>
 
