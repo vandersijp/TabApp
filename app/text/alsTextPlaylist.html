@@ -51,8 +51,7 @@
                     </md-card-title-media>
 
                     <md-card-title-text>
-                        <span ng-if="c.title" class="md-title">{{c.title}}</span>
-                        <span ng-if="c.subhead" class="md-subhead">{{c.subhead}}</span>
+                      <als-text-header data-object="c"></als-text-header>
                     </md-card-title-text>
 
                     <div layout="column" layout-align="end" ng-if="c.lyrics || c.footer">

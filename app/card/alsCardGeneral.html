@@ -24,16 +24,10 @@
         <md-card ng-repeat="c in cardset.cards | filter: cardset.query">
 
             <md-card-header ng-if="c.title">
-
                 <md-card-header-text>
                   <als-text-header data-object="c"></als-text-header>
-                  <md-divider></md-divider>
-                    <span class="md-title">{{c.title}}</span>
-                    <span ng-if="c.subhead" class="md-subhead">{{c.subhead}}</span>
                 </md-card-header-text>
-
             </md-card-header>
-
 
             <md-card-title ng-if="c.headline">
 
@@ -46,9 +40,6 @@
 
                 <md-card-title-text>
                   <als-text-header data-object="c"></als-text-header>
-                  <md-divider></md-divider>
-                    <span class="md-headline">{{c.headline}}</span>
-                    <span ng-if="c.subhead" class="md-subhead">{{c.subhead}}</span>
                 </md-card-title-text>
 
             </md-card-title>
