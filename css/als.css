@@ -73,7 +73,13 @@ md-card-title-media {
     margin-right: 1.5em !important;
 }
 
-md-card-content p, md-content p {
+xxmd-card-content p, xxmd-content p {
+    /* to reduce excessive spacing */
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+}
+
+p {
     /* to reduce excessive spacing */
     margin-top: 1em !important;
     margin-bottom: 1em !important;
