@@ -68,6 +68,17 @@ md-menu-item p {
     margin-right: 1em !important;
 }
 
+md-card-title-media {
+    /* to correct Angular Material bug */
+    margin-right: 1.5em !important;
+}
+
+md-card-content p {
+    /* to reduce excessive spacing */
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+}
+
 md-card md-card-title md-card-title-media .md-media-sm {
     /* to allow for non-square images */
     height: auto;
