@@ -3,6 +3,16 @@
 */
 var alsText = angular.module("alsText", ['ngMaterial', 'ngAnimate', 'ngSanitize']);
 
+alsText.directive('alsTextHeader', function() {
+    return {
+        restrict: 'E',
+        scope: {
+            object: '='
+        },
+        templateUrl: window.x.app + 'text/alsTextHeader.html'
+    }
+});
+
 alsText.directive('alsTextSection', function() {
     return {
         restrict: 'E',
