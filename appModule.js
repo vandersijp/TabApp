@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 35");
+console.log("App 36");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -53,8 +53,8 @@ function getAlerts() {
 function getPaths() {
     var p = {};
     p.sce = "https://rawgit.com/vandersijp/";
-    //p.repo = "git/";
-    p.repo = "https://rawgit.com/vandersijp/TabApp/master/";
+    p.repo = "git/";
+    //p.repo = "https://rawgit.com/vandersijp/TabApp/master/";
     p.assets = "https://rawgit.com/vandersijp/assets/master/";
     p.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
     p.contacturl = "http://www.asklearnshare.com/alsContactSend.php";

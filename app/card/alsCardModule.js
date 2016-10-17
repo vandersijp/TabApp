@@ -1,4 +1,6 @@
 /* (C) 2016 Ask Learn Share Ltd */
+console.log("Card 1");
+
 var alsCard = angular.module("alsCard", []);
 
 alsCard.directive('alsCardExample', function() {
