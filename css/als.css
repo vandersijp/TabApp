@@ -81,8 +81,8 @@ xxmd-card-content p, xxmd-content p {
 
 p {
     /* to reduce excessive spacing */
-    margin-top: 1em !important;
-    margin-bottom: 1em !important;
+    margin-top: .8em !important;
+    margin-bottom: .8em !important;
 }
 
 md-card md-card-title md-card-title-media .md-media-sm {
