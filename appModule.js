@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 37");
+console.log("App 38");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -27,7 +27,6 @@ function getAppProperties() {
     //    l.app = l.fullName.split("/")[l.depth];
     l.app = l.app.split(".").join("-");
     l.faviconExt = ".png";
-    console.log(JSON.stringify(l));
     return l;
 }
 
@@ -53,8 +52,8 @@ function getAlerts() {
 function getPaths() {
     var p = {};
     p.sce = "https://rawgit.com/vandersijp/";
-    //p.repo = "git/";
-    p.repo = "https://rawgit.com/vandersijp/TabApp/master/";
+    p.repo = "git/";
+    //p.repo = "https://rawgit.com/vandersijp/TabApp/master/";
     p.assets = "https://rawgit.com/vandersijp/assets/master/";
     p.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
     p.contacturl = "http://www.asklearnshare.com/alsContactSend.php";
@@ -68,6 +67,8 @@ function getFolders() {
     f.vid = "images/videos/";
     f.ava = "images/avatars/";
     f.fav = "images/favicons/";
+    f.thu = "images/thumbnails/";
+    f.bac = "images/backgrounds/";
     return f;
 }
 
@@ -88,6 +89,8 @@ function getShortCuts() {
     x.vid = window.appProperties.paths.assets + window.appProperties.folders.vid;
     x.ava = window.appProperties.paths.assets + window.appProperties.folders.ava;
     x.fav = window.appProperties.paths.assets + window.appProperties.folders.fav;
+    x.thu = window.appProperties.paths.assets + window.appProperties.folders.thu;
+    x.bac = window.appProperties.paths.assets + window.appProperties.folders.bac;
     x.send = window.appProperties.paths.contacturl;
     return x;
 }
@@ -134,6 +137,10 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "querylabel": "query",
             "actionlabel": "contact"
         },
+        "pater-info": {
+            "bcc": "jxpater@gmail.com",
+            "from": "noreply@pater.info"
+        },
         "app": {
             "bcc": "c@asklearnshare.com",
             "from": "test@testco.com"
@@ -174,6 +181,11 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "primary": "wine-red",
             "accent": "amber",
             "title": "Goodbye"
+        },
+        "pater-info": {
+          "primary": "wine-red",
+          "accent": "amber",
+          "title": "Goodbye"
         },
         "vandersijp-net": {
             "primary": "red",
@@ -296,6 +308,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
     // make a snap-shot for usage in the View
     self.appProps = $window.appProperties;
     self.shortCuts = $window.x;
+    self.selectedIndex = 0;
 
     // ===========< to be moved to a Service ===========
     $scope.addElement = function(array) {
@@ -338,14 +351,51 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
         return (menuSub);
     }
 
+    self.changeTypography = function(o, type1, type2) {
+        //var o = obj;
+        angular.forEach(o, function(value, key) {
+            if (value[type1] && !value[type2]) {
+                o[key][type2] = value[type1];
+                delete o[key][type1];
+            }
+        });
+        return (o);
+    }
+
+    self.tabsToCards = function(tabs, type1, type2) {
+        var cc = {};
+        var cards = [];
+        angular.forEach(tabs, function(value, key) {
+            if (!value.icon) {
+                var card = value;
+                card['image'] = window.appProperties.app + " " + value.id + ".png";
+                card['index'] = key;
+                //card['subhead'] = card['summary'];
+                cards.push(card);
+
+            }
+        });
+        cards = self.changeTypography(cards, type1, type2);
+        cc.cards = cards;
+        cc.expand = true;
+        cc.toclink = true;
+        console.log(JSON.stringify(cc));
+        return (cc);
+    }
+
+
     $q.all([
             dataService.getFileData(), dataService.getFirebaseData(window.appProperties.app)
         ])
         .then(function(result) {
             self.appData = result[1];
-            // alert (JSON.stringify(result[2]));
+            //console.log(JSON.stringify(result[1]));
             // async not working
+        }).then(function() {
+            //console.log(JSON.stringify(self.appData));
         });
+
+    //self.appData.tabCards = self.tabsToCards(self.appData.tabs);
 
     self.fontLarge = false;
 
