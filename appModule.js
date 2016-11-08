@@ -218,6 +218,9 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "primary": "red",
             "accent": "blue-grey",
             "title": "Never Turkey"
+          },
+          "nils-info": {
+              "title": "Nils"
         },
         "mexit-us": {
             "primary": "green",
