@@ -142,8 +142,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "from": "noreply@nils.info"
         },
         "joelle-info": {
-          "bcc": "joellehavekotte@gmail.com",
-          "from": "noreply@joelle.info"
+            "bcc": "joellehavekotte@gmail.com",
+            "from": "noreply@joelle.info"
         },
         "robyn-mobi": {
             "bcc": "robynhavekotte@gmail.com",
@@ -218,9 +218,11 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "primary": "red",
             "accent": "blue-grey",
             "title": "Never Turkey"
-          },
-          "nils-info": {
-              "title": "Nils"
+        },
+        "nils-info": {
+            "primary": "green",
+            "accent": "red",
+            "title": "Nils"
         },
         "mexit-us": {
             "primary": "green",
