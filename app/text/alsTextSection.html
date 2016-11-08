@@ -1,14 +1,51 @@
 <!--(C) Ask Learn Share Ltd -->
-<md-content>
+<md-content ng-class="section.class">
+    <!--(C) Ask Learn Share Ltd -->
+    <style type="text/css">
+        div.als-list-capfirst div div:first-letter {
+            text-transform: uppercase;
+        }
+
+        .singleline {
+            text-align: center !important;
+        }
+
+        .singleline p {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        p:first {
+            margin-top: 0px;
+        }
+
+        p:last {
+            /* check syntax */
+            margin-top: 0px;
+        }
+    </style>
+
     <div ng-switch="section.type" layout="column">
         <!-- typw xxx -->
-        <div ng-switch-when="xxx">
-            <!-- html  -->
+
+        <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
+            <als-text-header data-object="section"></als-text-header>
+            <md-content layout="row" layout-align="center center" layout-wrap layout-padding>
+                <md-card ng-repeat="p in section.paragraphs" ng-class="section.style" layout-align="center center" flex-gt-xs="45" flex-xs="auto">
+                    <md-card-content class="singleline">
+                        <p>
+                            {{p}}
+                        </p>
+                    </md-card-content>
+                </md-card>
+            </md-content>
         </div>
+
+        <!-- html  -->
         <!-- default -->
         <div ng-switch-default>
             <als-text-header data-object="section"></als-text-header>
-            <p ng-repeat="p in section.paragraphs">
+            <p ng-repeat="p in section.paragraphs" ng-class="section.style">
                 {{p}}
             </p>
         </div>

@@ -4,11 +4,7 @@
     <p ng-if="tab.summary" class="md-body-1">{{tab.summary}}</p>
 
     <div ng-if="tab.toc">
-        <ul>
-            <li ng-repeat="tab in data.tabs" ng-if="!tab.icon">
-                {{tab.headline}}
-            </li>
-        </ul>
+        <als-card-general data-cardset="data.tabCards" data-cuts="cuts"></als-card-general>
     </div>
 
     <als-text-playlist ng-repeat="l in data.playlists" ng-if="l.tab==tab.id" data-playlist="l" data-cuts="cuts"></als-text-playlist>

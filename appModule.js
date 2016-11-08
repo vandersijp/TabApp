@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 38");
+console.log("App 39");
 
 String.repeat = function(string, num) {
     return new Array(parseInt(num) + 1).join(string);
@@ -137,6 +137,18 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "querylabel": "query",
             "actionlabel": "contact"
         },
+        "nils-info": {
+            "bcc": "nhavekotte@gmail.com",
+            "from": "noreply@nils.info"
+        },
+        "joelle-info": {
+          "bcc": "joellehavekotte@gmail.com",
+          "from": "noreply@joelle.info"
+        },
+        "robyn-mobi": {
+            "bcc": "robynhavekotte@gmail.com",
+            "from": "noreply@robyn.mobi"
+        },
         "pater-info": {
             "bcc": "jxpater@gmail.com",
             "from": "noreply@pater.info"
@@ -183,9 +195,9 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "title": "Goodbye"
         },
         "pater-info": {
-          "primary": "wine-red",
-          "accent": "amber",
-          "title": "Goodbye"
+            "primary": "wine-red",
+            "accent": "amber",
+            "title": "Goodbye"
         },
         "vandersijp-net": {
             "primary": "red",
@@ -367,10 +379,14 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
         var cards = [];
         angular.forEach(tabs, function(value, key) {
             if (!value.icon) {
-                var card = value;
-                card['image'] = window.appProperties.app + " " + value.id + ".png";
-                card['index'] = key;
-                //card['subhead'] = card['summary'];
+                var card = {};
+                card = value;
+                //card.title += (" - "+value.id);
+                //card.title = "ss";
+
+                card.image = window.appProperties.app + " " + value.id + ".png";
+                //card.index = key;
+                //card.subhead = card.summary;
                 cards.push(card);
 
             }
