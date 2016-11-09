@@ -193,8 +193,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "title": "Never Turkey"
           },
           "fbi-mobi": {
-            "primary": "red",
-            "accent": "deep-purple",
+            "primary": "indigo",
+            "accent": "light-blue",
             "title": "FBI"
         },
         "manya-info": {
