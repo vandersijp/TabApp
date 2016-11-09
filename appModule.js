@@ -136,6 +136,9 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "signature": "Kind regards.",
             "querylabel": "query",
             "actionlabel": "contact"
+          },
+          "fbi-mobi": {
+              "from": "lostemail@fbi.mobi"
         },
         "nils-info": {
             "bcc": "nhavekotte@gmail.com",
@@ -188,6 +191,11 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "primary": "red",
             "accent": "deep-purple",
             "title": "Never Turkey"
+          },
+          "fbi-mobi": {
+            "primary": "red",
+            "accent": "deep-purple",
+            "title": "FBI"
         },
         "manya-info": {
             "primary": "wine-red",
