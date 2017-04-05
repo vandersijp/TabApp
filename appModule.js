@@ -187,6 +187,11 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         "h2-eu": {
             "title": "Goodbye"
         },
+        "mafia-eu": {
+            "primary": "red",
+            "accent": "deep-purple",
+            "title": "European Mafia"
+          },
         "neverturkey-eu": {
             "primary": "red",
             "accent": "deep-purple",
