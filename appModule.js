@@ -187,11 +187,11 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "title": "Ask Learn Share",
             "favicon": "als"
         },
-        "h2-eu": {
-            "title": "Goodbye"
-        },
+        "h2-eu": {},
+        "asklearnshare-com": {},
         "mafia-eu": {
             "primary": "red",
+            "background": "grey",
             "accent": "blue"
           },
         "neverturkey-eu": {
@@ -212,8 +212,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         },
         "vandersijp-net": {
             "primary": "red",
-            "accent": "indigo",
-            "title": "van der Sijp"
+            "accent": "indigo"
         },
         "app": {
             "primary": "purple",
@@ -247,7 +246,6 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "primary": "blue",
             "accent": "red"
         },
-        "asklearnshare-com": {},
         "sulaiman-mobi": {
             "primary": "deep-orange"
         }
