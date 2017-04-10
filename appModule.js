@@ -192,28 +192,23 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         },
         "mafia-eu": {
             "primary": "red",
-            "accent": "blue",
-            "title": "European Mafia"
+            "accent": "blue"
           },
         "neverturkey-eu": {
             "primary": "red",
-            "accent": "deep-purple",
-            "title": "Never Turkey"
+            "accent": "deep-purple"
           },
           "fbi-mobi": {
             "primary": "indigo",
-            "accent": "light-blue",
-            "title": "FBI"
+            "accent": "light-blue"
         },
         "manya-info": {
             "primary": "wine-red",
-            "accent": "amber",
-            "title": "Goodbye"
+            "accent": "amber"
         },
         "pater-info": {
             "primary": "wine-red",
-            "accent": "amber",
-            "title": "Goodbye"
+            "accent": "amber"
         },
         "vandersijp-net": {
             "primary": "red",
@@ -222,43 +217,35 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         },
         "app": {
             "primary": "purple",
-            "accent": "blue",
-            "title": "Test application"
+            "accent": "blue"
         },
         "secuos": {
             "primary": "deep-orange",
-            "accent": "indigo",
-            "title": "Expressions"
+            "accent": "indigo"
         },
         "neverturkey-eu": {
             "primary": "red",
-            "accent": "blue-grey",
-            "title": "Never Turkey"
+            "accent": "blue-grey"
         },
         "nils-info": {
             "primary": "green",
-            "accent": "red",
-            "title": "Nils"
+            "accent": "red"
         },
         "mexit-us": {
             "primary": "green",
-            "accent": "red",
-            "title": "Mexit"
+            "accent": "red"
         },
         "nw3-info": {
             "primary": "indigo",
-            "accent": "red",
-            "title": "Hampstead Maansions"
+            "accent": "red"
         },
         "smartsoft-mobi": {
             "primary": "amber",
-            "accent": "deep-purple",
-            "title": "Smartsoft"
+            "accent": "deep-purple"
         },
         "defectelimination-com": {
             "primary": "blue",
-            "accent": "red",
-            "title": "Defect Elimination"
+            "accent": "red"
         },
         "asklearnshare-com": {},
         "sulaiman-mobi": {
