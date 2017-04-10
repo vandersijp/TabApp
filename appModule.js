@@ -191,7 +191,6 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         "asklearnshare-com": {},
         "mafia-eu": {
             "primary": "red",
-            "background": "grey",
             "accent": "blue"
           },
         "neverturkey-eu": {
