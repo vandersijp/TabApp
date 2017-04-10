@@ -160,6 +160,9 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "bcc": "c@asklearnshare.com",
             "from": "test@testco.com"
         },
+        "mafia-eu": {
+            "from": "noreply@mafia.eu"
+        },
         "secuos": {
             "bcc": "hans@secuos.com"
         },
@@ -189,7 +192,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         },
         "mafia-eu": {
             "primary": "red",
-            "accent": "deep-purple",
+            "accent": "blue",
             "title": "European Mafia"
           },
         "neverturkey-eu": {
@@ -245,7 +248,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         "nw3-info": {
             "primary": "indigo",
             "accent": "red",
-            "title": "Hampstead Mansions"
+            "title": "Hampstead Maansions"
         },
         "smartsoft-mobi": {
             "primary": "amber",
