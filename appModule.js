@@ -163,6 +163,9 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         "mafia-eu": {
             "from": "noreply@mafia.eu"
         },
+        "whitehouse-tel": {
+            "from": "press@mwhitehouse.tel"
+        },
         "secuos": {
             "bcc": "hans@secuos.com"
         },
@@ -193,6 +196,10 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "primary": "red",
             "accent": "blue"
           },
+          "whitehouse-tel": {
+              "primary": "blue",
+              "accent": "red"
+            },
         "neverturkey-eu": {
             "primary": "red",
             "accent": "deep-purple"
