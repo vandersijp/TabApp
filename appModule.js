@@ -171,7 +171,6 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         },
         "vandersijp-net": {
             "bcc": "chaco@vandersijp.com",
-            "signature": "Chaco van der Sijp",
             "from": "noreply@vandersijp.net"
         },
         "neverturkey-eu": {
@@ -197,8 +196,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "accent": "blue"
           },
           "whitehouse-tel": {
-              "primary": "blue",
-              "accent": "red"
+              "primary": "indigo",
+              "accent": "blue"
             },
         "neverturkey-eu": {
             "primary": "red",
