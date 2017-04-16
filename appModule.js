@@ -137,6 +137,9 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "querylabel": "query",
             "actionlabel": "contact"
           },
+          "hydrogenie": {
+              "from": "noreply@hydrogenie.com"
+          },
           "fbi-mobi": {
               "from": "lostemail@fbi.mobi"
         },
@@ -191,6 +194,10 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         },
         "h2-eu": {},
         "asklearnshare-com": {},
+        "hydrogenie": {
+            "primary": "blue",
+            "accent": "indigo"
+          },
         "mafia-eu": {
             "primary": "red",
             "accent": "blue"
