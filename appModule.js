@@ -137,6 +137,9 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
             "querylabel": "query",
             "actionlabel": "contact"
           },
+          "snapelection": {
+              "from": "noreply@snapelection.eu"
+          },
           "hydrogenie": {
               "from": "noreply@hydrogenie.com"
           },
@@ -194,10 +197,14 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         },
         "h2-eu": {},
         "asklearnshare-com": {},
-        "hydrogenie": {
-            "primary": "blue",
-            "accent": "indigo"
+        "snapelection": {
+            "primary": "amber",
+            "accent": "blue"
           },
+          "hydrogenie": {
+              "primary": "blue",
+              "accent": "indigo"
+            },
         "mafia-eu": {
             "primary": "red",
             "accent": "blue"
