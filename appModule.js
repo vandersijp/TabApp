@@ -197,7 +197,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
         },
         "h2-eu": {},
         "asklearnshare-com": {},
-        "snapelection": {
+        "snapelection-eu": {
             "primary": "amber",
             "accent": "blue"
           },
