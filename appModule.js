@@ -1,9 +1,9 @@
 /* (C) 2016 Ask Learn Share Ltd */
+console.log("App 2");
+
 
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
-
-console.log("App 39");
 
 String.repeat = function(string, num) {
   return new Array(parseInt(num) + 1).join(string);
@@ -55,7 +55,8 @@ function getPaths() {
   //p.repo = "git/";
   p.repo = "https://rawgit.com/vandersijp/TabApp/master/";
   p.assets = "https://rawgit.com/vandersijp/assets/master/";
-  p.firebase = "https://smartchart.firebaseio.com/apps/tab-apps/";
+  p.firebaseApps = "https://smartchart.firebaseio.com/apps/tab-apps/";
+  p.firebaseFonts = "https://smartchart.firebaseio.com/apps/fonts/";
   p.contacturl = "http://www.asklearnshare.com/alsContactSend.php";
   return p;
 }
@@ -102,13 +103,17 @@ window.appProperties.alerts = getAlerts();
 window.x = getShortCuts();
 window.x.yt = getYouTube();
 
+// not recognised
 window.lsCodeCompare = function(val1, val2) {
   if (typeof val1 == 'undefined') return false;
   if (typeof val2 == 'undefined') return false;
+  //console.log("window: "+val1);
   return (val2.toLowerCase() == val1.toLowerCase());
 }
 
-var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTab'])
+
+
+var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsTab'])
 
 app.config(function($mdThemingProvider, $sceDelegateProvider) {
 
@@ -137,10 +142,10 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
       "querylabel": "query",
       "actionlabel": "contact"
     },
-    "snapelection": {
+    "snapelection-eu": {
       "from": "noreply@snapelection.eu"
     },
-    "hydrogenie": {
+    "hydrogenie-com": {
       "from": "noreply@hydrogenie.com"
     },
     "fbi-mobi": {
@@ -202,8 +207,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
       "accent": "blue"
     },
     "hydrogenie-com": {
-      "primary": "blue",
-      "accent": "indigo"
+      "primary": "hydrogenie-primary",
+      "accent": "hydrogenie-accent"
     },
     "mafia-eu": {
       "primary": "red",
@@ -323,6 +328,48 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
   $mdThemingProvider.theme('wine-red').backgroundPalette('wine-red').dark();
   // <md-card md-theme-watch md-theme="'wine-red'">
 
+  var hydrogeniePrimary = {
+    'contrastDefaultColor': 'light',
+    'contrastDarkColors': ['50', 'A100', 'A200', 'A400'],
+    'contrastLightColors': undefined,
+    '50': '#a1a1ff',
+    '100': '#8888ff',
+    '200': '#6e6eff',
+    '300': '#5555ff',
+    '400': '#3b3bff',
+    '500': '#22f',
+    '600': '#0808ff',
+    '700': '#0000ee',
+    '800': '#0000d4',
+    '900': '#0000bb',
+    'A100': '#bbbbff',
+    'A200': '#d4d4ff',
+    'A400': '#eeeeff',
+    'A700': '#0000a1'
+  };
+  $mdThemingProvider.definePalette('hydrogenie-primary', hydrogeniePrimary);
+  $mdThemingProvider.theme('hydrogenie-primary').backgroundPalette('hydrogenie-primary').dark();
+
+  var hydrogenieAccent = {
+    '50': '#3eaa00',
+    '100': '#47c300',
+    '200': '#50dd00',
+    '300': '#5af600',
+    '400': '#68ff11',
+    '500': '#78ff2a',
+    '600': '#98ff5d',
+    '700': '#a8ff77',
+    '800': '#b9ff90',
+    '900': '#c9ffaa',
+    'A100': '#98ff5d',
+    'A200': '#8f4',
+    'A400': '#78ff2a',
+    'A700': '#d9ffc3'
+  };
+  $mdThemingProvider.definePalette('hydrogenie-accent', hydrogenieAccent);
+  $mdThemingProvider.theme('hydrogenie-accent').backgroundPalette('hydrogenie-accent').dark();
+
+
   $mdThemingProvider.theme('default')
     .primaryPalette(window.appProperties.theme['primary'] || 'indigo')
     .accentPalette(window.appProperties.theme['accent'] || 'red')
@@ -331,16 +378,42 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
 });
 
 app.service('dataService', function($http, $firebaseObject) {
-  this.getFileData = function() {};
-  this.getFirebaseData = function(app) {
-    var ref = new Firebase(window.appProperties.paths.firebase + app);
+  this.getFontData = function(font) {
+    var font = "hydrogenie";
+    var ref = new Firebase(window.appProperties.paths.firebaseFonts + font);
     return $firebaseObject(ref);
   };
+  this.getFirebaseData = function(app) {
+    var ref = new Firebase(window.appProperties.paths.firebaseApps + app);
+    return $firebaseObject(ref);
+  };
+
+  this.getAlert = function(app) {
+    alert("getAlert");
+  };
+
 });
 
-app.controller('appController', function($scope, $window, $http, $q, dataService, $timeout, $mdSidenav, $mdDialog, $log) {
+app.constant("alsLib", alsLibrary);
+app.constant("alsUtils", alsUtilities);
+
+app.controller('appController', function(alsUtils, alsLib, $scope, $rootScope, $window, $http, $q, dataService, $timeout, $mdSidenav, $mdDialog, $log) {
 
     var self = this;
+
+    self.alsUtils = alsUtils;
+
+    /*
+    $window.braintree.setup('CLIENTTOKEN', 'dropin', {
+      container: 'dropin'
+    });
+    */
+
+    self.d = function() {
+      return dataService.getAlert();
+    }
+
+    self.dataService = dataService;
 
     // make a snap-shot for usage in the View
     self.appProps = $window.appProperties;
@@ -372,23 +445,22 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
     self.charToRIShtml = function(char) {
       var base = 127462;
       var ascii = char.charAt(0).toUpperCase().charCodeAt(0);
-      var out = "&#" + (base + ascii) + ";";
-      return out;
+      var html = "&#" + (base + ascii) + ";";
+      return html;
     };
 
     self.isoToRIShtml = function(iso) {
       var out1 = self.charToRIShtml(iso.charAt(0));
       var out2 = self.charToRIShtml(iso.charAt(1));
-      return out1 + out2;
-    }
-
-    //alert(self.isoToRIShtml('nl'));
+      var html = out1 + out2;
+      return html;
+    };
 
     self.codeCompare = function(val1, val2) {
       if (typeof val1 == 'undefined') return false;
       if (typeof val2 == 'undefined') return false;
       return (val2.toLowerCase() == val1.toLowerCase());
-    }
+    };
 
     self.menuSub = function(tabs, index) {
       var menuSub = {};
@@ -435,20 +507,21 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
       cc.cards = cards;
       cc.expand = true;
       cc.toclink = true;
-      console.log(JSON.stringify(cc));
+      //console.log(JSON.stringify(cc));
       return (cc);
     }
 
 
     $q.all([
-        dataService.getFileData(), dataService.getFirebaseData(window.appProperties.app)
+        dataService.getFontData("hydrogenie"), dataService.getFirebaseData(window.appProperties.app)
       ])
       .then(function(result) {
+        self.fontData = result[0];
         self.appData = result[1];
-        //console.log(JSON.stringify(result[1]));
+        // console.log(JSON.stringify(result[0]));
         // async not working
       }).then(function() {
-        //console.log(JSON.stringify(self.appData));
+        // alert(JSON.stringify(self.appData));
       });
 
     //self.appData.tabCards = self.tabsToCards(self.appData.tabs);
@@ -569,7 +642,7 @@ app.directive('img', function() {
 
         var url = "https://www.google.co.uk/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
         element.prop('src', url);
-        //                element.remove();
+        // element.remove();
       });
     }
   }
