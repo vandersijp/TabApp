@@ -1,4 +1,6 @@
 /* (C) 2016 Ask Learn Share Ltd */
+console.log("Example 2");
+
 var alsExample = angular.module("alsExample", ['ngMaterial', 'ngAnimate']);
 
 alsIcon.directive('alsExampleFunction', function() {

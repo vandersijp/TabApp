@@ -1,7 +1,7 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log("Contact 9");
+console.log("Contact 2");
 
-var alsContact = angular.module("alsContact", ['alsIcon']);
+var alsContact = angular.module("alsContact", []);
 
 alsContact.directive('alsContactForm', function() {
     return {

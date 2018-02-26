@@ -1,4 +1,6 @@
 /* (C) 2016 Ask Learn Share Ltd */
+console.log("Icon 2");
+
 var alsIcon = angular.module("alsIcon", []);
 
 alsIcon.directive('alsIconMenuPair', function() {
