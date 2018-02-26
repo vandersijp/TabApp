@@ -1,6 +1,6 @@
-/* (C) 2016 Ask Learn Share Ltd */
-console.log("Figure 2");
-
+/*
+(C) 2016 Ask Learn Share Ltd
+*/
 var alsFigure = angular.module("alsFigure", []);
 
 alsFigure.directive('alsFigurePhotoMain', function () {

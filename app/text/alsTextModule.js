@@ -1,5 +1,8 @@
-/* (C) 2016 Ask Learn Share Ltd */
-console.log("Text 2");
+/*
+(C) 2016 Ask Learn Share Ltd
+*/
+
+console.log("Text 1");
 
 var alsText = angular.module("alsText", ['ngMaterial', 'ngAnimate', 'ngSanitize']);
 
