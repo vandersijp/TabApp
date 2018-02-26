@@ -1,4 +1,6 @@
 /* (C) 2016 Ask Learn Share Ltd */
+console.log("Access 2");
+
 var alsAccess = angular.module("alsAccess", []);
 
 alsAccess.directive('alsAccessForm', function() {
@@ -9,7 +11,7 @@ alsAccess.directive('alsAccessForm', function() {
         },
         /* this funtion is not recognised */
         controller: function() {
-            this.codeCompare = function(val1, val2) {
+            this.xxcodeCompare = function(val1, val2) {
                 return (val1.toLowerCase() == val2.toLowerCase());
             }
         },

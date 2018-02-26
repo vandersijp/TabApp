@@ -1,0 +1,111 @@
+<!--(C) Ask Learn Share Ltd -->
+<md-content layout="column" layout-margin ng-init="f=data.fonts.hydrogenie; u=$parent.appCtrl.alsUtils">
+
+  <div layout="row" layout-margin layout-align="center center">
+    <md-switch ng-repeat="(key, value) in f.switches" ng-model="f.switches[key]" aria-label="">
+      {{key}}
+    </md-switch>
+  </div>
+
+  <div layout="row" layout-margin layout-align="center center">
+    <md-slider-container ng-repeat="(key, value) in f.settings">
+      <span>{{key}}</span>
+      <md-slider flex min="{{value.min}}" max="{{value.max}}" step="{{value.step}}" ng-model="value.value" aria-label="x" id="scale-slider" md-vertical>
+      </md-slider>
+      <md-input-container>
+        <input flex type="number" ng-model="value.value" aria-label="x" aria-controls="{{key}}-slider">
+      </md-input-container>
+    </md-slider-container>
+  </div>
+
+  <div layout="row" layout-margin layout-align="center center">
+    <md-switch ng-repeat="(key, value) in f.spacings" ng-model="f.spacings[key]" aria-label="">
+      {{key}}
+    </md-switch>
+  </div>
+
+  <div layout="row" layout-margin layout-align="center center">
+
+    <svg width="600px" height="200px" viewbox="0 -4.5 24 9" style="filter: {{f.switches.shadow ? 'drop-shadow(4px 4px 4px #bbb)' : 'none'}}">
+
+      <g
+      ng-attr-transform = "scale({{f.settings.scale.value}}) skewX({{f.settings.skew.value}})"
+      fill="none"
+      >
+
+        <g ng-if="f.switches.raster"
+        stroke="grey"
+        stroke-width="0.02"
+        >
+          <path
+          ng-attr-d="
+          {{u.gridPath(-1, 1000, -4, 4, 1)}}
+          "/>
+        </g>
+
+        <path
+        ng-attr-stroke="black"
+        ng-attr-stroke-width="{{f.settings.stroke.value}}"
+        />
+
+        <g
+        ng-attr-stroke-width="{{f.settings.stroke.value}}"
+        ng-attr-stroke-linecap="{{f.switches.round ? 'round' : 'square'}}"
+        >
+
+          <g ng-repeat="w in f.words track by $index"
+          ng-attr-stroke="{{w.color}}"
+          ng-attr-transform = "translate({{u.wordsWidth(f.words, f, 'content', $index)}}, 0)"
+          >
+            <path ng-repeat = "c in w.content.split('') track by $index"
+            ng-attr-transform = "translate({{ u.wordPath(w.content, f).positions[$index] }}, 0)"
+            ng-attr-d="m 0 2 v 1 m 0 -3 {{u.wordPath(w.content, f).charPaths[$index]}} m 0 2 v 1 m 0 -3"
+            />
+          </g>
+
+        </g>
+      </g>
+
+    </svg>
+  </div>
+
+  <div ng-repeat="w in f.words" layout="row" layout-margin layout-align="center center">
+    <div ng-repeat="(key, value) in w" layout="column" layout-margin layout-align="center center">
+      <md-input-container>
+        <label>{{key}}</label>
+        <input ng-model="w[key]">
+      </md-input-container>
+    </div>
+  </div>
+
+  <als-text-header data-object="tab"></als-text-header>
+
+  <p ng-if="tab.summary" class="md-body-1">{{tab.summary}}</p>
+
+  <div ng-if="tab.toc">
+    <als-card-general data-cardset="data.tabCards" data-cuts="cuts"></als-card-general>
+  </div>
+
+  <als-text-playlist ng-repeat="l in data.playlists" ng-if="l.tab==tab.id" data-playlist="l" data-cuts="cuts"></als-text-playlist>
+  <als-figure-video-main ng-repeat="v in data.videos" ng-if="v.tab==tab.id" data-video="v" data-cuts="cuts"></als-figure-video-main>
+  <als-figure-photo-main ng-repeat="i in data.images" ng-if="i.tab==tab.id" data-image="i" data-cuts="cuts"></als-figure-photo-main>
+  <als-text-section ng-repeat="s in data.sections" ng-if="s.tab==tab.id" data-section="s"></als-text-section>
+  <als-card-general ng-repeat="c in data.cards" ng-if="c.tab==tab.id" data-cardset="c" data-cuts="cuts"></als-card-general>
+  <als-access-form ng-show="tab.id==data.system.access.tab" data-access="data.system.access"></als-access-form>
+
+  <div layout="column" layout-align="start center" ng-show="(tab.id!=data.system.access.tab || $parent.appCtrl.codeCompare(data.system.access.entered, data.system.access.code))">
+    <als-list-table-filtered ng-repeat="t in data.tables" ng-if="t.tab==tab.id" data-table="t" data-cuts="cuts"></als-list-table-filtered>
+    <als-list-single ng-repeat="l in data.lists" ng-if="l.tab==tab.id" data-list="l"></als-list-single>
+
+    <div layout-margin ng-if="(tab.id==data.system.access.tab && data.system.access.showsite)">
+      <div>
+        <h4 class="md-title">App properties</h4>
+        <pre>{{props | json}}</pre>
+        <h4 class="md-title">Repo properties</h4>
+        <pre>{{cuts | json}}</pre>
+        <h4 class="md-title">Site content</h4>
+        <pre>{{data | json}}</pre>
+      </div>
+    </div>
+  </div>
+</md-content>

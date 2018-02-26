@@ -1,9 +1,9 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log("Tab 11");
+console.log("Tab 2");
 
-var alsTab = angular.module("alsTab", ['ngMaterial', 'ngAnimate', 'ngSanitize', 'alsIcon', 'alsList', 'alsCard', 'alsText', 'alsFigure']);
+var alsTab = angular.module("alsTab", ['app', 'alsUtils', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTab', 'alsCard', 'alsFigure', 'alsText']);
 
-alsTab.directive('alsTabContent', function() {
+alsTab.directive('alsTabContent', ['alsLib', function(alsLib) {
     return {
         scope: {
             tab: '=',
@@ -19,4 +19,4 @@ alsTab.directive('alsTabContent', function() {
         //    bindToController: true,
         templateUrl: window.x.app + 'tab/alsTabContent.html'
     };
-});
+}]);
