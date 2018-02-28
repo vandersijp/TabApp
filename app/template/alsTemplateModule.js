@@ -3,7 +3,7 @@ console.log("Template 1");
 
 var alsTemplate = angular.module("alsTemplate", []);
 
-alsTemplate.directive('alsTemplateInvoiceMain', function () {
+alsTemplate.directive('alsTemplateInvoice', function () {
   return {
     scope: {
         image: '=',
@@ -12,13 +12,13 @@ alsTemplate.directive('alsTemplateInvoiceMain', function () {
     controller: function () {
       // this.name = 'Pascal';
     },
-    controllerAs: 'alsTemplateInvoiceMainCtrl',
+    controllerAs: 'alsTemplateInvoiceCtrl',
 //    bindToController: true,
-    templateUrl: window.x.app + 'template/alsTemplateInvoiceMain.html'
+    templateUrl: window.x.app + 'template/alsTemplateInvoice.html'
   };
 });
 
-alsTemplate.directive('alsTemplateResolutionMain', function () {
+alsTemplate.directive('alsTemplateResolution', function () {
   return {
     scope: {
         video: '=',
@@ -27,8 +27,8 @@ alsTemplate.directive('alsTemplateResolutionMain', function () {
     controller: function () {
       // this.name = 'Pascal';
     },
-    controllerAs: 'alsTemplateResolutionMainCtrl',
+    controllerAs: 'alsTemplateResolutionCtrl',
 //    bindToController: true,
-    templateUrl: window.x.app + 'template/alsTemplateResolutionMain.html'
+    templateUrl: window.x.app + 'template/alsTemplateResolution.html'
   };
 });
