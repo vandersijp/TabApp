@@ -28,8 +28,8 @@
         </td>
       </tr>
       <tr>
-        <td ng-repeat="h in invoice.filter" ng-if="$last">
-          {{invoice.total}}
+        <td ng-repeat="h in invoice.filter">
+          <span ng-if="$last">{{invoice.total}}</span>
         </td>
         <td>
           {{invoice.currency}}
