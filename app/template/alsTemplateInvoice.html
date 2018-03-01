@@ -27,9 +27,9 @@
           {{invoice.currency}}
         </td>
       </tr>
-      <tr ng-repeat="r in invoice.records">
-        <td ng-repeat="h in invoice.filter">
-          xx
+      <tr>
+        <td ng-repeat="h in invoice.filter" ng-if="$last">
+          {{invoice.total}}
         </td>
         <td>
           {{invoice.currency}}
