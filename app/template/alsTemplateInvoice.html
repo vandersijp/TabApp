@@ -2,6 +2,22 @@
 <style type="text/css">
 </style>
 
-<p layout="column" layout-align="start center">
-  invoice test 28 Feb 2018
-</p>
+<div layout="column" layout-align="start center">
+  <h3>{{invoice.header}}</h3>
+
+  <p>
+    invoice test 28 Feb 2018
+  </p>
+
+  <table>
+    <tr>
+      <th>a</th>
+      <th>b</th>
+    </tr>
+    <tr ng-repeat="i in invoice.items">
+      <td>{{i.description}}</td>
+      <td>{{i.unit}}</td>
+    </tr>
+  </table>
+
+</div>

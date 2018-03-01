@@ -6,7 +6,7 @@ var alsTemplate = angular.module("alsTemplate", []);
 alsTemplate.directive('alsTemplateInvoice', function () {
   return {
     scope: {
-        image: '=',
+        invoice: '=',
         cuts: '='
     },
     controller: function () {
@@ -21,7 +21,7 @@ alsTemplate.directive('alsTemplateInvoice', function () {
 alsTemplate.directive('alsTemplateResolution', function () {
   return {
     scope: {
-        video: '=',
+        resolution: '=',
         cuts: '='
     },
     controller: function () {
