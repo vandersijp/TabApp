@@ -30,6 +30,7 @@
       <tr>
         <td ng-repeat="h in invoice.filter">
           x
+          <span ng-if="$index == invoice.filter.length-2">Total</span>
           <span ng-if="$last">{{invoice.total}}</span>
         </td>
         <td>
