@@ -6,18 +6,27 @@
   <h3>{{invoice.header}}</h3>
 
   <p>
-    invoice test 28 Feb 2018
+    ["description","date","unit","quantity","rate", "nett", "VAT", "subtotal"]
   </p>
 
+
+
   <table>
-    <tr>
-      <th>a</th>
-      <th>b</th>
-    </tr>
-    <tr ng-repeat="i in invoice.items">
-      <td>{{i.description}}</td>
-      <td>{{i.unit}}</td>
-    </tr>
+
+    <thead>
+      <tr>
+        <th ng-repeat="h in invoice.filter">
+          {{h}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="r in invoice.records">
+        <td ng-repeat="h in invoice.filter">
+          {{r[h]}}
+        </td>
+      </tr>
+    </tbody>
   </table>
 
 </div>
