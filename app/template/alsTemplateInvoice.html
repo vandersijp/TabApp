@@ -29,9 +29,9 @@
       </tr>
       <tr>
         <td ng-repeat="h in invoice.filter">
-          x
           <span ng-if="$index == invoice.filter.length-2">Total</span>
-          <span ng-if="$last">{{invoice.total}}</span>
+          <span ng-if="$index == invoice.filter.length-1">{{invoice.total}}</span>
+          <span></span>
         </td>
         <td>
           {{invoice.currency}}
