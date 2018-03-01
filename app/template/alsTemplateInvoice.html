@@ -9,8 +9,6 @@
     ["description","date","unit","quantity","rate", "nett", "VAT", "subtotal"]
   </p>
 
-
-
   <table>
 
     <thead>
@@ -24,6 +22,17 @@
       <tr ng-repeat="r in invoice.records">
         <td ng-repeat="h in invoice.filter">
           {{r[h]}}
+        </td>
+        <td>
+          {{invoice.currency}}
+        </td>
+      </tr>
+      <tr ng-repeat="r in invoice.records">
+        <td ng-repeat="h in invoice.filter">
+          xx
+        </td>
+        <td>
+          {{invoice.currency}}
         </td>
       </tr>
     </tbody>
