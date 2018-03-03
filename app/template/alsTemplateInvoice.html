@@ -2,19 +2,19 @@
 <style type="text/css">
 </style>
 
-<div layout="column" layout-align="start center" ng-inti="cust='dw'">
+<div layout="column" layout-align="start center" ng-init="inv='dw01'; cust='dw'">
   <h3>{{invoice.tab}}</h3>
 
   <p>
-    56
+    57
   </p>
 
   <p>
-    {{invoice.customers[cust].name}}
+    {{inv}} | {{cust}} | {{invoice.customers[cust].name}}
    </p>
 
    <table ng-init="inv='dw01'; records=invoice.invoices.records; filter=invoice.invoices.filters.summary">
-     <thead>
+     <thead style="font-size: 80%;">
        <tr>
          <th ng-repeat="h in filter">
            {{h}}
