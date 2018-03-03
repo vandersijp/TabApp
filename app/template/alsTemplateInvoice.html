@@ -24,8 +24,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="r in invoice.records">
-        <td ng-repeat="h in invoice.filter">
+      <tr ng-repeat="r in invoice.jobs.records">
+        <td ng-repeat="h in invoice.jobs.filter">
           {{r[h]}}
         </td>
         <td>
