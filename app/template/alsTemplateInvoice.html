@@ -6,8 +6,7 @@
   <h3>{{invoice.tab}}</h3>
 
   <p>
-    44
-    ["description","date","unit","quantity","rate", "nett", "VAT", "subtotal"]
+    45
   </p>
 
   <p>
@@ -25,7 +24,7 @@
     </thead>
     <tbody>
       <tr ng-repeat="r in invoice.jobs.records">
-        <td ng-repeat="h in invoice.jobs.filter">
+        <td ng-repeat="h in invoice.jobs.filters.list">
           {{r[h]}}
         </td>
         <td>
@@ -33,7 +32,7 @@
         </td>
       </tr>
       <tr>
-        <td ng-repeat="h in invoice.filter">
+        <td ng-repeat="h in invoice.filters.list">
           <span ng-if="$index == invoice.filter.length-2">Total</span>
           <span ng-if="$index == invoice.filter.length-1">{{invoice.total}}</span>
           <span></span>
