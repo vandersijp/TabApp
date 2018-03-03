@@ -6,23 +6,23 @@
   <h3>{{invoice.tab}}</h3>
 
   <p>
-    50
+    51
   </p>
 
   <p>
     {{invoice.customers.dw.name}}
    </p>
 
-  <table style="font-size: 50%; color: blue;" ng-init="cust = 'dw'">
+  <table ng-init="cust = 'dw'">
 
-    <thead style="font-size: 50%;">
+    <thead>
       <tr>
         <th ng-repeat="h in invoice.jobs.filters.list">
           {{h}}
         </th>
       </tr>
     </thead>
-    <tbody>
+    <tbody style="font-size: 80%;">
       <tr ng-repeat="r in invoice.jobs.records">
         <td ng-repeat="h in invoice.jobs.filters.list">
           {{r[h]}}
