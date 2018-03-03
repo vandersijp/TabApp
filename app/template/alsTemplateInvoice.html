@@ -6,14 +6,18 @@
   <h3>{{invoice.tab}}</h3>
 
   <p>
-    57
+    59
   </p>
 
   <p>
     {{inv}} | {{cust}} | {{invoice.customers[cust].name}}
    </p>
 
-   <table ng-init="inv='dw01'; records=invoice.invoices.records; filter=invoice.invoices.filters.summary">
+<div ng-init="records=invoice.invoices.records; filter=invoice.invoices.filters.summary">
+
+<pre>{{ filter | json }}</pre>
+
+   <table>
      <thead style="font-size: 80%;">
        <tr>
          <th ng-repeat="h in filter">
@@ -33,6 +37,7 @@
      </tbody>
    </table>
 
+</div>
 
   <table ng-init="cust = 'dw'">
     <thead>
