@@ -2,19 +2,39 @@
 <style type="text/css">
 </style>
 
-<div layout="column" layout-align="start center">
+<div layout="column" layout-align="start center" ng-inti="cust='dw'">
   <h3>{{invoice.tab}}</h3>
 
   <p>
-    51
+    56
   </p>
 
   <p>
-    {{invoice.customers.dw.name}}
+    {{invoice.customers[cust].name}}
    </p>
 
-  <table ng-init="cust = 'dw'">
+   <table ng-init="inv='dw01'; records=invoice.invoices.records; filter=invoice.invoices.filters.summary">
+     <thead>
+       <tr>
+         <th ng-repeat="h in filter">
+           {{h}}
+         </th>
+       </tr>
+     </thead>
+     <tbody style="font-size: 80%;">
+       <tr ng-repeat="r in records">
+         <td ng-repeat="h in filter" ng-if = "r.invoice==inv">
+           {{r[h]}}
+         </td>
+         <td>
+           {{invoice.currency}}GGBB
+         </td>
+       </tr>
+     </tbody>
+   </table>
 
+
+  <table ng-init="cust = 'dw'">
     <thead>
       <tr>
         <th ng-repeat="h in invoice.jobs.filters.list">
@@ -26,16 +46,6 @@
       <tr ng-repeat="r in invoice.jobs.records">
         <td ng-repeat="h in invoice.jobs.filters.list">
           {{r[h]}}
-        </td>
-        <td>
-          {{invoice.currency}}
-        </td>
-      </tr>
-      <tr>
-        <td ng-repeat="h in invoice.filters.list">
-          <span ng-if="$index == invoice.filter.length-2">Total</span>
-          <span ng-if="$index == invoice.filter.length-1">{{invoice.total}}</span>
-          <span></span>
         </td>
         <td>
           {{invoice.currency}}
