@@ -6,6 +6,7 @@
   <h3>{{invoice.tab}}</h3>
 
   <p>
+    43
     ["description","date","unit","quantity","rate", "nett", "VAT", "subtotal"]
   </p>
 
@@ -13,11 +14,11 @@
     {{invoice.customers.dw.name}}
    </p>
 
-  <table>
+  <table ng-init="cust = 'dw'">
 
     <thead>
       <tr>
-        <th ng-repeat="h in invoice.filter">
+        <th ng-repeat="h in invoice.jobs.filter">
           {{h}}
         </th>
       </tr>
