@@ -6,7 +6,7 @@
   <h3>{{invoice.tab}}</h3>
 
   <p>
-    59
+    60
   </p>
 
   <p>
@@ -15,7 +15,7 @@
 
 <div ng-init="records=invoice.invoices.records; filter=invoice.invoices.filters.summary">
 
-<pre>{{ filter | json }}</pre>
+<pre>{{ invoice.customers[cust] | json }}</pre>
 
    <table>
      <thead style="font-size: 80%;">
