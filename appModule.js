@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 39a");
+console.log("App 40");
 
 String.repeat = function(string, num) {
   return new Array(parseInt(num) + 1).join(string);
@@ -108,7 +108,7 @@ window.lsCodeCompare = function(val1, val2) {
   return (val2.toLowerCase() == val1.toLowerCase());
 }
 
-var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTab'])
+var app = angular.module('app', ['ngMaterial', 'ngAnimate', 'firebase', 'ngSanitize', 'ngMessages', 'alsContact', 'alsAccess', 'alsIcon', 'alsList', 'alsFigure', 'alsTemplate', 'alsTab'])
 
 app.config(function($mdThemingProvider, $sceDelegateProvider) {
 
@@ -202,8 +202,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
       "accent": "blue"
     },
     "hydrogenie-com": {
-      "primary": "blue",
-      "accent": "indigo"
+      "primary": "hydrogenie-primary",
+      "accent": "hydrogenie-accent"
     },
     "mafia-eu": {
       "primary": "red",
@@ -323,6 +323,48 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
   $mdThemingProvider.theme('wine-red').backgroundPalette('wine-red').dark();
   // <md-card md-theme-watch md-theme="'wine-red'">
 
+  var hydrogeniePrimary = {
+    'contrastDefaultColor': 'light',
+    'contrastDarkColors': ['50', 'A100', 'A200', 'A400'],
+    'contrastLightColors': undefined,
+    '50': '#a1a1ff',
+    '100': '#8888ff',
+    '200': '#6e6eff',
+    '300': '#5555ff',
+    '400': '#3b3bff',
+    '500': '#22f',
+    '600': '#0808ff',
+    '700': '#0000ee',
+    '800': '#0000d4',
+    '900': '#0000bb',
+    'A100': '#bbbbff',
+    'A200': '#d4d4ff',
+    'A400': '#eeeeff',
+    'A700': '#0000a1'
+  };
+  $mdThemingProvider.definePalette('hydrogenie-primary', hydrogeniePrimary);
+  $mdThemingProvider.theme('hydrogenie-primary').backgroundPalette('hydrogenie-primary').dark();
+
+  var hydrogenieAccent = {
+    '50': '#3eaa00',
+    '100': '#47c300',
+    '200': '#50dd00',
+    '300': '#5af600',
+    '400': '#68ff11',
+    '500': '#78ff2a',
+    '600': '#98ff5d',
+    '700': '#a8ff77',
+    '800': '#b9ff90',
+    '900': '#c9ffaa',
+    'A100': '#98ff5d',
+    'A200': '#8f4',
+    'A400': '#78ff2a',
+    'A700': '#d9ffc3'
+  };
+  $mdThemingProvider.definePalette('hydrogenie-accent', hydrogenieAccent);
+  $mdThemingProvider.theme('hydrogenie-accent').backgroundPalette('hydrogenie-accent').dark();
+
+
   $mdThemingProvider.theme('default')
     .primaryPalette(window.appProperties.theme['primary'] || 'indigo')
     .accentPalette(window.appProperties.theme['accent'] || 'red')
@@ -348,6 +390,9 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
     self.selectedIndex = 0;
 
     // ===========< to be moved to a Service ===========
+
+    $scope.alsDate = Date;
+
     $scope.addElement = function(array) {
       var e = {
         "name": "",
