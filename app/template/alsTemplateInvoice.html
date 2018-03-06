@@ -6,7 +6,7 @@
   <h3>{{invoice.tab}}</h3>
 
   <p>
-    61
+    62
   </p>
 
   <p>
@@ -15,7 +15,7 @@
 
 <div ng-init="records=invoice.invoices.records; filter=invoice.invoices.filters.summary">
 
-<pre>{{ records | json }}</pre>
+<pre>{{ invoice.invoices.records | json }}</pre>
 
    <table>
      <thead style="font-size: 80%;">
@@ -26,8 +26,8 @@
        </tr>
      </thead>
      <tbody style="font-size: 80%;">
-       <tr ng-repeat="r in records">
-         <td ng-repeat="h in filter" ng-if = "r.invoice==inv">
+       <tr ng-repeat="r in invoice.invoices.records">
+         <td ng-repeat="h in invoice.invoices.filters.summary" ng-if = "r.invoice==inv">
            {{r[h]}}
          </td>
          <td>
