@@ -163,7 +163,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
       "bcc": "jxpater@gmail.com",
       "from": "noreply@pater.info"
     },
-    "app": {
+    "rawgit-com": {
       "bcc": "c@asklearnshare.com",
       "from": "test@testco.com"
     },
