@@ -234,7 +234,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
       "primary": "red",
       "accent": "indigo"
     },
-    "app": {
+    "rawgit-com": {
       "primary": "purple",
       "accent": "blue"
     },
