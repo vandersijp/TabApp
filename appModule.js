@@ -13,7 +13,7 @@ function getAppProperties() {
   var l = {};
   l.hostName = window.location.hostname.split("www.").slice(-1)[0];
   console.log(l.hostName);
-  if (l.hostName=="rawgit.com") l.hostName="mexit.us":
+  if (l.hostName=="rawgit.com") l.hostName="mexit.us";
   //    l.hostName = window.location.hostname;
   //    l.hostName = l.hostName.split("www.").slice(-1)[0];
   l.pathName = window.location.pathname;
