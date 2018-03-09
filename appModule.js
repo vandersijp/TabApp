@@ -24,9 +24,9 @@ function getAppProperties() {
   // someserver/rawgit.com/vandersijp/TabApp/master/indexhttps.html
   // someserver/mexit.us/
   l.app = l.app.split(".").join("-");
-  console.log("fullName:" + l.fullName);
-  console.log("hostName:" + l.hostName);
-  console.log("app:" + l.app);
+  //console.log("fullName:" + l.fullName);
+  //console.log("hostName:" + l.hostName);
+  //console.log("app:" + l.app);
   l.faviconExt = ".png";
   return l;
 }
@@ -481,7 +481,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
       cc.cards = cards;
       cc.expand = true;
       cc.toclink = true;
-      console.log(JSON.stringify(cc));
+      //console.log(JSON.stringify(cc));
       return (cc);
     }
 
