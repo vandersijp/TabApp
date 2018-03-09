@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 45");
+console.log("App 46");
 
 String.repeat = function(string, num) {
   return new Array(parseInt(num) + 1).join(string);
@@ -13,6 +13,7 @@ function getAppProperties() {
   var l = {};
   l.hostName = window.location.hostname.split("www.").slice(-1)[0];
   console.log(l.hostName);
+
   if (l.hostName=="rawgit.com") l.hostName="mexit.us";
   //    l.hostName = window.location.hostname;
   //    l.hostName = l.hostName.split("www.").slice(-1)[0];
