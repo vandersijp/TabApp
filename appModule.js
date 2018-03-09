@@ -30,6 +30,7 @@ function getAppProperties() {
   //    l.depth = l.fullName.split("/").length - 2;
   //    l.app = l.fullName.split("/")[l.depth];
   l.app = l.app.split(".").join("-");
+  console.log(l.app);
   l.faviconExt = ".png";
   return l;
 }
