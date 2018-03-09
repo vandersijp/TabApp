@@ -12,8 +12,6 @@ String.repeat = function(string, num) {
 function getAppProperties() {
   var l = {};
   l.hostName = window.location.hostname.split("www.").slice(-1)[0];
-  console.log("hostname");
-  console.log(l.hostName);
   //    l.hostName = window.location.hostname;
   //    l.hostName = l.hostName.split("www.").slice(-1)[0];
   l.pathName = window.location.pathname;
