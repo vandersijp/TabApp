@@ -21,8 +21,11 @@ function getAppProperties() {
       l.fullName = "someserver/" + l.hostName + l.pathName;
   }
   l.app = l.fullName.split("/").slice(-2)[0];
-  console.log(l.fullName);
+  // someserver/rawgit.com/vandersijp/TabApp/master/indexhttps.html
   l.app = l.app.split(".").join("-");
+  console.log("fullName:" + l.fullName);
+  console.log("hostName:" + l.hostName);
+  console.log("app:" + l.app);
   l.faviconExt = ".png";
   return l;
 }
