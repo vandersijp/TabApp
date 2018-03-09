@@ -8,7 +8,7 @@
     <title>Ask Learn Share</title>
     <!-- Utilities -->
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <!-- Material Design -->
     <link rel="stylesheet prefetch" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.css">
     <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
@@ -38,7 +38,7 @@
                 <als-icon-fab-pair data-class="'md-icon-button'" data-toggle="appCtrl.fontLarge" data-icon1="'format_size'" data-icon2="'text_fields'"> </als-icon-fab-pair>
 
                 <md-menu md-position-mode="target-right target">
-                    <md-button aria-label="" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                    <md-button aria-label="more options" class="md-icon-button" ng-click="$mdOpenMenu($event)">
                         <md-icon>
                             <i class="material-icons">more_vert</i>
                         </md-icon>
@@ -46,13 +46,13 @@
                     <md-menu-content>
 
                         <md-menu-item>
-                            <md-button aria-label="" ng-click="appCtrl.fontLarge=!appCtrl.fontLarge">
+                            <md-button aria-label="font size" ng-click="appCtrl.fontLarge=!appCtrl.fontLarge">
                                 <als-icon-menu-pair data-toggle="appCtrl.fontLarge" data-label1="'smaller'" data-label2="'larger'" data-icon1="'format_size'" data-icon2="'text_fields'"></als-icon-menu-pair>
                             </md-button>
                         </md-menu-item>
 
                         <md-menu-item ng-repeat="alert in appCtrl.appProps.alerts" ng-hide="alert.hide">
-                            <md-button aria-label="" ng-click="appCtrl.alertAny($event, alert.name)" ng-disabled="alert.disabled">
+                            <md-button aria-label="got it" ng-click="appCtrl.alertAny($event, alert.name)" ng-disabled="alert.disabled">
                                 <div layout="row" flex>
                                     <p flex>{{alert.label}}</p>
                                     <md-icon>
@@ -82,7 +82,7 @@
 
                     <md-menu-content>
                         <md-menu-item ng-repeat="tab in appCtrl.appData.tabs" ng-init="menuSub = appCtrl.menuSub(appCtrl.appData.tabs, $index)">
-                            <md-button aria-label="" ng-class="{'md-primary':menuSub.isSub}" ng-click="$parent.$parent.selectedIndex=$index; toggleLeft();">
+                            <md-button aria-label="menu sub-item" ng-class="{'md-primary':menuSub.isSub}" ng-click="$parent.$parent.selectedIndex=$index; toggleLeft();">
                                 <div layout="row" flex>
                                   <span ng-if="menuSub.isSub" ng-bind-html="menuSub.prefix"></span>
                                     <p flex>{{tab.id}}</p>
@@ -135,11 +135,11 @@
 
     <!-- Angular JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
     <!-- Material Design -->
     <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.js"></script>
     <!-- FireBase -->
