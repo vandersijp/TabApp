@@ -20,8 +20,9 @@ function getAppProperties() {
     default:
       l.fullName = "someserver/" + l.hostName + l.pathName;
   }
-  l.app = l.fullName.split("/").slice(-2)[0];
+  l.app = l.fullName.split("/").slice(1)[0];
   // someserver/rawgit.com/vandersijp/TabApp/master/indexhttps.html
+  // someserver/mexit.us/
   l.app = l.app.split(".").join("-");
   console.log("fullName:" + l.fullName);
   console.log("hostName:" + l.hostName);
