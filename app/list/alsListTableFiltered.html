@@ -17,6 +17,22 @@
 
     <div layout="column" ng-switch="table.type">
 
+      <div ng-switch-when="quote" class="quote" layout="column" layout-align="center center">
+          <als-text-header data-object="section"></als-text-header>
+          <md-content layout="row" layout-align="center center" layout-wrap layout-padding>
+              <md-card ng-repeat="item in table.records" ng-class="section.style" layout-align="center center" ng-class="section.style" flex-gt-xs="45" flex-xs="auto">
+                  <md-card-content class="singleline">
+                    <p>
+                        {{item.quote}}
+                    </p>
+                      <p>
+                          {{item.from}}
+                      </p>
+                  </md-card-content>
+              </md-card>
+          </md-content>
+      </div>
+
       <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
           <als-text-header data-object="section"></als-text-header>
           <md-content layout="row" layout-align="center center" layout-wrap layout-padding>
@@ -32,7 +48,6 @@
               </md-card>
           </md-content>
       </div>
-
 
         <div ng-switch-when="mdlist" layout="column">
             <md-content>
