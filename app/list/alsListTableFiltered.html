@@ -38,12 +38,12 @@
           <md-content layout="row" layout-align="center center" layout-wrap layout-padding>
               <md-card ng-repeat="item in table.records" ng-class="section.style" layout-align="center center" ng-class="section.style" flex-gt-xs="45" flex-xs="auto">
                   <md-card-content class="singleline">
-                    <p>
+                    <div layout-align="start">
                         {{item.title}}
-                    </p>
-                      <p>
+                    </div>
+                      <div layout-align="end">
                           {{item.body}}
-                      </p>
+                      </div>
                   </md-card-content>
               </md-card>
           </md-content>
