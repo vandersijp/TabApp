@@ -23,14 +23,10 @@
         <md-card ng-repeat="item in table.records" ng-class="section.style" layout-align="center center" ng-class="section.style" flex-gt-xs="45" flex-xs="auto">
           <md-card-content class="singleline">
             <div layout-align="start">
-              <div>
-                start{{item.title}}
-              </div>
+                start{{item.quote}}
             </div>
             <div layout-align="end">
-              <div>
-                end{{item.body}}
-              </div>
+                end{{item.from}}
             </div>
           </md-card-content>
         </md-card>
