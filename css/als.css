@@ -20,6 +20,25 @@ p, ul, ol, table, pre, .md-body-1, .md-body-2 {
     font-size: 100% !important;
 }
 
+blockquote::before{
+  content: "\201C"; /*Unicode for Left Double Quote*/
+
+  /*Font*/
+  font-size: 200%;
+  font-weight: bold;
+  color: #999;
+
+  /*Positioning*/
+  position: absolute;
+  left: 10px;
+  top:5px;
+}
+
+blockquote::after{
+  /*Reset to make sure*/
+  content: "";
+}
+
 figcaption, .md-caption {
     font-size: 75% !important;
     line-height: normal !important;
