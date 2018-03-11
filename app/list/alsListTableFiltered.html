@@ -22,22 +22,6 @@
       <md-content layout="row" layout-align="center center" layout-wrap layout-padding>
         <md-card ng-repeat="item in table.records" ng-class="section.style" layout-align="center center" ng-class="section.style" flex-gt-xs="45" flex-xs="auto">
           <md-card-content class="singleline">
-            <p>
-              {{item.quote}}
-            </p>
-            <p>
-              {{item.from}}
-            </p>
-          </md-card-content>
-        </md-card>
-      </md-content>
-    </div>
-
-    <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
-      <als-text-header data-object="section"></als-text-header>
-      <md-content layout="row" layout-align="center center" layout-wrap layout-padding>
-        <md-card ng-repeat="item in table.records" ng-class="section.style" layout-align="center center" ng-class="section.style" flex-gt-xs="45" flex-xs="auto">
-          <md-card-content class="singleline">
             <div layout-align="start">
               <div>
                 start{{item.title}}
@@ -48,6 +32,22 @@
                 end{{item.body}}
               </div>
             </div>
+          </md-card-content>
+        </md-card>
+      </md-content>
+    </div>
+
+    <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
+      <als-text-header data-object="section"></als-text-header>
+      <md-content layout="row" layout-align="center center" layout-wrap layout-padding>
+        <md-card ng-repeat="item in table.records" ng-class="section.style" layout-align="center center" ng-class="section.style" flex-gt-xs="45" flex-xs="auto">
+          <md-card-content class="singleline">
+            <p>
+              {{item.title}}
+            </p>
+            <p>
+              {{item.body}}
+            </p>
           </md-card-content>
         </md-card>
       </md-content>
