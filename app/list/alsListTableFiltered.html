@@ -13,6 +13,7 @@
 
   .als-from {
     text-align: right;
+    color: red;
   }
 </style>
 
@@ -28,8 +29,8 @@
         <md-card ng-repeat="item in table.records" ng-class="section.style" layout-align="center center" ng-class="section.style" flex-gt-xs="45" flex-xs="auto">
           <md-card-content>
             <blockquote>{{item.quote}}</blockquote>
-            <div class="md-caption" style="text-align: right;">
-              20{{item.from}}
+            <div class="md-caption als-from">
+              21{{item.from}}
             </div>
           </md-card-content>
         </md-card>
