@@ -23,18 +23,18 @@ p, ul, ol, table, pre, .md-body-1, .md-body-2 {
 blockquote, q{
     margin:0;
     padding:0;
-    border:0;
+    border:2px solid #78C0A8;
     outline:0;
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
     quotes:none;
+    position: relative;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:after {
     content:'';
-    content:none;
 }
 
 blockquote::before{
