@@ -26,16 +26,14 @@
       <md-content layout="row" layout-align="center center" layout-wrap layout-padding>
         <md-card ng-repeat="item in table.records" ng-class="section.style" layout-align="center center" ng-class="section.style" flex-gt-xs="45" flex-xs="auto">
           <md-card-content>
-            <div style="text-align: left;">
                 <blockquote>{{item.quote}}</blockquote>
-            </div>
-            <div class="md-caption als-from">
-                {{item.from}}
-            </div>
-            <md-subheader>
-                {{item.from}}
-            </md-subheader>
           </md-card-content>
+            <md-card-footer>
+              Card footer
+            </md-card-footer>
+            <md-card-footer class="als-from">
+              Card footer
+            </md-card-footer>
         </md-card>
       </md-content>
     </div>
