@@ -20,10 +20,29 @@ p, ul, ol, table, pre, .md-body-1, .md-body-2 {
     font-size: 100% !important;
 }
 
+blockquote, q{
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
 blockquote::before{
   content: "\201C"; /*Unicode for Left Double Quote*/
 
-  /*Font*/
+  /*Font
+  https://codepen.io/maxds/pen/DcveB
+  */
   font-size: 200%;
   font-weight: bold;
   color: #999;
