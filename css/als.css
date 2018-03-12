@@ -51,6 +51,8 @@ blockquote::before{
   position: absolute;
   left: 10px;
   top:5px;
+  left: 0px;
+  top:5px;
 }
 
 blockquote::after{
