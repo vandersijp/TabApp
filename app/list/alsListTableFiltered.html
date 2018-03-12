@@ -10,6 +10,10 @@
     /* to avoid jumping heights */
     height: .5em;
   }
+
+  .als-from {
+    text-align: right;
+  }
 </style>
 
 <div layout="column" layout-align="start center">
@@ -25,9 +29,12 @@
             <div style="text-align: left;">
                 <blockquote>{{item.quote}}</blockquote>
             </div>
-            <div style="text-align: right;" class="md-caption">
-                <i>{{item.from}}</i>
+            <div class="md-caption als-from">
+                {{item.from}}
             </div>
+            <md-subheader>
+                {{item.from}}
+            </md-subheader>
           </md-card-content>
         </md-card>
       </md-content>
