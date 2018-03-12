@@ -39,7 +39,8 @@ blockquote {
 blockquote:before {
   color: #555;
   content: open-quote;
-  font-size: 2em;
+  font-size: 3em;
+    line-height: 0;
   vertical-align: -0.4em;
   horizontal-align: -1em;
 }
