@@ -24,14 +24,16 @@
     <div ng-switch-when="quote" class="quote" layout="column" layout-align="center center">
       <als-text-header data-object="section"></als-text-header>
       <md-content layout="row" layout-align="center center" layout-wrap layout-padding>
+
         <md-card ng-repeat="item in table.records" ng-class="section.style" layout-align="center center" ng-class="section.style" flex-gt-xs="45" flex-xs="auto">
-          <div>
-                <blockquote>{{item.quote}}</blockquote>
-          </div>
-          <div class="md-caption" style="text-align: right;">
-            19{{item.from}}
-          <div>
+          <md-card-content>
+            <blockquote>{{item.quote}}</blockquote>
+            <div class="md-caption" style="text-align: right;">
+              20{{item.from}}
+            </div>
+          </md-card-content>
         </md-card>
+
       </md-content>
     </div>
 
