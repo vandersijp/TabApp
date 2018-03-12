@@ -20,25 +20,33 @@ p, ul, ol, table, pre, .md-body-1, .md-body-2 {
   font-size: 100% !important;
 }
 
+blockquote, q {
+  margin: 0;
+  padding: 0;
+  border: 2px solid #78C0A8;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  quotes: none;
+  position: relative;
+}
+
 blockquote {
-  padding: 22px;
   quotes: "\201C""\201D""\2018""\2019";
-  font-size: 15px;
 }
+
 blockquote:before {
-  color: #111;
+  color: #555;
   content: open-quote;
-  font-size: 4em;
-  line-height: 0;
+  font-size: 2em;
   vertical-align: -0.4em;
+  horizontal-align: -1em;
 }
+
 blockquote:after {
   visibility: hidden;
-  color: #111;
   content: close-quote;
-  font-size: 4em;
-  line-height: 0;
-  vertical-align: -0.4em;
 }
 
 figcaption, .md-caption {
