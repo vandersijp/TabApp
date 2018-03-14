@@ -39,15 +39,17 @@
         <md-card ng-repeat="item in table.records" ng-class="section.style" layout-align="center center" ng-class="section.style" flex-gt-xs="45" flex-xs="auto">
           <md-card-content>
             <div layout="row" layout-align="start start">
-              <div class="als-quotation-quote">
-                <span>&ldquo;</span>
+              <div>
+                <div class="als-quotation-quote">
+                  <span>&ldquo;</span>
+                </div>
               </div>
               <div>
                 <span>{{item.quote}}</span>
               </div>
             </div>
             <div class="md-caption als-quotation-from">
-              28 {{item.from}}
+              29 {{item.from}}
             </div>
           </md-card-content>
         </md-card>
