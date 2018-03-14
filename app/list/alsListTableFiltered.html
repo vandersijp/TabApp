@@ -15,10 +15,21 @@
     text-align: right;
   }
 
-  .als-quotation-quote {
+  div.als-quotation-quote {
     font-size: 2em;
     color: grey;
   }
+
+  div.als-quotation-quote > a {
+    position: relative;
+  }
+
+  div.als-quotation-quote > a > a{
+    position: absolute;
+    vertical-align: -0.4em;
+
+  }
+
 </style>
 
 <div layout="column" layout-align="start center">
@@ -32,8 +43,8 @@
 
         <md-card ng-repeat="item in table.records" ng-class="section.style" layout-align="center center" ng-class="section.style" flex-gt-xs="45" flex-xs="auto">
           <md-card-content>
-            <div layout="row" layout-align="start start">
-              <span class="als-quotation-quote">&ldquo;</span>
+            <div class="als-quotation-quote" layout="row" layout-align="start start">
+              <span>&ldquo;</span>
               <span>{{item.quote}}</span>
             </div>
             <div class="md-caption als-quotation-from">
