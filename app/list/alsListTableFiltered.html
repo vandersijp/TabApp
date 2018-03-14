@@ -19,7 +19,7 @@
     position: relative;
   }
 
-  .als-quotation-quote > span {
+  .als-quotation-quote>span {
     font-size: 2em;
     color: red;
     position: absolute;
@@ -50,7 +50,7 @@
               </div>
             </div>
             <div class="md-caption als-quotation-from">
-              30 {{item.from}}
+              31 {{item.from}}
             </div>
           </md-card-content>
         </md-card>
@@ -114,90 +114,90 @@
 
           <div ng-if="!active.length">
             <span>(empty)</span>
+              </div>
+            </div>
+
+            <div class="editable" layout="row" ng-repeat="(k,v) in active track by $index" layout-align="center center">
+
+              <div style="width: 50px">
+                <span ng-if="!v.open">{{v.name}}</span>
+                <form ng-if="v.open">
+                  <input ng-model="v.name" size="3" placeholder="name">
+                </form>
+              </div>
+
+              <div flex ng-title="{{Math.eval(v.expression)}}" title="eval function to be fixed">
+                <span ng-if="!v.open">{{v.expression}}</span>
+                <form ng-if="v.open">
+                  <input ng-model="v.expression" size="17" placeholder="expression">
+                </form>
+              </div>
+              <div style="width: 150px" layout="row" layout-align="end">
+
+                <!-- Edit -->
+                <als-icon-fab-pair title="edit" data-class="'md-icon-button'" data-toggle="v.open" data-icon1="'edit'" data-icon2="'check'"></als-icon-fab-pair>
+
+                <!-- Bin -->
+                <md-button arria-label="" title="bin" class="md-icon-button" ng-click="bin.unshift(active[$index]); active.splice($index, 1);">
+                  <md-icon>
+                    <i class="material-icons">delete</i>
+                  </md-icon>
+                </md-button>
+
+              </div>
+            </div>
+        </md-card>
+
+        <md-card layout-padding>
+
+          <div layout="column">
+            <div layout="row" layout-align="space-between center">
+              <h4 class="md-title">Bin</h4>
+            </div>
+
+            <div ng-if="!bin.length">
+              <span>(empty)</span>
+            </div>
           </div>
+
+          <div layout="row" ng-repeat="(k,v) in bin track by $index" layout-align="center center">
+
+            <div style="width: 50px">
+              <span>{{v.name}}</span>
+            </div>
+            <div flex ng-title="{{eval(v.expression)}}" title "to be fixed">
+              <span>{{v.expression}}</span>
+            </div>
+            <div style="width: 150px" layout="row" layout-align="end">
+
+              <!-- Restore -->
+              <md-button arria-label="" title="restore" class="md-icon-button" ng-click="active.unshift(bin[$index]); bin.splice($index, 1);">
+                <md-icon>
+                  <i class="material-icons">restore</i>
+                </md-icon>
+              </md-button>
+
+              <!-- Delete forever-->
+              <md-button arria-label="" title="delete forever" class="md-icon-button" ng-click="bin.splice($index, 1);">
+                <md-icon>
+                  <i class="material-icons">delete_forever</i>
+                </md-icon>
+              </md-button>
+
+            </div>
+          </div>
+        </md-card>
+
+        <div title="show the expressions in a JSON format" layout="row" layout-align="center" layout-padding>
+          <md-checkbox ng-model="showJSON">Show JSON</md-checkbox>
         </div>
 
-        <div class="editable" layout="row" ng-repeat="(k,v) in active track by $index" layout-align="center center">
-
-          <div style="width: 50px">
-            <span ng-if="!v.open">{{v.name}}</span>
-            <form ng-if="v.open">
-              <input ng-model="v.name" size="3" placeholder="name">
-            </form>
-          </div>
-
-          <div flex ng-title="{{Math.eval(v.expression)}}" title="eval function to be fixed">
-            <span ng-if="!v.open">{{v.expression}}</span>
-            <form ng-if="v.open">
-              <input ng-model="v.expression" size="17" placeholder="expression">
-            </form>
-          </div>
-          <div style="width: 150px" layout="row" layout-align="end">
-
-            <!-- Edit -->
-            <als-icon-fab-pair title="edit" data-class="'md-icon-button'" data-toggle="v.open" data-icon1="'edit'" data-icon2="'check'"></als-icon-fab-pair>
-
-            <!-- Bin -->
-            <md-button arria-label="" title="bin" class="md-icon-button" ng-click="bin.unshift(active[$index]); active.splice($index, 1);">
-              <md-icon>
-                <i class="material-icons">delete</i>
-              </md-icon>
-            </md-button>
-
-          </div>
+        <div ng-show="showJSON" layout-padding layout="column" layout-align="center center">
+          <h4 class="md-title">Active</h4>
+          <pre>{{active | json}}</pre>
+          <h4 class="md-title">Bin</h4>
+          <pre>{{bin | json}}</pre>
         </div>
-      </md-card>
-
-      <md-card layout-padding>
-
-        <div layout="column">
-          <div layout="row" layout-align="space-between center">
-            <h4 class="md-title">Bin</h4>
-          </div>
-
-          <div ng-if="!bin.length">
-            <span>(empty)</span>
-          </div>
-        </div>
-
-        <div layout="row" ng-repeat="(k,v) in bin track by $index" layout-align="center center">
-
-          <div style="width: 50px">
-            <span>{{v.name}}</span>
-          </div>
-          <div flex ng-title="{{eval(v.expression)}}" title "to be fixed">
-            <span>{{v.expression}}</span>
-          </div>
-          <div style="width: 150px" layout="row" layout-align="end">
-
-            <!-- Restore -->
-            <md-button arria-label="" title="restore" class="md-icon-button" ng-click="active.unshift(bin[$index]); bin.splice($index, 1);">
-              <md-icon>
-                <i class="material-icons">restore</i>
-              </md-icon>
-            </md-button>
-
-            <!-- Delete forever-->
-            <md-button arria-label="" title="delete forever" class="md-icon-button" ng-click="bin.splice($index, 1);">
-              <md-icon>
-                <i class="material-icons">delete_forever</i>
-              </md-icon>
-            </md-button>
-
-          </div>
-        </div>
-      </md-card>
-
-      <div title="show the expressions in a JSON format" layout="row" layout-align="center" layout-padding>
-        <md-checkbox ng-model="showJSON">Show JSON</md-checkbox>
-      </div>
-
-      <div ng-show="showJSON" layout-padding layout="column" layout-align="center center">
-        <h4 class="md-title">Active</h4>
-        <pre>{{active | json}}</pre>
-        <h4 class="md-title">Bin</h4>
-        <pre>{{bin | json}}</pre>
-      </div>
     </div>
 
     <table ng-switch-when="basic">
