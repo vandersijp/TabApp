@@ -11,16 +11,14 @@
     height: .5em;
   }
 
-  .als-from {
+  .als-quotation-from {
     text-align: right;
-    color: green;
   }
 
-  .als-quotation-quote
-  {
-    font-size=2em;
+  .als-quotation-quote {
+    font-size: 2em;
+    color: grey;
   }
-  
 </style>
 
 <div layout="column" layout-align="start center">
@@ -36,12 +34,10 @@
           <md-card-content>
             <div layout="row" layout-align="start start">
               <span class="als-quotation-quote">&ldquo;</span>
-              <span> The most valuable test is a valuable test is a valuable test is a valuable test is a valuable test is a valuable test is a valuable test is a valuable test is a valuable test is a valuable test is a valuable test</span>
+              <span>{{item.quote}}</span>
             </div>
-
-            <blockquote>{{item.quote}}</blockquote>
-            <div class="md-caption als-from">
-              25{{item.from}}
+            <div class="md-caption als-quotation-from">
+              {{item.from}}
             </div>
           </md-card-content>
         </md-card>
