@@ -217,7 +217,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
       "primary": "indigo",
       "accent": "blue"
     },
-    "eurokiss": {
+    "eurokiss-eu": {
       "primary": "indigo",
       "accent": "light-blue"
     },
