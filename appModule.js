@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 52");
+console.log("App 53");
 
 String.repeat = function(string, num) {
   return new Array(parseInt(num) + 1).join(string);
@@ -138,6 +138,9 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
       "querylabel": "query",
       "actionlabel": "contact"
     },
+    "eurokiss": {
+      "from": "noreply@eurokiss.eu"
+    },
     "snapelection": {
       "from": "noreply@snapelection.eu"
     },
@@ -213,6 +216,10 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     "whitehouse-tel": {
       "primary": "indigo",
       "accent": "blue"
+    },
+    "eurokiss": {
+      "primary": "indigo",
+      "accent": "light-blue"
     },
     "neverturkey-eu": {
       "primary": "red",
