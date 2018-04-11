@@ -2,15 +2,14 @@
 <!--(C) Ask Learn Share Ltd:-->
 <style type="text/css">
   .lead {
-    font-size: 120%;
     font-weight: bold;
+    font-size: 120%;
+    line-height: 90%;
   }
 </style>
 
 <md-content layout="column" layout-margin>
   <als-text-header data-object="tab"></als-text-header>
-  <p ng-if="tab.summary" class="md-subheader">{{tab.summary}}</p>
-  <p ng-if="tab.summary" class="md-subheading-1">{{tab.summary}}</p>
   <p ng-if="tab.summary" class="md-subheading-1 lead">{{tab.summary}}</p>
 
   <div ng-if="tab.toc">
