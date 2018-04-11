@@ -1,0 +1,43 @@
+<!--(C) Ask Learn Share Ltd:-->
+<style type="text/css">
+  .lead {
+    font-weight: bold;
+    font-size: 120%;
+    line-height: 115%;
+  }
+</style>
+
+<md-content layout="column" layout-margin>
+  <als-text-header data-object="tab"></als-text-header>
+  <p ng-if="tab.summary" class="md-subheading-1 lead">{{tab.summary}}</p>
+  <p ng-if="tab.summary" class="md-body-1 lead">{{tab.summary}}</p>
+
+  <div ng-if="tab.toc">
+    <als-card-general data-cardset="data.tabCards" data-cuts="cuts"></als-card-general>
+  </div>
+
+  <als-template-invoice ng-repeat="i in data.invoices" ng-if="i.tab==tab.id" data-invoice="i" data-cuts="cuts"></als-template-invoice>
+  <als-template-resolution ng-repeat="r in data.resolutions" ng-if="r.tab==tab.id" data-invoice="i" data-cuts="cuts"></als-template-resolution>
+  <als-text-playlist ng-repeat="l in data.playlists" ng-if="l.tab==tab.id" data-playlist="l" data-cuts="cuts"></als-text-playlist>
+  <als-figure-video-main ng-repeat="v in data.videos" ng-if="v.tab==tab.id" data-video="v" data-cuts="cuts"></als-figure-video-main>
+  <als-figure-photo-main ng-repeat="i in data.images" ng-if="i.tab==tab.id" data-image="i" data-cuts="cuts"></als-figure-photo-main>
+  <als-text-section ng-repeat="s in data.sections" ng-if="s.tab==tab.id" data-section="s"></als-text-section>
+  <als-card-general ng-repeat="c in data.cards" ng-if="c.tab==tab.id" data-cardset="c" data-cuts="cuts"></als-card-general>
+  <als-access-form ng-show="tab.id==data.system.access.tab" data-access="data.system.access"></als-access-form>
+
+  <div layout="column" layout-align="start center" ng-show="(tab.id!=data.system.access.tab || $parent.appCtrl.codeCompare(data.system.access.entered, data.system.access.code))">
+    <als-list-table-filtered ng-repeat="t in data.tables" ng-if="t.tab==tab.id" data-table="t" data-cuts="cuts"></als-list-table-filtered>
+    <als-list-single ng-repeat="l in data.lists" ng-if="l.tab==tab.id" data-list="l"></als-list-single>
+
+    <div layout-margin ng-if="(tab.id==data.system.access.tab && data.system.access.showsite)">
+      <div>
+        <h4 class="md-title">App properties</h4>
+        <pre>{{props | json}}</pre>
+        <h4 class="md-title">Repo properties</h4>
+        <pre>{{cuts | json}}</pre>
+        <h4 class="md-title">Site content</h4>
+        <pre>{{data | json}}</pre>
+      </div>
+    </div>
+  </div>
+</md-content>
