@@ -1,9 +1,7 @@
 <!--(C) Ask Learn Share Ltd:-->
-<style type="text/css">
-</style>
-
 <md-content layout="column" layout-margin>
-  <als-text-header data-object="tab"></als-text-header>  <p ng-if="tab.summary" class="md-body-1 als-lead">{{tab.summary}}</p>
+  <!--the header includes the lead-->
+  <als-text-header data-object="tab"></als-text-header>
 
   <div ng-if="tab.toc">
     <als-card-general data-cardset="data.tabCards" data-cuts="cuts"></als-card-general>
