@@ -57,7 +57,7 @@ blockquote:after {
 }
 
 figcaption, .md-caption {
-  font-size: 75% !important;
+  font-size: 90% !important;
   line-height: normal !important;
   text-align: center;
   margin-top: .5em;
