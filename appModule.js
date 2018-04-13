@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 53");
+console.log("App 54");
 
 String.repeat = function(string, num) {
   return new Array(parseInt(num) + 1).join(string);
@@ -144,7 +144,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     "snapelection": {
       "from": "noreply@snapelection.eu"
     },
-    "defectelimination": {
+    "defectelimination-com": {
       "from": "noreply@defectelimination.com"
     },
     "hydrogenie": {
@@ -204,9 +204,6 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     },
     "h2-eu": {},
     "asklearnshare-com": {},
-    "defectelimination-com": {
-      "primary": "amber",
-      "accent": "blue"
     },
     "snapelection-eu": {
       "primary": "amber",
