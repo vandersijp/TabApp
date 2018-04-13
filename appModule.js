@@ -144,6 +144,9 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     "snapelection": {
       "from": "noreply@snapelection.eu"
     },
+    "defectelimination": {
+      "from": "noreply@defectelimination.com"
+    },
     "hydrogenie": {
       "from": "noreply@hydrogenie.com"
     },
@@ -201,6 +204,10 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     },
     "h2-eu": {},
     "asklearnshare-com": {},
+    "defectelimination-com": {
+      "primary": "amber",
+      "accent": "blue"
+    },
     "snapelection-eu": {
       "primary": "amber",
       "accent": "blue"
