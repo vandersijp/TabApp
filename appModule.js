@@ -273,8 +273,8 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
       "accent": "deep-purple"
     },
     "defectelimination-com": {
-      "primary": "blue",
-      "accent": "red"
+      "primary": "green",
+      "accent": "deep orange"
     },
     "sulaiman-mobi": {
       "primary": "deep-orange"
