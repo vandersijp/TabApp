@@ -274,7 +274,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
     },
     "defectelimination-com": {
       "primary": "green",
-      "accent": "deep orange"
+      "accent": "deep-orange"
     },
     "sulaiman-mobi": {
       "primary": "deep-orange"
