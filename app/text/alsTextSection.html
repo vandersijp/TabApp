@@ -45,8 +45,7 @@
         <!-- default -->
         <div ng-switch-default>
             <als-text-header data-object="section"></als-text-header>
-            <p ng-if="section.lead" class="md-display-1 als-lead">{{section.lead}}</p>
-            <p ng-repeat="p in section.paragraphs" class="md-body-1" ng-class="xxsection.style">
+            <p ng-repeat="p in section.paragraphs" class="md-body-1">
                 {{p}}
             </p>
         </div>
