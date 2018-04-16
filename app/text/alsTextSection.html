@@ -25,9 +25,10 @@
     }
   </style>
 
-  <div ng-switch="section.type" layout="column">
+qqq
+  <als-text-header data-object="section"></als-text-header>
 
-    <als-text-header data-object="section"></als-text-header>
+  <div ng-switch="section.type" layout="column">
 
     <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
       <md-content layout="row" layout-align="center center" layout-wrap layout-padding>
@@ -45,6 +46,6 @@
   </div>
 
   <!-- recursive section -->
-  <als-text-section data-section="section.section"></als-text-section>
+  <als-text-section ng-if="section.section" data-section="section.section"></als-text-section>
 
 </md-content>
