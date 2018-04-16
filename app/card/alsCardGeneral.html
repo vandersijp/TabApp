@@ -71,7 +71,7 @@ qq
 
             </md-card-title>
 
-            <md-card-content ng-if="c.section | c.sections" ng-hide="(cardset.expand && !c.cardOpen)" layout="column" layout-align="start center">
+            <md-card-content ng-hide="(cardset.expand && !c.cardOpen)" layout="column" layout-align="start center">
                 <als-text-section data-section="c.section"></als-text-section>
                 <als-text-section ng-repeat="s in c.sections" data-section="s"></als-text-section>
             </md-card-content>
