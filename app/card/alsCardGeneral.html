@@ -74,7 +74,8 @@
                 </div>
 
                 <als-text-section data-section="c.section"></als-text-section>
-                
+                <als-text-section ng-repeat="s in c.sections" data-section="s"></als-text-section>
+
                 <p ng-if="c.content" class="md-body-1" ng-repeat="p in c.content">{{p}}</p>
             </md-card-content>
 
