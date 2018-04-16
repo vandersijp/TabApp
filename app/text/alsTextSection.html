@@ -25,7 +25,6 @@
     }
   </style>
 
-www
   <als-text-header data-object="section"></als-text-header>
 
   <div ng-switch="section.type" layout="column">
@@ -46,7 +45,7 @@ www
   </div>
 
   <!-- recursive sections -->
-  <als-text-section ng-if="section.sections" ng-repeat="s in section.sections" data-section="s"></als-text-section>
   <als-text-section ng-if="section.section" data-section="section.section"></als-text-section>
+  <als-text-section ng-if="section.sections" ng-repeat="s in section.sections" data-section="s"></als-text-section>
 
 </md-content>
