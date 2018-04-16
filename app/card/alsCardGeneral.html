@@ -1,21 +1,4 @@
 <!--(C) Ask Learn Share Ltd:-->
-<style type="text/css">
-    xxmd-card-content {
-        /* to reduce excessive spacing, not working */
-        margin-top: 0em !important;
-        margin-bottom: 0em !important;
-    }
-
-    xxmd-card p {
-        margin-top: 0px !important;
-    }
-
-    xxmd-card-title {
-        height: auto !important;
-    }
-</style>
-dd
-
 <div ng-if="cardset.search" layout="row" layout-align="end">
     <md-input-container>
         <md-icon>
@@ -76,6 +59,11 @@ dd
                 <als-text-section data-section="c.section"></als-text-section>
                 <als-text-section ng-repeat="s in c.sections" data-section="s"></als-text-section>
             </md-card-content>
+
+            <md-card-actions layout="row" layout-align="end center">
+  <md-button>Action 1</md-button>
+  <md-button>Open</md-button>
+</md-card-actions>
 
             <md-card-footer ng-if="c.footer" ng-hide="(cardset.expand && !c.cardOpen)" layout="row" layout-align="{{cardset.alignments.footer}}">
                 <span>{{c.footer}}</span>
