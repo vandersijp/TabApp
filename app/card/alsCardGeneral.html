@@ -61,9 +61,8 @@
           <als-text-section ng-repeat="s in c.sections" data-section="s"></als-text-section>
         </md-card-content>
 
-        <md-card-actions layout="row" layout-align="end center">
-          <md-button>Action 1</md-button>
-          <md-button class="md-accent md-raised">Open</md-button>
+        <md-card-actions ng-if="c.button" layout="row" layout-align="end center">
+          <md-button class="md-accent md-raised" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
         </md-card-actions>
 
         <md-card-footer ng-if="c.footer" layout="row" layout-align="{{cardset.alignments.footer}}">
