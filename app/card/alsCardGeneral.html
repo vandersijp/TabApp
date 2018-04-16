@@ -1,74 +1,76 @@
 <!--(C) Ask Learn Share Ltd:-->
 <div ng-if="cardset.search" layout="row" layout-align="end">
-    <md-input-container>
-        <md-icon>
-            <i class="material-icons">search</i>
-        </md-icon>
-        <label>Search</label>
-        <input ng-model="cardset.query" type="search" />
-    </md-input-container>
+  <md-input-container>
+    <md-icon>
+      <i class="material-icons">search</i>
+    </md-icon>
+    <label>Search</label>
+    <input ng-model="cardset.query" type="search" />
+  </md-input-container>
 </div>
 
 <div layout="column" layout-align="start center">
-    <als-text-header data-object="cardset"></als-text-header>
-    <md-content layout="row" layout-align="center center" layout-wrap>
-        <md-card ng-repeat="c in cardset.cards | filter: cardset.query" ng-class="cardset.style" flex-gt-xs="45" flex-xs="auto">
+  <als-text-header data-object="cardset"></als-text-header>
+  <md-content layout="row" layout-align="center center" layout-wrap>
+    <md-card ng-repeat="c in cardset.cards | filter: cardset.query" ng-class="cardset.style" flex-gt-xs="45" flex-xs="auto">
 
-            <md-card-header ng-if="cardset.layout=='top'">
-                <md-card-header-text layout="column" layout-align="start {{cardset.alignments.title}}">
-                    <als-text-header data-object="c"></als-text-header>
-                </md-card-header-text>
-            </md-card-header>
+      <md-card-header ng-if="cardset.layout=='top'">
+        <md-card-header-text layout="column" layout-align="start {{cardset.alignments.title}}">
+          <als-text-header data-object="c"></als-text-header>
+        </md-card-header-text>
+      </md-card-header>
 
-            <md-card-title layout="row" layout-align="space-between start">
+      <md-card-title layout="row" layout-align="space-between start">
 
-                <md-card-title-media xxflex-order="20" ng-if="c.image">
-                    <div class="md-media-sm card-media">
-                        <img ng-src="{{cuts.thu + c.image}}" />
-                    </div>
+        <md-card-title-media xxflex-order="20" ng-if="c.image">
+          <div class="md-media-sm card-media">
+            <img ng-src="{{cuts.thu + c.image}}" />
+          </div>
 
-                    <als-text-section ng-repeat="s in c.sections" data-section="s"></als-text-section>
+          <als-text-section ng-repeat="s in c.sections" data-section="s"></als-text-section>
 
-                </md-card-title-media>
+        </md-card-title-media>
 
-                <md-card-title-text layout="column" layout-align="start {{cardset.alignments.title}}">
-                    <als-text-header ng-if="cardset.layout!='top'" data-object="c"></als-text-header>
-                    <div ng-if="cardset.layout=='top' && c.summary">
-                        <p class="md-body-2">{{c.summary}}</p>
-                    </div>
-                </md-card-title-text>
+        <md-card-title-text layout="column" layout-align="start {{cardset.alignments.title}}">
+          <als-text-header ng-if="cardset.layout!='top'" data-object="c"></als-text-header>
+          <div ng-if="cardset.layout=='top' && c.summary">
+            <p class="md-body-2">{{c.summary}}</p>
+          </div>
+        </md-card-title-text>
 
-                <!-- start  -->
-                <div ng-if="(cardset.expand || cardset.toclink)" xxflex-order="-20" ng-if="true" layout="column" layout-align="end center">
-                    <md-button ng-if="cardset.toclink" aria-label="" class="md-icon-button" ng-click="$parent.$parent.$parent.$parent.$parent.$parent.$parent.selectedIndex=$parent.$index;">
-                        <md-icon>
-                            <i class="material-icons">arrow_forward</i>
-                        </md-icon>
-                    </md-button>
-                    <div ng-if="false">
-                        a{{$parent.$parent.selectedIndex}} b{{$parent.$parent.$parent.selectedIndex}} c{{$parent.$parent.$parent.$parent.selectedIndex}} d{{$parent.$parent.$parent.$parent.$parent.selectedIndex}} e{{$parent.$parent.$parent.$parent.$parent.$parent.selectedIndex}}
-                        f{{$parent.$parent.$parent.$parent.$parent.$parent.$parent.selectedIndex}} k{{$index}} l{{$parent.$index}} m{{$parent.$parent.$index}} n{{$parent.$parent.$parent.$index}} o{{$parent.$parent.$parent.$parent.$index}}
-                    </div>
-                    <als-icon-fab-pair ng-if="cardset.expand" data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'keyboard_arrow_down'" data-icon2="'keyboard_arrow_up'"> </als-icon-fab-pair>
-                </div>
-                <!-- end  -->
+        <!-- start  -->
+        <div ng-if="(cardset.expand || cardset.toclink)" xxflex-order="-20" ng-if="true" layout="column" layout-align="end center">
+          <md-button ng-if="cardset.toclink" aria-label="" class="md-icon-button" ng-click="$parent.$parent.$parent.$parent.$parent.$parent.$parent.selectedIndex=$parent.$index;">
+            <md-icon>
+              <i class="material-icons">arrow_forward</i>
+            </md-icon>
+          </md-button>
+          <div ng-if="false">
+            a{{$parent.$parent.selectedIndex}} b{{$parent.$parent.$parent.selectedIndex}} c{{$parent.$parent.$parent.$parent.selectedIndex}} d{{$parent.$parent.$parent.$parent.$parent.selectedIndex}} e{{$parent.$parent.$parent.$parent.$parent.$parent.selectedIndex}}
+            f{{$parent.$parent.$parent.$parent.$parent.$parent.$parent.selectedIndex}} k{{$index}} l{{$parent.$index}} m{{$parent.$parent.$index}} n{{$parent.$parent.$parent.$index}} o{{$parent.$parent.$parent.$parent.$index}}
+          </div>
+          <als-icon-fab-pair ng-if="cardset.expand" data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'keyboard_arrow_down'" data-icon2="'keyboard_arrow_up'"> </als-icon-fab-pair>
+        </div>
+        <!-- end  -->
 
-            </md-card-title>
+      </md-card-title>
 
-            <md-card-content ng-hide="(cardset.expand && !c.cardOpen)" layout="column" layout-align="start center">
-                <als-text-section data-section="c.section"></als-text-section>
-                <als-text-section ng-repeat="s in c.sections" data-section="s"></als-text-section>
-            </md-card-content>
+      <div ng-hide="(cardset.expand && !c.cardOpen)">
+        <md-card-content layout="column" layout-align="start center">
+          <als-text-section data-section="c.section"></als-text-section>
+          <als-text-section ng-repeat="s in c.sections" data-section="s"></als-text-section>
+        </md-card-content>
 
-            <md-card-actions layout="row" layout-align="end center">
-  <md-button>Action 1</md-button>
-  <md-button>Open</md-button>
-</md-card-actions>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Action 1</md-button>
+          <md-button class="md-accent md-raised">Open</md-button>
+        </md-card-actions>
 
-            <md-card-footer ng-if="c.footer" ng-hide="(cardset.expand && !c.cardOpen)" layout="row" layout-align="{{cardset.alignments.footer}}">
-                <span>{{c.footer}}</span>
-            </md-card-footer>
+        <md-card-footer ng-if="c.footer" layout="row" layout-align="{{cardset.alignments.footer}}">
+          <span>{{c.footer}}</span>
+        </md-card-footer>
 
-        </md-card>
-    </md-content>
+      </div>
+    </md-card>
+  </md-content>
 </div>
