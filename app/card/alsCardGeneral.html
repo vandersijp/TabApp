@@ -14,7 +14,7 @@
         height: auto !important;
     }
 </style>
-
+qq
 <div ng-if="cardset.search" layout="row" layout-align="end">
     <md-input-container>
         <md-icon>
@@ -71,14 +71,9 @@
 
             </md-card-title>
 
-            <md-card-content ng-hide="(cardset.expand && !c.cardOpen)" layout="column" layout-align="start center">
-                <div ng-if="cardset.layout!='top' && c.summary">
-                </div>
-
+            <md-card-content ng-if="c.section | c.sections" ng-hide="(cardset.expand && !c.cardOpen)" layout="column" layout-align="start center">
                 <als-text-section data-section="c.section"></als-text-section>
                 <als-text-section ng-repeat="s in c.sections" data-section="s"></als-text-section>
-
-                <p ng-if="c.content" class="md-body-1" ng-repeat="p in c.content">{{p}}</p>
             </md-card-content>
 
             <md-card-footer ng-if="c.footer" ng-hide="(cardset.expand && !c.cardOpen)" layout="row" layout-align="{{cardset.alignments.footer}}">
