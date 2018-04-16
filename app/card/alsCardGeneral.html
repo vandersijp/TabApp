@@ -43,7 +43,7 @@
                         <img ng-src="{{cuts.thu + c.image}}" />
                     </div>
 
-                    <als-text-section data-section="c.section"></als-text-section>
+                    <als-text-section ng-repeat="s in c.sections" data-section="s"></als-text-section>
 
                 </md-card-title-media>
 
