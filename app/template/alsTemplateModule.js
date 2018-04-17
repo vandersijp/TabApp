@@ -3,7 +3,7 @@ console.log("Template 2");
 
 var alsTemplate = angular.module("alsTemplate", []);
 
-alsTemplate].directive('alsTemplateStatement', function () {
+alsTemplate.directive('alsTemplateStatement', function () {
   return {
     scope: {
         statement: '='
