@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log("Template 4");
+console.log("Template 5");
 
 var alsTemplate = angular.module("alsTemplate", []);
 
