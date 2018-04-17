@@ -1,12 +1,13 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log("Template 2");
+console.log("Template 3");
 
 var alsTemplate = angular.module("alsTemplate", []);
 
 alsTemplate.directive('alsTemplateStatement', function () {
   return {
     scope: {
-        statement: '='
+        statement: '=',
+        cuts: '='
     },
     controller: function () {
       // this.name = 'Pascal';
@@ -20,8 +21,10 @@ alsTemplate.directive('alsTemplateStatement', function () {
 alsTemplate.directive('alsTemplateInvoice', function () {
   return {
     scope: {
+      scope: {
         invoice: '=',
         cuts: '='
+      },
     },
     controller: function () {
       // this.name = 'Pascal';
@@ -35,8 +38,10 @@ alsTemplate.directive('alsTemplateInvoice', function () {
 alsTemplate.directive('alsTemplateResolution', function () {
   return {
     scope: {
+      scope: {
         resolution: '=',
         cuts: '='
+      },
     },
     controller: function () {
       // this.name = 'Pascal';
