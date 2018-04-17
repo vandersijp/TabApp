@@ -1,7 +1,21 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log("Template 1");
+console.log("Template 2");
 
 var alsTemplate = angular.module("alsTemplate", []);
+
+alsStatement.directive('alsTemplateStatement', function () {
+  return {
+    scope: {
+        statement: '='
+    },
+    controller: function () {
+      // this.name = 'Pascal';
+    },
+    controllerAs: 'alsTemplateStatementCtrl',
+//    bindToController: true,
+    templateUrl: window.x.app + 'template/alsTemplateStatement.html'
+  };
+});
 
 alsTemplate.directive('alsTemplateInvoice', function () {
   return {
