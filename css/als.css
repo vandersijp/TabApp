@@ -8,8 +8,8 @@ img{max-width:100%!important}
 img{vertical-align:middle}
 img{border:0}
 
-md-card{
-  background: yellow;
+md-card-content{
+  background: orange;
 }
 
   md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
