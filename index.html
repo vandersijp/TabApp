@@ -23,11 +23,6 @@
     -->
     <!-- Temporary styles -->
     <style type="text/css">
-
-    img{max-width:100%!important}
-    img{vertical-align:middle}
-    img{border:0}
-
     </style>
 </head>
 
@@ -51,7 +46,7 @@
                     <md-menu-content>
 
                         <md-menu-item>
-                            <md-button aria-label="font size" ng-click="appCtrl.fontLarge=!appCtrl.fontLarge">
+                            <md-button ng-click="appCtrl.fontLarge=!appCtrl.fontLarge" aria-label="font size">
                                 <als-icon-menu-pair data-toggle="appCtrl.fontLarge" data-label1="'smaller'" data-label2="'larger'" data-icon1="'format_size'" data-icon2="'text_fields'"></als-icon-menu-pair>
                             </md-button>
                         </md-menu-item>
@@ -102,14 +97,14 @@
                     <md-content layout="column" layout-align="top center" layout-margin>
                         <p class="md-caption">&copy;&nbsp;{{appCtrl.appData.version.copyright}}</p>
                         <p class="md-caption">{{alsDate.now() | date:'MMMM yyyy'}}</p>
-                        <p class="md-caption">vs 5</p>
+                        <p class="md-caption">vs 7swi</p>
                     </md-content>
 
                 </md-content>
             </md-sidenav>
 
             <md-content ng-class="{'als-font-large' : appCtrl.fontLarge}">
-                <md-tabs md-selected="selectedIndex" md-dynamic-height md-border-bottom md-swipe-content>
+                <md-tabs md-selected="selectedIndex" md-dynamic-height md-border-bottom md-swipe-content="true" md-swipe-left="alert('left')">
                     <!-- first tabs only -->
                     <md-tab ng-repeat="tab in appCtrl.appData.tabs" ng-if="$index < appCtrl.appData.tabs.length-1" label="{{tab.id}}"  ng-init="appCtrl.appData.tabCards=appCtrl.tabsToCards(appCtrl.appData.tabs, 'headline', 'title');">
                         <als-tab-content data-data="appCtrl.appData" data-tab="tab" data-props="appCtrl.appProps" data-cuts="appCtrl.shortCuts"></als-tab-content>
