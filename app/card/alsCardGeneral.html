@@ -27,6 +27,7 @@
             <img ng-src="{{cuts.thu + c.image}}" />
           </div>
 
+          <als-text-section data-section="c.section"></als-text-section>
           <als-text-section ng-repeat="s in c.sections" data-section="s"></als-text-section>
 
         </md-card-title-media>
@@ -57,8 +58,8 @@
 
       <div ng-hide="(cardset.expand && !c.cardOpen)">
         <md-card-content layout="column" layout-align="start center">
-          <als-text-section data-section="c.section"></als-text-section>
-          <als-text-section ng-repeat="s in c.sections" data-section="s"></als-text-section>
+          <als-text-section data-section="c.content.section"></als-text-section>
+          <als-text-section ng-repeat="s in c.content.sections" data-section="s"></als-text-section>
         </md-card-content>
 
         <md-card-actions ng-if="c.button" layout="row" layout-align="end center">
