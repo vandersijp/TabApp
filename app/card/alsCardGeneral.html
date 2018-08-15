@@ -17,6 +17,10 @@
       <md-card-header ng-if="cardset.layout=='top'">
         <md-card-header-text layout="column" layout-align="start {{cardset.alignments.title}}">
           <als-text-header data-object="c"></als-text-header>
+          
+                    <als-text-section data-section="c.section"></als-text-section>
+                    <als-text-section ng-repeat="s in c.sections" data-section="s"></als-text-section>
+
         </md-card-header-text>
       </md-card-header>
 
@@ -26,10 +30,6 @@
           <div class="md-media-sm card-media">
             <img ng-src="{{cuts.thu + c.image}}" />
           </div>
-
-          <als-text-section data-section="c.section"></als-text-section>
-          <als-text-section ng-repeat="s in c.sections" data-section="s"></als-text-section>
-
         </md-card-title-media>
 
         <md-card-title-text layout="column" layout-align="start {{cardset.alignments.title}}">
