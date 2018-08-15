@@ -23,7 +23,7 @@
   }
 </style>
 
-<md-content ng-class="section.class">
+<div ng-class="section.class">
 
   <als-text-header data-object="section"></als-text-header>
 
@@ -63,4 +63,4 @@
   <als-text-section ng-if="section.section" data-section="section.section"></als-text-section>
   <als-text-section ng-if="section.sections" ng-repeat="s in section.sections" data-section="s"></als-text-section>
 
-</md-content>
+</div>
