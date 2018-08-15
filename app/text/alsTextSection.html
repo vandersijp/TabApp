@@ -31,16 +31,31 @@
 
     <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
       <md-content layout="row" layout-align="center center" layout-wrap layout-padding>
-        <md-card ng-repeat="p in section.paragraphs" ng-class="section.style" layout-align="center center" flex-gt-xs="45" flex-xs="auto">
+
+        <!-- single -->
+        <md-card ng-if="section.paragraph" ng-class="section.style" layout-align="center center" flex-gt-xs="45" flex-xs="auto">
+          <md-card-content class="singleline">
+            <p>{{section.paragraph}}</p>
+          </md-card-content>
+        </md-card>
+
+        <!-- multiple -->
+        <md-card ng-if="section.paragraphs" ng-repeat="p in section.paragraphs" ng-class="section.style" layout-align="center center" flex-gt-xs="45" flex-xs="auto">
           <md-card-content class="singleline">
             <p>{{p}}</p>
           </md-card-content>
         </md-card>
+
       </md-content>
     </div>
 
     <div ng-switch-default>
-      <p ng-repeat="p in section.paragraphs" class="md-body-1">{{p}}</p>
+      <p ng-if="section.paragraph" class="md-body-1">
+        {{section.paragraph}}
+      </p>
+      <p ng-if="section.paragraphs" ng-repeat="p in section.paragraphs" class="md-body-1">
+        {{p}}
+      </p>
     </div>
   </div>
 
