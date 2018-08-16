@@ -30,7 +30,7 @@
   <div ng-switch="section.type" layout="column">
 
     <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
-      <md-content layout="row" layout-align="center center" layout-wrap layout-padding>
+      <div layout="row" layout-align="center center" layout-wrap layout-padding>
 
         <!-- single -->
         <md-card ng-if="section.paragraph" ng-class="section.style" layout-align="center center" flex-gt-xs="45" flex-xs="auto">
@@ -46,7 +46,7 @@
           </md-card-content>
         </md-card>
 
-      </md-content>
+      </div>
     </div>
 
     <div ng-switch-default>
