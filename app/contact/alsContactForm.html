@@ -4,8 +4,8 @@
         background-color: transparent !important;
     }
 </style>
-
-<md-content ng-hide="status.success">
+xxxx
+<div ng-hide="status.success">
     <md-toolbar class="transparent">
         <div class="md-toolbar-tools" layout-margin>
             <span flex></span>
@@ -16,13 +16,13 @@
         </div>
         <span flex></span>
     </md-toolbar>
-</md-content>
+</div>
 
 <div layout="column" layout-align="center center" ng-if="status.sending">
     <md-progress-circular md-mode="indeterminate"></md-progress-circular>
 </div>
 
-<md-content layout="column" layout-margin ng-show="status.open">
+<div layout="column" layout-margin ng-show="status.open">
     <form name="contactForm">
         <md-input-container class="md-block" flex-gt-sm>
             <label>Your email address</label>
@@ -38,7 +38,7 @@
             </md-checkbox>
         </div>
     </form>
-</md-content>
+</div>
 
 <md-subheader ng-if="status.response.data">
     <div ng-bind-html="status.response.data"></div>
