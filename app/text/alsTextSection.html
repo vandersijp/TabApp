@@ -25,7 +25,7 @@
 
 <div ng-class="section.class">
 
-  <als-text-header data-object="section"></als-text-header>
+  <als-text-header data-section="section"></als-text-header>
 
   <div ng-switch="section.type" layout="column">
 
@@ -50,9 +50,9 @@
     </div>
 
     <div ng-switch-default>
-      <als-text-paragraphs data-object="section"></als-text-paragraphs>
+      <als-text-paragraphs data-section="section"></als-text-paragraphs>
     </div>
-    
+
   </div>
 
   <!-- recursive sections -->
