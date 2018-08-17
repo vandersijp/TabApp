@@ -7,7 +7,7 @@ alsText.directive('alsTextParagraphs', function() {
     return {
         restrict: 'E',
         scope: {
-            object: '='
+            section: '='
         },
         templateUrl: window.x.app + 'text/alsTextParagraphs.html'
     }
@@ -17,7 +17,7 @@ alsText.directive('alsTextHeader', function() {
     return {
         restrict: 'E',
         scope: {
-            object: '='
+            section: '='
         },
         templateUrl: window.x.app + 'text/alsTextHeader.html'
     }

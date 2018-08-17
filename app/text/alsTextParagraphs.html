@@ -1,12 +1,13 @@
 <!--(C) Ask Learn Share Ltd:-->
 
-<p ng-if="object.paragraph" class="md-body-1">
-  {{object.paragraph}}
+<p ng-if="section.paragraph" class="md-body-1">
+  {{section.paragraph}}
 </p>
 
-<p ng-if="object.paragraphs" ng-repeat="p in object.paragraphs" class="md-body-1">
+<p ng-if="section.paragraphs" ng-repeat="p in section.paragraphs" class="md-body-1">
   {{p}}
 </p>
 
-<!-- recursive -->
-<als-text-paragraphs data-object="object.paragraphs"></als-text-paragraphs>
+<als-text-section ng-if="section.section" data-section="section.section"></als-text-section>
+
+<als-text-section ng-if="section.sections" ng-repeat="s in section.sections" data-section="s"></als-text-section>
