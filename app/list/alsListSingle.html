@@ -33,21 +33,21 @@
     <div class="als-list-capfirst" ng-switch="list.type">
         <!--stamp:-->
         <div ng-switch-when="stamp" layout="row" layout-margin layout-wrap layout-align="center center">
-            <div class="stamp" ng-repeat="p in list.points" ng-class="list.style">
+            <div class="stamp" ng-repeat="p in list.points track by $index" ng-class="list.style">
                 {{p}}
             </div>
         </div>
         <!--wrapped:-->
         <div ng-switch-when="wrap" layout="row" layout-margin layout-wrap layout-align="center center">
-            <div class="wrap" ng-repeat="p in list.points" ng-class="list.style">{{p}}</div>
+            <div class="wrap" ng-repeat="p in list.points track by $index" ng-class="list.style">{{p}}</div>
         </div>
         <!--column:-->
         <div ng-switch-when="strip" layout="column" layout-margin layout-align="center center">
-            <div class="strip" ng-repeat="p in list.points" ng-class="list.style">{{p}}</div>
+            <div class="strip" ng-repeat="p in list.points track by $index" ng-class="list.style">{{p}}</div>
         </div>
         <!--link objects:-->
         <div ng-switch-when="contact" layout="row" layout-align="center center" layout-margin layout-padding layout-wrap>
-            <div class="contact" ng-repeat="p in list.points" ng-class="list.style">
+            <div class="contact" ng-repeat="p in list.points track by $index" ng-class="list.style">
                 {{p.name}}</br>
                 {{p.email}}</br>
                 {{p.tel}}
@@ -56,7 +56,7 @@
         <!--link objects:-->
         <div ng-switch-when="link" layout="column" layout-align="center center">
             <ol style="display: inline-block;">
-                <li ng-repeat="p in list.points" ng-class="list.style">
+                <li ng-repeat="p in list.points track by $index" ng-class="list.style">
                     <a href="{{p.link}}" target="_blank">{{p.description}}</a>
                 </li>
             </ol>
@@ -64,7 +64,7 @@
         <!--bullets:-->
         <div ng-switch-default layout="column" layout-align="center center">
             <ul style="display: inline-block;">
-                <li ng-repeat="p in list.points" ng-class="list.style">{{p}}</li>
+                <li ng-repeat="p in list.points track by $index" ng-class="list.style">{{p}}</li>
             </ul>
         </div>
     </div>
