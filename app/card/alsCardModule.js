@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log("Card 2");
+console.log("Card 6");
 
 var alsCard = angular.module("alsCard", []);
 
