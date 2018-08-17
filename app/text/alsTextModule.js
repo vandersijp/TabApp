@@ -13,7 +13,7 @@ alsText.directive('alsTextParagraphs', function() {
     }
 });
 
-alsText.directive('alsTextHeaders', function() {
+alsText.directive('alsTextHeader', function() {
     return {
         restrict: 'E',
         scope: {
