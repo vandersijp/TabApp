@@ -1,9 +1,19 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log("Text 3");
+console.log("Text 4");
 
 var alsText = angular.module("alsText", ['ngMaterial', 'ngAnimate', 'ngSanitize']);
 
-alsText.directive('alsTextHeader', function() {
+alsText.directive('alsTextParagraphs', function() {
+    return {
+        restrict: 'E',
+        scope: {
+            object: '='
+        },
+        templateUrl: window.x.app + 'text/alsTextParagraphs.html'
+    }
+});
+
+alsText.directive('alsTextHeaders', function() {
     return {
         restrict: 'E',
         scope: {
