@@ -11,14 +11,14 @@
 </div>
 
 <div layout="column" layout-align="start center">
-  <als-text-header data-object="cardset"></als-text-header>
+  <als-text-header data-section="cardset"></als-text-header>
   <div layout="row" layout-align="center center" layout-wrap>
 
     <md-card ng-repeat="c in cardset.cards | filter: cardset.query" ng-class="cardset.style" flex="auto" flex-gt-xs="50">
 
       <md-card-header ng-if="cardset.layout=='top'">
         <md-card-header-text layout="column" layout-align="start {{cardset.alignments.title}}">
-          <als-text-header data-object="c"></als-text-header>
+          <als-text-header data-section="c"></als-text-header>
 
           <als-text-section data-section="c.section"></als-text-section>
           <als-text-section ng-repeat="s in c.sections" data-section="s"></als-text-section>
@@ -35,7 +35,7 @@
         </md-card-title-media>
 
         <md-card-title-text layout="column" layout-align="start {{cardset.alignments.title}}">
-          zzz<als-text-header ng-if="cardset.layout!='top'" data-object="c"></als-text-header>
+          zzz<als-text-header ng-if="cardset.layout!='top'" data-section="c"></als-text-header>
         </md-card-title-text>
 
         <!-- start  -->
