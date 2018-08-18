@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log("Text 6");
+console.log("Text 7");
 
 var alsText = angular.module("alsText", ['ngMaterial', 'ngAnimate', 'ngSanitize']);
 
@@ -27,7 +27,7 @@ alsText.directive('alsTextSection', function() {
     return {
         restrict: 'E',
         scope: {
-            section: '=';
+            section: '=',
             filter: '='
         },
         templateUrl: window.x.app + 'text/alsTextSection.html'
