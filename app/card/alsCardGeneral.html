@@ -35,7 +35,7 @@
         </md-card-title-media>
 
         <md-card-title-text layout="column" layout-align="start {{cardset.alignments.title}}">
-          zzz<als-text-header ng-if="cardset.layout!='top'" data-section="c"></als-text-header>
+          <als-text-header ng-if="cardset.layout!='top'" data-section="c"></als-text-header>
         </md-card-title-text>
 
         <!-- start  -->
@@ -54,10 +54,6 @@
         <!-- end  -->
 
       </md-card-title>
-
-      <hr>
-        xx
-      <hr>
 
       <div ng-hide="(cardset.expand && !c.cardOpen)">
         <md-card-content layout="column" layout-align="start center">
