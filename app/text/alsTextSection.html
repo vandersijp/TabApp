@@ -25,7 +25,13 @@
 
 <div ng-class="section.class">
 
+<hr>
+{{filter}}
+<hr>
+
+<div ng-hide="filter==1">
   <als-text-header data-section="section"></als-text-header>
+</div>
 
   <div ng-switch="section.type" layout="column">
 
