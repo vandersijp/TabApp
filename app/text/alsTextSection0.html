@@ -25,9 +25,9 @@
 
 <div ng-class="section.class">
 
-  <als-text-header ng-if="(1 << 0) & filter" data-section="section"></als-text-header>
+  <als-text-header data-object="section"></als-text-header>
 
-  <div ng-if="(1 << 1) & filter" ng-switch="section.type" layout="column">
+  <div ng-switch="section.type" layout="column">
 
     <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
       <div layout="row" layout-align="center center" layout-wrap layout-padding>
@@ -50,9 +50,13 @@
     </div>
 
     <div ng-switch-default>
-      <als-text-paragraphs data-section="section"></als-text-paragraphs>
+      <p ng-if="section.paragraph" class="md-body-1">
+        {{section.paragraph}}
+      </p>
+      <p ng-if="section.paragraphs" ng-repeat="p in section.paragraphs" class="md-body-1">
+        {{p}}
+      </p>
     </div>
-
   </div>
 
   <!-- recursive sections -->

@@ -29,6 +29,12 @@ alsText.directive('alsTextSection', function() {
         scope: {
             section: '=',
             filter: '='
+            /*
+            bitmask
+            1 = include only titles
+            2 = include only paragraphs
+            4 = include only sub section or sections
+            */
         },
         templateUrl: window.x.app + 'text/alsTextSection.html'
     }
