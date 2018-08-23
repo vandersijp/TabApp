@@ -29,6 +29,10 @@
   <als-text-header ng-if="filter.includes('header')" data-section="section"></als-text-header>
   <!-- ng-if="(1*1*1*filter) == 1" -->
 
+<pre>
+  {{filter | json}}
+</pre>
+
   <div ng-if="(2*1*1*filter) == 2" ng-switch="section.type" layout="column">
 
     <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
