@@ -1,5 +1,8 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log("Text 15");
+console.log("Text 16");
+
+var pets = ['cat', 'dog', 'bat'];
+console.log(pets.includes('cat'));
 
 var alsText = angular.module("alsText", ['ngMaterial', 'ngAnimate', 'ngSanitize']);
 
