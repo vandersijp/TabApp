@@ -26,8 +26,11 @@
 
 <div ng-class="section.class">
 
-  <als-text-header ng-if="filter.includes('header')" data-section="section"></als-text-header>
+
+<div ng-if="filter.includes('header')">
+  <als-text-header data-section="section"></als-text-header>
   <!-- ng-if="(1*1*1*filter) == 1" -->
+</div>
 
 <pre>
   {{filter | json}}
