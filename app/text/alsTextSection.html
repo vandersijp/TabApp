@@ -26,15 +26,8 @@
 
 <div ng-class="section.class">
 
-  <als-text-header data-section="section"></als-text-header>
-
-  <div ng-if="filter.includes('header')">
-    <als-text-header data-section="section"></als-text-header>
-    <!-- ng-if="(1*1*1*filter) == 1" -->
-  </div>
-
   <als-text-header ng-if="filter.includes('header')" data-section="section"></als-text-header>
-  <!-- ng-if="(1*1*1*filter) == 1" -->
+  <als-text-lead ng-if="filter.includes('lead')" data-section="section"></als-text-lead>
 
 <pre>
   {{filter | json}}
@@ -44,7 +37,7 @@
   {{filter.includes('header') | json}}
 </pre>
 
-  <div ng-if="(2*1*1*filter) == 2" ng-switch="section.type" layout="column">
+  <div ng-if="filter.includes('paragraphs')" ng-switch="section.type" layout="column">
 
     <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
       <div layout="row" layout-align="center center" layout-wrap layout-padding>
