@@ -42,10 +42,12 @@
     <p ng-if="section.lead" class="md-display-1 als-lead">{{section.lead}}</p>
   </div>
 
+  <!--
   <pre>
   {{filter | json}}
   </pre>
-
+  -->
+  
   <div ng-if="filter.includes('paragraphs')" ng-switch="section.type" layout="column">
 
     <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
