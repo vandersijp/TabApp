@@ -29,12 +29,13 @@
 </style>
 
 <div layout="column" layout-align="start center">
-  <als-text-header data-object="table"></als-text-header>
+
+  <als-text-section data-section="table" data-filter="'titles'"></als-text-section>
 
   <div layout="column" ng-switch="table.type">
 
     <div ng-switch-when="quote" class="quote" layout="column" layout-align="center center">
-      <als-text-header data-object="section"></als-text-header>
+      <als-text-section data-section="section" data-filter="'titles'"></als-text-section>
       <div layout="row" layout-align="center center" layout-wrap layout-padding>
 
         <md-card ng-repeat="item in table.records" ng-class="section.style" layout-align="center center" ng-class="section.style" flex-gt-xs="45" flex-xs="auto">
@@ -59,7 +60,9 @@
     </div>
 
     <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
-      <als-text-header data-object="section"></als-text-header>
+
+      <als-text-section data-section="section" data-filter="'titles'"></als-text-section>
+
       <div layout="row" layout-align="center center" layout-wrap layout-padding>
 
         <md-card ng-repeat="item in table.records" ng-class="section.style" layout-align="center center" ng-class="section.style" flex-gt-xs="45" flex-xs="auto">
