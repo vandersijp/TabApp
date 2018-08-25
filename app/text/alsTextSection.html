@@ -26,17 +26,16 @@
 
 <div ng-class="section.class">
 
-  <xxals-text-header ng-if="filter.includes('header')" data-section="section"></xxals-text-header>
-  <xxals-text-lead ng-if="filter.includes('lead')" data-section="section"></xxals-text-lead>
-
-  <div ng-if="filter.includes('header')">
+  <div ng-if="filter.includes('display')">
     <h1 ng-if="section.display3" class="md-display-3">{{section.display3}}</h1>
     <h2 ng-if="section.display2" class="md-display-2">{{section.display2}}</h2>
     <h3 ng-if="section.display1" class="md-display-1">{{section.display1}}</h3>
+  </div>
+
+  <div ng-if="filter.includes('titles')">
     <h4 ng-if="section.headline" class="md-headline">{{section.headline}}</h4>
     <h5 ng-if="section.title" class="md-title">{{section.title}}</h5>
     <h6 ng-if="section.subhead" class="md-subhead">{{section.subhead}}</h6>
-    <p ng-if="section.lead" class="md-display-1 als-lead">{{section.lead}}</p>
   </div>
 
   <div ng-if="filter.includes('lead')">
@@ -45,11 +44,7 @@
 
   <pre>
   {{filter | json}}
-</pre>
-
-  <pre>
-  {{filter.includes('header') | json}}
-</pre>
+  </pre>
 
   <div ng-if="filter.includes('paragraphs')" ng-switch="section.type" layout="column">
 

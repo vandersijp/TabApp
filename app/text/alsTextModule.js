@@ -39,7 +39,7 @@ alsText.directive('alsTextSection', function() {
     controller: function($scope) {
       // check if it was defined.  If not - set a default
       // from https://stackoverflow.com/questions/18784520/angular-directive-with-default-options
-      $scope.filter = angular.isDefined($scope.filter) ? $scope.filter : ["header", "title", "lead", "paragraphs", "footer"];
+      $scope.filter = angular.isDefined($scope.filter) ? $scope.filter : ["displays", "titles", "lead", "paragraphs", "footer"];
     },
     templateUrl: window.x.app + 'text/alsTextSection.html'
   }
