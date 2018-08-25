@@ -11,16 +11,20 @@
 </div>
 
 <div layout="column" layout-align="start center">
-  <als-text-section data-section="cardset" data-filter="'titles'"></als-text-section>
+  <als-text-section data-section="cardset"></als-text-section>
   <div layout="row" layout-align="center center" layout-wrap>
 
     <div flex-xs flex-gt-xs="50" layout="column">
 
+      <!--
       <md-card ng-repeat="c in cardset.cards | filter: cardset.query" ng-class="cardset.style" flex="auto" flex-gt-xs="50">
+      -->
+
+      <md-card ng-repeat="c in cardset.cards | filter: cardset.query" ng-class="cardset.style">
 
         <md-card-header ng-if="cardset.layout=='top'">
           <md-card-header-text layout="column" layout-align="start {{cardset.alignments.title}}">
-            <als-text-section data-section="c.section" data-filter="'titles'"></als-text-section>
+            <als-text-section data-section="c" data-filter="'titles'"></als-text-section>
           </md-card-header-text>
         </md-card-header>
 
