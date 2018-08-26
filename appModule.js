@@ -622,14 +622,15 @@ app.directive('img', function() {
         element.prop('src', url);
         element.css('border', 'double 3px #cccccc');
         */
-        var url;
-        if (element.class == "md-avatar") {
-          url = "https://rbt.net.au/wp-content/uploads/2017/12/dummy-image.png";
+        var elementClass = element.prop('class');
+        var elementUrl;
+        if (elementClass == "md-avatar") {
+          elementUrl = "https://rbt.net.au/wp-content/uploads/2017/12/dummy-image.png";
         } else {
-          url = "https://www.google.co.uk/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
+          elementUrl = "https://www.google.co.uk/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
         }
 
-        element.prop('src', url);
+        element.prop('src', elementUrl);
         //                element.remove();
       });
     }
