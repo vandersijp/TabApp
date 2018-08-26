@@ -20,9 +20,17 @@
       <md-card ng-repeat="c in cardset.cards | filter: cardset.query" ng-class="cardset.style" flex="auto" flex-gt-xs="50">
       -->
 
+      <img src="" class="md-avatar">
+
+
       <md-card ng-repeat="c in cardset.cards | filter: cardset.query" ng-class="cardset.style">
 
+
+
         <md-card-header ng-if="cardset.layout=='top'">
+          <md-card-avatar>
+            <img class="md-user-avatar" ng-src="{{cuts.ava + c.avatar}}">
+          </md-card-avatar>
           <md-card-header-text layout="column" layout-align="start {{cardset.alignments.title}}">
             <als-text-section data-section="c" data-filter="'titles'"></als-text-section>
           </md-card-header-text>
