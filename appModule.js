@@ -611,20 +611,10 @@ app.directive('img', function() {
     link: function(scope, element, attrs) {
       // show an image-missing image
       element.error(function() {
-        /*
-        var w = element.width();
-        var h = element.height();
-        // using 20 here because it seems even a missing image will have ~18px width
-        // after this error function has been called
-        if (w <= 20) { w = 100; }
-        if (h <= 20) { h = 100; }
-        var url = 'http://placehold.it/' + w + 'x' + h + '/cccccc/ffffff&text=Oh No!';
-        element.prop('src', url);
-        element.css('border', 'double 3px #cccccc');
-        */
+        // from https://stackoverflow.com/questions/16310298/if-a-ngsrc-path-resolves-to-a-404-is-there-a-way-to-fallback-to-a-default/24963384
         var elementClass = element.prop('class');
         var elementUrl;
-        if (elementClass == "md-avatar") {
+        if (elementClass.slice(-6) == "avatar") {
           elementUrl = "https://rbt.net.au/wp-content/uploads/2017/12/dummy-image.png";
         } else {
           elementUrl = "https://www.google.co.uk/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
