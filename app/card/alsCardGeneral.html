@@ -30,6 +30,21 @@
       <md-card ng-repeat="c in cardset.cards | filter: cardset.query" ng-class="cardset.style">
 
         <md-card-header ng-if="cardset.layout=='top'">
+
+          <md-list layout-padding>
+            <md-list-item class="md-3-line" ng-repeat="message in messages">
+              <img ng-src="{{cuts.ava + c.avatar}}" class="md-avatar">
+              <div class="md-list-item-text">
+                <h3>H3 text</h3>
+                <h4>H4 text</h4>
+                <p>
+                  message
+                </p>
+              </div>
+            </md-list-item>
+          </md-list>
+
+
           <md-card-avatar>
             <img class="md-user-avatar" ng-src="{{cuts.ava + c.avatar}}">
             <img class="md-avatar" ng-src="{{cuts.ava + c.avatar}}">
