@@ -517,7 +517,11 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
       return $mdSidenav('right').isOpen();
     };
 
+
     self.classInFilter = function(filterArray, c) {
+
+      console.log("ssssss");
+
       var filters = {
         "display": ["display3",
           "display2",
