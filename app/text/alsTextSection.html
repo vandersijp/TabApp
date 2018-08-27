@@ -31,9 +31,13 @@
   </h1>
 
   <h1>
-  {{$parent.appCtrl.classInFilter(["display", "header"], "display3")}}
-  {{$parent.appCtrl.classInFilter(["header"], "display3")}}
-  {{$parent.appCtrl.classInFilter(["header"], "dummy")}}
+  ppp{{$parent.$parent.appCtrl.classInFilter(["display", "header"], "display3")}}
+  </h1>
+  <h1>
+  pp{{$parent.appCtrl.classInFilter(["header"], "display3")}}
+  </h1>
+  <h1>
+  p{{$parent.appCtrl.classInFilter(["header"], "dummy")}}
   </h1>
 
   <h1 ng-if="section.display3 && appCtrl.classInFilter(filter, 'display-3')" class="md-display-3">{{section.display3}}</h1>
