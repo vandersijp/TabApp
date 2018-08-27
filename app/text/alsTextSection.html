@@ -26,13 +26,13 @@
 
 <div ng-class="section.class">
 
-  <h1>
-  www
-  </h1>
+  <p>
+    {{$parent.$parent.appCtrl.classInFilter(["display", "header"], "display3")}}
+  </p>
 
-  <h1>
-  {{$parent.$parent.appCtrl.classInFilter(["display", "header"], "display3")}}
-  </h1>
+  <pre>
+  {{filter | json}}
+  </pre>
 
   <h1 ng-if="section.display3 && $parent.$parent.appCtrl.classInFilter(filter, 'display3')" class="md-display-3">{{section.display3}}</h1>
   <h2 ng-if="section.display2 && $parent.$parent.appCtrl.classInFilter(filter, 'display3')" class="md-display-2">{{section.display2}}</h2>
@@ -53,12 +53,6 @@
   <div ng-if="filter.includes('lead')">
     <p ng-if="section.lead" class="md-display-1 als-lead">{{section.lead}}</p>
   </div>
-
-  <!--
-  <pre>
-  {{filter | json}}
-  </pre>
-  -->
 
   <div ng-if="filter.includes('paragraphs')" ng-switch="section.type" layout="column">
 
