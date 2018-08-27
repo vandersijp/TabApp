@@ -523,7 +523,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
 
     self.classInFilter = function(filterArray, c) {
 
-      console.log("ssssss");
+      console.log("ttttt");
 
       var filters = {
         "display": ["display3",
@@ -545,12 +545,12 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
 
       var i;
       for (i = 0; i < filters.length; i++) {
-        out = filters[filter].includes(c);
-        if (out) {
+        if (filters[filter].includes(c)) {
+          out = true;
           break;
         }
       }
-      return "test";
+      return out;
     };
 
 
