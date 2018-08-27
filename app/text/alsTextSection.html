@@ -38,13 +38,13 @@
   <h2 ng-if="section.display2 && $parent.$parent.appCtrl.classInFilter(filter, 'display3')" class="md-display-2">{{section.display2}}</h2>
   <h3 ng-if="section.display1 && $parent.$parent.appCtrl.classInFilter(filter, 'display3')" class="md-display-1">{{section.display1}}</h3>
 
-  <div ng-if="filter.includes('displays')">
+  <div ng-if="filter.includes('display')">
     <h1 ng-if="section.display3" class="md-display-3">{{section.display3}}</h1>
     <h2 ng-if="section.display2" class="md-display-2">{{section.display2}}</h2>
     <h3 ng-if="section.display1" class="md-display-1">{{section.display1}}</h3>
   </div>
 
-  <div ng-if="filter.includes('titles')">
+  <div ng-if="filter.includes('title')">
     <h4 ng-if="section.headline" class="md-headline">{{section.headline}}</h4>
     <h5 ng-if="section.title" class="md-title">{{section.title}}</h5>
     <h6 ng-if="section.subhead" class="md-subhead">{{section.subhead}}</h6>
