@@ -544,7 +544,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
       var out = false;
 
       var i;
-      for (i = 0; i < filter.length; i++) {
+      for (i = 0; i < filters.length; i++) {
         out = filters[filter].includes(c);
         if (out) {
           break;
