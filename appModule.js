@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 56");
+console.log("App 57");
 
 String.repeat = function(string, num) {
   return new Array(parseInt(num) + 1).join(string);
@@ -516,6 +516,35 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
     $scope.isOpenRight = function() {
       return $mdSidenav('right').isOpen();
     };
+
+    self.classInFilter = function(filterArray, c) {
+      var filters = {
+        "displays": ["display3",
+          "display2",
+          "display1"
+        ],
+        "header": ["headline",
+          "title-avatar",
+          "subhead"
+        ],
+        "title": ["title",
+          "subhead",
+          "tagline"
+        ]
+        "lead": ["lead"]
+      };
+
+      var out = false;
+      filterArray.forEach(function(filter) {
+        out = filters[filter].includes(c);
+        if (out) {
+          break;
+        }
+      });
+      return out;
+    };
+
+
 
     self.alertAny = function(ev, alertName) {
       $mdDialog.show({
