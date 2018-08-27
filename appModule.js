@@ -517,6 +517,9 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
       return $mdSidenav('right').isOpen();
     };
 
+    self.classInTest = function() {
+      return "test";
+    };
 
     self.classInFilter = function(filterArray, c) {
 
