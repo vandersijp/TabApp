@@ -21,21 +21,14 @@
       -->
 
       <md-card ng-repeat="c in cardset.cards | filter: cardset.query" ng-class="cardset.style">
-        <p>
-          {{cuts.ava + c.avatar}}
-        </p>
 
         <md-card-header ng-if="cardset.layout=='top'">
 
           <md-list layout-padding>
-            <md-list-item class="md-3-line" ng-repeat="message in messages">
+            <md-list-item class="md-3-line">
               <img ng-src="{{cuts.ava + c.avatar}}" class="md-avatar">
               <div class="md-list-item-text">
-                <h3>H3 text</h3>
-                <h4>H4 text</h4>
-                <p>
-                  message
-                </p>
+                <als-text-section data-section="c" data-filter="'header'"></als-text-section>
               </div>
             </md-list-item>
           </md-list>
