@@ -46,7 +46,7 @@
             <img class="md-avatar" ng-src="{{cuts.ava + c.avatar}}">
           </md-card-avatar>
           <md-card-header-text layout="column" layout-align="start {{cardset.alignments.title}}">
-            <als-text-section data-section="c" data-filter="'titles'"></als-text-section>
+            <als-text-section data-section="c" data-filter="'header'"></als-text-section>
           </md-card-header-text>
         </md-card-header>
 
@@ -59,7 +59,7 @@
           </md-card-title-media>
 
           <md-card-title-text layout="column" layout-align="start {{cardset.alignments.title}}">
-            <als-text-section ng-if="cardset.layout!='top'" data-section="c.section" data-filter="'titles'"></als-text-section>
+            <als-text-section ng-if="cardset.layout!='top'" data-section="c.section" data-filter="'title'"></als-text-section>
           </md-card-title-text>
 
           <!-- start  -->
