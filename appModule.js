@@ -519,7 +519,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
 
     self.classInFilter = function(filterArray, c) {
       var filters = {
-        "displays": ["display3",
+        "display": ["display3",
           "display2",
           "display1"
         ],
