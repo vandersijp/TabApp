@@ -550,7 +550,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
           break;
         }
       }
-      return out;
+      return true;
     };
 
 
