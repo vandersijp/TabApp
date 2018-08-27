@@ -542,12 +542,14 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
       };
 
       var out = false;
-      filterArray.forEach(function(filter) {
+
+      var i;
+      for (i = 0; i < filter.length; i++) {
         out = filters[filter].includes(c);
         if (out) {
           break;
         }
-      });
+      }
       return "test";
     };
 
