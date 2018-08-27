@@ -3,7 +3,7 @@
 //  button to close the sideNav
 //  <md-button ng-click="close()" class="md-primary" hide-gt-md="">close</md-button>
 
-console.log("App 57");
+console.log("App 58");
 
 String.repeat = function(string, num) {
   return new Array(parseInt(num) + 1).join(string);
@@ -530,7 +530,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
         "title": ["title",
           "subhead",
           "tagline"
-        ]
+        ],
         "lead": ["lead"]
       };
 
