@@ -19,12 +19,11 @@
       <!--
       <md-card ng-repeat="c in cardset.cards | filter: cardset.query" ng-class="cardset.style" flex="auto" flex-gt-xs="50">
       -->
-      <p>
-        {{cuts.ava + c.avatar}}
-      </p>
-
 
       <md-card ng-repeat="c in cardset.cards | filter: cardset.query" ng-class="cardset.style">
+        <p>
+          {{cuts.ava + c.avatar}}
+        </p>
 
         <md-card-header ng-if="cardset.layout=='top'">
 
