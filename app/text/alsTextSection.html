@@ -27,11 +27,19 @@
 <h1>zz</h1>
 <div ng-init='ss={"s1":["f1", "f3"], "s2":["f2"]}; ff=["f1", "f2", "f3"];'>
   <div ng-repeat="f in ff">
+    <div ng-repeat="x in xx">
+      <div ng-repeat="s in x">
     <p ng-if="true">
       {{f}}
+    </div>
     </p>
   </div>
+  </div>
 </div>
+
+<h1 ng-if="section.display3 && appCtrl.classInFilter(filter, 'display-3')" class="md-display-3">{{section.display3}}</h1>
+<h2 ng-if="section.display2 && appCtrl.classInFilter(filter, 'display-3')" class="md-display-2">{{section.display2}}</h2>
+<h3 ng-if="section.display1 && appCtrl.classInFilter(filter, 'display-3')" class="md-display-1">{{section.display1}}</h3>
 
 <div ng-class="section.class">
 
