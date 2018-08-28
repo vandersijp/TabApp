@@ -29,11 +29,11 @@ sectionMap = {
   "display-3": ["all", "display"],
   "display-2": ["all", "display"],
   "display-1": ["all", "display"],
-  "headline" : ["all", "header"],
-  "title" : ["all", "title"],
-  "subhead" : ["all", "header", "title"],
-  "tagline" : ["all", "header", "title"],
-  "lead":["all", "lead"],
+  "headline": ["all", "header"],
+  "title": ["all", "title"],
+  "subhead": ["all", "header", "title"],
+  "tagline": ["all", "header", "title"],
+  "lead": ["all", "lead"],
   "content":["all", "content"]
 };
 '>
@@ -45,12 +45,6 @@ sectionMap = {
   <h5 ng-if="section['title'] && sectionMap['title'].includes(subsection)" class="md-title">{{section['title']}}</h5>
   <h6 ng-if="section['subhead'] && sectionMap['subhead'].includes(subsection)" class="md-subhead">{{section['subhead']}}</h6>
   <p ng-if="section['lead'] && sectionMap['lead'].includes(subsection)" class="md-body-2 als-lead">{{section['lead']}}</p>
-
-  <p>
-  <pre>
-  aaaa | {{sectionMap['content'].includes(subsection)}}
-  </pre>
-  </p>
 
   <div ng-if="sectionMap['content'].includes(subsection)" layout="column">
 
@@ -82,8 +76,6 @@ sectionMap = {
       </div>
 
     </div>
-
-    <als-text-paragraphs data-section="section"></als-text-paragraphs>
 
     <!-- recursive sections -->
     <als-text-section ng-if="section.section" data-section="section.section"></als-text-section>
