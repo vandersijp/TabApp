@@ -22,20 +22,7 @@
 
         <md-card>
 
-          <md-card-header ng-if="cardset.layout=='top'">
-
-            <md-list layout-padding>
-              <md-list-item class="md-3-line" ng-repeat="dummy in [0,1]">
-                <img ng-src="{{cuts.ava + c.avatar}}" class="md-avatar">
-                <div class="md-list-item-text">
-                  <als-text-section data-section="c" data-subsection="'header'"></als-text-section>
-                </div>
-              </md-list-item>
-            </md-list>
-
-          </md-card-header>
-
-          <md-card-header ng-if="cardset.layout=='top'">
+          <md-card-header ng-if="c.avatar">
 
             <md-card-avatar>
               <img class="md-user-avatar" ng-src="{{cuts.ava + c.avatar}}">
@@ -43,12 +30,12 @@
             </md-card-avatar>
 
             <md-card-header-text layout="column" layout-align="start {{cardset.alignments.title}}">
-              <als-text-section data-section="c" data-subsection="'header'"></als-text-section>
+              <als-text-section data-section="c.section" data-subsection="'header'"></als-text-section>
             </md-card-header-text>
 
           </md-card-header>
 
-          <md-card-title layout="row" layout-align="space-between start">
+          <md-card-title ng-if="c.media" layout="row" layout-align="space-between start">
 
             <md-card-title-media xxflex-order="20" ng-if="c.media">
               <div class="md-media-sm card-media">
@@ -57,7 +44,7 @@
             </md-card-title-media>
 
             <md-card-title-text layout="column" layout-align="start {{cardset.alignments.title}}">
-              <als-text-section ng-if="cardset.layout!='top'" data-section="c.section" data-subsection="'title'"></als-text-section>
+              <als-text-section data-section="c.section" data-subsection="'title'"></als-text-section>
             </md-card-title-text>
 
             <!-- start  -->
