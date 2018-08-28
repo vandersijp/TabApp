@@ -46,6 +46,12 @@ sectionMap = {
   <h6 ng-if="section['subhead'] && sectionMap['subhead'].includes(subsection)" class="md-subhead">{{section['subhead']}}</h6>
   <p ng-if="section['lead'] && sectionMap['lead'].includes(subsection)" class="md-body-2 als-lead">{{section['lead']}}</p>
 
+  <p>
+  <pre>
+  {{sectionMap['content'].includes(subsection)}}
+  </pre>
+  </p>
+
   <div ng-if="sectionMap['content'].includes(subsection)" layout="column">
 
     <div ng-switch="section.type">
