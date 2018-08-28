@@ -26,7 +26,7 @@
 
 <div ng-class="section.class">
 
-  <h1 ng-if="section.display3 && $parent.$parent.appCtrl.classInFilter(filter, 'display3')" class="md-display-3">[3]{{section.display3}}</h1>
+  <h1 ng-if="section.display3 && $parent.appCtrl.classInFilter(filter, 'display3')" class="md-display-3">[3]{{section.display3}}</h1>
   <h2 ng-if="section.display2 && $parent.$parent.appCtrl.classInFilter(filter, 'display3')" class="md-display-2">[2]{{section.display2}}</h2>
   <h3 ng-if="section.display1 && $parent.$parent.appCtrl.classInFilter(filter, 'display3')" class="md-display-1">[1]{{section.display1}}</h3>
 
