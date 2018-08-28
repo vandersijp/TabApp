@@ -24,23 +24,32 @@
   }
 </style>
 
-<div ng-class="section.class" ng-init="d3=['display', 'header']">
+<div ng-class="section.class" ng-init='d3 = {
+  "display-3": ["display"],
+  "display-2": ["display"],
+  "display-1": ["display"],
+  "headline" : ["header"],
+  "title" : ["title"],
+  "subhead" : ["header", "title"],
+  "lead":["lead"]
+}
+'>
 
 
 
-    <p>
-      {{parent.parent.$parent.$parent.appCtrl.classInFilter(["display", "header"], "display3")}} ||||| {{section.display3}}
+  <p>
+    {{parent.parent.$parent.$parent.appCtrl.classInFilter(["display", "header"], "display3")}} ||||| {{section.display3}}
 
-      <pre>
+    <pre>
       {{d3 | json}}
       </pre>
 
-    </p>
+  </p>
 
 
-      <p>
-        {{parent.$parent.$parent.appCtrl.classInFilter(["display", "header"], "display3")}} |||| {{section.display3}}
-      </p>
+  <p>
+    {{parent.$parent.$parent.appCtrl.classInFilter(["display", "header"], "display3")}} |||| {{section.display3}}
+  </p>
 
   <p>
     {{$parent.$parent.appCtrl.classInFilter(["display", "header"], "display3")}} ||| {{section.display3}}
