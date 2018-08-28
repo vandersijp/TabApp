@@ -30,12 +30,12 @@
 
 <div layout="column" layout-align="start center">
 
-  <als-text-section data-section="table" data-filter="'title'"></als-text-section>
+  <als-text-section data-section="table" data-filters="['title']"></als-text-section>
 
   <div layout="column" ng-switch="table.type">
 
     <div ng-switch-when="quote" class="quote" layout="column" layout-align="center center">
-      <als-text-section data-section="section" data-filter="'title'"></als-text-section>
+      <als-text-section data-section="section" data-filters="['title']"></als-text-section>
       <div layout="row" layout-align="center center" layout-wrap layout-padding>
 
         <md-card ng-repeat="item in table.records" ng-class="section.style" layout-align="center center" ng-class="section.style" flex-gt-xs="45" flex-xs="auto">
@@ -61,7 +61,7 @@
 
     <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
 
-      <als-text-section data-section="section" data-filter="'title'"></als-text-section>
+      <als-text-section data-section="section" data-filters="['title']"></als-text-section>
 
       <div layout="row" layout-align="center center" layout-wrap layout-padding>
 

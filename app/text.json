@@ -1,0 +1,9 @@
+{
+  "display-3": ["display"],
+  "display-2": ["display"],
+  "display-1": ["display"],
+  "headline" : ["header"],
+  "title" : ["title"],
+  "subhead" : ["header", "title"],
+  "lead":["lead"]
+}
