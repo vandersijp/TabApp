@@ -26,6 +26,16 @@
 
 <div ng-class="section.class">
 
+
+    <p>
+      {{parent.parent.$parent.$parent.appCtrl.classInFilter(["display", "header"], "display3")}} ||||| {{section.display3}}
+    </p>
+
+
+      <p>
+        {{parent.$parent.$parent.appCtrl.classInFilter(["display", "header"], "display3")}} |||| {{section.display3}}
+      </p>
+
   <p>
     {{$parent.$parent.appCtrl.classInFilter(["display", "header"], "display3")}} ||| {{section.display3}}
   </p>
