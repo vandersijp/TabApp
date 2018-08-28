@@ -37,22 +37,28 @@ sectionMap = {
 };
 '>
 
-  <p>
-    <pre>
-      {{subsection}}
-    </pre>
-  </p>
+<p>
+<pre>
+{{subsection}}
+</pre>
+</p>
 
-  <p>
-    <pre>
-      {{sectionMap['display-3'] | json}}
-    </pre>
-  </p>
+<p>
+<pre>
+{{sectionMap['display-3'] | json}}
+</pre>
+</p>
 
-  <p>
-    <pre>
-      {{section['display-3']}}
-    </pre>
+<p>
+<pre>
+{{section['display-3']}}
+</pre>
+</p>
+
+<p>
+<pre>
+{{section['display-3'] && sectionMap['display-3'].includes(subsection)}}
+</pre>
 </p>
 
   <h1 ng-if="section['display-3'] && sectionMap['display-3'].includes(subsection)" class="md-display-3">[3]{{section['display-3']}}</h1>
