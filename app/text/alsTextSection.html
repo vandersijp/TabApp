@@ -25,10 +25,18 @@
 </style>
 
 <div ng-class="section.class">
-  
+
   <p>
-     {{$parent.$parent.appCtrl.classInFilter(["display", "header"], "display3")}} | {{section.display3}}
-   </p>
+    {{$parent.$parent.appCtrl.classInFilter(["display", "header"], "display3")}} | {{section.display3}}
+  </p>
+
+  <p>
+    {{$parent.appCtrl.classInFilter(["display", "header"], "display3")}} | {{section.display3}}
+  </p>
+
+  <p>
+    {{appCtrl.classInFilter(["display", "header"], "display3")}} | {{section.display3}}
+  </p>
 
   <h1 ng-if="section.display3 && $parent.$parent.appCtrl.classInFilter(filter, 'display3')" class="md-display-3">[3]{{section.display3}}</h1>
   <h1 ng-if="section.display3 && $parent.appCtrl.classInFilter(filter, 'display3')" class="md-display-3">[3a]{{section.display3}}</h1>
