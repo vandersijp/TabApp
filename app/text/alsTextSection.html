@@ -37,43 +37,13 @@ sectionMap = {
 };
 '>
 
-<p>
-<pre>
-{{subsection}}
-</pre>
-</p>
-
-<p>
-<pre>
-{{sectionMap['display-3'] | json}}
-</pre>
-</p>
-
-<p>
-<pre>
-{{section['display-3']}}
-</pre>
-</p>
-
-<p>
-<pre>
-{{sectionMap['display-3'].includes(subsection)}}
-</pre>
-</p>
-
   <h1 ng-if="section['display-3'] && sectionMap['display-3'].includes(subsection)" class="md-display-3">[3]{{section['display-3']}}</h1>
   <h2 ng-if="section['display-2'] && sectionMap['display-2'].includes(subsection)" class="md-display-2">[2]{{section['display-2']}}</h2>
   <h3 ng-if="section['display-1'] && sectionMap['display-1'].includes(subsection)" class="md-display-1">[1]{{section['display-1']}}</h3>
-
-  <div ng-if="true">
-    <h4 ng-if="section.headline" class="md-headline">{{section.headline}}</h4>
-    <h5 ng-if="section.title" class="md-title">{{section.title}}</h5>
-    <h6 ng-if="section.subhead" class="md-subhead">{{section.subhead}}</h6>
-  </div>
-
-  <div ng-if="true">
-    <p ng-if="section.lead" class="md-display-1 als-lead">{{section.lead}}</p>
-  </div>
+  <h4 ng-if="section['headline'] && sectionMap['headline'].includes(subsection)" class="md-headline">[1]{{section['display-1']}}</h4>
+  <h5 ng-if="section['title'] && sectionMap['title'].includes(subsection)" class="md-title">[1]{{section['display-1']}}</h5>
+  <h6 ng-if="section['subhead'] && sectionMap['subhead'].includes(subsection)" class="md-subhead">[1]{{section['display-1']}}</h6>
+  <p ng-if="section['lead'] && sectionMap['lead'].includes(subsection)" class="md-body-2 als-lead">[1]{{section['display-1']}}</p>
 
   <div ng-if="true" ng-switch="section.type" layout="column">
 
