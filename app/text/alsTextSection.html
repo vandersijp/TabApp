@@ -33,7 +33,8 @@ sectionMap = {
   "title" : ["all", "title"],
   "subhead" : ["all", "header", "title"],
   "tagline" : ["all", "header", "title"],
-  "lead":["all", "lead"]
+  "lead":["all", "lead"],
+  "content":["all", "content"]
 };
 '>
 
@@ -45,36 +46,40 @@ sectionMap = {
   <h6 ng-if="section['subhead'] && sectionMap['subhead'].includes(subsection)" class="md-subhead">{{section['subhead']}}</h6>
   <p ng-if="section['lead'] && sectionMap['lead'].includes(subsection)" class="md-body-2 als-lead">{{section['lead']}}</p>
 
-  <div ng-if="true" ng-switch="section.type" layout="column">
+  <div ng-if="sectionMap['content'].includes(subsection)" layout="column">
 
-    <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
-      <div layout="row" layout-align="center center" layout-wrap layout-padding>
+    <div ng-switch="section.type">
 
-        <!-- single -->
-        <md-card ng-if="section.paragraph" ng-class="section.style" layout-align="center center" flex-gt-xs="45" flex-xs="auto">
-          <md-card-content class="singleline">
-            <p>{{section.paragraph}}</p>
-          </md-card-content>
-        </md-card>
+      <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
+        <div layout="row" layout-align="center center" layout-wrap layout-padding>
 
-        <!-- multiple -->
-        <md-card ng-if="section.paragraphs" ng-repeat="p in section.paragraphs" ng-class="section.style" layout-align="center center" flex-gt-xs="45" flex-xs="auto">
-          <md-card-content class="singleline">
-            <p>{{p}}</p>
-          </md-card-content>
-        </md-card>
+          <!-- single -->
+          <md-card ng-if="section.paragraph" ng-class="section.style" layout-align="center center" flex-gt-xs="45" flex-xs="auto">
+            <md-card-content class="singleline">
+              <p>{{section.paragraph}}</p>
+            </md-card-content>
+          </md-card>
 
+          <!-- multiple -->
+          <md-card ng-if="section.paragraphs" ng-repeat="p in section.paragraphs" ng-class="section.style" layout-align="center center" flex-gt-xs="45" flex-xs="auto">
+            <md-card-content class="singleline">
+              <p>{{p}}</p>
+            </md-card-content>
+          </md-card>
+
+        </div>
       </div>
+
+      <div ng-switch-default>
+        <als-text-paragraphs data-section="section"></als-text-paragraphs>
+      </div>
+
     </div>
 
-    <div ng-switch-default>
-      <als-text-paragraphs data-section="section"></als-text-paragraphs>
-    </div>
+    <!-- recursive sections -->
+    <als-text-section ng-if="section.section" data-section="section.section"></als-text-section>
+    <als-text-section ng-if="section.sections" ng-repeat="s in section.sections" data-section="s"></als-text-section>
 
   </div>
-
-  <!-- recursive sections -->
-  <als-text-section ng-if="section.section" data-section="section.section"></als-text-section>
-  <als-text-section ng-if="section.sections" ng-repeat="s in section.sections" data-section="s"></als-text-section>
 
 </div>
