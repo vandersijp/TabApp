@@ -25,10 +25,7 @@
 </style>
 
 <div ng-class="section.class" ng-init='
-f = {
-  "ff": ["display", "header"]
-};
-d3 = {
+sectionMap = {
   "display-3": ["display"],
   "display-2": ["display"],
   "display-1": ["display"],
@@ -45,11 +42,11 @@ d3 = {
     {{parent.parent.$parent.$parent.appCtrl.classInFilter(["display", "header"], "display3")}} ||||| {{section.display3}}
 
   <pre>
-    {{d3["display-3"] | json}}
+    {{sectionMap["display-3"] | json}}
   </pre>
 
   <pre>
-    {{f.ff}}
+    {{filters.filter(value => -1 !== sectionMap["display-3"].indexOf(value))}}
   </pre>
 
   </p>
