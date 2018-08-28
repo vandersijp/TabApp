@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log("Text 33");
+console.log("Text 34");
 
 var alsText = angular.module("alsText", ['ngMaterial', 'ngAnimate', 'ngSanitize']);
 
