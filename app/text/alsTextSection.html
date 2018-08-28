@@ -42,23 +42,23 @@ sectionMap = {
   <h2 ng-if="section.display2 && $parent.$parent.appCtrl.classInFilter(filters, 'display2')" class="md-display-2">[3]{{section.display2}}</h2>
   <h3 ng-if="section.display1 && $parent.$parent.appCtrl.classInFilter(filters, 'display1')" class="md-display-1">[1]{{section.display1}}</h3>
 
-  <div ng-if="filters.includes('display')">
+  <div ng-if="true">
     <h1 ng-if="section.display3" class="md-display-3">[4\{{$parent.$parent.appCtrl.classInFilter(filters, 'display3')}}]{{section.display3}}</h1>
     <h2 ng-if="section.display2" class="md-display-2">[5]{{section.display2}}</h2>
     <h3 ng-if="section.display1" class="md-display-1">[6]{{section.display1}}</h3>
   </div>
 
-  <div ng-if="filters.includes('title')">
+  <div ng-if="true">
     <h4 ng-if="section.headline" class="md-headline">{{section.headline}}</h4>
     <h5 ng-if="section.title" class="md-title">{{section.title}}</h5>
     <h6 ng-if="section.subhead" class="md-subhead">{{section.subhead}}</h6>
   </div>
 
-  <div ng-if="filters.includes('lead')">
+  <div ng-if="true">
     <p ng-if="section.lead" class="md-display-1 als-lead">{{section.lead}}</p>
   </div>
 
-  <div ng-if="filters.includes('paragraphs')" ng-switch="section.type" layout="column">
+  <div ng-if="true" ng-switch="section.type" layout="column">
 
     <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
       <div layout="row" layout-align="center center" layout-wrap layout-padding>
