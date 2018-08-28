@@ -83,6 +83,8 @@ sectionMap = {
 
     </div>
 
+    <als-text-paragraphs data-section="c.section"></als-text-paragraphs>
+
     <!-- recursive sections -->
     <als-text-section ng-if="c.section.section" data-section="section.section"></als-text-section>
     <als-text-section ng-if="c.section.sections" ng-repeat="s in section.sections" data-section="s"></als-text-section>
