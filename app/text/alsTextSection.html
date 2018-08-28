@@ -54,20 +54,20 @@ sectionMap = {
 
   <div ng-if="sectionMap['content'].includes(subsection)" layout="column">
 
-    <div ng-switch="c.section.type">
+    <div ng-switch="section.type">
 
       <div ng-switch-when="dykt" class="dykt" layout="column" layout-align="center center">
         <div layout="row" layout-align="center center" layout-wrap layout-padding>
 
           <!-- single -->
-          <md-card ng-if="c.section.paragraph" ng-class="section.style" layout-align="center center" flex-gt-xs="45" flex-xs="auto">
+          <md-card ng-if="section.paragraph" ng-class="section.style" layout-align="center center" flex-gt-xs="45" flex-xs="auto">
             <md-card-content class="singleline">
               <p>{{section.paragraph}}</p>
             </md-card-content>
           </md-card>
 
           <!-- multiple -->
-          <md-card ng-if="c.section.paragraphs" ng-repeat="p in section.paragraphs" ng-class="section.style" layout-align="center center" flex-gt-xs="45" flex-xs="auto">
+          <md-card ng-if="section.paragraphs" ng-repeat="p in section.paragraphs" ng-class="section.style" layout-align="center center" flex-gt-xs="45" flex-xs="auto">
             <md-card-content class="singleline">
               <p>{{p}}</p>
             </md-card-content>
@@ -78,16 +78,16 @@ sectionMap = {
 
       <div ng-switch-default>
         zzzz
-        <als-text-paragraphs data-section="c.section"></als-text-paragraphs>
+        <als-text-paragraphs data-section="section"></als-text-paragraphs>
       </div>
 
     </div>
 
-    <als-text-paragraphs data-section="c.section"></als-text-paragraphs>
+    <als-text-paragraphs data-section="section"></als-text-paragraphs>
 
     <!-- recursive sections -->
-    <als-text-section ng-if="c.section.section" data-section="section.section"></als-text-section>
-    <als-text-section ng-if="c.section.sections" ng-repeat="s in section.sections" data-section="s"></als-text-section>
+    <als-text-section ng-if="section.section" data-section="section.section"></als-text-section>
+    <als-text-section ng-if="section.sections" ng-repeat="s in section.sections" data-section="s"></als-text-section>
 
   </div>
 
