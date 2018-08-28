@@ -18,7 +18,7 @@
   }
 </style>
 
-<als-text-section data-section="playlist" data-filters="['title']"></als-text-section>
+<als-text-section data-section="playlist" data-subsection="'title'"></als-text-section>
 
 <div ng-switch="playlist.type" layout="column">
   <!-- typw xxx -->
@@ -50,7 +50,7 @@
         </md-card-title-media>
 
         <md-card-title-text>
-          <als-text-section data-section="c" data-filters="['title']"></als-text-section>
+          <als-text-section data-section="c" data-subsection="'title'"></als-text-section>
         </md-card-title-text>
 
         <div layout="column" layout-align="end" ng-if="c.lyrics || c.footer">

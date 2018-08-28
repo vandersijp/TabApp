@@ -28,7 +28,7 @@ alsText.directive('alsTextSection', function() {
     restrict: 'E',
     scope: {
       section: '=',
-      filters: '=?'
+      subsection: '=?'
       /*
       bitmask
       1 = include only titles
@@ -39,7 +39,7 @@ alsText.directive('alsTextSection', function() {
     controller: function($scope) {
       // check if it was defined.  If not - set a default
       // from https://stackoverflow.com/questions/18784520/angular-directive-with-default-options
-      $scope.filters = angular.isDefined($scope.filters) ? $scope.filters : ["display", "header", "title", "lead", "paragraphs", "footer"];
+      $scope.subsection = angular.isDefined($scope.filters) ? $scope.filters : ["all";
     },
     templateUrl: window.x.app + 'text/alsTextSection.html'
   }

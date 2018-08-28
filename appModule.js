@@ -521,7 +521,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
       return "test";
     };
 
-    self.classInFilter = function(filterArray, c) {
+    self.elementInArrays = function(filterArray, c) {
 
       console.log("ttttt");
 
@@ -544,8 +544,8 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
       var out = false;
 
       var i;
-      for (i = 0; i < filters.length; i++) {
-        if (filters[filter].includes(c)) {
+      for (i = 0; i < arrays.length; i++) {
+        if (filters[filter].includes(element)) {
           out = true;
           break;
         }
