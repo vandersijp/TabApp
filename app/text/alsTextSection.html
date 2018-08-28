@@ -49,9 +49,15 @@ sectionMap = {
     </pre>
   </p>
 
-  <h1 ng-if="section['display-3'] && sectionMap['display-3'].includes(subsection)" class="md-display-3">[3]{{section['display-3]'}}</h1>
-  <h2 ng-if="section['display-2'] && sectionMap['display-2'].includes(subsection)" class="md-display-2">[2]{{section['display-2]'}}</h2>
-  <h3 ng-if="section['display-1'] && sectionMap['display-1'].includes(subsection)" class="md-display-1">[1]{{section['display-1]'}}</h3>
+  <p>
+    <pre>
+      {{section['display-3']}}
+    </pre>
+</p>
+
+  <h1 ng-if="section['display-3'] && sectionMap['display-3'].includes(subsection)" class="md-display-3">[3]{{section['display-3']}}</h1>
+  <h2 ng-if="section['display-2'] && sectionMap['display-2'].includes(subsection)" class="md-display-2">[2]{{section['display-2']}}</h2>
+  <h3 ng-if="section['display-1'] && sectionMap['display-1'].includes(subsection)" class="md-display-1">[1]{{section['display-1']}}</h3>
 
   <div ng-if="true">
     <h4 ng-if="section.headline" class="md-headline">{{section.headline}}</h4>
