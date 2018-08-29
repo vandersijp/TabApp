@@ -3,6 +3,24 @@
   .md-card-image {
     filter: drop-shadow(0px 0px 0px);
   }
+
+  .frame-square {
+    width: 100%;
+    padding-top: 50%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .frame-square img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    position: absolute;
+    top: -100%;
+    right: -100%;
+    bottom: -100%;
+    left: -100%;
+  }
 </style>
 
 
@@ -41,8 +59,10 @@
 
         </md-card-header>
 
-        <img ng-if="c.image" ng-src="{{cuts.img + c.image}}" class="md-card-image" />
-
+        <div class="frame-square">
+          <img ng-if="c.image" ng-src="{{cuts.img + c.image}}" class="md-card-image" />
+        </div>
+        
         <md-card-title ng-if="c.media" layout="row" layout-align="space-between start">
 
           <md-card-title-media xxflex-order="20" ng-if="c.media">
