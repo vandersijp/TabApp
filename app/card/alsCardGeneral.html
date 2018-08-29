@@ -23,8 +23,8 @@
         <md-card-header ng-if="c.avatar">
 
           <md-card-avatar>
-            <img class="md-user-avatar" ng-src="{{cuts.ava + c.avatar}}">
-            <img class="md-avatar" ng-src="{{cuts.ava + c.avatar}}">
+            <img ng-if="cardset.user" class="md-user-avatar" ng-src="{{cuts.ava + c.avatar}}">
+            <img ng-if="!cardset.user" class="md-avatar" ng-src="{{cuts.ava + c.avatar}}">
           </md-card-avatar>
 
           <md-card-header-text layout="column" layout-align="start {{cardset.alignments.title}}">
