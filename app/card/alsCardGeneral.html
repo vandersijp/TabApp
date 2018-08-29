@@ -14,7 +14,7 @@
   <als-text-section data-section="cardset" class="center-all"></als-text-section>
   <div layout="row" layout-align="center center" layout-wrap>
 
-    <div ng-repeat="c in cardset.cards | filter: cardset.query" ng-class="cardset.style" flex="100%" flex-gt-sm="45">
+    <div ng-repeat="c in cardset.cards | filter: cardset.query" ng-class="cardset.style" flex="100" flex-gt-sm="50">
 
       <als-text-section data-section="c" data-subsection="'title'" class="center-all"></als-text-section>
 
@@ -28,7 +28,7 @@
           </md-card-avatar>
 
           <md-card-header-text layout="column" layout-align="start {{cardset.alignments.title}}">
-            <als-text-section data-section="c.section" data-subsection="'allheaders'"></als-text-section>
+            <als-text-section data-section="c.section" data-subsection="'header'"></als-text-section>
           </md-card-header-text>
 
           <md-divider md-inset></md-divider>
@@ -45,7 +45,7 @@
           </md-card-title-media>
 
           <md-card-title-text layout="column" layout-align="start {{cardset.alignments.title}}">
-            <als-text-section data-section="c.section" data-subsection="'allheaders'"></als-text-section>
+            <als-text-section data-section="c.section" data-subsection="'title'"></als-text-section>
           </md-card-title-text>
 
           <!-- start  -->
