@@ -655,7 +655,7 @@ app.directive('img', function() {
         if (elementClass.slice(-6) == "avatar") {
           elementUrl = "https://rbt.net.au/wp-content/uploads/2017/12/dummy-image.png";
         } else {
-          elementUrl = "https://www.google.co.uk/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
+          elementUrl = "https://media.licdn.com/dms/image/C510BAQF8U_ih5BvkPQ/company-logo_200_200/0?e=2159024400&v=beta&t=QVMAUi0Luks4iZiP5RrfjJOZW_mjNvOmIrMbIsMIjsU";
         }
 
         element.prop('src', elementUrl);
