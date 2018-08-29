@@ -1,7 +1,7 @@
 <!--(C) Ask Learn Share Ltd:-->
 <style>
   .md-card-image {
-    filter: drop-shadow(0px 0px 0px);
+    filter: drop-shadow(none);
   }
 </style>
 
@@ -41,7 +41,7 @@
 
         </md-card-header>
 
-        <img ng-if="c.image" ng-src="c.image" class="md-card-image" />
+        <img ng-if="c.image" ng-src="{{cuts.img + c.image}}" class="md-card-image" />
 
         <md-card-title ng-if="c.media" layout="row" layout-align="space-between start">
 

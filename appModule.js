@@ -65,6 +65,7 @@ function getFolders() {
   var f = {};
   f.app = "app/";
   f.img = "images/";
+  f.log = "images/logos/";
   f.vid = "images/videos/";
   f.ava = "images/avatars/";
   f.fav = "images/favicons/";
@@ -87,6 +88,7 @@ function getShortCuts() {
   x = {}
   x.app = window.appProperties.paths.repo + window.appProperties.folders.app;
   x.img = window.appProperties.paths.assets + window.appProperties.folders.img;
+  x.log = window.appProperties.paths.assets + window.appProperties.folders.log;
   x.vid = window.appProperties.paths.assets + window.appProperties.folders.vid;
   x.ava = window.appProperties.paths.assets + window.appProperties.folders.ava;
   x.fav = window.appProperties.paths.assets + window.appProperties.folders.fav;
