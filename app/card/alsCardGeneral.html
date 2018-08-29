@@ -1,4 +1,10 @@
 <!--(C) Ask Learn Share Ltd:-->
+<style>
+  .md-card-image {
+    filter: drop-shadow(0px 0px 0px);
+  }
+</style>
+
 
 <div ng-if="cardset.search" layout="row" layout-align="end">
   <md-input-container>
@@ -35,7 +41,7 @@
 
         </md-card-header>
 
-        <img ng-src="c.media" class="md-card-image" />
+        <img ng-if="c.image" ng-src="c.image" class="md-card-image" />
 
         <md-card-title ng-if="c.media" layout="row" layout-align="space-between start">
 
