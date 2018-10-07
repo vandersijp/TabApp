@@ -35,9 +35,11 @@
   <div layout="column" ng-switch="table.type">
 
     <div ng-switch-when="pitch">
-      <p ng-repeat="h in table.filter">
-        <span>{{h}}</span> - <span>{{table.records[h]}}</span>
-      </p>
+      <div ng-repeat="r in table.records">
+        <p ng-repeat="h in table.filter">
+          {{h}} - {{r[h]}}
+        </p>
+      </div>
     </div>
 
     <div ng-switch-when="quote" class="quote" layout="column" layout-align="center center">
