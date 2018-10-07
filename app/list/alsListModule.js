@@ -1,5 +1,5 @@
 /* (C) 2016 Ask Learn Share Ltd */
-console.log("List 6");
+console.log("List 7");
 
 var alsList = angular.module("alsList", []);
 
