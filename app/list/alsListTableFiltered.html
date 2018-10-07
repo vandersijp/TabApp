@@ -20,7 +20,7 @@
     overflow: hidden;
   }
 
-  .als-quotation-quote > span {
+  .als-quotation-quote>span {
     font-size: 2em;
     position: absolute;
     horizontal-align: -0.4em;
@@ -33,6 +33,12 @@
   <als-text-section data-section="table" data-subsection="'title'"></als-text-section>
 
   <div layout="column" ng-switch="table.type">
+
+    <div ng-switch-when="pitch">
+      <p ng-repeat="h in table.filter">
+        <span>{{h}}</span> - <span>{{table.records[h]}}</span>
+      </p>
+    </div>
 
     <div ng-switch-when="quote" class="quote" layout="column" layout-align="center center">
       <als-text-section data-section="section" data-subsection="'title'"></als-text-section>
@@ -80,6 +86,9 @@
     </div>
 
     <div ng-switch-when="mdlist" layout="column">
+
+      <p>
+
       <md-content>
         <md-list flex>
           <md-subheader ng-if="false" class="md-no-sticky">3 line item (with hover)</md-subheader>
@@ -203,76 +212,78 @@
           <h4 class="md-title">Bin</h4>
           <pre>{{bin | json}}</pre>
         </div>
-    </div>
+      </div>
 
-    <table ng-switch-when="basic">
-      <thead>
-        <tr>
-          <th ng-repeat="h in table.filter">
-            <span>{{h}}</span>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="r in table.records">
-          <td ng-repeat="h in table.filter">
-            <span>{{r[h]}}yy</span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      <div ng-switch-when="basic">
+        <table>
+          <thead>
+            <tr>
+              <th ng-repeat="h in table.filter">
+                <span>{{h}}</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="r in table.records">
+              <td ng-repeat="h in table.filter">
+                <span>{{r[h]}}yy</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
+      <div ng-switch-default>
+        <table>
+          <thead>
+            <tr>
+              <th ng-repeat="h in table.filter">
+                <span ng-if="h!='icon'">{{h}}</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="r in table.records">
+              <td ng-repeat="h in table.filter" ng-switch="h" class="center">
 
-    <table ng-switch-default>
-
-      <thead>
-        <tr>
-          <th ng-repeat="h in table.filter">
-            <span ng-if="h!='icon'">{{h}}</span>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="r in table.records">
-          <td ng-repeat="h in table.filter" ng-switch="h" class="center">
-
-            <span ng-switch-when="hex" layout="row" layout-align="center center" class="hex">
+                <span ng-switch-when="hex" layout="row" layout-align="center center" class="hex">
 
                           <span flex="25">{{r[h]}}</span>
 
-            <span style="background: #{{r[h]}}; font-size: 100%" flex="20">
+                <span style="background: #{{r[h]}}; font-size: 100%" flex="20">
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           </span>
 
-            <span flex="10">
+                <span flex="10">
                           &nbsp;
                           </span>
 
-            <span style="background: #fbe88b; font-size: 100%" flex="20">
+                <span style="background: #fbe88b; font-size: 100%" flex="20">
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           </span>
 
-            <span flex="25">fbe88b</span>
+                <span flex="25">fbe88b</span>
 
-            </span>
+                </span>
 
-            <span ng-switch-when="icon">
+                <span ng-switch-when="icon">
                           <md-icon>
                             <i class="material-icons">{{r[h]}}</i>
                           </md-icon>
                         </span>
 
-            <span ng-switch-when="flag">
+                <span ng-switch-when="flag">
                           {{r[h]}}<i>{{window.x.app}}</i>
                         </span>
 
-            <span ng-switch-default>{{r[h]}}</span>
+                <span ng-switch-default>{{r[h]}}</span>
 
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-    <p class="md-caption" ng-if="table.caption">{{table.caption}}</p>
+      <p class="md-caption" ng-if="table.caption">{{table.caption}}</p>
+    </div>
   </div>
-</div>
