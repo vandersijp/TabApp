@@ -23,7 +23,8 @@ alsList.directive('alsListTable', function() {
   }
 });
 
-alsList.directive('alsListTableFiltered', function(alsUtilsFactory) {
+//alsList.directive('alsListTableFiltered', function(alsUtilsFactory) {
+alsList.directive('alsListTableFiltered', function() {
   return {
     restrict: 'E',
     scope: {
