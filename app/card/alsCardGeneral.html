@@ -64,12 +64,12 @@
         </md-card-header>
 
         <!-- not supposed to be within DIV -->
-        <div class="frame-square">
-          <img ng-if="c.image" ng-src="{{cuts.img + c.image}}" class="md-card-image" />
+        <div ng-if="c.image" class="frame-square">
+          <img ng-src="{{cuts.img + c.image}}" class="md-card-image" />
         </div>
         <!-- -->
 
-        <md-card-title ng-if="c.media" layout="row" layout-align="space-between start">
+        <md-card-title layout="row" layout-align="space-between start">
 
           <md-card-title-media xxflex-order="20" ng-if="c.media">
             <div class="md-media-sm card-media">
