@@ -12,7 +12,7 @@
   <als-template-resolution ng-repeat="r in data.resolutions" ng-if="r.tab==tab.id" data-resolution="r" data-cuts="cuts"></als-template-resolution>
   <als-template-invoice ng-repeat="i in data.invoices" ng-if="i.tab==tab.id" data-invoice="i" data-cuts="cuts"></als-template-invoice>
   <als-card-general ng-repeat="c in data.cards" ng-if="c.tab==tab.id" data-cardset="c" data-cuts="cuts"></als-card-general>
-  <als-text-section ng-repeat="s in data.sections" ng-if="s.tab==tab.id" data-section="s"></als-text-section>
+  <als-text-section ng-repeat="s in data.sections" ng-if="s.tab==tab.id" data-section="s" data-cuts="cuts"></als-text-section>
   <als-text-playlist ng-repeat="l in data.playlists" ng-if="l.tab==tab.id" data-playlist="l" data-cuts="cuts"></als-text-playlist>
   <als-figure-video-main ng-repeat="v in data.videos" ng-if="v.tab==tab.id" data-video="v" data-cuts="cuts"></als-figure-video-main>
   <als-figure-photo-main ng-repeat="i in data.images" ng-if="i.tab==tab.id" data-image="i" data-cuts="cuts"></als-figure-photo-main>

@@ -28,6 +28,7 @@ alsText.directive('alsTextSection', function() {
     restrict: 'E',
     scope: {
       section: '=',
+      cuts: '=',
       subsection: '=?'
       /*
       bitmask
