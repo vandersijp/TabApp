@@ -205,18 +205,19 @@
             </div>
           </div>
         </md-card>
+
+        <div title="show the expressions in a JSON format" layout="row" layout-align="center" layout-padding>
+          <md-checkbox ng-model="showJSON">Show JSON</md-checkbox>
+        </div>
+
+        <div ng-show="showJSON" layout-padding layout="column" layout-align="center center">
+          <h4 class="md-title">Active</h4>
+          <pre>{{active | json}}</pre>
+          <h4 class="md-title">Bin</h4>
+          <pre>{{bin | json}}</pre>
+        </div>
       </div>
 
-      <div title="show the expressions in a JSON format" layout="row" layout-align="center" layout-padding>
-        <md-checkbox ng-model="showJSON">Show JSON</md-checkbox>
-      </div>
-
-      <div ng-show="showJSON" layout-padding layout="column" layout-align="center center">
-        <h4 class="md-title">Active</h4>
-        <pre>{{active | json}}</pre>
-        <h4 class="md-title">Bin</h4>
-        <pre>{{bin | json}}</pre>
-      </div>
     </div>
 
     <div ng-switch-when="basic">
