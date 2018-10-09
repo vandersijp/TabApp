@@ -82,7 +82,7 @@
           </md-card-title-text>
 
           <!-- start  -->
-          <div ng-if="(cardset.expand || cardset.toclink)" xxflex-order="-20" ng-if="true" layout="column" layout-align="end center">
+          <div zzng-if="(cardset.expand || cardset.toclink)" xxflex-order="-20" ng-if="true" layout="column" layout-align="end center">
             <md-button ng-if="cardset.toclink" aria-label="expand" class="md-icon-button" ng-click="$parent.$parent.$parent.$parent.$parent.$parent.$parent.selectedIndex=$parent.$index;">
               <md-icon>
                 <i class="material-icons">arrow_forward</i>
@@ -98,7 +98,7 @@
 
         </md-card-title>
 
-        <div zzng-hide="(cardset.expand && !c.cardOpen)">
+        <div ng-hide="(cardset.expand && !c.cardOpen)">
 
           <md-card-content layout="column" layout-align="start center">
             <als-text-section data-section="c.section" data-subsection="'content'"></als-text-section>
