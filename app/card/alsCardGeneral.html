@@ -56,7 +56,12 @@
       </md-card-title-text>
     </md-card-title>
 
-    <md-card-actions layout="row" layout-align="start center">
+    <md-card-content>
+      <als-text-section data-section="c.section" data-subsection="'content'"></als-text-section>
+    </md-card-content>
+
+    <md-card-actions ng-if="c.button" layout="row" layout-align="end center">
+      <md-button class="md-accent md-raised" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
       <md-button>Action 1</md-button>
       <md-button>Action 2</md-button>
       <md-card-icon-actions>
@@ -65,10 +70,6 @@
         </md-button>
       </md-card-icon-actions>
     </md-card-actions>
-
-    <md-card-content>
-      <als-text-section data-section="c.section" data-subsection="'content'"></als-text-section>
-    </md-card-content>
 
     <md-card-footer>
       <span>{{c.footer}}</span>
