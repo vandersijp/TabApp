@@ -3,28 +3,6 @@
   .md-card-image {
     filter: drop-shadow(0px 0px 0px);
   }
-
-  /*
-  from https://codepen.io/avelone/pen/Lxgejp
-  */
-
-  .frame-square {
-    width: 100%;
-    padding-top: 50%;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .frame-square img {
-    width: 100%;
-    height: auto;
-    margin: auto;
-    position: absolute;
-    top: -100%;
-    right: -100%;
-    bottom: -100%;
-    left: -100%;
-  }
 </style>
 
 <div ng-repeat="c in cardset.cards track by $index">
@@ -50,10 +28,18 @@
     <!-- -->
 
     <md-card-title>
+
+      <md-card-title-media ng-if="c.media">
+        <div class="md-media-sm">
+          <img ng-src="{{cuts.thu + c.media}}" />
+        </div>
+      </md-card-title-media>
+
       <md-card-title-text>
         <span class="md-headline">{{c.headline}}</span>
         <span class="md-subhead">{{c.subhead}}</span>
       </md-card-title-text>
+
     </md-card-title>
 
     <md-card-content>
