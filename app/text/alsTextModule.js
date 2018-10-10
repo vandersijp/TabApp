@@ -23,6 +23,22 @@ alsText.directive('alsTextHeader', function() {
   }
 });
 
+alsText.directive('alsTextSelection', function() {
+  return {
+    restrict: 'E',
+    scope: {
+      object: '=',
+      filter: '=?'
+    },
+    controller: function($scope) {
+      // check if it was defined.  If not - set a default
+      // from https://stackoverflow.com/questions/18784520/angular-directive-with-default-options
+      $scope.filter = angular.isDefined($scope.filter) ? $scope.filter : "all";
+    },
+    templateUrl: window.x.app + 'text/alsTextSelection.html'
+  }
+});
+
 alsText.directive('alsTextSection', function() {
   return {
     restrict: 'E',
