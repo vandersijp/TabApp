@@ -61,12 +61,13 @@
       <als-text-selection data-object="c.section" data-filter="'content'"></als-text-selection>
     </md-card-content>
 
-    <md-card-actions ng-if="c.button" layout="row" layout-align="end center" layout-margin>
+    <md-card-actions ng-if="c.button" layout="row" layout-align="start center" layout-margin>
       <md-button>Action 1</md-button>
       <md-button>Action 2</md-button>
       <md-button class="md-accent md-raised" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
       <md-card-icon-actions>
         <md-button class="md-icon-button" aria-label="icon">
+          <als-icon-fab-pair ng-if="cardset.expand" data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'keyboard_arrow_down'" data-icon2="'keyboard_arrow_up'"> </als-icon-fab-pair>
           <md-icon md-svg-icon="icon"></md-icon>
         </md-button>
       </md-card-icon-actions>
