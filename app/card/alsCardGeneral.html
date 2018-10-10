@@ -1,4 +1,32 @@
 <!--(C) Ask Learn Share Ltd:-->
+<style>
+  .md-card-image {
+    filter: drop-shadow(0px 0px 0px);
+  }
+
+  /*
+  from https://codepen.io/avelone/pen/Lxgejp
+  */
+
+  .frame-square {
+    width: 100%;
+    padding-top: 50%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .frame-square img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    position: absolute;
+    top: -100%;
+    right: -100%;
+    bottom: -100%;
+    left: -100%;
+  }
+</style>
+
 <div ng-repeat="c in cardset.cards">
 
   <md-card>
@@ -6,7 +34,7 @@
     <md-card-header>
 
       <md-card-avatar>
-        <img class="md-user-avatar" src="c.avatar">
+        <img class="md-user-avatar" ng-src="cuts.ava + c.avatar">
       </md-card-avatar>
 
       <md-card-header-text>
@@ -17,7 +45,11 @@
 
     </md-card-header>
 
-    <img ng-src="c.image" class="md-card-image" alt="image caption">
+    <!-- not supposed to be within DIV -->
+    <div ng-if="c.image" class="frame-square">
+      <img ng-src="cuts.img + c.image" class="md-card-image" />
+    </div>
+    <!-- -->
 
     <md-card-title>
       <md-card-title-text>
