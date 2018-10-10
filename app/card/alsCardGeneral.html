@@ -34,27 +34,27 @@
     <md-card-header>
 
       <md-card-avatar>
-        <img class="md-user-avatar" ng-src="cuts.ava + c.avatar">
+        <img class="md-user-avatar" src="{{cuts.ava + c.avatar}}">
       </md-card-avatar>
 
       <md-card-header-text>
-        <als-text-section data-section="cardset"></als-text-section>
-        <span class="md-title">{{cardset.title}}</span>
-        <span class="md-subhead">{{cardset.subhead}}</span>
+        <als-text-section data-section="c"></als-text-section>
+        <span class="md-title">{{c.title}}</span>
+        <span class="md-subhead">{{c.subhead}}</span>
       </md-card-header-text>
 
     </md-card-header>
 
     <!-- not supposed to be within DIV -->
     <div ng-if="c.image" class="frame-square">
-      <img ng-src="cuts.img + c.image" class="md-card-image" />
+      <img ng-src="{{cuts.img + c.image}}" class="md-card-image" />
     </div>
     <!-- -->
 
     <md-card-title>
       <md-card-title-text>
-        <span class="md-headline">{{cardset.headline}}</span>
-        <span class="md-subhead">{{cardset.subhead}}</span>
+        <span class="md-headline">{{c.headline}}</span>
+        <span class="md-subhead">{{c.subhead}}</span>
       </md-card-title-text>
     </md-card-title>
 
