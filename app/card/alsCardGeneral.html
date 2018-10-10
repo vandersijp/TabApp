@@ -61,10 +61,10 @@
       <als-text-selection data-object="c.section" data-filter="'content'"></als-text-selection>
     </md-card-content>
 
-    <md-card-actions ng-if="c.button" layout="row" layout-align="end center">
-      <md-button class="md-accent md-raised" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
+    <md-card-actions ng-if="c.button" layout="row" layout-align="end center" layout-margin>
       <md-button>Action 1</md-button>
       <md-button>Action 2</md-button>
+      <md-button class="md-accent md-raised" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
       <md-card-icon-actions>
         <md-button class="md-icon-button" aria-label="icon">
           <md-icon md-svg-icon="icon"></md-icon>
