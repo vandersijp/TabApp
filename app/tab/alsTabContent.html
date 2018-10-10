@@ -8,19 +8,19 @@
     <als-card-general data-cardset="data.tabCards" data-cuts="cuts"></als-card-general>
   </div>
 
-  <als-template-statement ng-repeat="s in data.statements" ng-if="s.tab==tab.id" data-statement="s" data-cuts="cuts"></als-template-statement>
-  <als-template-resolution ng-repeat="r in data.resolutions" ng-if="r.tab==tab.id" data-resolution="r" data-cuts="cuts"></als-template-resolution>
-  <als-template-invoice ng-repeat="i in data.invoices" ng-if="i.tab==tab.id" data-invoice="i" data-cuts="cuts"></als-template-invoice>
-  <als-card-general ng-repeat="c in data.cards" ng-if="c.tab==tab.id" data-cardset="c" data-cuts="cuts"></als-card-general>
-  <als-text-section ng-repeat="s in data.sections" ng-if="s.tab==tab.id" data-section="s" data-cuts="cuts"></als-text-section>
-  <als-text-playlist ng-repeat="l in data.playlists" ng-if="l.tab==tab.id" data-playlist="l" data-cuts="cuts"></als-text-playlist>
-  <als-figure-video-main ng-repeat="v in data.videos" ng-if="v.tab==tab.id" data-video="v" data-cuts="cuts"></als-figure-video-main>
-  <als-figure-photo-main ng-repeat="i in data.images" ng-if="i.tab==tab.id" data-image="i" data-cuts="cuts"></als-figure-photo-main>
-  <als-access-form ng-show="tab.id==data.system.access.tab" data-access="data.system.access"></als-access-form>
+  <als-template-statement ng-repeat="s in data.statements track by $index" ng-if="s.tab==tab.id" data-statement="s" data-cuts="cuts"></als-template-statement>
+  <als-template-resolution ng-repeat="r in data.resolutions track by $index" ng-if="r.tab==tab.id" data-resolution="r" data-cuts="cuts"></als-template-resolution>
+  <als-template-invoice ng-repeat="i in data.invoices track by $index" ng-if="i.tab==tab.id" data-invoice="i" data-cuts="cuts"></als-template-invoice>
+  <als-card-general ng-repeat="c in data.cards track by $index" ng-if="c.tab==tab.id" data-cardset="c" data-cuts="cuts"></als-card-general>
+  <als-text-section ng-repeat="s in data.sections track by $index" ng-if="s.tab==tab.id" data-section="s" data-cuts="cuts"></als-text-section>
+  <als-text-playlist ng-repeat="l in data.playlists track by $index" ng-if="l.tab==tab.id" data-playlist="l" data-cuts="cuts"></als-text-playlist>
+  <als-figure-video-main ng-repeat="v in data.videos track by $index" ng-if="v.tab==tab.id" data-video="v" data-cuts="cuts"></als-figure-video-main>
+  <als-figure-photo-main ng-repeat="i in data.images track by $index" ng-if="i.tab==tab.id" data-image="i" data-cuts="cuts"></als-figure-photo-main>
+  <als-access-form ng-show="tab.id==data.system.access.tab track by $index" data-access="data.system.access"></als-access-form>
 
   <div layout="column" layout-align="start center" ng-show="(tab.id!=data.system.access.tab || $parent.appCtrl.codeCompare(data.system.access.entered, data.system.access.code))">
-    <als-list-table-filtered ng-repeat="t in data.tables" ng-if="t.tab==tab.id" data-table="t" data-cuts="cuts"></als-list-table-filtered>
-    <als-list-single ng-repeat="l in data.lists" ng-if="l.tab==tab.id" data-list="l"></als-list-single>
+    <als-list-table-filtered ng-repeat="t in data.tables track by $index" ng-if="t.tab==tab.id" data-table="t" data-cuts="cuts"></als-list-table-filtered>
+    <als-list-single ng-repeat="l in data.lists track by $index" ng-if="l.tab==tab.id" data-list="l"></als-list-single>
 
     <div layout-margin ng-if="(tab.id==data.system.access.tab && data.system.access.showsite)">
       <div>

@@ -64,7 +64,7 @@ sectionMap = {
           </md-card>
 
           <!-- multiple dykt cards -->
-          <md-card ng-if="section.paragraphs" ng-repeat="p in section.paragraphs" ng-class="section.style" layout-align="center center" flex-gt-xs="45" flex-xs="auto">
+          <md-card ng-if="section.paragraphs" ng-repeat="p in section.paragraphs track by $index" ng-class="section.style" layout-align="center center" flex-gt-xs="45" flex-xs="auto">
             <md-card-content class="singleline">
               <p>{{p}}</p>
             </md-card-content>
@@ -83,7 +83,7 @@ sectionMap = {
 
     <!-- recursive sections -->
     <als-text-section ng-if="section.section" data-section="section.section"></als-text-section>
-    <als-text-section ng-if="section.sections" ng-repeat="s in section.sections" data-section="s"></als-text-section>
+    <als-text-section ng-if="section.sections" ng-repeat="s in section.sections track by $index" data-section="s"></als-text-section>
 
   </div>
 
