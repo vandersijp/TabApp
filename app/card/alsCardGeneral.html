@@ -3,6 +3,28 @@
   .md-card-image {
     filter: drop-shadow(0px 0px 0px);
   }
+
+  /*
+  from https://codepen.io/avelone/pen/Lxgejp
+  */
+
+  .frame-square {
+    width: 100%;
+    padding-top: 50%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .frame-square img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    position: absolute;
+    top: -100%;
+    right: -100%;
+    bottom: -100%;
+    left: -100%;
+  }
 </style>
 
 <div ng-repeat="c in cardset.cards track by $index">
