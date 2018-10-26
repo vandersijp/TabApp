@@ -45,6 +45,7 @@
       </md-card-avatar>
 
       <md-card-header-text>
+        [alltitles]
         <als-text-selection data-object="c" data-filter="'alltitles'"></als-text-selection>
       </md-card-header-text>
 
@@ -54,6 +55,7 @@
     <div ng-if="c.image" class="frame-square">
       <img ng-src="{{cuts.img + c.image}}" class="md-card-image" />
       <div class="title-overlay">
+        [alltitles]
         <als-text-selection data-object="c" data-filter="'alltitles'"></als-text-selection>
       </div>
     </div>
@@ -68,13 +70,16 @@
       </md-card-title-media>
 
       <md-card-title-text>
+        [header]
         <als-text-selection data-object="c" data-filter="'header'"></als-text-selection>
       </md-card-title-text>
 
     </md-card-title>
 
     <md-card-content>
+      [header]
       <als-text-selection data-object="c.section" data-filter="'header'"></als-text-selection>
+      [content]
       <als-text-selection data-object="c.section" data-filter="'content'"></als-text-selection>
     </md-card-content>
 
