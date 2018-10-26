@@ -46,7 +46,6 @@
 
       <md-card-header-text>
         [alltitles]
-        <als-text-selection data-object="c" data-filter="'alldisplays'"></als-text-selection>
         <als-text-selection data-object="c" data-filter="'alltitles'"></als-text-selection>
       </md-card-header-text>
 
@@ -56,6 +55,8 @@
     <div ng-if="c.image" class="frame-square">
       <img ng-src="{{cuts.img + c.image}}" class="md-card-image" />
       <div class="title-overlay">
+        [alldisplays]
+        <als-text-selection data-object="c" data-filter="'alldisplays'"></als-text-selection>
         [alltitles]
         <als-text-selection data-object="c" data-filter="'alltitles'"></als-text-selection>
       </div>
