@@ -27,13 +27,11 @@
     left: -100%;
   }
 
-  .title-overlay {
+  .text-overlay {
     position: absolute;
     bottom: 8px;
     left: 16px;
     color: white;
-    font-weight: 900 !important;
-    font-size: 120% !important;
   }
 </style>
 
@@ -57,7 +55,7 @@
     <!-- not supposed to be within DIV -->
     <div ng-if="c.image" class="frame-square">
       <img ng-src="{{cuts.img + c.image}}" class="md-card-image" />
-      <div class="title-overlay">
+      <div class="text-overlay">
         [alldisplays]
         <als-text-selection data-object="c" data-filter="'alldisplays'"></als-text-selection>
         [alltitles]
