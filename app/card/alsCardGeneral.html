@@ -25,6 +25,14 @@
     bottom: -100%;
     left: -100%;
   }
+
+.title-overlay {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    color: white;
+}
+
 </style>
 
 <div ng-repeat="c in cardset.cards track by $index">
@@ -46,6 +54,7 @@
     <!-- not supposed to be within DIV -->
     <div ng-if="c.image" class="frame-square">
       <img ng-src="{{cuts.img + c.image}}" class="md-card-image" />
+      <span class="title-overlay">top left</span>
     </div>
     <!-- -->
 
