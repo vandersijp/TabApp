@@ -16,7 +16,7 @@
   <als-text-playlist ng-repeat="l in data.playlists track by $index" ng-if="l.tab==tab.id" data-playlist="l" data-cuts="cuts"></als-text-playlist>
   <als-figure-video-main ng-repeat="v in data.videos track by $index" ng-if="v.tab==tab.id" data-video="v" data-cuts="cuts"></als-figure-video-main>
   <als-figure-photo-main ng-repeat="i in data.images track by $index" ng-if="i.tab==tab.id" data-image="i" data-cuts="cuts"></als-figure-photo-main>
-  <als-access-form ng-show="tab.id==data.system.access.tab track by $index" data-access="data.system.access"></als-access-form>
+  <als-access-form ng-show="tab.id==data.system.access.tab" data-access="data.system.access"></als-access-form>
 
   <div layout="column" layout-align="start center" ng-show="(tab.id!=data.system.access.tab || $parent.appCtrl.codeCompare(data.system.access.entered, data.system.access.code))">
     <als-list-table-filtered ng-repeat="t in data.tables track by $index" ng-if="t.tab==tab.id" data-table="t" data-cuts="cuts"></als-list-table-filtered>
