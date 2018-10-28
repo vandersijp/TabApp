@@ -8,7 +8,6 @@
   from https://codepen.io/avelone/pen/Lxgejp
   */
 
-
   .frame-square {
     width: 100%;
     padding-top: 50%;
@@ -35,70 +34,73 @@
   }
 </style>
 
-<div ng-repeat="c in cardset.cards track by $index" layout="row" layout-wrap>
+<div ng-repeat="c in cardset.cards track by $index">
 
-  <md-card flex="30">
+  <div layout="row" layout-wrap>
+    <md-card flex="30">
 
-    <md-card-header>
+      <md-card-header>
 
-      <md-card-avatar>
-        <img class="md-user-avatar" src="{{cuts.ava + c.avatar}}">
-      </md-card-avatar>
+        <md-card-avatar>
+          <img class="md-user-avatar" src="{{cuts.ava + c.avatar}}">
+        </md-card-avatar>
 
-      <md-card-header-text>
-        [alltitles]
-        <als-text-selection data-object="c" data-filter="'alltitles'"></als-text-selection>
-      </md-card-header-text>
+        <md-card-header-text>
+          [alltitles]
+          <als-text-selection data-object="c" data-filter="'alltitles'"></als-text-selection>
+        </md-card-header-text>
 
-    </md-card-header>
+      </md-card-header>
 
-    <!-- not supposed to be within DIV -->
-    <div ng-if="c.image" class="frame-square">
-      <img ng-src="{{cuts.img + c.image}}" class="md-card-image" />
-      <div class="text-overlay">
-        <als-text-selection data-object="c" data-filter="'alldisplays'"></als-text-selection>
-      </div>
-    </div>
-    <!-- -->
-
-    <md-card-title>
-
-      <md-card-title-media ng-if="c.media">
-        <div class="md-media-sm">
-          <img ng-src="{{cuts.thu + c.media}}" />
+      <!-- not supposed to be within DIV -->
+      <div ng-if="c.image" class="frame-square">
+        <img ng-src="{{cuts.img + c.image}}" class="md-card-image" />
+        <div class="text-overlay">
+          <als-text-selection data-object="c" data-filter="'alldisplays'"></als-text-selection>
         </div>
-      </md-card-title-media>
+      </div>
+      <!-- -->
 
-      <md-card-title-text>
-        [header]
-        <als-text-selection data-object="c" data-filter="'header'"></als-text-selection>
-      </md-card-title-text>
+      <md-card-title>
 
-    </md-card-title>
+        <md-card-title-media ng-if="c.media">
+          <div class="md-media-sm">
+            <img ng-src="{{cuts.thu + c.media}}" />
+          </div>
+        </md-card-title-media>
 
-    <md-card-content>
-      [section header]
-      <als-text-selection data-object="c.section" data-filter="'header'"></als-text-selection>
-      [section content]
-      <als-text-selection data-object="c.section" data-filter="'content'"></als-text-selection>
-    </md-card-content>
+        <md-card-title-text>
+          [header]
+          <als-text-selection data-object="c" data-filter="'header'"></als-text-selection>
+        </md-card-title-text>
 
-    <md-card-actions ng-if="c.button" layout="row" layout-align="start center" layout-margin>
-      <md-button>Action 1</md-button>
-      <md-button>Action 2</md-button>
-      <md-button class="md-accent md-raised" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
-      <md-card-icon-actions>
-        <md-button class="md-icon-button" aria-label="icon">
-          <als-icon-fab-pair ng-if="cardset.expand" data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'keyboard_arrow_down'" data-icon2="'keyboard_arrow_up'"> </als-icon-fab-pair>
-          <md-icon md-svg-icon="icon"></md-icon>
-        </md-button>
-      </md-card-icon-actions>
-    </md-card-actions>
+      </md-card-title>
 
-    <md-card-footer>
-      <span>{{c.footer}}</span>
-    </md-card-footer>
+      <md-card-content>
+        [section header]
+        <als-text-selection data-object="c.section" data-filter="'header'"></als-text-selection>
+        [section content]
+        <als-text-selection data-object="c.section" data-filter="'content'"></als-text-selection>
+      </md-card-content>
 
-  </md-card>
+      <md-card-actions ng-if="c.button" layout="row" layout-align="start center" layout-margin>
+        <md-button>Action 1</md-button>
+        <md-button>Action 2</md-button>
+        <md-button class="md-accent md-raised" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
+        <md-card-icon-actions>
+          <md-button class="md-icon-button" aria-label="icon">
+            <als-icon-fab-pair ng-if="cardset.expand" data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'keyboard_arrow_down'" data-icon2="'keyboard_arrow_up'"> </als-icon-fab-pair>
+            <md-icon md-svg-icon="icon"></md-icon>
+          </md-button>
+        </md-card-icon-actions>
+      </md-card-actions>
+
+      <md-card-footer>
+        <span>{{c.footer}}</span>
+      </md-card-footer>
+
+    </md-card>
+
+  </div>
 
 </div>
