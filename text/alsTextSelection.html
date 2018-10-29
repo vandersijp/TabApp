@@ -1,0 +1,36 @@
+<!--(C) Ask Learn Share Ltd -->
+<style>
+  .text-overlay .md-title {
+    font-size: 24px; !important;
+  font-weight: 900 !important;
+}
+</style>
+
+<div ng-class="section.class" ng-init='
+map = {
+  "display-3": ["all", "alldisplays", "display"],
+  "display-2": ["all", "alldisplays", "display"],
+  "display-1": ["all", "alldisplays", "display"],
+  "headline": ["all", "allheaders", "header"],
+  "title": ["all", "allheaders", "alltitles", "title"],
+  "subhead": ["all", "allheaders", "alltitles", "header"],
+  "lead": ["all", "lead", "content"],
+  "content":["all", "content"],
+  "paragraph":["all", "content"],
+  "paragraphs":["all", "content"]
+};
+'>
+
+  <h1 ng-if="object['display-3'] && map['display-3'].includes(filter)" class="md-display-3">{{object['display-3']}}</h1>
+  <h2 ng-if="object['display-2'] && map['display-2'].includes(filter)" class="md-display-2">{{object['display-2']}}</h2>
+  <h3 ng-if="object['display-1'] && map['display-1'].includes(filter)" class="md-display-1">{{object['display-1']}}</h3>
+  <h4 ng-if="object['headline'] && map['headline'].includes(filter)" class="md-headline">{{object['headline']}}</h4>
+  <h5 ng-if="object['title'] && map['title'].includes(filter)" class="md-title">{{object['title']}}</h5>
+  <h6 ng-if="object['subhead'] && map['subhead'].includes(filter)" class="md-subhead">{{object['subhead']}}</h6>
+  <p ng-if="object['lead'] && map['lead'].includes(filter)" class="md-body-2 als-lead">{{object['lead']}}</p>
+  <p ng-if="object['paragraph'] && map['paragraph'].includes(filter)" class="md-body-1">{{object['paragraph']}}</p>
+  <div ng-if="object['paragraphs'] && map['paragraphs'].includes(filter)" layout="column">
+    <als-text-paragraphs data-section="object"></als-text-paragraphs>
+  </div>
+
+</div>
