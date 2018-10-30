@@ -36,11 +36,11 @@
 
 <div ng-repeat="c in cardset.cards track by $index" layout="row">
 
-  <div flex="33">
+  <md-content>
 
-    <md-content>
+    <div layout="row" layout-xs="column">
 
-      <md-card>
+      <md-card flex flex-gt-xs="30">
 
         <md-card-header ng-if="c.avatar">
 
@@ -102,8 +102,8 @@
 
       </md-card>
 
-    </md-content>
+    </div>
 
-  </div>
+  </md-content>
 
 </div>
