@@ -1,4 +1,4 @@
-/* (C) 2016 Ask Learn Share Ltd */
+car/* (C) 2016 Ask Learn Share Ltd */
 
 html {
   font-family: 'Roboto', sans-serif;
@@ -104,40 +104,13 @@ pre {
 md-menu-item {
   /* to accomodate icons */
   margin-right: -1em;
-}
+}d
 
 md-menu-item p {
   /* in case the md-sidenav is too narrow, maybe obsolete */
-  margin-right: 1em !important;
+  margin-right: car1em !important;
 }
 
-md-card-title-media {
-  /* to correct Angular Material bug */
-  margin-right: 1.5em !important;
-}
-
-md-card-content p {
-  /* to reduce excessive spacing */
-  margin-top: 1em !important;
-  margin-bottom: 1em !important;
-}
-
-md-card md-card-title md-card-title-media .md-media-sm {
-  /* to allow for non-square images */
-  height: auto;
-}
-
-md-card md-card-title md-card-title-media .md-media-md {
-  height: auto;
-}
-
-md-card md-card-title md-card-title-media .md-media-lg {
-  height: auto;
-}
-
-md-card md-card-title md-card-title-media .md-media-xl {
-  height: auto;
-}
 
 /*
 for sideNav scrolling
