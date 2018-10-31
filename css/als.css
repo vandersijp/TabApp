@@ -1,22 +1,98 @@
-car/* (C) 2016 Ask Learn Share Ltd */
+/* (C) 2016 Ask Learn Share Ltd */
 
 html {
   font-family: 'Roboto', sans-serif;
 }
 
-img{max-width:100%!important}
-img{vertical-align:middle}
-img{border:0}
+img {
+  max-width: 100% !important
+}
 
-md-card-content{
+img {
+  vertical-align: middle
+}
+
+img {
+  border: 0
+}
+
+/*
+from https://codepen.io/avelone/pen/Lxgejp
+*/
+
+.als-img-frame {
+  width: 100%;
+  padding-top: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.als-img-frame img {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  top: -100%;
+  right: -100%;
+  bottom: -100%;
+  left: -100%;
+}
+
+.als-text-overlay {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  color: white;
+}
+
+/* need to refer to md-title explicitely */
+.als-text-overlay .md-title {
+  font-size: 22px !important;
+  font-weight: 900 !important;
+  text-align: right !important;
+}
+
+md-card-content {
   zzbackground: orange;
 }
 
-  md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
+md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
   max-width: 40px;
   max-height: 40px;
   height: auto;
   width: auto;
+}
+
+.md-card-image {
+  filter: drop-shadow(0px 0px 0px);
+}
+
+md-card-title-media {
+  /* to correct Angular Material bug */
+  margin-right: 1.5em !important;
+}
+
+md-card-content p {
+  /* to reduce excessive spacing */
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
+}
+
+md-card md-card-title md-card-title-media .md-media-sm {
+  /* to allow for non-square images */
+  height: auto;
+}
+
+md-card md-card-title md-card-title-media .md-media-md {
+  height: auto;
+}
+
+md-card md-card-title md-card-title-media .md-media-lg {
+  height: auto;
+}
+
+md-card md-card-title md-card-title-media .md-media-xl {
+  height: auto;
 }
 
 .als-main-content {
@@ -54,7 +130,7 @@ blockquote:before {
   color: #555;
   content: open-quote;
   font-size: 3em;
-    line-height: 0;
+  line-height: 0;
   vertical-align: -0.4em;
   horizontal-align: -1em;
 }
@@ -104,13 +180,12 @@ pre {
 md-menu-item {
   /* to accomodate icons */
   margin-right: -1em;
-}d
+}
 
-md-menu-item p {
+d md-menu-item p {
   /* in case the md-sidenav is too narrow, maybe obsolete */
   margin-right: car1em !important;
 }
-
 
 /*
 for sideNav scrolling
