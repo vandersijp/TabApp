@@ -1,43 +1,4 @@
 <!--(C) Ask Learn Share Ltd:-->
-<style>
-  .md-card-image {
-    filter: drop-shadow(0px 0px 0px);
-  }
-
-  /*
-  from https://codepen.io/avelone/pen/Lxgejp
-  */
-
-  .frame-square {
-    width: 100%;
-    padding-top: 50%;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .frame-square img {
-    width: 100%;
-    height: auto;
-    margin: auto;
-    position: absolute;
-    top: -100%;
-    right: -100%;
-    bottom: -100%;
-    left: -100%;
-  }
-
-  .text-overlay {
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
-    color: white;
-  }
-
-  .text-overlay .md-title {
-    font-size: 24px !important;
-    font-weight: 900 !important;
-  }
-</style>
 
 <md-content>
 
@@ -56,9 +17,9 @@
     </md-card-header>
 
     <!-- not supposed to be within DIV -->
-    <div ng-if="c.image" class="frame-square">
+    <div ng-if="c.image" class="als-img-frame">
       <img ng-src="{{cuts.img + c.image}}" class="md-card-image" />
-      <div class="text-overlay" style="text-align: right !important;">
+      <div class="als-text-overlay">
         <als-text-selection data-object="c" data-filter="'alldisplays'"></als-text-selection>
       </div>
     </div>
