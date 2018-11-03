@@ -2,7 +2,7 @@
 <style>
   .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 </style>
 
@@ -65,11 +65,11 @@
         </md-card-icon-actions>
       </md-card-actions>
 
-    <md-card-footer ng-if="c.footer">
-      <span>{{c.footer}}</span>
-    </md-card-footer>
+      <md-card-footer ng-if="c.footer">
+        <span>{{c.footer}}</span>
+      </md-card-footer>
 
-  </div>
+    </div>
 
   </md-card>
 
