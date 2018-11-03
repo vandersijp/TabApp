@@ -1,6 +1,14 @@
 <!--(C) Ask Learn Share Ltd:-->
+<style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+</style>
 
-<md-content class="md-padding" flex layout-wrap layout="row" layout-align="{{cardset.alignments.layout}}">
+
+
+<md-content class="md-padding grid-container" flex layout-wrap layout="row" layout-align="{{cardset.alignments.layout}}">
 
   <md-card ng-repeat="c in cardset.cards track by $index" flex="{{cardset.alignments.flex}}" flex-sm="{{cardset.alignments.flex-sm}}" flex-gt-sm="{{cardset.alignments.flex-gt-sm}}">
 
