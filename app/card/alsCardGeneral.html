@@ -1,18 +1,26 @@
 <!--(C) Ask Learn Share Ltd:-->
 <style>
   .container {
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    <!--https://medium.com/samsung-internet-dev/common-responsive-layouts-with-css-grid-and-some-without-245a862f48df-->
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
-  .container > *
-{
-  flex: .5;
-}
+
+  @media screen and (max-width: 500px) {
+    .container>* {
+      flex: .45;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .container>* {
+      flex: .3;
+    }
+  }
+
 </style>
 
 <md-content class="md-padding container">
