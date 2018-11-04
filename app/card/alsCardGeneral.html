@@ -1,33 +1,7 @@
 <!--(C) Ask Learn Share Ltd:-->
-<style>
-  .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    position: relative;
-  }
 
-  .container>* {
-    width 25%;
-    position: absolute;
-  }
-
-  @media screen and (max-width: 400px) {
-    .container>* {
-      width 32%;
-    }
-  }
-
-  @media screen and (max-width: 300px) {
-    .container>* {
-      width 95%;
-    }
-  }
-</style>
 
 <md-content class="md-padding" layout-xs="column" layout="row">
-  <div flex-xs flex-gt-xs="50" layout="column">
 
     <md-card ng-repeat="c in cardset.cards track by $index">
 
@@ -91,6 +65,5 @@
       </div>
 
     </md-card>
-  </div>
 
 </md-content>
