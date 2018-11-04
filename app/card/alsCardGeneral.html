@@ -5,7 +5,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    position:relative;
+    position: relative;
   }
 
   .container>* {
@@ -24,73 +24,74 @@
       width 95%;
     }
   }
-
-
 </style>
 
 <md-content class="md-padding container">
 
-  <md-card ng-repeat="c in cardset.cards track by $index">
+  <div ng-repeat="c in cardset.cards track by $index">
 
-    <md-card-header ng-if="c.avatar">
+    <md-card>
 
-      <md-card-avatar>
-        <img class="md-user-avatar" src="{{cuts.ava + c.avatar}}">
-      </md-card-avatar>
+      <md-card-header ng-if="c.avatar">
 
-      <md-card-header-text>
-        <als-text-selection data-object="c" data-filter="'alltitles'"></als-text-selection>
-      </md-card-header-text>
+        <md-card-avatar>
+          <img class="md-user-avatar" src="{{cuts.ava + c.avatar}}">
+        </md-card-avatar>
 
-    </md-card-header>
+        <md-card-header-text>
+          <als-text-selection data-object="c" data-filter="'alltitles'"></als-text-selection>
+        </md-card-header-text>
 
-    <!-- not supposed to be within DIV -->
-    <div ng-if="c.image" class="als-img-frame">
-      <img ng-src="{{cuts.img + c.image}}" class="md-card-image" />
-      <div class="als-text-overlay">
-        <als-text-selection data-object="c" data-filter="'alldisplays'"></als-text-selection>
-      </div>
-    </div>
-    <!-- -->
+      </md-card-header>
 
-    <md-card-title>
-
-      <md-card-title-media ng-if="c.media">
-        <div class="md-media-sm">
-          <img ng-src="{{cuts.thu + c.media}}" />
+      <!-- not supposed to be within DIV -->
+      <div ng-if="c.image" class="als-img-frame">
+        <img ng-src="{{cuts.img + c.image}}" class="md-card-image" />
+        <div class="als-text-overlay">
+          <als-text-selection data-object="c" data-filter="'alldisplays'"></als-text-selection>
         </div>
-      </md-card-title-media>
+      </div>
+      <!-- -->
 
-      <md-card-title-text>
-        <als-text-selection data-object="c" data-filter="'header'"></als-text-selection>
-      </md-card-title-text>
+      <md-card-title>
 
-    </md-card-title>
+        <md-card-title-media ng-if="c.media">
+          <div class="md-media-sm">
+            <img ng-src="{{cuts.thu + c.media}}" />
+          </div>
+        </md-card-title-media>
 
-    <md-card-content>
-      <als-text-selection data-object="c" data-filter="'lead'"></als-text-selection>
-      <als-text-selection data-object="c.section" data-filter="'header'"></als-text-selection>
-      <als-text-selection data-object="c.section" data-filter="'content'"></als-text-selection>
-    </md-card-content>
+        <md-card-title-text>
+          <als-text-selection data-object="c" data-filter="'header'"></als-text-selection>
+        </md-card-title-text>
 
-    <div layout="column" layout-align="center center">
+      </md-card-title>
 
-      <md-card-actions ng-if="c.button">
-        <md-button class="md-accent md-raised" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
-        <md-card-icon-actions ng-if="cardset.expand">
-          <md-button class="md-icon-button" aria-label="icon">
-            <als-icon-fab-pair data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'keyboard_arrow_down'" data-icon2="'keyboard_arrow_up'"> </als-icon-fab-pair>
-            <md-icon md-svg-icon="icon"></md-icon>
-          </md-button>
-        </md-card-icon-actions>
-      </md-card-actions>
+      <md-card-content>
+        <als-text-selection data-object="c" data-filter="'lead'"></als-text-selection>
+        <als-text-selection data-object="c.section" data-filter="'header'"></als-text-selection>
+        <als-text-selection data-object="c.section" data-filter="'content'"></als-text-selection>
+      </md-card-content>
 
-      <md-card-footer ng-if="c.footer">
-        <span>{{c.footer}}</span>
-      </md-card-footer>
+      <div layout="column" layout-align="center center">
 
-    </div>
+        <md-card-actions ng-if="c.button">
+          <md-button class="md-accent md-raised" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
+          <md-card-icon-actions ng-if="cardset.expand">
+            <md-button class="md-icon-button" aria-label="icon">
+              <als-icon-fab-pair data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'keyboard_arrow_down'" data-icon2="'keyboard_arrow_up'"> </als-icon-fab-pair>
+              <md-icon md-svg-icon="icon"></md-icon>
+            </md-button>
+          </md-card-icon-actions>
+        </md-card-actions>
 
-  </md-card>
+        <md-card-footer ng-if="c.footer">
+          <span>{{c.footer}}</span>
+        </md-card-footer>
+
+      </div>
+
+    </md-card>
+  </div>
 
 </md-content>
