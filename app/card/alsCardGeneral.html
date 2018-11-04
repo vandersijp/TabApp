@@ -26,11 +26,10 @@
   }
 </style>
 
-<md-content class="md-padding container">
+  <md-content class="md-padding" layout-xs="column" layout="row">
+      <div flex-xs flex-gt-xs="50" layout="column">
 
-  <div ng-repeat="c in cardset.cards track by $index">
-
-    <md-card>
+    <md-card ng-repeat="c in cardset.cards track by $index">
 
       <md-card-header ng-if="c.avatar">
 
