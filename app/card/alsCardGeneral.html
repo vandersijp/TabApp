@@ -32,7 +32,7 @@
         </md-card-avatar>
 
         <md-card-header-text>
-          <als-text-selection data-object="c" data-filter="'title'"></als-text-selection>
+          <als-text-selection data-object="c" data-filter="'alltitle'"></als-text-selection>
         </md-card-header-text>
 
       </md-card-header>
@@ -41,7 +41,7 @@
       <div ng-if="c.image" class="als-img-frame">
         <img ng-src="{{cuts.img + c.image}}" class="md-card-image" ng-style= "{{'transform: translateY('+c.alignments.translateY+');'}}" />
         <div class="als-text-overlay">
-          <als-text-selection data-object="c" data-filter="'alldisplays'"></als-text-selection>
+          <als-text-selection data-object="c" data-filter="'headline'"></als-text-selection>
         </div>
       </div>
 
