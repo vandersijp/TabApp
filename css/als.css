@@ -45,9 +45,9 @@ from https://codepen.io/avelone/pen/Lxgejp
   color: white;
 }
 
-/* need to refer to md-title explicitely */
+/* need to refer to deeper element */
 
-.als-text-overlay .md-title {
+.als-text-overlay p, .als-text-overlay h6, .als-text-overlay h5, .als-text-overlay h4 {
   font-size: 22px !important;
   font-weight: 900 !important;
   text-align: right !important;
