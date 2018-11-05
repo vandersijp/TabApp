@@ -6,7 +6,7 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: 600px) {
     .container {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -14,6 +14,12 @@
 </style>
 
 <md-content class="md-padding container">
+
+  <md-card>
+    <p>
+      start card
+    </p>
+  </md-card>
 
   <md-card ng-repeat="c in cardset.cards track by $index">
 
