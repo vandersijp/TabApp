@@ -1,9 +1,15 @@
 <!--(C) Ask Learn Share Ltd:-->
 
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+  }
 
-<md-content class="md-padding" layout-xs="column" layout="row">
 
-    <md-card ng-repeat="c in cardset.cards track by $index" flex="80" flex-gt-md="30" flex-gt-sm="40">
+<md-content class="md-padding container" zzlayout-xs="column" zzlayout="row">
+
+    <md-card ng-repeat="c in cardset.cards track by $index" zzflex="80" zzflex-gt-md="30" zzflex-gt-sm="40">
 
       <md-card-header ng-if="c.avatar">
 
