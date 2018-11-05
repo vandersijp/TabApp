@@ -39,7 +39,7 @@
 
       <!-- not supposed to be within DIV -->
       <div ng-if="c.image" class="als-img-frame">
-        <img ng-src="{{cuts.img + c.image}}" class="md-card-image" />
+        <img ng-src="{{cuts.img + c.image}}" class="md-card-image" ng-style= "'transform: translateY('+c.alignments.transformY+');'" />
         <div class="als-text-overlay">
           <als-text-selection data-object="c" data-filter="'alldisplays'"></als-text-selection>
         </div>
