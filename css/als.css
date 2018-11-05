@@ -36,6 +36,7 @@ from https://codepen.io/avelone/pen/Lxgejp
   right: -100%;
   bottom: -100%;
   left: -100%;
+  transform: translateY(-30%);
 }
 
 .als-text-overlay {
@@ -46,6 +47,7 @@ from https://codepen.io/avelone/pen/Lxgejp
 }
 
 /* need to refer to md-title explicitely */
+
 .als-text-overlay .md-title {
   font-size: 22px !important;
   font-weight: 900 !important;
