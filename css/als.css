@@ -40,7 +40,7 @@ from https://codepen.io/avelone/pen/Lxgejp
 
 .als-text-overlay {
   position: absolute;
-  bottom: 8px;
+  bottom: 0px;
   left: 16px;
   color: white;
 }
@@ -50,6 +50,7 @@ from https://codepen.io/avelone/pen/Lxgejp
 .als-text-overlay p, .als-text-overlay h6, .als-text-overlay h5, .als-text-overlay h4 {
   font-size: 22px !important;
   font-weight: 900 !important;
+  text-shadow: 1px 1px #808080 !important;
   text-align: right !important;
 }
 
