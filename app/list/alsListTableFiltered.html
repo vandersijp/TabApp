@@ -37,8 +37,7 @@
     <div ng-switch-when="pitch">
       <div ng-repeat="r in table.records">
         <div ng-repeat="h in table.filter">
-          <h6 class="md-subhead">{{h}}</h6>
-          <p>{{r[h]}}</p>
+          <p><strong>{{h}}</strong> - <em>{{h}}</em> - {{r[h]}}</p>
         </div>
       </div>
     </div>
