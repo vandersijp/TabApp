@@ -80,13 +80,14 @@
 
         <md-card-actions ng-if="c.button">
           <md-button class="md-accent md-raised" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
-          <md-card-icon-actions ng-if="cardset.expand">
-            <md-button class="md-icon-button" aria-label="icon">
-              <als-icon-fab-pair data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'keyboard_arrow_down'" data-icon2="'keyboard_arrow_up'"> </als-icon-fab-pair>
-              <md-icon md-svg-icon="icon"></md-icon>
-            </md-button>
-          </md-card-icon-actions>
-        </md-card-actions>
+
+          <!-- start  -->
+          <div ng-if="cardset.expand">
+            <als-icon-fab-pair ng-if="cardset.expand" data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'keyboard_arrow_down'" data-icon2="'keyboard_arrow_up'"> </als-icon-fab-pair>
+          </div>
+          <!-- end  -->
+
+      </md-card-actions>
 
         <md-card-footer ng-if="c.footer">
           <span>{{c.footer}}</span>
@@ -94,11 +95,6 @@
 
       </div>
 
-      <!-- start  -->
-      <div ng-if="cardset.expand">
-        <als-icon-fab-pair ng-if="cardset.expand" data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'keyboard_arrow_down'" data-icon2="'keyboard_arrow_up'"> </als-icon-fab-pair>
-      </div>
-      <!-- end  -->
 
     </md-card>
 
