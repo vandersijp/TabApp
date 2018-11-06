@@ -61,7 +61,7 @@
 
   </div>
 
-  <als-list-table-filtered ng-repeat="t in section.tables track by $index" data-table="t" data-cuts="cuts"></als-list-table-filtered>
+  <als-list-table-filtered ng-if="section.tables" ng-repeat="t in section.tables track by $index" data-table="t" data-cuts="cuts"></als-list-table-filtered>
 
   <!-- recursive sections -->
   <als-text-section ng-if="section.section" data-section="section.section"></als-text-section>
