@@ -74,6 +74,11 @@
       <md-card-content>
         <als-text-selection data-object="c" data-filter="'lead'"></als-text-selection>
         <als-text-section data-section="c.section"></als-text-section>
+
+        <div>
+          <pre>{{c.section.tables[0] | json}}</pre>
+        </div>
+
       </md-card-content>
 
       <div layout="column" layout-align="center center">
