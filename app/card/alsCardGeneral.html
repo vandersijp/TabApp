@@ -76,7 +76,7 @@
       </md-card-content>
 
       <md-card-actions ng-if="c.button || cardset.expand" layout="row" layout-align="space-between center" layout-margin>
-        <md-button ng-if="c.button" class="md-accent md-raised" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
+        <md-button ng-if="c.button"  class="md-accent md-raised" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
         <als-icon-fab-pair ng-if="cardset.expand" data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'keyboard_arrow_down'" data-icon2="'keyboard_arrow_up'"> </als-icon-fab-pair>
       </md-card-actions>
 
