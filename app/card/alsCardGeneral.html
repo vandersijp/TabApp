@@ -67,19 +67,12 @@
         <md-card-title-text>
           <als-text-selection ng-if="!cardset.alignments.overlay" data-object="c" data-filter="'headline'"></als-text-selection>
           <als-text-selection data-object="c" data-filter="'subhead'"></als-text-selection>
+          <als-text-selection data-object="c" data-filter="'lead'"></als-text-selection>
         </md-card-title-text>
 
       </md-card-title>
 
-
-      <!-- start  -->
-      <div ng-if="cardset.expand">
-        <als-icon-fab-pair ng-if="cardset.expand" data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'keyboard_arrow_down'" data-icon2="'keyboard_arrow_up'"> </als-icon-fab-pair>
-      </div>
-      <!-- end  -->
-
       <md-card-content>
-        <als-text-selection data-object="c" data-filter="'lead'"></als-text-selection>
         <als-text-section data-section="c.section"></als-text-section>
       </md-card-content>
 
@@ -100,6 +93,12 @@
         </md-card-footer>
 
       </div>
+
+      <!-- start  -->
+      <div ng-if="cardset.expand">
+        <als-icon-fab-pair ng-if="cardset.expand" data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'keyboard_arrow_down'" data-icon2="'keyboard_arrow_up'"> </als-icon-fab-pair>
+      </div>
+      <!-- end  -->
 
     </md-card>
 
