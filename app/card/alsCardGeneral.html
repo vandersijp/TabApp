@@ -57,19 +57,25 @@
 
       <md-card-title>
 
-        <md-card-title-media ng-if="c.media">
-          <div class="md-media-sm">
-            <img ng-src="{{cuts.thu + c.media}}" />
+        <div layout="column">
+          <div>
+
+            <md-card-title-media ng-if="c.media">
+              <div class="md-media-sm">
+                <img ng-src="{{cuts.thu + c.media}}" />
+              </div>
+            </md-card-title-media>
+
+            <md-card-title-text>
+              <als-text-selection ng-if="!cardset.alignments.overlay" data-object="c" data-filter="'headline'"></als-text-selection>
+              <als-text-selection data-object="c" data-filter="'subhead'"></als-text-selection>
+            </md-card-title-text>
+
           </div>
-        </md-card-title-media>
 
-        <md-card-title-text>
-          <als-text-selection ng-if="!cardset.alignments.overlay" data-object="c" data-filter="'headline'"></als-text-selection>
-          <als-text-selection data-object="c" data-filter="'subhead'"></als-text-selection>
-        </md-card-title-text>
+          <als-text-selection data-object="c" data-filter="'lead'"></als-text-selection>
 
-        <als-text-selection data-object="c" data-filter="'lead'"></als-text-selection>
-
+        </div>
       </md-card-title>
 
       <md-card-content>
