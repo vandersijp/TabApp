@@ -48,15 +48,12 @@
 
       <!-- not supposed to be within DIV -->
       <div ng-if="c.image" class="als-img-frame">
-        <img ng-src="{{cuts.img + c.image}}" ng-class="{{'md-card-image translate-'+c.alignments.image}}" />
+        <img ng-src="{{cuts.img + c.image}}" ng-class="{{'md-card-image '+c.alignments.image}}" />
         <div ng-if="cardset.alignments.overlay" class="als-text-overlay">
           <als-text-selection data-object="c" data-filter="'headline'"></als-text-selection>
         </div>
       </div>
 
-      <p ng-hide="true">
-        {{'transform: translateY('+c.alignments.translateY+');'}}
-      </p>
       <!-- -->
 
       <md-card-title>
