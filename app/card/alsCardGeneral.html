@@ -17,6 +17,15 @@
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
+
+  .translate-top {
+    transform: translateY(-100%);
+  }
+
+  .translate-bottom {
+    transform: translateY(100%);
+  }
+
 </style>
 
 <md-content class="md-padding">
@@ -39,7 +48,7 @@
 
       <!-- not supposed to be within DIV -->
       <div ng-if="c.image" class="als-img-frame">
-        <img ng-src="{{cuts.img + c.image}}" class="md-card-image" ng-style= "{{'transform: translateY('+c.alignments.translateY+');'}}" />
+        <img ng-src="{{cuts.img + c.image}}" ng-class="{{'md-card-image translate-'+c.alignments.image+');'}}" />
         <div ng-if="cardset.alignments.overlay" class="als-text-overlay">
           <als-text-selection data-object="c" data-filter="'headline'"></als-text-selection>
         </div>
