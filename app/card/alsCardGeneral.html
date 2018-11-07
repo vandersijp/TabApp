@@ -36,9 +36,11 @@
 
 </style>
 
+<als-text-selection data-object="cardset" data-filter="'alltitles'"></als-text-selection>
+
 <md-content class="md-padding">
 
-  <div class="['container', cardset.style]">
+  <div ng-class="['container', cardset.style]">
 
     <md-card ng-repeat="c in cardset.cards track by $index">
 
