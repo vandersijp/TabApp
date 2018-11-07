@@ -38,11 +38,11 @@
 
 <als-text-selection data-object="cardset" data-filter="'alltitles'"></als-text-selection>
 
-<md-content class="md-padding">
+<md-content class="zzmd-padding">
 
-  <div ng-class="['container', cardset.style]">
+  <div class="container">
 
-    <md-card ng-repeat="c in cardset.cards track by $index">
+    <md-card ng-repeat="c in cardset.cards track by $index" ng-class="[cardset.style]">
 
       <md-card-header ng-if="c.avatar">
 
