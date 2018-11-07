@@ -90,17 +90,18 @@
 
         </div>
       </md-card-title>
-
+content
       <md-card-content ng-hide="(cardset.expand && !c.cardOpen)">
         <als-text-section data-section="c.section"></als-text-section>
       </md-card-content>
-
-      <md-card-actions ng-if="c.button || cardset.expand" layout="row" layout-align="space-between center" layout-margin>
+content
+actions
+      <md-card-actions layout="row" layout-align="space-between center" layout-margin>
         <als-icon-fab-pair ng-if="cardset.expand" data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'expand_more'" data-icon2="'expand_less'"> </als-icon-fab-pair>
         <md-button ng-if="c.website" class="md-accent" ng-href="{{c.website}}" target="_blank">website</md-button>
         <md-button ng-if="c.button" class="md-accent" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
       </md-card-actions>
-
+actions
       <md-card-footer ng-if="c.footer">
         <span>{{c.footer}}</span>
       </md-card-footer>
