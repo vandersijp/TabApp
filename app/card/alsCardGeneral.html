@@ -96,7 +96,7 @@ content
       </md-card-content>
 content
 actions
-      <md-card-actions layout="row" layout-align="space-between center" layout-margin>
+      <md-card-actions ng-if="c.button || c.website || cardset.expand" layout="row" layout-align="space-between center" layout-margin>
         <als-icon-fab-pair ng-if="cardset.expand" data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'expand_more'" data-icon2="'expand_less'"> </als-icon-fab-pair>
         <md-button ng-if="c.website" class="md-accent" ng-href="{{c.website}}" target="_blank">website</md-button>
         <md-button ng-if="c.button" class="md-accent" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
