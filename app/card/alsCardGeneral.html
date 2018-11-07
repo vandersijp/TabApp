@@ -57,8 +57,10 @@
 
       <md-card-title>
 
+
+        <!-- to allow the LEAD to be part of the TITLE -->
         <div layout="column">
-          <div layout="row" >
+          <div layout="row">
 
             <md-card-title-media ng-if="c.media">
               <div class="md-media-sm">
@@ -78,9 +80,8 @@
         </div>
       </md-card-title>
 
-      <md-card-content>
-        <als-text-selection data-object="c" data-filter="'lead'"></als-text-selection>
-        <als-text-section ng-hide="(cardset.expand && !c.cardOpen)" data-section="c.section"></als-text-section>
+      <md-card-content ng-hide="(cardset.expand && !c.cardOpen)">
+        <als-text-section data-section="c.section"></als-text-section>
       </md-card-content>
 
       <md-card-actions ng-if="c.button || cardset.expand" layout="row" layout-align="space-between center" layout-margin>
