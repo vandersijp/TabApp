@@ -91,7 +91,6 @@
       </md-card-title>
 
       <md-card-content ng-hide="(cardset.expand && !c.cardOpen)">
-        <als-text-section data-section="c.section"></als-text-section>
 
         <div ng-repeat="r in c.section.table.records">
           <div ng-repeat="h in c.section.table.filter">
@@ -100,8 +99,11 @@
         </div>
 
         <div>
+          <h4>c.section.table</h4>
           <pre>{{c.section.table | json}}</pre>
         </div>
+
+        <als-text-section data-section="c.section"></als-text-section>
 
       </md-card-content>
 
