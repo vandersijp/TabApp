@@ -93,14 +93,14 @@
       <md-card-content ng-hide="(cardset.expand && !c.cardOpen)">
         <als-text-section data-section="c.section"></als-text-section>
 
-        <div ng-repeat="r in c.table.records">
-          <div ng-repeat="h in c.table.filter">
+        <div ng-repeat="r in c.section.table.records">
+          <div ng-repeat="h in c.section.table.filter">
             <p><strong>{{h}}</strong> - {{r[h]}}</p>
           </div>
         </div>
 
         <div>
-          <pre>{{c.table | json}}</pre>
+          <pre>{{c.section.table | json}}</pre>
         </div>
 
       </md-card-content>
