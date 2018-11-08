@@ -92,6 +92,17 @@
 
       <md-card-content ng-hide="(cardset.expand && !c.cardOpen)">
         <als-text-section data-section="c.section"></als-text-section>
+
+        <div ng-repeat="r in c.table.records">
+          <div ng-repeat="h in c.table.filter">
+            <p><strong>{{h}}</strong> - {{r[h]}}</p>
+          </div>
+        </div>
+
+        <div>
+          <pre>{{c.table | json}}</pre>
+        </div>
+
       </md-card-content>
 
       <!-- md-card-actions take up space, also when empty -->
@@ -104,10 +115,6 @@
       <md-card-footer ng-if="c.footer">
         <span>{{c.footer}}</span>
       </md-card-footer>
-
-      <div>
-        <pre>{{c.section | json}}</pre>
-      </div>
 
     </md-card>
 
