@@ -6,6 +6,10 @@
     text-align: center;
   }
 
+  als-marker-box {
+    border: 2px solid red;
+  }
+
   .container {
     display: grid;
     grid-template-columns: 1fr;
@@ -73,7 +77,7 @@
 
       <div ng-class="cardset.marker"></div>
 
-      <md-card-header ng-if="c.avatar">
+      <md-card-header ng-if="c.avatar" class="als-marker-box">
 
         <md-card-avatar>
           <img class="md-user-avatar" src="{{cuts.ava + c.avatar}}">
@@ -98,7 +102,7 @@
       <!-- -->
       <div ng-class="cardset.marker"></div>
 
-      <md-card-title>
+      <md-card-title class="als-marker-box">
 
 
         <!-- to allow the LEAD to be part of the TITLE -->
@@ -126,7 +130,7 @@
 
       <div ng-class="cardset.marker"></div>
 
-      <md-card-content ng-hide="(cardset.expand && !c.cardOpen)">
+      <md-card-content ng-hide="(cardset.expand && !c.cardOpen)" class="als-marker-box">
 
         <als-text-section data-section="c.section"></als-text-section>
 
