@@ -1,8 +1,8 @@
 <!--(C) Ask Learn Share Ltd:-->
 
 <style>
-  md-card-header:before {
-    content: "prefix";
+  .als-marker:before {
+    content: "marker";
   }
 
   .container {
@@ -60,7 +60,7 @@
 
     <md-card ng-repeat="c in cardset.cards track by $index" ng-class="[cardset.style]">
 
-      header
+      <div class="als-marker"></div>
 
       <md-card-header ng-if="c.avatar">
 
@@ -74,9 +74,7 @@
 
       </md-card-header>
 
-      header
-      </br>
-      image
+      <div class="als-marker"></div>
 
       <!-- not supposed to be within DIV -->
       <div ng-if="c.image" class="als-img-frame">
@@ -87,9 +85,7 @@
       </div>
 
       <!-- -->
-      image
-      </br>
-      title
+      <div class="als-marker"></div>
 
       <md-card-title>
 
@@ -117,9 +113,8 @@
         </div>
       </md-card-title>
 
-      title
-      </br>
-      content
+      <div class="als-marker"></div>
+
       <md-card-content ng-hide="(cardset.expand && !c.cardOpen)">
 
         <als-text-section data-section="c.section"></als-text-section>
@@ -137,9 +132,7 @@
 
       </md-card-content>
 
-      content
-      </br>
-      actions
+      <div class="als-marker"></div>
 
       <!-- md-card-actions take up space, also when empty -->
       <md-card-actions ng-if="c.button || c.website || cardset.expand" layout="row" layout-align="space-between center">
@@ -148,15 +141,13 @@
         <md-button ng-if="c.button" class="md-accent" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
       </md-card-actions>
 
-      actions
-      </br>
-      footer
+      <div class="als-marker"></div>
 
       <md-card-footer ng-if="c.footer">
         <span>{{c.footer}}</span>
       </md-card-footer>
 
-      footer
+      <div class="als-marker"></div>
 
     </md-card>
 
