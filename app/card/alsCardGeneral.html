@@ -1,6 +1,10 @@
 <!--(C) Ask Learn Share Ltd:-->
 
 <style>
+  md-card-header:before {
+    content: "prefix";
+  }
+
   .container {
     display: grid;
     grid-template-columns: 1fr;
@@ -40,13 +44,12 @@
 
   md-card .md-actions,
   md-card md-card-actions {
-    margin: 8px 16px 8px !important;
+    margin: 8px 8px 8px !important;
   }
 
   md-card md-card-content {
     padding: 0px 16px 48px !important;
   }
-
 </style>
 
 <als-text-selection data-object="cardset" data-filter="'all'"></als-text-selection>
@@ -56,6 +59,8 @@
   <div class="container">
 
     <md-card ng-repeat="c in cardset.cards track by $index" ng-class="[cardset.style]">
+
+      header
 
       <md-card-header ng-if="c.avatar">
 
@@ -69,6 +74,10 @@
 
       </md-card-header>
 
+      header
+      </br>
+      image
+
       <!-- not supposed to be within DIV -->
       <div ng-if="c.image" class="als-img-frame">
         <img ng-src="{{cuts.img + c.image}}" ng-class="['md-card-image', c.alignments.image]" />
@@ -78,6 +87,9 @@
       </div>
 
       <!-- -->
+      image
+      </br>
+      title
 
       <md-card-title>
 
@@ -105,6 +117,9 @@
         </div>
       </md-card-title>
 
+      title
+      </br>
+      content
       <md-card-content ng-hide="(cardset.expand && !c.cardOpen)">
 
         <als-text-section data-section="c.section"></als-text-section>
@@ -122,6 +137,10 @@
 
       </md-card-content>
 
+      content
+      </br>
+      actions
+
       <!-- md-card-actions take up space, also when empty -->
       <md-card-actions ng-if="c.button || c.website || cardset.expand" layout="row" layout-align="space-between center">
         <als-icon-fab-pair ng-if="cardset.expand" data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'expand_more'" data-icon2="'expand_less'"> </als-icon-fab-pair>
@@ -129,9 +148,15 @@
         <md-button ng-if="c.button" class="md-accent" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
       </md-card-actions>
 
+      actions
+      </br>
+      footer
+
       <md-card-footer ng-if="c.footer">
         <span>{{c.footer}}</span>
       </md-card-footer>
+
+      footer
 
     </md-card>
 
