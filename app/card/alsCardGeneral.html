@@ -60,7 +60,7 @@
 
     <md-card ng-repeat="c in cardset.cards track by $index" ng-class="[cardset.style]">
 
-      <div class="als-marker"></div>
+      <div ng-class="cardset.marker"></div>
 
       <md-card-header ng-if="c.avatar">
 
@@ -74,7 +74,7 @@
 
       </md-card-header>
 
-      <div class="als-marker"></div>
+      <div ng-class="cardset.marker"></div>
 
       <!-- not supposed to be within DIV -->
       <div ng-if="c.image" class="als-img-frame">
@@ -85,7 +85,7 @@
       </div>
 
       <!-- -->
-      <div class="als-marker"></div>
+      <div ng-class="cardset.marker"></div>
 
       <md-card-title>
 
@@ -113,7 +113,7 @@
         </div>
       </md-card-title>
 
-      <div class="als-marker"></div>
+      <div ng-class="cardset.marker"></div>
 
       <md-card-content ng-hide="(cardset.expand && !c.cardOpen)">
 
@@ -132,7 +132,7 @@
 
       </md-card-content>
 
-      <div class="als-marker"></div>
+      <div ng-class="cardset.marker"></div>
 
       <!-- md-card-actions take up space, also when empty -->
       <md-card-actions ng-if="c.button || c.website || cardset.expand" layout="row" layout-align="space-between center">
@@ -141,13 +141,13 @@
         <md-button ng-if="c.button" class="md-accent" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
       </md-card-actions>
 
-      <div class="als-marker"></div>
+      <div ng-class="cardset.marker"></div>
 
       <md-card-footer ng-if="c.footer">
         <span>{{c.footer}}</span>
       </md-card-footer>
 
-      <div class="als-marker"></div>
+      <div ng-class="cardset.marker"></div>
 
     </md-card>
 
