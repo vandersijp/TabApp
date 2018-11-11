@@ -45,8 +45,6 @@ from https://codepen.io/avelone/pen/Lxgejp
   color: white;
 }
 
-/* need to refer to deeper element */
-
 .als-text-overlay p, .als-text-overlay h6, .als-text-overlay h5, .als-text-overlay h4 {
   font-size: 22px !important;
   font-weight: 900 !important;
@@ -54,8 +52,29 @@ from https://codepen.io/avelone/pen/Lxgejp
   text-align: right !important;
 }
 
-md-card-content {
-  zzbackground: orange;
+.translate-top {
+  transform: translateY(-10%);
+}
+
+.translate-bottom {
+  transform: translateY(10%);
+}
+
+.als-boxed {
+  border: 4px solid red;
+}
+
+.als-boxed>* {
+  border: 3px solid blue;
+}
+
+.als-boxed>*>* {
+  border: 2px solid green;
+  border-style: dotted;
+}
+
+.als-boxed>*>*>* {
+  border: 1px solid purple;
 }
 
 md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
