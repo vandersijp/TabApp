@@ -86,6 +86,7 @@
     </div>
 
     <div ng-switch-when="mdlist" layout="column">
+
       <md-content>
         <md-list flex>
           <md-subheader ng-if="false" class="md-no-sticky">3 line item (with hover)</md-subheader>
@@ -97,6 +98,7 @@
           </md-list-item>
         </md-list>
       </md-content>
+
     </div>
 
     <div ng-switch-when="editable" layout="column" ng-init="active=table.records; bin=[]; e = {'name': '','expression': '','open': true,'test': 'test'};">
@@ -287,6 +289,8 @@
       </table>
     </div>
 
-    <p class="md-caption" ng-if="table.caption">{{table.caption}}</p>
   </div>
+
+  <p class="md-caption" ng-if="table.caption">{{table.caption}}</p>
+
 </div>
