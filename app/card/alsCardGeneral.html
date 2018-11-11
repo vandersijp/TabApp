@@ -18,31 +18,31 @@
     }
   }
 
-  .translate-top {
-    transform: translateY(-10%);
+
+  md-card-title .md-headline {
+    line-height: 24px;
   }
 
-  .translate-bottom {
-    transform: translateY(10%);
+  md-card md-card-title md-card-title-text .md-subhead {
+    padding-top: 0;
   }
 
-  .als-boxed {
-  border: 4px solid red;
-}
+  md-card md-card-title md-card-title-text {
+    padding-top: 12px;
+  }
 
-.als-boxed>* {
-  border: 3px solid blue;
-}
+  md-card md-card-title md-card-title-text:only-child .md-subhead {
+    padding-top: 12px;
+  }
 
-.als-boxed>*>* {
-  border: 2px solid green;
-  border-style: dotted;
-}
+  md-card md-card-content {
+    padding: 16px;
+  }
 
-.als-boxed>*>*>* {
-  border: 1px solid purple;
-}
-
+  md-card .md-actions,
+  md-card md-card-actions {
+    margin: 8px;
+  }
 
 </style>
 
@@ -54,7 +54,7 @@
 
     <md-card ng-repeat="c in cardset.cards track by $index" ng-class="[cardset.style]">
 
-      <md-card-header ng-if="c.avatar" >
+      <md-card-header ng-if="c.avatar">
 
         <md-card-avatar>
           <img class="md-user-avatar" src="{{cuts.ava + c.avatar}}">
