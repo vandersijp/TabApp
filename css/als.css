@@ -77,6 +77,9 @@ from https://codepen.io/avelone/pen/Lxgejp
   border: 1px solid purple;
 }
 
+.als-boxed * {
+  border: 1px solid grey;
+}
 md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
   max-width: 40px;
   max-height: 40px;
