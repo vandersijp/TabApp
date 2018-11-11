@@ -7,15 +7,20 @@
   }
 
   .als-marker-box {
-    border: 3px solid red;
+    border: 4px solid red;
   }
 
   .als-marker-box>* {
-    border: 2px solid blue;
+    border: 3px solid blue;
   }
 
   .als-marker-box>*>* {
-    border: 1px solid green;
+    border: 2px solid green;
+    border-style: dotted;
+  }
+
+  .als-marker-box>*>*>* {
+    border: 1px solid purple;
   }
 
   .container {
@@ -117,7 +122,7 @@
       <div ng-class="cardset.marker"></div>
 
       <!-- not supposed to be within DIV -->
-      <div ng-if="c.image" class="als-img-frame">
+      <div ng-if="c.image" class="als-img-frame" class="als-marker-box">
         <img ng-src="{{cuts.img + c.image}}" ng-class="['md-card-image', c.alignments.image]" />
         <div ng-if="cardset.alignments.overlay" class="als-text-overlay">
           <als-text-selection data-object="c" data-filter="'headline'"></als-text-selection>
@@ -175,7 +180,7 @@
       <div ng-class="cardset.marker"></div>
 
       <!-- md-card-actions take up space, also when empty -->
-      <md-card-actions ng-if="c.button || c.website || cardset.expand" layout="row" layout-align="space-between center">
+      <md-card-actions ng-if="c.button || c.website || cardset.expand" layout="row" layout-align="space-between center" class="als-marker-box">
         <als-icon-fab-pair ng-if="cardset.expand" data-class="'md-icon-button'" data-toggle="c.cardOpen" data-icon1="'expand_more'" data-icon2="'expand_less'"> </als-icon-fab-pair>
         <md-button ng-if="c.website" class="md-accent" ng-href="{{c.website}}" target="_blank">website</md-button>
         <md-button ng-if="c.button" class="md-accent" ng-href="{{c.button.html}}" target="_blank">{{c.button.label}}</md-button>
@@ -183,7 +188,7 @@
 
       <div ng-class="cardset.marker"></div>
 
-      <md-card-footer ng-if="c.footer">
+      <md-card-footer ng-if="c.footer" class="als-marker-box">
         <span>{{c.footer}}</span>
       </md-card-footer>
 
