@@ -52,7 +52,7 @@
 
   <div class="container">
 
-    <md-card ng-repeat="c in cardset.cards track by $index" ng-class="[cardset.style, {cardset.boxed: 'als-boxed'}]">
+    <md-card ng-repeat="c in cardset.cards track by $index" ng-class="[cardset.style]">
 
       <md-card-header ng-if="c.avatar" >
 
