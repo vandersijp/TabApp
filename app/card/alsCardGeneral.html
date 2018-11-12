@@ -1,6 +1,10 @@
 <!--(C) Ask Learn Share Ltd:-->
 
 <style>
+  .als-card-title-lead {
+    margin-top: 32px;
+  }
+
   .container {
     display: grid;
     grid-template-columns: 1fr;
@@ -52,7 +56,6 @@
   md-card-title-media {
     margin-bottom: 50px !mportant;
   }
-
 </style>
 
 <als-text-selection data-object="cardset" data-filter="'all'"></als-text-selection>
@@ -106,7 +109,9 @@
 
           </div>
 
-          <als-text-selection data-object="c" data-filter="'lead'"></als-text-selection>
+          <div class="als-card-title-lead">
+            <als-text-selection data-object="c" data-filter="'lead'"></als-text-selection>
+          </div>
 
         </div>
       </md-card-title>
