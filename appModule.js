@@ -33,7 +33,7 @@ function getAppProperties() {
 
 function getAlerts() {
   var m = [{
-    "hide": false,
+    "hide": false,nav
     "disabled": true,
     "icon": "person",
     "name": "login",
@@ -286,7 +286,7 @@ app.config(function($mdThemingProvider, $sceDelegateProvider) {
   // start with any existing object
   window.appProperties.defaults = (profile[window.appProperties.app] || profile["default"]);
   angular.forEach(profile["default"], function(value, key) {
-    // them set any missing attributes to a default
+    // then set any missing attributes to a default
     window.appProperties.defaults[key] = (window.appProperties.defaults[key] || value);
   });
 
@@ -523,43 +523,9 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
       return "test";
     };
 
-    self.elementInArrays = function(filterArray, c) {
-
-      console.log("ttttt");
-
-      var filters = {
-        "display": ["display3",
-          "display2",
-          "display1"
-        ],
-        "header": ["headline",
-          "title-avatar",
-          "subhead"
-        ],
-        "title": ["title",
-          "subhead",
-          "tagline"
-        ],
-        "lead": ["lead"]
-      };
-
-      var out = false;
-
-      var i;
-      for (i = 0; i < arrays.length; i++) {
-        if (filters[filter].includes(element)) {
-          out = true;
-          break;
-        }
-      }
-      return true;
-    };
-
-
-
     self.alertAny = function(ev, alertName) {
       $mdDialog.show({
-        controller: DialogController,
+        controller: navgController,
         templateUrl: window.x.app + 'alert/alsAlert' + alertName + '.html',
         targetEvent: ev,
         parent: angular.element(document.querySelector('#alertContainer')),
