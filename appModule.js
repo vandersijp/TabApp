@@ -525,7 +525,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
 
     self.alertAny = function(ev, alertName) {
       $mdDialog.show({
-        controller: navgController,
+        controller: DialogController,
         templateUrl: window.x.app + 'alert/alsAlert' + alertName + '.html',
         targetEvent: ev,
         parent: angular.element(document.querySelector('#alertContainer')),
