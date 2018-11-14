@@ -33,7 +33,7 @@ function getAppProperties() {
 
 function getAlerts() {
   var m = [{
-    "hide": false,nav
+    "hide": false,
     "disabled": true,
     "icon": "person",
     "name": "login",
