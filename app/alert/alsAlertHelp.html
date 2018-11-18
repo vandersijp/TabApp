@@ -5,7 +5,10 @@
 
       <div ng-if="true">
         <pre>{{'window.x' | json}}</pre>
-        <pre>{{window.x | json}}</pre>
+        <pre>{{props | json}}</pre>
+        
+        <label>Your {{message.querylabel || props.defaults.querylabel}}</label>
+
       </div>
 
       <als-text-selection data-object="hhh" data-filter="'all'"></als-text-selection>
