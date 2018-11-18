@@ -1,7 +1,10 @@
 <!--(C) Ask Learn Share Ltd -->
-<script
+<script>
+
 var ggg = document.createAttribute("hhh");
   ggg.value = "test sentence";
+
+
 </script>
 
 <md-dialog aria-label="Help" ng-init="hhh={lead: 'lead'}">
@@ -13,6 +16,8 @@ var ggg = document.createAttribute("hhh");
         <pre>{{props | json}}</pre>
 
         <pre>{{ggg | json}}</pre>
+
+        <pre>{{document.ggg | json}}</pre>
 
         <label>Your {{message.querylabel || props.defaults.querylabel}}</label>
 
