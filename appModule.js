@@ -523,7 +523,9 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
       return "test";
     };
 
-    $scope.ggg = "test ggg"
+    $scope.ggg = {
+      "lead": "lead sentance"
+    };
 
     self.alertAny = function(ev, alertName) {
       $mdDialog.show({
