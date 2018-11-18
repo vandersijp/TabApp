@@ -523,7 +523,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
       return "test";
     };
 
-    $scope.ggg = {
+    $scope.messages = {
       "lead": "lead sentance"
     };
 
