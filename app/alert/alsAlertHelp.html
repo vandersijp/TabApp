@@ -1,4 +1,8 @@
 <!--(C) Ask Learn Share Ltd -->
+<script>
+  window.hhh = "test sentence";
+</script>
+
 <md-dialog aria-label="Help" ng-init="hhh={lead: 'lead'}">
   <md-dialog-content>
     <div class="md-dialog-content">
@@ -6,8 +10,11 @@
       <div ng-if="true">
         <pre>{{'window.x' | json}}</pre>
         <pre>{{props | json}}</pre>
-        
+
+        <pre>{{window.hhh | json}}</pre>
+
         <label>Your {{message.querylabel || props.defaults.querylabel}}</label>
+
 
       </div>
 
