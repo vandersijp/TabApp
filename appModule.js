@@ -523,6 +523,7 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
       return "test";
     };
 
+    $scope.tempDialogues = {};
     $scope.tempDialogues.messages = {
       "lead": "lead sentance"
     };
