@@ -1,5 +1,5 @@
 <!--(C) Ask Learn Share Ltd -->
-<md-dialog aria-label="Help">
+<md-dialog aria-label="Help" ng-init="hhh={lead: 'lead'}">
   <md-dialog-content>
     <div class="md-dialog-content">
 
@@ -7,6 +7,8 @@
         <pre>{{'window.x' | json}}</pre>
         <pre>{{window.x | json}}</pre>
       </div>
+
+      <als-text-selection data-object="hhh" data-filter="'all'"></als-text-selection>
 
       <h4 class="md-title">Tips</h4>
       <p>There are four ways to navigate</p>
