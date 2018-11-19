@@ -523,15 +523,17 @@ app.controller('appController', function($scope, $window, $http, $q, dataService
       return "test";
     };
 
+    /*
     $scope.tempDialogues = {};
     $scope.tempDialogues.messages = {
       "lead": "lead sentance"
     };
+    */
 
     self.alertAny = function(ev, alertName) {
       $mdDialog.show({
         controller: DialogController,
-        scope: $scope.tempDialogues,
+        //scope: $scope.tempDialogues,
         templateUrl: window.x.app + 'alert/alsAlert' + alertName + '.html',
         targetEvent: ev,
         parent: angular.element(document.querySelector('#alertContainer')),
