@@ -5,15 +5,15 @@ html {
 }
 
 img {
-  max-width: 100% !important
+  max-width: 100% !important;
 }
 
 img {
-  vertical-align: middle
+  vertical-align: middle;
 }
 
 img {
-  border: 0
+  border: 0;
 }
 
 /*
@@ -22,7 +22,7 @@ from https://codepen.io/avelone/pen/Lxgejp
 
 .als-img-frame {
   width: 100%;
-  padding-top: 50%;
+  padding-top: 100%;
   overflow: hidden;
   position: relative;
 }
