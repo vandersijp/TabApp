@@ -576,6 +576,18 @@ md-tooltip {
   line-height: auto !important;
 }
 
+.md-caption {
+  text-align: center !important;
+  margin-bottom: 1em !important;
+}
+
+.card-media {
+  /* to avoid card titles to touch the image */
+  /* see https://material.angularjs.org/latest/demo/card */
+  padding-left: 1em !important;
+}
+
+/* md-list directive */
 md-list-item.md-3-line .md-list-item-text h3 {}
 
 md-list-item h3, md-list-item h4, md-list-item p {
@@ -628,18 +640,20 @@ md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
   width: auto;
 }
 
-.md-caption {
-  text-align: center !important;
-  margin-bottom: 1em !important;
-}
-
-.card-media {
-  /* to avoid card titles to touch the image */
-  /* see https://material.angularjs.org/latest/demo/card */
-  padding-left: 1em !important;
-}
-
 /* special features */
+.als-image-right-float {
+  max-width: 140px;
+  xxmax-height: 25em;
+  float: right;
+  margin: 1em;
+  margin-top: 0.8em;
+  margin-bottom: 0em;
+}
+
+.als-image-right-float img {
+  box-shadow: 1px 1px #808080 !important;
+}
+
 .als-banner-overlay {
   width: 100%;
   position: relative;
