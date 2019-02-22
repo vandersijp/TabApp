@@ -596,8 +596,8 @@ md-list-item h3, md-list-item h4, md-list-item p {
 
 .md-list-item-text {
   /* md-list seems to overflow internal divs */
-  min-width: 65% !important;
-  max-width: 65% !important;
+  min-width: 60% !important;
+  max-width: 60% !important;
 }
 
 .als-list-item-image {
