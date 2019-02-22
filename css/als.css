@@ -22,7 +22,7 @@ from https://codepen.io/avelone/pen/Lxgejp
 
 .als-img-frame {
   width: 100%;
-  padding-top: 100%;
+  padding-top: 50%;
   overflow: hidden;
   position: relative;
 }
@@ -45,7 +45,7 @@ from https://codepen.io/avelone/pen/Lxgejp
   color: white;
 }
 
-.als-text-overlay p, .als-text-overlay h6, .als-text-overlay h5, .als-text-overlay h4 {
+.als-text-overlay p, .als-text-overlay h6, .als-text-overlay h5, .als-text-overlay h4, .als-text-overlay h3 {
   font-size: 22px !important;
   font-weight: 900 !important;
   text-shadow: 1px 1px #808080 !important;
@@ -497,4 +497,272 @@ md-sidenav {
 
 .als-random-rotate li:nth-child(6n) {
   transform: rotate(-0.6deg);
+}
+
+/* developed for SecuoS */
+.als-font-noto {
+  font-family: 'Noto Sans';
+}
+
+.als-font-roboto {
+  font-family: 'Roboto';
+}
+
+/* CSS resets */
+blockquote {
+  font-size: 24px !important;
+  width: 10em;
+  margin: 1em;
+  padding: 1em;
+  float: right;
+  display: table-cell;
+  vertical-align: middle;
+  align: center;
+  text-align: right;
+  background: white;
+}
+
+.als-pullquote {
+  xxborder: solid 1px #808080;
+  xxborder-radius: 10px 10px 10px 1px;
+  font-weight: 1200 !important;
+  box-shadow: 1px 1px #808080 !important;
+  background: #fefefe;
+  width: 40%;
+  max-width: 15em;
+  float: right;
+  margin: 1em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  padding: 0.2em;
+  padding-top: 0em;
+  padding-bottom: : 0em;
+  text-align: center;
+  font-style: italic;
+  zzbackground-color: white;
+}
+
+thead {
+  font-weight: bold !important;
+}
+
+th, td {
+  padding: .5em;
+}
+
+h5 {
+  font-weight: bolder !important;
+}
+
+p {
+  /* to force line spacing inside md-list */
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
+}
+
+h6 {
+  display: inline;
+  font-weight: bold;
+}
+
+h5:focus, img:focus, div:focus {
+  outline: none;
+  border: 0;
+}
+
+/* Material Design corrections */
+md-divider {
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
+}
+
+md-list-item.md-3-line .md-list-item-text h3 {}
+
+md-list-item h3, md-list-item h4, md-list-item p {
+  text-overflow: ellipsis !important;
+}
+
+md-list-item img {
+  margin-right: 1em !important;
+  margin-top: 0em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.md-list-item-text {
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
+}
+
+md-tooltip {
+  /* to allow multi-line tooltips */
+  font-size: 14px !important;
+   height: auto;  height: auto !important;
+  line-height: auto !important;
+}
+
+.md-caption {
+  text-align: center !important;
+  margin-bottom: 1em !important;
+}
+
+.card-media {
+  /* to avoid card titles to touch the image */
+  /* see https://material.angularjs.org/latest/demo/card */
+  padding-left: 1em !important;
+}
+
+/* special features */
+.als-banner-overlay {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.als-banner-overlay img {
+  object-fit: cover;
+  xxbox-shadow: none !important;
+  width: 100%;
+  height: 150px;
+  zztransform: scale(1.1) rotate(45deg);
+  zztransform-origin: center center;
+}
+
+.als-banner-overlay p, .als-banner-overlay h6, .als-banner-overlay h5, .als-banner-overlay h4, .als-banner-overlay h3 {
+  position: absolute;
+  bottom: 0px;
+  left: 16px;
+  color: white !important;
+  font-size: 30px !important;
+  font-weight: 900 !important;
+  text-shadow: 1px 1px #808080 !important;
+  text-align: right !important;
+}
+
+.als-lead {
+  font-weight: bolder;
+  font-size: 105% !important;
+  line-height: 140% !important;
+}
+
+/* animations */
+#als-scrabble, #als-scrabble span, #als-scrabble div {
+  transition: all .5s;
+  font-weight: bold !important;
+  width: auto;
+}
+
+#als-scrabble {
+  position: relative;
+  /* to preserve left alignment */
+  transform-origin: left center;
+}
+
+#als-scrabble span, #als-scrabble div {
+  display: inline;
+}
+
+#als-scrabble span {
+  position: absolute;
+}
+
+#als-scrabble>span>span>span {
+  /* to avoid word wrapping */
+  width: 300px;
+}
+
+/* nested span elements allow to create a vertical structure */
+.als-scrabble-on {
+  transform: scale(.8);
+}
+
+.als-scrabble-off {
+  transform: scale(0.75);
+}
+
+.als-scrabble-off div {
+  /* to ensure propagation to each div */
+  color: orange !important;
+}
+
+.als-scrabble-on>span {
+  top: -3.15em;
+  left: 0%;
+}
+
+.als-scrabble-on>span>span {
+  top: 1em;
+  left: 1.6em;
+}
+
+.als-scrabble-on>span>span>span {
+  top: 1em;
+  left: 0%;
+}
+
+.als-scrabble-off>span {
+  top: -1.5em;
+  left: 0%;
+}
+
+.als-scrabble-off>span>span {
+  top: 0em;
+  left: 100%;
+}
+
+.als-scrabble-off>span>span>span {
+  top: 0em;
+  left: 100%;
+}
+
+#als-kicklogo {
+  position: absolute;
+  width: 96px;
+  top: 7.5em;
+  right: 1em;
+  transition: all .6s;
+  transform-origin: center center;
+}
+
+.als-kicklogo-on {
+  opacity: 1;
+  /* the order of the transitions is important */
+  transform: translate(0px, 0px) scale(1) rotate(0deg);
+}
+
+.als-kicklogo-off {
+  opacity: 0.0;
+  transform: translate(100px, -20px) scale(0) rotate(10deg);
+}
+
+#als-navbar {
+  position: fixed;
+  z-index: 80 !important;
+  transition: all .2s;
+  transform-origin: top center;
+}
+
+.als-navbar-on {
+  opacity: 1;
+}
+
+.als-navbar-off {
+  opacity: 0;
+}
+
+#als-fabtop, #als-fabmenu {
+  /* to control the layering of fabs, menus and logos */
+  z-index: 90 !important;
+  position: fixed;
+  transition: all .3s;
+  transform-origin: center top;
+}
+
+.als-fabmenu-on, .als-fabtop-on {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.als-fabmenu-off, .als-fabtop-off {
+  opacity: 0;
+  transform: scale(0.2);
 }
