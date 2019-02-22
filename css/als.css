@@ -624,6 +624,7 @@ md-tooltip {
   height: 150px;
   zztransform: scale(1.1) rotate(45deg);
   zztransform-origin: center center;
+  text-align: left;
 }
 
 .als-banner-overlay p, .als-banner-overlay h6, .als-banner-overlay h5, .als-banner-overlay h4, .als-banner-overlay h3 {
@@ -634,6 +635,7 @@ md-tooltip {
   font-size: 30px !important;
   font-weight: 900 !important;
   text-shadow: 1px 1px #808080 !important;
+  text-align: left;
 }
 
 .als-lead {
