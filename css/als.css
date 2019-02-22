@@ -624,13 +624,12 @@ md-tooltip {
   height: 150px;
   zztransform: scale(1.1) rotate(45deg);
   zztransform-origin: center center;
-  text-align: left;
 }
 
 .als-banner-overlay p, .als-banner-overlay h6, .als-banner-overlay h5, .als-banner-overlay h4, .als-banner-overlay h3 {
   position: absolute;
-  bottom: 0em;
-  left: 1em;
+  bottom: 0.1em;
+  left: 0.4em;
   color: white !important;
   font-size: 30px !important;
   font-weight: 900 !important;
