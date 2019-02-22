@@ -79,12 +79,6 @@ from https://codepen.io/avelone/pen/Lxgejp
 .als-boxed * {
   border: 1px solid grey;
 }
-md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
-  max-width: 40px;
-  max-height: 40px;
-  height: auto;
-  width: auto;
-}
 
 .md-card-image {
   filter: drop-shadow(0px 0px 0px);
@@ -571,23 +565,6 @@ h5:focus, img:focus, div:focus {
 
 /* Material Design corrections */
 md-divider {
-  margin-top: 1em !important;
-  margin-bottom: 1em !important;
-}
-
-md-list-item.md-3-line .md-list-item-text h3 {}
-
-md-list-item h3, md-list-item h4, md-list-item p {
-  text-overflow: ellipsis !important;
-}
-
-md-list-item img {
-  margin-right: 1em !important;
-  margin-top: 0em !important;
-  margin-bottom: 0.5em !important;
-}
-
-.md-list-item-text {
   margin-top: 1em !important;
   margin-bottom: 1em !important;
 }
