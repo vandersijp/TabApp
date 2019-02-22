@@ -628,13 +628,12 @@ md-tooltip {
 
 .als-banner-overlay p, .als-banner-overlay h6, .als-banner-overlay h5, .als-banner-overlay h4, .als-banner-overlay h3 {
   position: absolute;
-  bottom: 0px;
-  left: 16px;
+  bottom: 0em;
+  left: 1em;
   color: white !important;
   font-size: 30px !important;
   font-weight: 900 !important;
   text-shadow: 1px 1px #808080 !important;
-  text-align: right !important;
 }
 
 .als-lead {
