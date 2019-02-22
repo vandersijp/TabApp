@@ -794,3 +794,16 @@ md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
   opacity: 0;
   transform: scale(0.2);
 }
+
+.als-image-right-float {
+  max-width: 140px;
+  xxmax-height: 25em;
+  float: right;
+  margin: 1em;
+  margin-top: 0.8em;
+  margin-bottom: 0em;
+}
+
+.als-image-right-float img {
+  box-shadow: 1px 1px #808080 !important;
+}
