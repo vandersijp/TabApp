@@ -595,9 +595,10 @@ md-list-item h3, md-list-item h4, md-list-item p {
 }
 
 .md-list-item-text {
+  min-width: 75% !important;
+  max-width: 75% !important;
   /* md-list seems to overflow internal divs */
-  min-width: 60% !important;
-  max-width: 60% !important;
+  padding-right: 4em !important;
 }
 
 .als-list-item-image {
