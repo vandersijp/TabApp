@@ -824,3 +824,12 @@ md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
 .als-image-right-float img {
   box-shadow: 1px 1px #808080 !important;
 }
+
+.als-swatch {
+  /* background for a text to show its colours */
+  font-weight: bold;
+  background: white;
+  padding: 1em;
+  border-radius: 15px;
+  box-shadow: 2px 2px #c0c0c0 !important;
+}
