@@ -36,7 +36,7 @@ window.onscroll = function(ev) {
     alsParallaxElementsVisibilities[i] = (window.innerHeight - alsParallaxElements[i].getBoundingClientRect().top) / window.innerHeight;
     if (alsParallaxElementsVisibilities[i] > 0 && alsParallaxElementsVisibilities[i] < 1) {
       alsParallaxElements[i].style.transform = "rotate(" + alsParallaxElementsVisibilities[i] * 3 + "deg)" + " " + "scale(" + (1.5 + (1 - alsParallaxElementsVisibilities[i]) / 20) + ")";
-      //console.log(i + " | " + alsParallaxElementsVisibilities[i]);
+      console.log(i + " | " + alsParallaxElementsVisibilities[i]);
     }
   }
 }
