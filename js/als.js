@@ -38,8 +38,9 @@ window.onscroll = function(ev) {
     //var v = alsParallaxElementsVisibilities[i];
     var windowHeight = window.innerHeight;
     var elementHeight = alsParallaxElements[i].offsetHeight;
-    var elementTop = alsParallaxElements[i].getBoundingClientRect().top);
-    var v = (windowHeight + elementHeight - elementTop / windowHeight;
+    var elementTop = alsParallaxElements[i].getBoundingClientRect().top;
+    var virtualHeight = windowHeight + elementHeight;
+    var v = (virtualHeight - elementTop) / virtualHeight;
     console.log(h);
     if (v > 0 && v < 1) {
       var rotate = "rotate(" + v * 0 + "deg)";
