@@ -1,8 +1,7 @@
 /* (C) Ask Learn Share Ltd */
-// version 20190223
+console.log("version 20190223 1");
 //
 var alsParallaxElements = document.getElementsByClassName('als-parallax');
-//var alsParallaxElementsVisibilities = [];
 var alsPreviousScrollPosition = window.pageYOffset;
 //
 window.onscroll = function(ev) {
@@ -40,7 +39,7 @@ window.onscroll = function(ev) {
     var elementHeight = alsParallaxElements[i].offsetHeight;
     var elementTop = alsParallaxElements[i].getBoundingClientRect().top;
     var virtualHeight = windowHeight + elementHeight;
-    var v = (virtualHeight - elementTop) / virtualHeight;
+    var v = (virtualHeight - elementTop - elementHeight) / windowHeight;
     console.log(h);
     if (v > 0 && v < 1) {
       var rotate = "rotate(" + v * 0 + "deg)";
