@@ -31,19 +31,20 @@ window.onscroll = function(ev) {
   alsPreviousScrollPosition = alsCurrentScrollPosition;
   //
   // parallax
-  var shift=0.2;
-  var zoom=0.05;
+  var shift = 0.2;
+  var zoom = 0.05;
   var i;
   for (i = 0; i < alsParallaxElements.length; i++) {
     //var v = alsParallaxElementsVisibilities[i];
-
-    var v = (window.innerHeight - alsParallaxElements[i].getBoundingClientRect().top) / window.innerHeight;
-var h = alsParallaxElements[i].offsetHeight;
+    var windowHeight = window.innerHeight;
+    var elementHeight = alsParallaxElements[i].offsetHeight;
+    var elementTop = alsParallaxElements[i].getBoundingClientRect().top);
+    var v = (windowHeight + elementHeight - elementTop / windowHeight;
     console.log(h);
     if (v > 0 && v < 1) {
       var rotate = "rotate(" + v * 0 + "deg)";
       var scale = "scale(" + (1.0 + zoom - v * zoom) + ")";
-      var translate = "translateY(" + (h*shift*(v-1)) +"px)";
+      var translate = "translateY(" + (h * shift * (v - 1)) + "px)";
       alsParallaxElements[i].style.transform = [rotate, scale, translate].join(" ");
       //console.log(t + " | " + i + " | " + v);
     }
