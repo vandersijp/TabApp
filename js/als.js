@@ -1,5 +1,5 @@
 /* (C) Ask Learn Share Ltd */
-console.log("version 20190223 1");
+console.log("version 20190223 2");
 //
 var alsParallaxElements = document.getElementsByClassName('als-parallax');
 var alsPreviousScrollPosition = window.pageYOffset;
@@ -44,7 +44,7 @@ window.onscroll = function(ev) {
     if (v > 0 && v < 1) {
       var rotate = "rotate(" + v * 0 + "deg)";
       var scale = "scale(" + (1.0 + zoom - v * zoom) + ")";
-      var translate = "translateY(" + (h * shift * (v - 1)) + "px)";
+      var translate = "translateY(" + (elementHeight * shift * (v - 1)) + "px)";
       alsParallaxElements[i].style.transform = [rotate, scale, translate].join(" ");
       //console.log(t + " | " + i + " | " + v);
     }
