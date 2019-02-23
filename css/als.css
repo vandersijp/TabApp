@@ -762,7 +762,7 @@ md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
 #als-kicklogo {
   position: absolute;
   width: 96px;
-  top: 7.5em;
+  top: 6.5em;
   right: 1em;
   transition: all .6s;
   transform-origin: center center;
