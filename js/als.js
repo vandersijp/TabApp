@@ -2,7 +2,7 @@
 // version 20190223
 //
 var alsParallaxElements = document.getElementsByClassName('als-parallax');
-var alsParallaxElementsVisibilities = [];
+//var alsParallaxElementsVisibilities = [];
 var alsPreviousScrollPosition = window.pageYOffset;
 //
 window.onscroll = function(ev) {
@@ -31,12 +31,19 @@ window.onscroll = function(ev) {
   alsPreviousScrollPosition = alsCurrentScrollPosition;
   //
   // parallax
+  var shift=0.2;
+  var zoom=0.05;
   var i;
   for (i = 0; i < alsParallaxElements.length; i++) {
-    alsParallaxElementsVisibilities[i] = (window.innerHeight - alsParallaxElements[i].getBoundingClientRect().top) / window.innerHeight;
-    if (alsParallaxElementsVisibilities[i] > 0 && alsParallaxElementsVisibilities[i] < 1) {
-      alsParallaxElements[i].style.transform = "rotate(" + alsParallaxElementsVisibilities[i] * 6 + "deg)" + " " + "scale(" + (1.5 + (1 - alsParallaxElementsVisibilities[i]) / 20) + ")";
-      console.log(i + " | " + alsParallaxElementsVisibilities[i]);
+    //var v = alsParallaxElementsVisibilities[i];
+
+    var v = (window.innerHeight - alsParallaxElements[i].getBoundingClientRect().top) / window.innerHeight;
+var h = alsParallaxElements[i].offsetHeight;
+    console.log(h);
+    if (v > 0 && v < 1) {
+      var t = "rotate(" + v * 0 + "deg)" + " " + "scale(" + (1.0 + zoom - v * zoom) + ")" +""+ "translateY(" + (h*shift*(1-v)) +"px)";
+      alsParallaxElements[i].style.transform = t;
+      //console.log(t + " | " + i + " | " + v);
     }
   }
 }
