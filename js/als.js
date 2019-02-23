@@ -41,8 +41,10 @@ window.onscroll = function(ev) {
 var h = alsParallaxElements[i].offsetHeight;
     console.log(h);
     if (v > 0 && v < 1) {
-      var t = "rotate(" + v * 0 + "deg)" + " " + "scale(" + (1.0 + zoom - v * zoom) + ")" +""+ "translateY(" + (h*shift*(1-v)) +"px)";
-      alsParallaxElements[i].style.transform = t;
+      var rotate = "rotate(" + v * 0 + "deg)";
+      var scale = "scale(" + (1.0 + zoom - v * zoom) + ")";
+      var translate = "translateY(" + (h*shift*(v-1)) +"px)";
+      alsParallaxElements[i].style.transform = [rotate, scale, translate].join(" ");
       //console.log(t + " | " + i + " | " + v);
     }
   }
