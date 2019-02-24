@@ -657,32 +657,6 @@ md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
   box-shadow: 1px 1px #808080 !important;
 }
 
-.als-banner-overlay {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.als-banner-overlay img {
-  object-fit: cover;
-  xxbox-shadow: none !important;
-  width: 100%;
-  height: 150px;
-  zztransform: scale(1.1) rotate(45deg);
-  zztransform-origin: center center;
-}
-
-.als-banner-overlay p, .als-banner-overlay h6, .als-banner-overlay h5, .als-banner-overlay h4, .als-banner-overlay h3 {
-  position: absolute;
-  bottom: 0.1em;
-  left: 0.4em;
-  color: white !important;
-  font-size: 30px !important;
-  font-weight: 900 !important;
-  text-shadow: 1px 1px #808080 !important;
-  text-align: left;
-}
-
 .als-lead {
   font-weight: bolder;
   font-size: 105% !important;
