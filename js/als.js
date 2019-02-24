@@ -40,7 +40,6 @@ window.onscroll = function(ev) {
     var elementTop = alsParallaxElements[i].getBoundingClientRect().top;
     var virtualHeight = windowHeight + elementHeight;
     var v = (virtualHeight - elementTop - elementHeight) / windowHeight;
-    console.log(h);
     if (v > 0 && v < 1) {
       var rotate = "rotate(" + v * 0 + "deg)";
       var scale = "scale(" + (1.0 + zoom - v * zoom) + ")";
