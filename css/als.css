@@ -16,6 +16,24 @@ img {
   border: 0;
 }
 
+.als-img-140px {
+  object-fit: cover;
+  width: 140px;
+  height: 140px;
+}
+
+.als-img-96px {
+  object-fit: cover;
+  width: 96px;
+  height: 96px;
+}
+
+.als-img-64px {
+  object-fit: cover;
+  width: 64px;
+  height: 64px;
+}
+
 /*
 from https://codepen.io/avelone/pen/Lxgejp
 */
@@ -78,10 +96,6 @@ from https://codepen.io/avelone/pen/Lxgejp
 
 .als-boxed * {
   border: 1px solid grey;
-}
-
-.md-card-image {
-  filter: drop-shadow(0px 0px 0px);
 }
 
 md-card-title-media {
@@ -243,201 +257,113 @@ md-sidenav {
 }
 
 .als-icon-fab-pair-icon1-on {
-  -webkit-animation: als-icon-fab-pair-icon1-on .44s normal both ease-out;
   animation: als-icon-fab-pair-icon1-on .44s normal both ease-out;
 }
 
 .als-icon-fab-pair-icon1-off {
-  -webkit-animation: als-icon-fab-pair-icon1-off .44s normal both ease-in;
   animation: als-icon-fab-pair-icon1-off .44s normal both ease-in;
 }
 
 .als-icon-fab-pair-icon2-on {
-  -webkit-animation: als-icon-fab-pair-icon2-on .44s normal both ease-out;
   animation: als-icon-fab-pair-icon2-on .44s normal both ease-out;
 }
 
 .als-icon-fab-pair-icon2-off {
-  -webkit-animation: als-icon-fab-pair-icon2-off .44s normal both ease-in;
   animation: als-icon-fab-pair-icon2-off .44s normal both ease-in;
 }
 
-@-webkit-keyframes als-icon-fab-pair-icon1-on {
-  0% {
-    -webkit-transform: rotate(-180deg) scale(0);
-    transform: rotate(-180deg) scale(0);
-  }
-  50% {
-    -webkit-transform: rotate(-90deg) scale(0.2);
-    transform: rotate(-90deg) scale(0.2);
-  }
-  100% {
-    -webkit-transform: rotate(0deg) scale(1);
-    transform: rotate(0deg) scale(1);
-  }
-}
-
 @keyframes als-icon-fab-pair-icon1-on {
   0% {
-    -webkit-transform: rotate(-180deg) scale(0);
     transform: rotate(-180deg) scale(0);
   }
   50% {
-    -webkit-transform: rotate(-90deg) scale(0.2);
     transform: rotate(-90deg) scale(0.2);
   }
   100% {
-    -webkit-transform: rotate(0deg) scale(1);
-    transform: rotate(0deg) scale(1);
-  }
-}
-
-@-webkit-keyframes als-icon-fab-pair-icon1-off {
-  0% {
-    -webkit-transform: rotate(0deg) scale(1);
-    transform: rotate(0deg) scale(1);
-  }
-  50% {
-    -webkit-transform: rotate(-90deg) scale(0.2);
-    transform: rotate(-90deg) scale(0.2);
-  }
-  100% {
-    -webkit-transform: rotate(-180deg) scale(0);
-    transform: rotate(-180deg) scale(0);
-  }
-}
-
-@keyframes als-icon-fab-pair-icon1-off {
-  0% {
-    -webkit-transform: rotate(0deg) scale(1);
-    transform: rotate(0deg) scale(1);
-  }
-  50% {
-    -webkit-transform: rotate(-90deg) scale(0.2);
-    transform: rotate(-90deg) scale(0.2);
-  }
-  100% {
-    -webkit-transform: rotate(-180deg) scale(0);
-    transform: rotate(-180deg) scale(0);
-  }
-}
-
-@-webkit-keyframes als-icon-fab-pair-icon2-on {
-  0% {
-    -webkit-transform: rotate(180deg) scale(0);
-    transform: rotate(180deg) scale(0);
-  }
-  50% {
-    -webkit-transform: rotate(90deg) scale(0.2);
-    transform: rotate(90deg) scale(0.2);
-  }
-  100% {
-    -webkit-transform: rotate(0deg) scale(1);
-    transform: rotate(0deg) scale(1);
-  }
-}
-
-@keyframes als-icon-fab-pair-icon2-on {
-  0% {
-    -webkit-transform: rotate(180deg) scale(0);
-    transform: rotate(180deg) scale(0);
-  }
-  50% {
-    -webkit-transform: rotate(90deg) scale(0.2);
-    transform: rotate(90deg) scale(0.2);
-  }
-  100% {
-    -webkit-transform: rotate(0deg) scale(1);
-    transform: rotate(0deg) scale(1);
-  }
-}
-
-@-webkit-keyframes als-icon-fab-pair-icon2-off {
-  0% {
-    -webkit-transform: rotate(0deg) scale(1);
-    transform: rotate(0deg) scale(1);
-  }
-  50% {
-    -webkit-transform: rotate(90deg) scale(0.2);
-    transform: rotate(90deg) scale(0.2);
-  }
-  100% {
-    -webkit-transform: rotate(180deg) scale(0);
-    transform: rotate(180deg) scale(0);
-  }
-}
-
-@keyframes als-icon-fab-pair-icon2-off {
-  0% {
-    -webkit-transform: rotate(0deg) scale(1);
-    transform: rotate(0deg) scale(1);
-  }
-  50% {
-    -webkit-transform: rotate(90deg) scale(0.2);
-    transform: rotate(90deg) scale(0.2);
-  }
-  100% {
-    -webkit-transform: rotate(180deg) scale(0);
-    transform: rotate(180deg) scale(0);
-  }
-}
-
-@keyframes als-icon-fab-pair-icon1-on {
-  0% {
-    -webkit-transform: rotate(-180deg) scale(0);
-    transform: rotate(-180deg) scale(0);
-  }
-  50% {
-    -webkit-transform: rotate(-90deg) scale(0.2);
-    transform: rotate(-90deg) scale(0.2);
-  }
-  100% {
-    -webkit-transform: rotate(0deg) scale(1);
     transform: rotate(0deg) scale(1);
   }
 }
 
 @keyframes als-icon-fab-pair-icon1-off {
   0% {
-    -webkit-transform: rotate(0deg) scale(1);
     transform: rotate(0deg) scale(1);
   }
   50% {
-    -webkit-transform: rotate(-90deg) scale(0.2);
     transform: rotate(-90deg) scale(0.2);
   }
   100% {
-    -webkit-transform: rotate(-180deg) scale(0);
     transform: rotate(-180deg) scale(0);
   }
 }
 
 @keyframes als-icon-fab-pair-icon2-on {
   0% {
-    -webkit-transform: rotate(180deg) scale(0);
     transform: rotate(180deg) scale(0);
   }
   50% {
-    -webkit-transform: rotate(90deg) scale(0.2);
     transform: rotate(90deg) scale(0.2);
   }
   100% {
-    -webkit-transform: rotate(0deg) scale(1);
     transform: rotate(0deg) scale(1);
   }
 }
 
 @keyframes als-icon-fab-pair-icon2-off {
   0% {
-    -webkit-transform: rotate(0deg) scale(1);
     transform: rotate(0deg) scale(1);
   }
   50% {
-    -webkit-transform: rotate(90deg) scale(0.2);
     transform: rotate(90deg) scale(0.2);
   }
   100% {
-    -webkit-transform: rotate(180deg) scale(0);
+    transform: rotate(180deg) scale(0);
+  }
+}
+
+@keyframes als-icon-fab-pair-icon1-on {
+  0% {
+    transform: rotate(-180deg) scale(0);
+  }
+  50% {
+    transform: rotate(-90deg) scale(0.2);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes als-icon-fab-pair-icon1-off {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(-90deg) scale(0.2);
+  }
+  100% {
+    transform: rotate(-180deg) scale(0);
+  }
+}
+
+@keyframes als-icon-fab-pair-icon2-on {
+  0% {
+    transform: rotate(180deg) scale(0);
+  }
+  50% {
+    transform: rotate(90deg) scale(0.2);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes als-icon-fab-pair-icon2-off {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(90deg) scale(0.2);
+  }
+  100% {
     transform: rotate(180deg) scale(0);
   }
 }
