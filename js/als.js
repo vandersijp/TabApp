@@ -31,7 +31,7 @@ window.onscroll = function(ev) {
   //
   // parallax and transforms
   var shift = 0;
-  var zoom = 0.05;
+  var zoom = 0.1;
   var blurMax = 4;
   var i;
   for (i = 0; i < alsParallaxElements.length; i++) {
