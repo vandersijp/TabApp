@@ -31,7 +31,7 @@ window.onscroll = function(ev) {
   //
   // parallax and transforms
   var shift = 0;
-  var zoom = 0.1;
+  var zoom = 1/15;
   var blurMax = 4;
   var i;
   for (i = 0; i < alsParallaxElements.length; i++) {
@@ -46,7 +46,7 @@ window.onscroll = function(ev) {
       alsParallaxElements[i].style.objectPosition = "50% " + 100*(1-vision) + "%";
       // ==============
       var transforms = [];
-      //transforms.push("rotate(" + vision * 0 + "deg)");
+      //transforms.push("rotate(" + vision * 10 + "deg)");
       //transforms.push("translateY(" + (d.elementHeight * shift * (vision - 1)) + "px)");
       transforms.push("scale(" + (1.0 + zoom - vision* zoom) + ")");
       alsParallaxElements[i].style.transform = transforms.join(" ");
