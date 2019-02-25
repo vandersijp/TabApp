@@ -142,23 +142,27 @@ p, ul, ol, table, pre, .md-body-1, .md-body-2 {
 }
 
 blockquote, q {
-    width: 40%;
-    margin: 1em;
-    padding: 1em;
-    float: right;
-    display: table-cell;
-    vertical-align: middle;
-    align: center;
-    text-align: right;
-    background: white;
-    border: none;
-    box-shadow: 1px 1px #808080 !important;
+  width: 90%;
+  margin: 1em;
+  padding: 1em;
+  float: right;
+  display: table-cell;
+  vertical-align: middle;
+  align: center;
+  text-align: right;
+  background: white;
+  border: none;
+  box-shadow: 1px 1px #808080 !important;
   outline: 0;
-  font-size: 100%;
+  font-size: 90%;
   vertical-align: baseline;
   background: transparent;
   position: relative;
   quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote>span:first-child {
+  display:block;
 }
 
 blockquote:before {
@@ -423,6 +427,7 @@ md-sidenav {
 }
 
 /* developed for SecuoS */
+
 .als-font-noto {
   font-family: 'Noto Sans';
 }
@@ -482,6 +487,7 @@ h5:focus, img:focus, div:focus {
 }
 
 /* Material Design corrections */
+
 md-divider {
   margin-top: 1em !important;
   margin-bottom: 1em !important;
@@ -490,7 +496,8 @@ md-divider {
 md-tooltip {
   /* to allow multi-line tooltips */
   font-size: 14px !important;
-   height: auto;  height: auto !important;
+  height: auto;
+  height: auto !important;
   line-height: auto !important;
 }
 
@@ -506,6 +513,7 @@ md-tooltip {
 }
 
 /* md-list directive */
+
 md-list-item.md-3-line .md-list-item-text h3 {}
 
 md-list-item h3, md-list-item h4, md-list-item p {
@@ -538,7 +546,7 @@ md-list-item h3, md-list-item h4, md-list-item p {
   margin: 1em !important;
 }
 
-md-list-item div{
+md-list-item div {
   /* reset all div elements */
   margin: 0px !important;
   padding: 0px !important;
@@ -557,6 +565,7 @@ md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
 }
 
 /* special features */
+
 .als-image-right-float {
   max-width: 140px;
   xxmax-height: 25em;
@@ -602,6 +611,7 @@ md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
 }
 
 /* animations */
+
 #als-scrabble, #als-scrabble span, #als-scrabble div {
   transition: all .5s;
   font-weight: bold !important;
@@ -628,6 +638,7 @@ md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
 }
 
 /* nested span elements allow to create a vertical structure */
+
 .als-scrabble-on {
   transform: scale(.8);
 }
