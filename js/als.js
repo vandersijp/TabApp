@@ -43,6 +43,8 @@ window.onscroll = function(ev) {
     if (vision > 0 && vision < 1) {
       var visionEntry = Math.max(0,Math.min(1,(d.windowHeight - d.elementTop)/d.elementHeight));
       // ==============
+      alsParallaxElements[i].style.objectPosition = "50% " + 100*(1-vision) + "%";
+      // ==============
       var transforms = [];
       //transforms.push("rotate(" + vision * 0 + "deg)");
       //transforms.push("translateY(" + (d.elementHeight * shift * (vision - 1)) + "px)");
@@ -53,8 +55,6 @@ window.onscroll = function(ev) {
       filters.push("blur("+ blurMax*(1-visionEntry) +"px)");
       filters.push("grayscale("+ 100*(1-visionEntry) +"%)");
       alsParallaxElements[i].style.filter = filters.join(" ");
-      // ==============
-      alsParallaxElements[i].style.objectPosition = "50% " + 100*(1-v) + "%";
       // ==============
     }
   }
