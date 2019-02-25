@@ -1,5 +1,5 @@
-/* (C) Ask Learn Share Ltd */
-console.log("version 20190224");
+console.log("(C) Ask Learn Share Ltd");
+console.log("version 20190225");
 //
 var alsParallaxElements = document.getElementsByClassName('als-parallax');
 var alsPreviousScrollPosition = window.pageYOffset;
@@ -29,23 +29,33 @@ window.onscroll = function(ev) {
   }
   alsPreviousScrollPosition = alsCurrentScrollPosition;
   //
-  // parallax
-  var shift = 0.2;
+  // parallax and transforms
+  var shift = 0;
   var zoom = 0.05;
+  var blurMax = 4;
   var i;
   for (i = 0; i < alsParallaxElements.length; i++) {
-    //var v = alsParallaxElementsVisibilities[i];
-    var windowHeight = window.innerHeight;
-    var elementHeight = alsParallaxElements[i].offsetHeight;
-    var elementTop = alsParallaxElements[i].getBoundingClientRect().top;
-    var virtualHeight = windowHeight + elementHeight;
-    var v = (virtualHeight - elementTop - elementHeight) / windowHeight;
-    if (v > 0 && v < 1) {
-      var rotate = "rotate(" + v * 0 + "deg)";
-      var scale = "scale(" + (1.0 + zoom - v * zoom) + ")";
-      var translate = "translateY(" + (elementHeight * shift * (v - 1)) + "px)";
-      alsParallaxElements[i].style.transform = [rotate, scale, translate].join(" ");
-      //console.log(t + " | " + i + " | " + v);
+    var d = {};
+    d.windowHeight = window.innerHeight;
+    d.elementHeight = alsParallaxElements[i].offsetHeight;
+    d.elementTop = alsParallaxElements[i].getBoundingClientRect().top;
+    var vision = (d.windowHeight - d.elementTop) / (d.windowHeight + d.elementHeight);
+    if (vision > 0 && vision < 1) {
+      var visionEntry = Math.max(0,Math.min(1,(d.windowHeight - d.elementTop)/d.elementHeight));
+      // ==============
+      var transforms = [];
+      //transforms.push("rotate(" + vision * 0 + "deg)");
+      //transforms.push("translateY(" + (d.elementHeight * shift * (vision - 1)) + "px)");
+      transforms.push("scale(" + (1.0 + zoom - vision* zoom) + ")");
+      alsParallaxElements[i].style.transform = transforms.join(" ");
+      // ==============
+      var filters = [];
+      filters.push("blur("+ blurMax*(1-visionEntry) +"px)");
+      filters.push("grayscale("+ 100*(1-visionEntry) +"%)");
+      alsParallaxElements[i].style.filter = filters.join(" ");
+      // ==============
+      alsParallaxElements[i].style.objectPosition = "50% " + 100*(1-v) + "%";
+      // ==============
     }
   }
 }
