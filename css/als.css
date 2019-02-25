@@ -142,7 +142,8 @@ p, ul, ol, table, pre, .md-body-1, .md-body-2 {
 }
 
 blockquote, q {
-  width: 90%;
+  width: 100%;
+  max-width: 30em;
   margin: 1em;
   padding: 1em;
   float: right;
@@ -154,14 +155,21 @@ blockquote, q {
   border: none;
   box-shadow: 1px 1px #808080 !important;
   outline: 0;
-  font-size: 90%;
+  font-size: 80%;
   vertical-align: baseline;
   background: transparent;
   position: relative;
   quotes: "\201C""\201D""\2018""\2019";
 }
 
-blockquote>span:first-child {
+blockquote>span:nth-child(2), blockquote>span:nth-child(3) {
+  font-style: normal;
+}
+
+blockquote>span:nth-child(2) {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  font-weight: bold;
   display:block;
 }
 
