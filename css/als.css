@@ -532,11 +532,6 @@ md-list-item h3, md-list-item h4, md-list-item p {
   min-width: 25% !important;
 }
 
-.als-list-item-image-portrait {
-  min-width: 96px !important;
-  max-width: 96px !important;
-}
-
 .als-list-item-image div {
   width: 100%;
 }
