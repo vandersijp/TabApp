@@ -142,18 +142,22 @@ p, ul, ol, table, pre, .md-body-1, .md-body-2 {
 }
 
 blockquote, q {
-  margin: 0;
-  padding: 0;
-  border: 2px solid #78C0A8;
+    width: 40%;
+    margin: 1em;
+    padding: 1em;
+    float: right;
+    display: table-cell;
+    vertical-align: middle;
+    align: center;
+    text-align: right;
+    background: white;
+    border: none;
+    box-shadow: 1px 1px #808080 !important;
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
-  quotes: none;
   position: relative;
-}
-
-blockquote {
   quotes: "\201C""\201D""\2018""\2019";
 }
 
@@ -428,18 +432,6 @@ md-sidenav {
 }
 
 /* CSS resets */
-blockquote {
-  font-size: 24px !important;
-  width: 10em;
-  margin: 1em;
-  padding: 1em;
-  float: right;
-  display: table-cell;
-  vertical-align: middle;
-  align: center;
-  text-align: right;
-  background: white;
-}
 
 .als-pullquote {
   xxborder: solid 1px #808080;
