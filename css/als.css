@@ -145,48 +145,45 @@ blockquote, q {
   width: 100%;
   max-width: 30em;
   margin: 1em;
-  padding: 1em;
+  padding-top: 0.0em;
+  padding-right: 1em;
+  padding-bottom: 0.0em;
   float: right;
-  display: table-cell;
-  vertical-align: middle;
-  align: center;
   text-align: right;
   background: white;
   border: none;
-  border-right: DarkOrange solid 3px;
-  xxbox-shadow: 1px 1px #808080 !important;
-  outline: 0;
-  font-size: 80%;
-  vertical-align: baseline;
+  border-right: DarkOrange solid 5px;
+  font-size: 85%;
   background: transparent;
-  position: relative;
   quotes: "\201C""\201D""\2018""\2019";
 }
 
 blockquote>span:nth-child(2), blockquote>span:nth-child(3) {
   font-style: normal;
+  color: DarkOrange;
 }
 
 blockquote>span:nth-child(2) {
-  color: DarkOrange;
-  margin-top: 0.2em;
-  margin-bottom: 0.2em;
   font-weight: bold;
   display:block;
 }
 
 blockquote:before {
-  color: #555;
+  color: DarkOrange;
   content: open-quote;
   font-size: 3em;
   line-height: 0;
-  vertical-align: -0.4em;
-  horizontal-align: -1em;
+  vertical-align: -0.3em;
+  margin-right: 0.1em;
 }
 
-blockquote:after {
-  visibility: hidden;
+blockquote>span:after {
+  color: DarkOrange;
   content: close-quote;
+  font-size: 3em;
+  line-height: 0;
+  vertical-align: -0.7em;
+  margin-left: -0.1em;
 }
 
 figcaption, .md-caption {
