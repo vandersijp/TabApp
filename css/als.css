@@ -143,8 +143,8 @@ p, ul, ol, table, pre, .md-body-1, .md-body-2 {
 
 blockquote, q {
   width: auto;
-  max-width: 40em;
-  margin: 1em;
+  max-width: 90%;
+  margin-right: 1em;
   margin-left: 2em;
   padding-right: 1em;
   padding-top: 0.5em;
@@ -157,6 +157,10 @@ blockquote, q {
   border-right: DarkOrange solid 7px;
   font-size: 90%;
   quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote>span+span {
+  font-size: 90%;
 }
 
 blockquote>span {
