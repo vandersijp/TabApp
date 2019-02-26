@@ -158,16 +158,16 @@ blockquote, q {
   quotes: "\201C""\201D""\2018""\2019";
 }
 
-blockquote span:first-letter {
-  text-transform: capitalize;
-}
-
-blockquote span {
+blockquote>span {
   font-style: normal;
 }
 
 blockquote>span:nth-child(1) {
   font-style: italic;
+}
+
+blockquote>span:first-letter {
+  text-transform: capitalize;
 }
 
 blockquote>span:nth-child(2) {
