@@ -142,7 +142,7 @@ p, ul, ol, table, pre, .md-body-1, .md-body-2 {
 }
 
 blockquote, q {
-  width: 100%;
+  width: 90%;
   max-width: 30em;
   margin: 1em;
   padding-right: 1em;
@@ -177,7 +177,7 @@ blockquote:before {
   content: open-quote;
   font-size: 3em;
   line-height: 0;
-  vertical-align: -0.3em;
+  vertical-align: -0.4em;
   margin-right: 0.1em;
 }
 
@@ -186,7 +186,7 @@ blockquote>span:after {
   content: close-quote;
   font-size: 3em;
   line-height: 0;
-  vertical-align: -0.7em;
+  vertical-align: -0.6em;
   margin-left: -0.1em;
 }
 
