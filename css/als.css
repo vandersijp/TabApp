@@ -160,6 +160,9 @@ blockquote, q {
 
 blockquote span:first-letter {
   text-transform: capitalize;
+}
+
+blockquote span {
   font-style: normal;
 }
 
