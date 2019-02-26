@@ -143,7 +143,7 @@ p, ul, ol, table, pre, .md-body-1, .md-body-2 {
 
 blockquote, q {
   width: 90%;
-  max-width: 30em;
+  max-width: 37em;
   margin: 1em;
   padding-right: 1em;
   padding-top: 0.0em;
@@ -160,7 +160,10 @@ blockquote, q {
 
 blockquote>span:nth-child(2), blockquote>span:nth-child(3) {
   font-style: normal;
-  zzcolor: DarkOrange;
+}
+
+blockquote span:first-letter {
+  text-transform: capitalize;
 }
 
 blockquote>span:nth-child(2) {
