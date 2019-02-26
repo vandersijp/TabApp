@@ -145,8 +145,8 @@ blockquote, q {
   width: 100%;
   max-width: 30em;
   margin: 1em;
-  padding-top: 0.0em;
   padding-right: 1em;
+  padding-top: 0.0em;
   padding-bottom: 0.0em;
   float: right;
   text-align: right;
@@ -166,6 +166,10 @@ blockquote>span:nth-child(2), blockquote>span:nth-child(3) {
 blockquote>span:nth-child(2) {
   font-weight: bold;
   display:block;
+}
+
+blockquote>span:nth-child(3) {
+  line-height: 0.1em;
 }
 
 blockquote:before {
