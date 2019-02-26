@@ -145,10 +145,10 @@ blockquote, q {
   width: auto;
   max-width: 40em;
   margin: 1em;
-  margin-left: 4em;
+  margin-left: 2em;
   padding-right: 1em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   padding-left: 0em;
   float: right;
   text-align: right;
