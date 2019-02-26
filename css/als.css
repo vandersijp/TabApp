@@ -169,7 +169,7 @@ blockquote>span:nth-child(2) {
 }
 
 blockquote>span:nth-child(3) {
-  line-height: 0.1em;
+  zzline-height: 0.1em;
 }
 
 blockquote:before {
