@@ -142,19 +142,20 @@ p, ul, ol, table, pre, .md-body-1, .md-body-2 {
 }
 
 blockquote, q {
-  width: 90%;
+  width: auto;
   max-width: 40em;
   margin: 1em;
+  margin-left: 4em;
   padding-right: 1em;
-  padding-top: 0.0em;
-  padding-bottom: 0.0em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 0em;
   float: right;
   text-align: right;
-  background: white;
+  background: LemonChiffon;
   border: none;
-  border-right: DarkOrange solid 5px;
-  font-size: 85%;
-  background: transparent;
+  border-right: DarkOrange solid 7px;
+  font-size: 90%;
   quotes: "\201C""\201D""\2018""\2019";
 }
 
