@@ -1,5 +1,5 @@
 console.log("(C) Ask Learn Share Ltd");
-console.log("version 20190225");
+console.log("version 20190227");
 //
 var alsParallaxElements = document.getElementsByClassName('als-parallax');
 var alsPreviousScrollPosition = window.pageYOffset;
@@ -40,7 +40,8 @@ window.onscroll = function(ev) {
     d.elementHeight = alsParallaxElements[i].offsetHeight;
     d.elementTop = alsParallaxElements[i].getBoundingClientRect().top;
     var vision = (d.windowHeight - d.elementTop) / (d.windowHeight + d.elementHeight);
-    if (vision > -0.1 && vision < 1.1) {
+    // to avoid sudden changes upon entry
+    if (vision > -0.1 && vision < 1) {
       var visionEntry = Math.max(0,Math.min(1,(d.windowHeight - d.elementTop)/d.elementHeight));
       // ==============
       alsParallaxElements[i].style.objectPosition = "50% " + 100*(1-vision) + "%";
