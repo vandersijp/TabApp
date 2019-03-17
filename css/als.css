@@ -1,4 +1,5 @@
-/* (C) 2016 Ask Learn Share Ltd */
+/* (C) Ask Learn Share Ltd */
+/* version 20190227 */
 
 html {
   font-family: 'Roboto', sans-serif;
@@ -14,6 +15,22 @@ img {
 
 img {
   border: 0;
+}
+
+.als-carousels md-card {
+  margin: 0px;
+}
+
+.als-venn div {
+  border: 1px #808080 solid;
+  box-shadow: 1px 1px #808080;
+  text-align: center;
+  border-radius: 20px;
+  padding: 0.5em;
+}
+
+.als-venn p {
+  margin: 2em;
 }
 
 .als-img-140px {
