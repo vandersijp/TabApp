@@ -17,10 +17,6 @@ img {
   border: 0;
 }
 
-.als-carousels md-card {
-  margin: 0px !important;
-}
-
 .als-venn div {
   border: 1px #808080 solid;
   box-shadow: 1px 1px #808080;
@@ -35,20 +31,20 @@ img {
 
 .als-img-140px {
   object-fit: cover;
-  width: 140px;
-  height: 140px;
+  width: 140px !important;
+  height: 140px !important;
 }
 
 .als-img-96px {
   object-fit: cover;
-  width: 96px;
-  height: 96px;
+  width: 96px !important;
+  height: 96px !important;
 }
 
 .als-img-64px {
   object-fit: cover;
-  width: 64px;
-  height: 64px;
+  width: 64px !important;
+  height: 64px !important;
 }
 
 /*
