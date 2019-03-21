@@ -63,9 +63,22 @@ ul li{
   padding-right: 1.5em;
 }
 
+.als-slide-overlay>div>div:first-of-type {
+  border-radius: 0px;
+  box-shadow: none !important;
+  max-width: 16em;
+}
+
 .als-slide-overlay>div>div:nth-of-type(2) {
   border-radius: 12px;
-  box-shadow: 8px 8px #808080 !important;
+}
+
+.als-slide-overlay, .als-slide-overlay>div>div:nth-of-type(2) {
+  border-radius: 12px;
+}
+
+.als-slide-overlay li {
+  font-weight: 900 !important;
 }
 
 .als-venn div {
