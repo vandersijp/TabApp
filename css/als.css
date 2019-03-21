@@ -77,6 +77,13 @@ ul li{
   border-radius: 12px;
 }
 
+.als-slide-overlay h2, .als-slide-overlay h1 {
+  color: white !important;
+  font-size: 32px !important;
+  font-weight: 900 !important;
+  text-shadow: 1px 1px #808080 !important;
+}
+
 .als-slide-overlay li {
   font-weight: 900 !important;
 }
