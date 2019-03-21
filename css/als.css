@@ -40,7 +40,7 @@ ul li{
 
 @media only screen and (max-width: 600px) {
   .als-slide-overlay {
-    height: 28em;
+    height: 26em;
   }
 }
 
@@ -61,8 +61,11 @@ ul li{
   padding: 0.1em;
   padding-left: 1.5em;
   padding-right: 1.5em;
+}
+
+.als-slide-overlay>div>div:nth-of-type(2) {
   border-radius: 12px;
-  box-shadow: 1px 1px #808080 !important;
+  box-shadow: 8px 8px #808080 !important;
 }
 
 .als-venn div {
@@ -649,9 +652,7 @@ md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
 
 /* special features */
 
-.als-image-right-float {
-  max-width: 140px;
-  xxmax-height: 25em;
+.als-image-als-image-right-float {
   float: right;
   margin: 1em;
   margin-top: 0.8em;
@@ -820,7 +821,6 @@ md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
 
 .als-image-right-float {
   max-width: 140px;
-  xxmax-height: 25em;
   float: right;
   margin: 1em;
   margin-top: 0.8em;
