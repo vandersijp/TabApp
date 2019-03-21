@@ -88,6 +88,13 @@ ul li{
   font-weight: 900 !important;
 }
 
+@media only screen and (max-width: 600px) {
+  .als-slide-overlay>div>div:first-of-type {
+    max-width: none;
+  }
+}
+
+
 .als-venn div {
   border: 1px #808080 solid;
   box-shadow: 1px 1px #808080;
