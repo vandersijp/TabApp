@@ -69,12 +69,8 @@ ul li{
   max-width: 16em;
 }
 
-.als-slide-overlay>div>div:nth-of-type(2) {
-  border-radius: 12px;
-}
-
 .als-slide-overlay, .als-slide-overlay>div>div:nth-of-type(2) {
-  border-radius: 12px;
+  border-radius: 0px;
 }
 
 .als-slide-overlay h2, .als-slide-overlay h1 {
