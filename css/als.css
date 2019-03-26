@@ -40,7 +40,7 @@ ul li{
 
 @media only screen and (max-width: 600px) {
   .als-slide-overlay {
-    height: 32em;
+    height: 28em;
   }
 }
 
@@ -213,11 +213,6 @@ md-card md-card-title md-card-title-media .md-media-xl {
   height: auto;
 }
 
-.als-main-content {
-  width: 800px !important;
-  line-height: normal !important;
-}
-
 .als-lead {
   font-weight: bold;
   font-size: 120%;
@@ -328,11 +323,6 @@ pre {
 md-menu-item {
   /* to accomodate icons */
   margin-right: -1em;
-}
-
-d md-menu-item p {
-  /* in case the md-sidenav is too narrow, maybe obsolete */
-  margin-right: car1em !important;
 }
 
 /*
