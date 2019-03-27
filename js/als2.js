@@ -1,5 +1,5 @@
 console.log("(C) Ask Learn Share Ltd");
-console.log("version 20190227");
+console.log("version 20190327");
 //
 var alsParallaxElements = document.getElementsByClassName('als-parallax');
 var alsPreviousScrollPosition = window.pageYOffset;
