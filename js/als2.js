@@ -10,22 +10,19 @@ window.onscroll = function(ev) {
   var alsCurrentScrollPosition = window.pageYOffset;
   // to prevent bouncing in case of negative values in Safari
   if (alsCurrentScrollPosition <= 0) {
-    alsSwitchClassOn("als-navbar");
     alsSwitchClassOn("als-scrabble");
     alsSwitchClassOn("als-kicklogo");
     alsSwitchClassOff("als-fabtop");
-    //alsSwitchClassOff("als-fabmenu");
-    alsSwitchClassOn("als-fabmenu");
+    alsSwitchClassOn("als-toolbar");
   } else {
-    alsSwitchClassOff("als-navbar");
     alsSwitchClassOff("als-scrabble");
     alsSwitchClassOff("als-kicklogo");
     if (alsPreviousScrollPosition > alsCurrentScrollPosition) {
       alsSwitchClassOn("als-fabtop");
-      alsSwitchClassOff("als-fabmenu");
+      alsSwitchClassOn("als-toolbar");
     } else {
       alsSwitchClassOff("als-fabtop");
-      alsSwitchClassOn("als-fabmenu");
+      alsSwitchClassOff("als-toolbar");
     }
   }
   alsPreviousScrollPosition = alsCurrentScrollPosition;
