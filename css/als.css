@@ -737,11 +737,11 @@ md-list-item .md-avatar, md-list-item .md-list-item-inner .md-avatar {
 /* nested span elements allow to create a vertical structure */
 
 .als-scrabble-on {
-  transform: scale(.8);
+  transform: scale(0.9);
 }
 
 .als-scrabble-off {
-  transform: scale(0.75);
+  transform: scale(0.8);
 }
 
 .als-scrabble-off div {
